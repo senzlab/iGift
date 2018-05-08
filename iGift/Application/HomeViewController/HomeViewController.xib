@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="iGift" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="iN0-l3-epB" id="auk-TL-u13"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ksq-pE-SlQ" userLabel="Root View">
+                    <rect key="frame" x="10" y="50" width="355" height="607"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="om1-Lc-Xob" userLabel="Root Grid">
+                            <rect key="frame" x="0.0" y="1" width="355" height="606"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="Ju7-vm-sf4">
+                                    <rect key="frame" x="0.0" y="0.0" width="355" height="303"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WQU-mA-aRF" userLabel="Segment 1">
+                                            <rect key="frame" x="0.0" y="0.0" width="177.5" height="303"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="van-M0-Vag">
+                                                    <rect key="frame" x="33" y="76.5" width="110" height="110"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="110" id="bIZ-ZH-o6o">
+                                                            <variation key="heightClass=compact-widthClass=compact" constant="90"/>
+                                                        </constraint>
+                                                        <constraint firstAttribute="width" constant="110" id="vtq-OQ-vCt">
+                                                            <variation key="heightClass=compact-widthClass=compact" constant="90"/>
+                                                        </constraint>
+                                                    </constraints>
+                                                    <inset key="titleEdgeInsets" minX="0.0" minY="150" maxX="0.0" maxY="0.0"/>
+                                                    <state key="normal" title="iGifts" backgroundImage="group_igift">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="onIGiftsBtnClicked:" destination="-1" eventType="touchUpInside" id="8R7-cs-iMt"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="van-M0-Vag" firstAttribute="centerY" secondItem="WQU-mA-aRF" secondAttribute="centerY" constant="-20" id="6Gm-ti-p5c">
+                                                    <variation key="heightClass=compact-widthClass=compact" constant="-15"/>
+                                                </constraint>
+                                                <constraint firstItem="van-M0-Vag" firstAttribute="centerX" secondItem="WQU-mA-aRF" secondAttribute="centerX" id="En4-N5-ukn"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XJG-Vu-lgW" userLabel="Segment 2">
+                                            <rect key="frame" x="178" y="0.0" width="177" height="303"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gd1-RG-uqK">
+                                                    <rect key="frame" x="33.5" y="76.5" width="110" height="110"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="110" id="pMF-oe-1nd">
+                                                            <variation key="heightClass=compact-widthClass=compact" constant="90"/>
+                                                        </constraint>
+                                                        <constraint firstAttribute="width" constant="110" id="wsP-LW-H4L">
+                                                            <variation key="heightClass=compact-widthClass=compact" constant="90"/>
+                                                        </constraint>
+                                                    </constraints>
+                                                    <inset key="titleEdgeInsets" minX="0.0" minY="150" maxX="0.0" maxY="0.0"/>
+                                                    <state key="normal" title="Send iGift" backgroundImage="group_write">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="onSendIGiftsBtnClicked:" destination="-1" eventType="touchUpInside" id="Im4-Sa-T6t"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="gd1-RG-uqK" firstAttribute="centerY" secondItem="XJG-Vu-lgW" secondAttribute="centerY" constant="-20" id="LhF-uX-HHn">
+                                                    <variation key="heightClass=compact-widthClass=compact" constant="-15"/>
+                                                </constraint>
+                                                <constraint firstItem="gd1-RG-uqK" firstAttribute="centerX" secondItem="XJG-Vu-lgW" secondAttribute="centerX" id="fi3-r1-h4R"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="XJG-Vu-lgW" firstAttribute="top" secondItem="Ju7-vm-sf4" secondAttribute="top" id="1pH-XP-sQD"/>
+                                        <constraint firstAttribute="bottom" secondItem="WQU-mA-aRF" secondAttribute="bottom" id="67P-vG-evw"/>
+                                        <constraint firstAttribute="bottom" secondItem="XJG-Vu-lgW" secondAttribute="bottom" id="HQu-41-F8u"/>
+                                        <constraint firstItem="WQU-mA-aRF" firstAttribute="top" secondItem="Ju7-vm-sf4" secondAttribute="top" id="emC-14-2sB"/>
+                                    </constraints>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="ip8-zg-hXq">
+                                    <rect key="frame" x="0.0" y="303.5" width="355" height="302.5"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xug-Jg-2n9" userLabel="Segment 3">
+                                            <rect key="frame" x="0.0" y="0.0" width="177.5" height="302.5"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kft-C1-i0N">
+                                                    <rect key="frame" x="33" y="76" width="110" height="110"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="110" id="EnX-Ys-fUS">
+                                                            <variation key="heightClass=compact-widthClass=compact" constant="90"/>
+                                                        </constraint>
+                                                        <constraint firstAttribute="width" constant="110" id="ISy-Xc-II1">
+                                                            <variation key="heightClass=compact-widthClass=compact" constant="90"/>
+                                                        </constraint>
+                                                    </constraints>
+                                                    <inset key="titleEdgeInsets" minX="0.0" minY="150" maxX="0.0" maxY="0.0"/>
+                                                    <state key="normal" title="Contacts" backgroundImage="contact_g">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="onContactsBtnClicked:" destination="-1" eventType="touchUpInside" id="FMm-C3-VdS"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="kft-C1-i0N" firstAttribute="centerY" secondItem="Xug-Jg-2n9" secondAttribute="centerY" constant="-20" id="Qz1-IQ-jIe">
+                                                    <variation key="heightClass=compact-widthClass=compact" constant="-15"/>
+                                                </constraint>
+                                                <constraint firstItem="kft-C1-i0N" firstAttribute="centerX" secondItem="Xug-Jg-2n9" secondAttribute="centerX" id="xlR-3d-tK7"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hyG-Jz-i7y" userLabel="Segment 4">
+                                            <rect key="frame" x="178" y="0.0" width="177" height="302.5"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZDP-Jf-JOC">
+                                                    <rect key="frame" x="33.5" y="76" width="110" height="110"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="110" id="LD2-n0-Nrv">
+                                                            <variation key="heightClass=compact-widthClass=compact" constant="90"/>
+                                                        </constraint>
+                                                        <constraint firstAttribute="height" constant="110" id="dqc-af-vav">
+                                                            <variation key="heightClass=compact-widthClass=compact" constant="90"/>
+                                                        </constraint>
+                                                    </constraints>
+                                                    <inset key="titleEdgeInsets" minX="0.0" minY="150" maxX="0.0" maxY="0.0"/>
+                                                    <state key="normal" title="Settings" backgroundImage="setting_g">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="onSettingsBtnClicked:" destination="-1" eventType="touchUpInside" id="gmb-oR-rJj"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="ZDP-Jf-JOC" firstAttribute="centerX" secondItem="hyG-Jz-i7y" secondAttribute="centerX" id="mTK-hG-0TN"/>
+                                                <constraint firstItem="ZDP-Jf-JOC" firstAttribute="centerY" secondItem="hyG-Jz-i7y" secondAttribute="centerY" constant="-20" id="pyq-KW-oOi">
+                                                    <variation key="heightClass=compact-widthClass=compact" constant="-15"/>
+                                                </constraint>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="Xug-Jg-2n9" secondAttribute="bottom" id="HD9-rk-KRy"/>
+                                        <constraint firstItem="hyG-Jz-i7y" firstAttribute="top" secondItem="ip8-zg-hXq" secondAttribute="top" id="NGS-1e-IT2"/>
+                                        <constraint firstAttribute="bottom" secondItem="hyG-Jz-i7y" secondAttribute="bottom" id="tzk-jS-JBE"/>
+                                        <constraint firstItem="Xug-Jg-2n9" firstAttribute="top" secondItem="ip8-zg-hXq" secondAttribute="top" id="yj1-7O-7Kv"/>
+                                    </constraints>
+                                </stackView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="ip8-zg-hXq" firstAttribute="leading" secondItem="om1-Lc-Xob" secondAttribute="leading" id="6ge-c0-j6L"/>
+                                <constraint firstAttribute="trailing" secondItem="ip8-zg-hXq" secondAttribute="trailing" id="B35-RP-UUE"/>
+                                <constraint firstAttribute="trailing" secondItem="Ju7-vm-sf4" secondAttribute="trailing" id="VN5-XX-IGR"/>
+                                <constraint firstItem="Ju7-vm-sf4" firstAttribute="leading" secondItem="om1-Lc-Xob" secondAttribute="leading" id="q4H-in-XhO"/>
+                                <constraint firstAttribute="bottom" secondItem="ip8-zg-hXq" secondAttribute="bottom" constant="0.5" id="ylf-ST-4P9"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="om1-Lc-Xob" secondAttribute="trailing" constant="0.5" id="93j-Lr-zMt"/>
+                        <constraint firstItem="om1-Lc-Xob" firstAttribute="top" secondItem="ksq-pE-SlQ" secondAttribute="top" constant="0.5" id="C3J-RM-cBW"/>
+                        <constraint firstItem="om1-Lc-Xob" firstAttribute="leading" secondItem="ksq-pE-SlQ" secondAttribute="leading" constant="0.5" id="RLK-qd-frm"/>
+                        <constraint firstAttribute="bottom" secondItem="om1-Lc-Xob" secondAttribute="bottom" constant="0.5" id="Xb1-Xn-hIg"/>
+                        <constraint firstItem="om1-Lc-Xob" firstAttribute="centerX" secondItem="ksq-pE-SlQ" secondAttribute="centerX" id="kdP-JE-aqQ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="ksq-pE-SlQ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="30" id="0Uq-fM-6To"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="ksq-pE-SlQ" secondAttribute="bottom" constant="10" id="hym-hp-92F"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ksq-pE-SlQ" secondAttribute="trailing" constant="10" id="maD-Cs-aQb"/>
+                <constraint firstItem="ksq-pE-SlQ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="slT-iT-LQQ"/>
+                <constraint firstItem="ksq-pE-SlQ" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="ud0-JW-SnM"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="contact_g" width="208" height="208"/>
+        <image name="group_igift" width="208" height="208"/>
+        <image name="group_write" width="208" height="208"/>
+        <image name="setting_g" width="208" height="208"/>
+    </resources>
+</document>

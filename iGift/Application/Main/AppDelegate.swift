@@ -17,8 +17,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+
+        // Load Navigation View Controller to stack other viewcontroallers
+        window = UIWindow.init(frame: UIScreen.main.bounds)
+        let navController = NavigationViewController()
+        window!.rootViewController = navController
+        window!.makeKeyAndVisible()
+
+        // Setup Global Styles for NavBar
+        setupNavBarStyles()
+
+        // Setup Global Styles for StatusBar
+        setupStatusBarStyles()
+
+
         return true
     }
+
+    func setupNavBarStyles(){
+        let navigationBarAppearace = UINavigationBar.appearance()
+        navigationBarAppearace.tintColor = UIColor.fromHex(0xFFFFFF)
+        navigationBarAppearace.barTintColor = UIColor.fromHex(0xFF8C00)
+        navigationBarAppearace.backgroundColor = UIColor.fromHex(0xFF8C00)
+        // change navigation item title color
+        navigationBarAppearace.titleTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
+    }
+
+
+    func setupStatusBarStyles(){
+        UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
+    }
+    
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
