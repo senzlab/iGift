@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F9138F320A34E400011DF2C /* DesignIGiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9138F120A34E400011DF2C /* DesignIGiftViewController.swift */; };
+		0F9138F420A34E400011DF2C /* DesignIGiftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F9138F220A34E400011DF2C /* DesignIGiftViewController.xib */; };
 		4021E6E720A1CA1600B3DEB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4021E6E620A1CA1600B3DEB7 /* AppDelegate.swift */; };
 		4021E6EC20A1CA1600B3DEB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4021E6EA20A1CA1600B3DEB7 /* Main.storyboard */; };
 		4021E6EF20A1CA1600B3DEB7 /* iGift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4021E6ED20A1CA1600B3DEB7 /* iGift.xcdatamodeld */; };
@@ -30,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F9138F120A34E400011DF2C /* DesignIGiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignIGiftViewController.swift; sourceTree = "<group>"; };
+		0F9138F220A34E400011DF2C /* DesignIGiftViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DesignIGiftViewController.xib; sourceTree = "<group>"; };
 		4021E6E320A1CA1600B3DEB7 /* iGift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iGift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4021E6E620A1CA1600B3DEB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4021E6EB20A1CA1600B3DEB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -65,6 +69,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F9138F020A34DF40011DF2C /* DesignIGiftViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0F9138F120A34E400011DF2C /* DesignIGiftViewController.swift */,
+				0F9138F220A34E400011DF2C /* DesignIGiftViewController.xib */,
+			);
+			path = DesignIGiftViewController;
+			sourceTree = "<group>";
+		};
 		4021E6DA20A1CA1600B3DEB7 = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +153,7 @@
 		4021E70020A1CD0000B3DEB7 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				0F9138F020A34DF40011DF2C /* DesignIGiftViewController */,
 				4021E70120A1CD0F00B3DEB7 /* Main */,
 				4021E71620A20AF600B3DEB7 /* BaseViewControllers */,
 				4021E71520A209E800B3DEB7 /* IGiftsViewController */,
@@ -348,6 +362,7 @@
 				4021E72420A21DE100B3DEB7 /* SettingsViewController.xib in Resources */,
 				4021E73420A231E100B3DEB7 /* PhoneBookViewController.xib in Resources */,
 				4021E6EC20A1CA1600B3DEB7 /* Main.storyboard in Resources */,
+				0F9138F420A34E400011DF2C /* DesignIGiftViewController.xib in Resources */,
 				4021E71820A20F1700B3DEB7 /* Assets.xcassets in Resources */,
 				4021E72E20A22B6700B3DEB7 /* SendIGiftsViewController.xib in Resources */,
 				4021E70620A1CFED00B3DEB7 /* HomeViewController.xib in Resources */,
@@ -373,6 +388,7 @@
 				4021E72820A2234F00B3DEB7 /* UIColor.swift in Sources */,
 				4021E72620A21E2F00B3DEB7 /* BaseViewController.swift in Sources */,
 				4021E73020A22B7500B3DEB7 /* SendIGiftsViewController.swift in Sources */,
+				0F9138F320A34E400011DF2C /* DesignIGiftViewController.swift in Sources */,
 				4021E72220A21DCE00B3DEB7 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -511,7 +527,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 67S5W9JU3Z;
+				DEVELOPMENT_TEAM = S67FEK7CTT;
 				INFOPLIST_FILE = "$(SRCROOT)/iGift/Config/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -527,7 +543,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 67S5W9JU3Z;
+				DEVELOPMENT_TEAM = S67FEK7CTT;
 				INFOPLIST_FILE = "$(SRCROOT)/iGift/Config/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
