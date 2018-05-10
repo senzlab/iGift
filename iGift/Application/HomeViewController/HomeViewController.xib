@@ -32,7 +32,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WQU-mA-aRF" userLabel="Segment 1">
                                             <rect key="frame" x="0.0" y="0.0" width="177.5" height="303"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="van-M0-Vag">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="van-M0-Vag" customClass="CustomButton" customModule="iGift" customModuleProvider="target">
                                                     <rect key="frame" x="33" y="76.5" width="110" height="110"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="110" id="bIZ-ZH-o6o">
@@ -42,6 +42,7 @@
                                                             <variation key="heightClass=compact-widthClass=compact" constant="90"/>
                                                         </constraint>
                                                     </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                     <inset key="titleEdgeInsets" minX="0.0" minY="150" maxX="0.0" maxY="0.0"/>
                                                     <state key="normal" title="iGifts" backgroundImage="group_igift">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -51,7 +52,7 @@
                                                     </connections>
                                                 </button>
                                             </subviews>
-                                            <color key="backgroundColor" red="1" green="0.5725490196078431" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstItem="van-M0-Vag" firstAttribute="centerY" secondItem="WQU-mA-aRF" secondAttribute="centerY" constant="-20" id="6Gm-ti-p5c">
                                                     <variation key="heightClass=compact-widthClass=compact" constant="-15"/>
@@ -62,7 +63,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XJG-Vu-lgW" userLabel="Segment 2">
                                             <rect key="frame" x="178" y="0.0" width="177" height="303"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gd1-RG-uqK">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gd1-RG-uqK" customClass="CustomButton" customModule="iGift" customModuleProvider="target">
                                                     <rect key="frame" x="33.5" y="76.5" width="110" height="110"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="110" id="pMF-oe-1nd">
@@ -72,6 +73,7 @@
                                                             <variation key="heightClass=compact-widthClass=compact" constant="90"/>
                                                         </constraint>
                                                     </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                     <inset key="titleEdgeInsets" minX="0.0" minY="150" maxX="0.0" maxY="0.0"/>
                                                     <state key="normal" title="Send iGift" backgroundImage="group_write">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -81,7 +83,7 @@
                                                     </connections>
                                                 </button>
                                             </subviews>
-                                            <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstItem="gd1-RG-uqK" firstAttribute="centerY" secondItem="XJG-Vu-lgW" secondAttribute="centerY" constant="-20" id="LhF-uX-HHn">
                                                     <variation key="heightClass=compact-widthClass=compact" constant="-15"/>
@@ -103,7 +105,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xug-Jg-2n9" userLabel="Segment 3">
                                             <rect key="frame" x="0.0" y="0.0" width="177.5" height="302.5"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kft-C1-i0N">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kft-C1-i0N" customClass="CustomButton" customModule="iGift" customModuleProvider="target">
                                                     <rect key="frame" x="33" y="76" width="110" height="110"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="110" id="EnX-Ys-fUS">
@@ -113,6 +115,7 @@
                                                             <variation key="heightClass=compact-widthClass=compact" constant="90"/>
                                                         </constraint>
                                                     </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                     <inset key="titleEdgeInsets" minX="0.0" minY="150" maxX="0.0" maxY="0.0"/>
                                                     <state key="normal" title="Contacts" backgroundImage="contact_g">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -122,7 +125,7 @@
                                                     </connections>
                                                 </button>
                                             </subviews>
-                                            <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstItem="kft-C1-i0N" firstAttribute="centerY" secondItem="Xug-Jg-2n9" secondAttribute="centerY" constant="-20" id="Qz1-IQ-jIe">
                                                     <variation key="heightClass=compact-widthClass=compact" constant="-15"/>
@@ -133,7 +136,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hyG-Jz-i7y" userLabel="Segment 4">
                                             <rect key="frame" x="178" y="0.0" width="177" height="302.5"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZDP-Jf-JOC">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZDP-Jf-JOC" customClass="CustomButton" customModule="iGift" customModuleProvider="target">
                                                     <rect key="frame" x="33.5" y="76" width="110" height="110"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="110" id="LD2-n0-Nrv">
@@ -143,6 +146,7 @@
                                                             <variation key="heightClass=compact-widthClass=compact" constant="90"/>
                                                         </constraint>
                                                     </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                     <inset key="titleEdgeInsets" minX="0.0" minY="150" maxX="0.0" maxY="0.0"/>
                                                     <state key="normal" title="Settings" backgroundImage="setting_g">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -152,7 +156,7 @@
                                                     </connections>
                                                 </button>
                                             </subviews>
-                                            <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstItem="ZDP-Jf-JOC" firstAttribute="centerX" secondItem="hyG-Jz-i7y" secondAttribute="centerX" id="mTK-hG-0TN"/>
                                                 <constraint firstItem="ZDP-Jf-JOC" firstAttribute="centerY" secondItem="hyG-Jz-i7y" secondAttribute="centerY" constant="-20" id="pyq-KW-oOi">
@@ -188,7 +192,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="ksq-pE-SlQ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="30" id="0Uq-fM-6To"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="ksq-pE-SlQ" secondAttribute="bottom" constant="10" id="hym-hp-92F"/>

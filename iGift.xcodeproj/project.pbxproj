@@ -33,6 +33,28 @@
 		4021E73020A22B7500B3DEB7 /* SendIGiftsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4021E72F20A22B7500B3DEB7 /* SendIGiftsViewController.swift */; };
 		4021E73220A231D600B3DEB7 /* PhoneBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4021E73120A231D600B3DEB7 /* PhoneBookViewController.swift */; };
 		4021E73420A231E100B3DEB7 /* PhoneBookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4021E73320A231E100B3DEB7 /* PhoneBookViewController.xib */; };
+		408714E620A31214007B3E4C /* AddAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 408714E520A31214007B3E4C /* AddAccountViewController.xib */; };
+		408714E820A31458007B3E4C /* AddAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408714E720A31458007B3E4C /* AddAccountViewController.swift */; };
+		408714EB20A31B28007B3E4C /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408714EA20A31B28007B3E4C /* CustomButton.swift */; };
+		408714F020A3326E007B3E4C /* GeosansLight-Oblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 408714EE20A3326D007B3E4C /* GeosansLight-Oblique.ttf */; };
+		408714F120A3326E007B3E4C /* GeosansLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 408714EF20A3326D007B3E4C /* GeosansLight.ttf */; };
+		408714F420A337AD007B3E4C /* CustomSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408714F320A337AD007B3E4C /* CustomSettingCell.swift */; };
+		408714F620A337CC007B3E4C /* CustomSettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 408714F520A337CC007B3E4C /* CustomSettingCell.xib */; };
+		408714FE20A34996007B3E4C /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408714FD20A34996007B3E4C /* UIFont.swift */; };
+		4087150220A34B59007B3E4C /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4087150120A34B58007B3E4C /* CustomLabel.swift */; };
+		4087150720A38737007B3E4C /* HexColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4087150620A38737007B3E4C /* HexColors.swift */; };
+		4087150920A38742007B3E4C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4087150820A38742007B3E4C /* Constants.swift */; };
+		4087150E20A391B8007B3E4C /* CustomContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4087150D20A391B8007B3E4C /* CustomContactCell.swift */; };
+		4087151020A391C8007B3E4C /* CustomContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4087150F20A391C8007B3E4C /* CustomContactCell.xib */; };
+		4087151320A391E2007B3E4C /* CustomPhoneBookCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4087151220A391E2007B3E4C /* CustomPhoneBookCell.xib */; };
+		4087151520A391EE007B3E4C /* CustomPhoneBookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4087151420A391EE007B3E4C /* CustomPhoneBookCell.swift */; };
+		4087151720A3FECF007B3E4C /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4087151620A3FECF007B3E4C /* CustomImageView.swift */; };
+		4087151A20A488ED007B3E4C /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4087151920A488ED007B3E4C /* CustomSearchBar.swift */; };
+		4087151E20A4A9BC007B3E4C /* PhoneContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4087151D20A4A9BC007B3E4C /* PhoneContact.swift */; };
+		4087152120A4ACA6007B3E4C /* PhoneBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4087152020A4ACA6007B3E4C /* PhoneBook.swift */; };
+		4087152320A4BE5F007B3E4C /* CustomTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4087152220A4BE5F007B3E4C /* CustomTableView.swift */; };
+		4087152620A4ED86007B3E4C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4087152520A4ED86007B3E4C /* RegisterViewController.swift */; };
+		4087152820A4ED96007B3E4C /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4087152720A4ED96007B3E4C /* RegisterViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +86,28 @@
 		4021E72F20A22B7500B3DEB7 /* SendIGiftsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendIGiftsViewController.swift; sourceTree = "<group>"; };
 		4021E73120A231D600B3DEB7 /* PhoneBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneBookViewController.swift; sourceTree = "<group>"; };
 		4021E73320A231E100B3DEB7 /* PhoneBookViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneBookViewController.xib; sourceTree = "<group>"; };
+		408714E520A31214007B3E4C /* AddAccountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddAccountViewController.xib; sourceTree = "<group>"; };
+		408714E720A31458007B3E4C /* AddAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountViewController.swift; sourceTree = "<group>"; };
+		408714EA20A31B28007B3E4C /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		408714EE20A3326D007B3E4C /* GeosansLight-Oblique.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeosansLight-Oblique.ttf"; sourceTree = "<group>"; };
+		408714EF20A3326D007B3E4C /* GeosansLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GeosansLight.ttf; sourceTree = "<group>"; };
+		408714F320A337AD007B3E4C /* CustomSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSettingCell.swift; sourceTree = "<group>"; };
+		408714F520A337CC007B3E4C /* CustomSettingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomSettingCell.xib; sourceTree = "<group>"; };
+		408714FD20A34996007B3E4C /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
+		4087150120A34B58007B3E4C /* CustomLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
+		4087150620A38737007B3E4C /* HexColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexColors.swift; sourceTree = "<group>"; };
+		4087150820A38742007B3E4C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		4087150D20A391B8007B3E4C /* CustomContactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomContactCell.swift; sourceTree = "<group>"; };
+		4087150F20A391C8007B3E4C /* CustomContactCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomContactCell.xib; sourceTree = "<group>"; };
+		4087151220A391E2007B3E4C /* CustomPhoneBookCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomPhoneBookCell.xib; sourceTree = "<group>"; };
+		4087151420A391EE007B3E4C /* CustomPhoneBookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPhoneBookCell.swift; sourceTree = "<group>"; };
+		4087151620A3FECF007B3E4C /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
+		4087151920A488ED007B3E4C /* CustomSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
+		4087151D20A4A9BC007B3E4C /* PhoneContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneContact.swift; sourceTree = "<group>"; };
+		4087152020A4ACA6007B3E4C /* PhoneBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneBook.swift; sourceTree = "<group>"; };
+		4087152220A4BE5F007B3E4C /* CustomTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableView.swift; sourceTree = "<group>"; };
+		4087152520A4ED86007B3E4C /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		4087152720A4ED96007B3E4C /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,11 +159,13 @@
 		4021E6E520A1CA1600B3DEB7 /* iGift */ = {
 			isa = PBXGroup;
 			children = (
+				4087151F20A4AC42007B3E4C /* Pojo */,
 				4021E70920A1D59500B3DEB7 /* Data */,
 				4021E70220A1CD4200B3DEB7 /* Communication */,
 				4021E70020A1CD0000B3DEB7 /* Application */,
 				4021E6FF20A1CCE800B3DEB7 /* Config */,
 				4021E71920A2104A00B3DEB7 /* Helpers */,
+				4087150520A386ED007B3E4C /* Enums */,
 				4021E6FC20A1CC9B00B3DEB7 /* Assets */,
 			);
 			path = iGift;
@@ -141,7 +187,6 @@
 				4021E6FE20A1CCC100B3DEB7 /* Sounds */,
 				4021E6FD20A1CCB200B3DEB7 /* Fonts */,
 				4021E6EA20A1CA1600B3DEB7 /* Main.storyboard */,
-				4021E6F220A1CA1700B3DEB7 /* LaunchScreen.storyboard */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -149,6 +194,8 @@
 		4021E6FD20A1CCB200B3DEB7 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				408714EE20A3326D007B3E4C /* GeosansLight-Oblique.ttf */,
+				408714EF20A3326D007B3E4C /* GeosansLight.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -171,6 +218,9 @@
 		4021E70020A1CD0000B3DEB7 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				4087152420A4ED4F007B3E4C /* RegisterViewController */,
+				4087151820A40667007B3E4C /* LoadingViewController */,
+				408714E920A31B02007B3E4C /* Shared */,
 				0F7C392F20A4213A00DF5BF6 /* ChooseBackgroundViewContoller */,
 				0F9138F020A34DF40011DF2C /* DesignIGiftViewController */,
 				4021E70120A1CD0F00B3DEB7 /* Main */,
@@ -193,6 +243,7 @@
 		4021E70120A1CD0F00B3DEB7 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				4021E6F220A1CA1700B3DEB7 /* LaunchScreen.storyboard */,
 				4021E6E620A1CA1600B3DEB7 /* AppDelegate.swift */,
 				4021E70720A1D55600B3DEB7 /* NavigationViewController.swift */,
 			);
@@ -217,6 +268,7 @@
 		4021E70C20A208F100B3DEB7 /* ContactsViewController */ = {
 			isa = PBXGroup;
 			children = (
+				4087150C20A39199007B3E4C /* CustomContactCell */,
 				4021E71D20A21AD800B3DEB7 /* ContactsViewController.swift */,
 				4021E71F20A21AF300B3DEB7 /* ContactsViewController.xib */,
 			);
@@ -226,6 +278,7 @@
 		4021E70D20A2090400B3DEB7 /* PhoneBookViewController */ = {
 			isa = PBXGroup;
 			children = (
+				4087151120A391CF007B3E4C /* CustomPhoneBookCell */,
 				4021E73120A231D600B3DEB7 /* PhoneBookViewController.swift */,
 				4021E73320A231E100B3DEB7 /* PhoneBookViewController.xib */,
 			);
@@ -235,6 +288,7 @@
 		4021E70E20A2093800B3DEB7 /* SettingsViewController */ = {
 			isa = PBXGroup;
 			children = (
+				408714F220A3376F007B3E4C /* CustomSettingCell */,
 				4021E72120A21DCE00B3DEB7 /* SettingsViewController.swift */,
 				4021E72320A21DE100B3DEB7 /* SettingsViewController.xib */,
 			);
@@ -244,6 +298,8 @@
 		4021E70F20A2094900B3DEB7 /* AddAccountViewController */ = {
 			isa = PBXGroup;
 			children = (
+				408714E520A31214007B3E4C /* AddAccountViewController.xib */,
+				408714E720A31458007B3E4C /* AddAccountViewController.swift */,
 			);
 			path = AddAccountViewController;
 			sourceTree = "<group>";
@@ -306,6 +362,7 @@
 			isa = PBXGroup;
 			children = (
 				4021E71A20A2105B00B3DEB7 /* Extensions */,
+				4087152020A4ACA6007B3E4C /* PhoneBook.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -314,9 +371,82 @@
 			isa = PBXGroup;
 			children = (
 				4021E72720A2234F00B3DEB7 /* UIColor.swift */,
+				408714FD20A34996007B3E4C /* UIFont.swift */,
 				0F7C392D20A41F1300DF5BF6 /* UITextViewPlaceholder.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		408714E920A31B02007B3E4C /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				408714EA20A31B28007B3E4C /* CustomButton.swift */,
+				4087150120A34B58007B3E4C /* CustomLabel.swift */,
+				4087151620A3FECF007B3E4C /* CustomImageView.swift */,
+				4087151920A488ED007B3E4C /* CustomSearchBar.swift */,
+				4087152220A4BE5F007B3E4C /* CustomTableView.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		408714F220A3376F007B3E4C /* CustomSettingCell */ = {
+			isa = PBXGroup;
+			children = (
+				408714F320A337AD007B3E4C /* CustomSettingCell.swift */,
+				408714F520A337CC007B3E4C /* CustomSettingCell.xib */,
+			);
+			path = CustomSettingCell;
+			sourceTree = "<group>";
+		};
+		4087150520A386ED007B3E4C /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				4087150620A38737007B3E4C /* HexColors.swift */,
+				4087150820A38742007B3E4C /* Constants.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		4087150C20A39199007B3E4C /* CustomContactCell */ = {
+			isa = PBXGroup;
+			children = (
+				4087150D20A391B8007B3E4C /* CustomContactCell.swift */,
+				4087150F20A391C8007B3E4C /* CustomContactCell.xib */,
+			);
+			path = CustomContactCell;
+			sourceTree = "<group>";
+		};
+		4087151120A391CF007B3E4C /* CustomPhoneBookCell */ = {
+			isa = PBXGroup;
+			children = (
+				4087151220A391E2007B3E4C /* CustomPhoneBookCell.xib */,
+				4087151420A391EE007B3E4C /* CustomPhoneBookCell.swift */,
+			);
+			path = CustomPhoneBookCell;
+			sourceTree = "<group>";
+		};
+		4087151820A40667007B3E4C /* LoadingViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LoadingViewController;
+			sourceTree = "<group>";
+		};
+		4087151F20A4AC42007B3E4C /* Pojo */ = {
+			isa = PBXGroup;
+			children = (
+				4087151D20A4A9BC007B3E4C /* PhoneContact.swift */,
+			);
+			path = Pojo;
+			sourceTree = "<group>";
+		};
+		4087152420A4ED4F007B3E4C /* RegisterViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4087152520A4ED86007B3E4C /* RegisterViewController.swift */,
+				4087152720A4ED96007B3E4C /* RegisterViewController.xib */,
+			);
+			path = RegisterViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -379,16 +509,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				4021E6F420A1CA1700B3DEB7 /* LaunchScreen.storyboard in Resources */,
+				4087151020A391C8007B3E4C /* CustomContactCell.xib in Resources */,
 				4021E72420A21DE100B3DEB7 /* SettingsViewController.xib in Resources */,
+				408714E620A31214007B3E4C /* AddAccountViewController.xib in Resources */,
 				4021E73420A231E100B3DEB7 /* PhoneBookViewController.xib in Resources */,
 				4021E6EC20A1CA1600B3DEB7 /* Main.storyboard in Resources */,
 				0F9138F420A34E400011DF2C /* DesignIGiftViewController.xib in Resources */,
 				4021E71820A20F1700B3DEB7 /* Assets.xcassets in Resources */,
+				408714F020A3326E007B3E4C /* GeosansLight-Oblique.ttf in Resources */,
+				408714F620A337CC007B3E4C /* CustomSettingCell.xib in Resources */,
+				408714F120A3326E007B3E4C /* GeosansLight.ttf in Resources */,
 				4021E72E20A22B6700B3DEB7 /* SendIGiftsViewController.xib in Resources */,
 				4021E70620A1CFED00B3DEB7 /* HomeViewController.xib in Resources */,
 				0F7C393320A4218500DF5BF6 /* ChooseBackgroundViewContoller.xib in Resources */,
 				4021E72020A21AF300B3DEB7 /* ContactsViewController.xib in Resources */,
+				4087151320A391E2007B3E4C /* CustomPhoneBookCell.xib in Resources */,
 				4021E72C20A22B4D00B3DEB7 /* IGiftsViewController.xib in Resources */,
+				4087152820A4ED96007B3E4C /* RegisterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,20 +536,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4087152320A4BE5F007B3E4C /* CustomTableView.swift in Sources */,
+				4087150E20A391B8007B3E4C /* CustomContactCell.swift in Sources */,
 				4021E72A20A22B4000B3DEB7 /* IGiftsViewController.swift in Sources */,
+				4087150720A38737007B3E4C /* HexColors.swift in Sources */,
+				4087150220A34B59007B3E4C /* CustomLabel.swift in Sources */,
+				4087151520A391EE007B3E4C /* CustomPhoneBookCell.swift in Sources */,
+				408714FE20A34996007B3E4C /* UIFont.swift in Sources */,
 				4021E6EF20A1CA1600B3DEB7 /* iGift.xcdatamodeld in Sources */,
 				0F7C393220A4218500DF5BF6 /* ChooseBackgroundViewContoller.swift in Sources */,
 				0F7C392E20A41F1300DF5BF6 /* UITextViewPlaceholder.swift in Sources */,
+				4087150920A38742007B3E4C /* Constants.swift in Sources */,
 				4021E6E720A1CA1600B3DEB7 /* AppDelegate.swift in Sources */,
+				4087152120A4ACA6007B3E4C /* PhoneBook.swift in Sources */,
+				408714F420A337AD007B3E4C /* CustomSettingCell.swift in Sources */,
+				4087151E20A4A9BC007B3E4C /* PhoneContact.swift in Sources */,
+				4087151720A3FECF007B3E4C /* CustomImageView.swift in Sources */,
+				4087151A20A488ED007B3E4C /* CustomSearchBar.swift in Sources */,
 				0F7C393520A4507300DF5BF6 /* ChooseBackgroundViewModel.swift in Sources */,
 				4021E70820A1D55600B3DEB7 /* NavigationViewController.swift in Sources */,
 				4021E70420A1CFDF00B3DEB7 /* HomeViewController.swift in Sources */,
+				408714EB20A31B28007B3E4C /* CustomButton.swift in Sources */,
 				4021E73220A231D600B3DEB7 /* PhoneBookViewController.swift in Sources */,
 				4021E71E20A21AD800B3DEB7 /* ContactsViewController.swift in Sources */,
 				4021E72820A2234F00B3DEB7 /* UIColor.swift in Sources */,
 				4021E72620A21E2F00B3DEB7 /* BaseViewController.swift in Sources */,
 				4021E73020A22B7500B3DEB7 /* SendIGiftsViewController.swift in Sources */,
 				0F9138F320A34E400011DF2C /* DesignIGiftViewController.swift in Sources */,
+				4087152620A4ED86007B3E4C /* RegisterViewController.swift in Sources */,
+				408714E820A31458007B3E4C /* AddAccountViewController.swift in Sources */,
 				4021E72220A21DCE00B3DEB7 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -30,15 +30,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Setup Global Styles for StatusBar
         setupStatusBarStyles()
 
-
         return true
     }
 
     func setupNavBarStyles(){
         let navigationBarAppearace = UINavigationBar.appearance()
-        navigationBarAppearace.tintColor = UIColor.fromHex(0xFFFFFF)
-        navigationBarAppearace.barTintColor = UIColor.fromHex(0xFF8C00)
-        navigationBarAppearace.backgroundColor = UIColor.fromHex(0xFF8C00)
+        navigationBarAppearace.tintColor = UIColor.fromHex(HexColors.WHITE_COLOR.rawValue)
+        navigationBarAppearace.barTintColor = UIColor.fromHex(HexColors.PRIMARY_COLOR.rawValue)
+        navigationBarAppearace.backgroundColor = UIColor.fromHex(0xf5944e)
         // change navigation item title color
         navigationBarAppearace.titleTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
     }

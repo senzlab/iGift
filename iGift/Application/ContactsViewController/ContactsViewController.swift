@@ -9,9 +9,10 @@
 import Foundation
 import UIKit
 
-class ContactsViewController : BaseViewController {
+class ContactsViewController : BaseViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var addContactsBtn : UIButton?
+    let NUMBER_OF_ROWS = 1
+    let HEIGHT_OF_ROW = 85
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,20 +24,45 @@ class ContactsViewController : BaseViewController {
         self.setNavBarHidden(false)
         self.title = "Contacts"
 
-        // Rounded Btn
-        addContactsBtn?.layer.shadowColor = UIColor.black.cgColor
-        addContactsBtn?.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
-        addContactsBtn?.layer.masksToBounds = false
-        addContactsBtn?.layer.shadowRadius = 1.0
-        addContactsBtn?.layer.shadowOpacity = 0.5
-        addContactsBtn?.layer.cornerRadius = (addContactsBtn?.frame.width)! / 2
-
     }
 
     @IBAction func onAddContactBtnClicked(_ sender: Any) {
         let phoneBookViewController = PhoneBookViewController(nibName: "PhoneBookViewController", bundle: nil)
         self.navigationController?.pushViewController(phoneBookViewController, animated: true)
     }
-    
+
+    // --- Start of Table View Logic ---
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return NUMBER_OF_ROWS
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+        // Try to find reusable cell
+        var cell = tableView.dequeueReusableCell(withIdentifier: "CustomContactCell") as? CustomContactCell
+
+        // If not available instantiate new custom cell
+        if (cell == nil) {
+            var nibArray = NSArray()
+            nibArray = Bundle.main.loadNibNamed("CustomContactCell", owner: self, options: nil)! as NSArray
+            cell = nibArray.object(at: 0) as? CustomContactCell
+        }
+
+        // SetupUI and return cell for each row
+        switch indexPath.row {
+        case 0:
+            cell?.lblName?.text = "Eranga"
+            cell?.lblMessage?.text = "He thinks he is Lamda!"
+            break
+        default:
+            print("NO AVAILABLE CELL FOR INDEX - \(indexPath.row)!!")
+        }
+
+        return cell!
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(HEIGHT_OF_ROW)
+    }
 
 }

@@ -13,8 +13,13 @@ class NavigationViewController : UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUi()
         loadInitialView()
         // Do any additional setup after loading the view.
+    }
+
+    func setupUi() {
+        self.navigationBar.isTranslucent = false;
     }
 
     func loadInitialView() {
