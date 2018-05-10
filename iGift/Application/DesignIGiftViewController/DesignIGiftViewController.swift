@@ -8,15 +8,22 @@
 
 import UIKit
 
-class DesignIGiftViewController: BaseViewController {
+class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
     
     @IBOutlet weak var sendGiftButton: UIButton!
+    @IBOutlet weak var currencyValueTextField: UITextField!
+    @IBOutlet weak var giftMsgTextView: UITextView!
+    
+    var userTryingToGiveCurrencyValue: Bool = false
+    var keyboardHeight: CGFloat!
     
     //    MARK: UIViewController related
     override func viewDidLoad() {
         super.viewDidLoad()
         print((#file as NSString).lastPathComponent)
         self.setupUi()
+        
+        currencyValueTextField.delegate = self
         
 //        Notify keyboard visibility to the view
         NotificationCenter.default.addObserver(self, selector: #selector(DesignIGiftViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
@@ -27,19 +34,38 @@ class DesignIGiftViewController: BaseViewController {
         view.addGestureRecognizer(tap)
     }
     
+    //    MARK: UITextFieldDelegate
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField == currencyValueTextField {
+            userTryingToGiveCurrencyValue = true
+            giftMsgTextView.isUserInteractionEnabled = false;
+        }
+    }
+    
     //    MARK: Observer selectors
     @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0 {
-                self.view.frame.origin.y -= keyboardSize.height
+        
+        if userTryingToGiveCurrencyValue {
+            if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+                if self.view.frame.origin.y == 0 {
+                    
+                    if keyboardHeight == nil {
+                        keyboardHeight = keyboardSize.height
+                    }
+                    
+                    self.view.frame.origin.y -= keyboardHeight
+                }
             }
         }
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y != 0 {
-                self.view.frame.origin.y += keyboardSize.height
+        
+        if userTryingToGiveCurrencyValue {
+            if ((notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue) != nil {
+                if self.view.frame.origin.y != 0 {
+                    self.view.frame.origin.y += keyboardHeight
+                }
             }
         }
     }
@@ -47,6 +73,8 @@ class DesignIGiftViewController: BaseViewController {
     //    MARK: Gesture selectors
     @objc func dismissKeyboard() {
         view.endEditing(true)
+        userTryingToGiveCurrencyValue = false
+        giftMsgTextView.isUserInteractionEnabled = true;
     }
     
     //    MARK: Action functions

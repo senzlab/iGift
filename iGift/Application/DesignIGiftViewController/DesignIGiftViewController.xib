@@ -14,6 +14,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DesignIGiftViewController" customModule="iGift" customModuleProvider="target">
             <connections>
+                <outlet property="currencyValueTextField" destination="1ta-Cp-S2T" id="AYC-nF-j5s"/>
+                <outlet property="giftMsgTextView" destination="JEJ-We-bVa" id="Fif-dp-lty"/>
                 <outlet property="sendGiftButton" destination="Gg0-Sr-2gU" id="Ac0-li-YCS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -169,11 +171,6 @@
                         <constraint firstItem="JEJ-We-bVa" firstAttribute="top" secondItem="H5G-bI-zak" secondAttribute="top" constant="20" id="fKT-rd-SOL"/>
                         <constraint firstItem="8Lb-9T-ayU" firstAttribute="leading" secondItem="JEJ-We-bVa" secondAttribute="trailing" constant="20" id="nEc-3C-MUc"/>
                     </constraints>
-                    <variation key="default">
-                        <mask key="subviews">
-                            <exclude reference="JEJ-We-bVa"/>
-                        </mask>
-                    </variation>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
