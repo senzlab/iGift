@@ -9,7 +9,9 @@
 import UIKit
 
 class DesignIGiftViewController: BaseViewController {
-
+    
+    @IBOutlet weak var sendGiftButton: UIButton!
+    
     //    MARK: UIViewController related
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,14 +44,33 @@ class DesignIGiftViewController: BaseViewController {
         }
     }
     
-    //    MARK:Gesture selectors
+    //    MARK: Gesture selectors
     @objc func dismissKeyboard() {
         view.endEditing(true)
+    }
+    
+    //    MARK: Action functions
+    @IBAction func sendGiftAction(_ sender: UIButton) {
+    }
+    
+    @IBAction func cameraAction(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func addArtAction(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func changeBgColorAction(_ sender: UIButton) {
+        
     }
     
     //    MARK: Supportive functions
     func setupUi() {
         self.setNavBarHidden(false)
         self.title = "Design iGifts"
+        
+//        Creating a circular button
+        sendGiftButton.layer.cornerRadius = 0.5 * sendGiftButton.bounds.size.width;
     }
 }
