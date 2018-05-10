@@ -100,5 +100,7 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
         
 //        Creating a circular button
         sendGiftButton.layer.cornerRadius = 0.5 * sendGiftButton.bounds.size.width;
+        
+        giftMsgTextView.placeholder = "Write your message here"
     }
 }

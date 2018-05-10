@@ -150,7 +150,7 @@
                                 <constraint firstItem="AAs-6C-Cie" firstAttribute="centerX" secondItem="8Lb-9T-ayU" secondAttribute="centerX" id="y4E-qh-xTT"/>
                             </constraints>
                         </view>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" text="Write your message here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JEJ-We-bVa" userLabel="TextView_GiftMsg">
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JEJ-We-bVa" userLabel="TextView_GiftMsg">
                             <rect key="frame" x="8" y="20" width="267" height="390"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
