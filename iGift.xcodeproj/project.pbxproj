@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0F7C392E20A41F1300DF5BF6 /* UITextViewPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7C392D20A41F1300DF5BF6 /* UITextViewPlaceholder.swift */; };
+		0F7C393220A4218500DF5BF6 /* ChooseBackgroundViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7C393020A4218500DF5BF6 /* ChooseBackgroundViewContoller.swift */; };
+		0F7C393320A4218500DF5BF6 /* ChooseBackgroundViewContoller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F7C393120A4218500DF5BF6 /* ChooseBackgroundViewContoller.xib */; };
+		0F7C393520A4507300DF5BF6 /* ChooseBackgroundViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7C393420A4507300DF5BF6 /* ChooseBackgroundViewModel.swift */; };
 		0F9138F320A34E400011DF2C /* DesignIGiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9138F120A34E400011DF2C /* DesignIGiftViewController.swift */; };
 		0F9138F420A34E400011DF2C /* DesignIGiftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F9138F220A34E400011DF2C /* DesignIGiftViewController.xib */; };
 		4021E6E720A1CA1600B3DEB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4021E6E620A1CA1600B3DEB7 /* AppDelegate.swift */; };
@@ -34,6 +37,9 @@
 
 /* Begin PBXFileReference section */
 		0F7C392D20A41F1300DF5BF6 /* UITextViewPlaceholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextViewPlaceholder.swift; sourceTree = "<group>"; };
+		0F7C393020A4218500DF5BF6 /* ChooseBackgroundViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseBackgroundViewContoller.swift; sourceTree = "<group>"; };
+		0F7C393120A4218500DF5BF6 /* ChooseBackgroundViewContoller.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseBackgroundViewContoller.xib; sourceTree = "<group>"; };
+		0F7C393420A4507300DF5BF6 /* ChooseBackgroundViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseBackgroundViewModel.swift; sourceTree = "<group>"; };
 		0F9138F120A34E400011DF2C /* DesignIGiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignIGiftViewController.swift; sourceTree = "<group>"; };
 		0F9138F220A34E400011DF2C /* DesignIGiftViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DesignIGiftViewController.xib; sourceTree = "<group>"; };
 		4021E6E320A1CA1600B3DEB7 /* iGift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iGift.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +77,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F7C392F20A4213A00DF5BF6 /* ChooseBackgroundViewContoller */ = {
+			isa = PBXGroup;
+			children = (
+				0F7C393020A4218500DF5BF6 /* ChooseBackgroundViewContoller.swift */,
+				0F7C393120A4218500DF5BF6 /* ChooseBackgroundViewContoller.xib */,
+				0F7C393420A4507300DF5BF6 /* ChooseBackgroundViewModel.swift */,
+			);
+			path = ChooseBackgroundViewContoller;
+			sourceTree = "<group>";
+		};
 		0F9138F020A34DF40011DF2C /* DesignIGiftViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +171,7 @@
 		4021E70020A1CD0000B3DEB7 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				0F7C392F20A4213A00DF5BF6 /* ChooseBackgroundViewContoller */,
 				0F9138F020A34DF40011DF2C /* DesignIGiftViewController */,
 				4021E70120A1CD0F00B3DEB7 /* Main */,
 				4021E71620A20AF600B3DEB7 /* BaseViewControllers */,
@@ -369,6 +386,7 @@
 				4021E71820A20F1700B3DEB7 /* Assets.xcassets in Resources */,
 				4021E72E20A22B6700B3DEB7 /* SendIGiftsViewController.xib in Resources */,
 				4021E70620A1CFED00B3DEB7 /* HomeViewController.xib in Resources */,
+				0F7C393320A4218500DF5BF6 /* ChooseBackgroundViewContoller.xib in Resources */,
 				4021E72020A21AF300B3DEB7 /* ContactsViewController.xib in Resources */,
 				4021E72C20A22B4D00B3DEB7 /* IGiftsViewController.xib in Resources */,
 			);
@@ -383,8 +401,10 @@
 			files = (
 				4021E72A20A22B4000B3DEB7 /* IGiftsViewController.swift in Sources */,
 				4021E6EF20A1CA1600B3DEB7 /* iGift.xcdatamodeld in Sources */,
+				0F7C393220A4218500DF5BF6 /* ChooseBackgroundViewContoller.swift in Sources */,
 				0F7C392E20A41F1300DF5BF6 /* UITextViewPlaceholder.swift in Sources */,
 				4021E6E720A1CA1600B3DEB7 /* AppDelegate.swift in Sources */,
+				0F7C393520A4507300DF5BF6 /* ChooseBackgroundViewModel.swift in Sources */,
 				4021E70820A1D55600B3DEB7 /* NavigationViewController.swift in Sources */,
 				4021E70420A1CFDF00B3DEB7 /* HomeViewController.swift in Sources */,
 				4021E73220A231D600B3DEB7 /* PhoneBookViewController.swift in Sources */,

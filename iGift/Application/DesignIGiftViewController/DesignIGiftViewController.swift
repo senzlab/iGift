@@ -91,6 +91,8 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
     
     @IBAction func changeBgColorAction(_ sender: UIButton) {
         
+        let chooseBackgroundViewContoller = ChooseBackgroundViewContoller(nibName: "ChooseBackgroundViewContoller", bundle: nil)
+        self.navigationController?.pushViewController(chooseBackgroundViewContoller, animated: true)
     }
     
     //    MARK: Supportive functions
