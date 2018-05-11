@@ -23,7 +23,7 @@ class CapturePhotoViewModel: NSObject {
         return nil
     }
     
-    func capturePhoto(stillImageOutput: AVCaptureStillImageOutput) {
+    func capturePhoto(stillImageOutput: AVCaptureStillImageOutput, viewController: UIViewController) {
         
         var videoConnection :AVCaptureConnection?
 
@@ -34,6 +34,7 @@ class CapturePhotoViewModel: NSObject {
                 let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(imageSampleBuffer as! CMSampleBuffer)
                 var image: UIImage = UIImage(data: imageData!)!
                 GiftCard.shared.capturedImage = image
+                viewController.navigationController?.popViewController(animated: true)
             }
         })
     }

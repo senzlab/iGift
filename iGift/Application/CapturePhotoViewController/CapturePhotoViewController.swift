@@ -40,10 +40,7 @@ class CapturePhotoViewController: BaseViewController {
     //    MARK: Action functions
     @IBAction func captureAction(_ sender: UIButton) {
         
-        CapturePhotoViewModel().capturePhoto(stillImageOutput: output!)
-        
-//        self.dismiss(animated: true, completion: nil)
-//        self.navigationController?.popViewController(animated: true)
+        CapturePhotoViewModel().capturePhoto(stillImageOutput: output!, viewController: self)
     }
     
     func openCameraView() {
