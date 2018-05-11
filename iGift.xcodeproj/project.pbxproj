@@ -17,6 +17,7 @@
 		0F7C393520A4507300DF5BF6 /* ChooseBackgroundViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7C393420A4507300DF5BF6 /* ChooseBackgroundViewModel.swift */; };
 		0F9138F320A34E400011DF2C /* DesignIGiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9138F120A34E400011DF2C /* DesignIGiftViewController.swift */; };
 		0F9138F420A34E400011DF2C /* DesignIGiftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F9138F220A34E400011DF2C /* DesignIGiftViewController.xib */; };
+		0FC94F1020A5F45E00CDC810 /* DeviceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC94F0F20A5F45E00CDC810 /* DeviceModel.swift */; };
 		4021E6E720A1CA1600B3DEB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4021E6E620A1CA1600B3DEB7 /* AppDelegate.swift */; };
 		4021E6EC20A1CA1600B3DEB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4021E6EA20A1CA1600B3DEB7 /* Main.storyboard */; };
 		4021E6EF20A1CA1600B3DEB7 /* iGift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4021E6ED20A1CA1600B3DEB7 /* iGift.xcdatamodeld */; };
@@ -72,6 +73,7 @@
 		0F7C393420A4507300DF5BF6 /* ChooseBackgroundViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseBackgroundViewModel.swift; sourceTree = "<group>"; };
 		0F9138F120A34E400011DF2C /* DesignIGiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignIGiftViewController.swift; sourceTree = "<group>"; };
 		0F9138F220A34E400011DF2C /* DesignIGiftViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DesignIGiftViewController.xib; sourceTree = "<group>"; };
+		0FC94F0F20A5F45E00CDC810 /* DeviceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceModel.swift; sourceTree = "<group>"; };
 		4021E6E320A1CA1600B3DEB7 /* iGift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iGift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4021E6E620A1CA1600B3DEB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4021E6EB20A1CA1600B3DEB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -159,6 +161,14 @@
 			path = DesignIGiftViewController;
 			sourceTree = "<group>";
 		};
+		0FC94F0E20A5F42000CDC810 /* GeneralModels */ = {
+			isa = PBXGroup;
+			children = (
+				0FC94F0F20A5F45E00CDC810 /* DeviceModel.swift */,
+			);
+			path = GeneralModels;
+			sourceTree = "<group>";
+		};
 		4021E6DA20A1CA1600B3DEB7 = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +188,7 @@
 		4021E6E520A1CA1600B3DEB7 /* iGift */ = {
 			isa = PBXGroup;
 			children = (
+				0FC94F0E20A5F42000CDC810 /* GeneralModels */,
 				4087151F20A4AC42007B3E4C /* Pojo */,
 				4021E70920A1D59500B3DEB7 /* Data */,
 				4021E70220A1CD4200B3DEB7 /* Communication */,
@@ -586,6 +597,7 @@
 				0F2EE36720A59466003C9AEA /* CapturePhotoViewController.swift in Sources */,
 				4021E73020A22B7500B3DEB7 /* SendIGiftsViewController.swift in Sources */,
 				0F9138F320A34E400011DF2C /* DesignIGiftViewController.swift in Sources */,
+				0FC94F1020A5F45E00CDC810 /* DeviceModel.swift in Sources */,
 				4087152620A4ED86007B3E4C /* RegisterViewController.swift in Sources */,
 				0F2EE36C20A5A6BE003C9AEA /* GiftCard.swift in Sources */,
 				408714E820A31458007B3E4C /* AddAccountViewController.swift in Sources */,

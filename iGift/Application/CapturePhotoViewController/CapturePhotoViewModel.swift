@@ -32,7 +32,7 @@ class CapturePhotoViewModel: NSObject {
         stillImageOutput.captureStillImageAsynchronously(from: videoConnection!, completionHandler: {(imageSampleBuffer, error) in
             if (imageSampleBuffer != nil) {
                 let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(imageSampleBuffer as! CMSampleBuffer)
-                var image: UIImage = UIImage(data: imageData!)!
+                let image: UIImage = UIImage(data: imageData!)!
                 GiftCard.shared.capturedImage = image
                 viewController.navigationController?.popViewController(animated: true)
             }
