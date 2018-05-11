@@ -37,6 +37,7 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         
         if GiftCard.shared.capturedImage != nil {
             capturedPhotoImageView.isHidden = false
