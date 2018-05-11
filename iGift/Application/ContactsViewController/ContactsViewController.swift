@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Contacts
 
 class ContactsViewController : BaseViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -27,8 +28,12 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
     }
 
     @IBAction func onAddContactBtnClicked(_ sender: Any) {
-        let phoneBookViewController = PhoneBookViewController(nibName: "PhoneBookViewController", bundle: nil)
-        self.navigationController?.pushViewController(phoneBookViewController, animated: true)
+        let permission = PhoneBook.sharedInstance.checkPermission()
+        if (permission == CNAuthorizationStatus.denied) {
+            UIApplication.shared.open(URL(string:UIApplicationOpenSettingsURLString)!)
+        } else {
+            self.loadView("PhoneBookViewController")
+        }
     }
 
     // --- Start of Table View Logic ---

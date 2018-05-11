@@ -63,22 +63,35 @@ class PhoneBook {
     }
 
 
-    func checkPermission(resolve: @escaping (_ value: Bool) -> Void) -> Void{
-        switch CNContactStore.authorizationStatus(for: .contacts){
-        case .authorized:
-            resolve(true)
-        break
-        case .notDetermined:
-            contactStore.requestAccess(for: .contacts){succeeded, err in
-                guard err == nil && succeeded else{
-                    return resolve(false)
-                }
-                resolve(true)
+    func checkPermission() -> CNAuthorizationStatus{
+//        switch CNContactStore.authorizationStatus(for: .contacts){
+//        case .authorized:
+//            resolve(.authorized)
+//        break
+//        case .denied:
+//            resolve(.denied)
+//        case .notDetermined:
+//            contactStore.requestAccess(for: .contacts){succeeded, err in
+//                guard err == nil && succeeded else{
+//                    return resolve(false)
+//                }
+//                resolve(true)
+//            }
+//        break
+//        default:
+//            print("Unknown Authorization!")
+//            resolve(false)
+//        }
+        return CNContactStore.authorizationStatus(for: .contacts)
+    }
+
+    func requestAccess(_ resolve: @escaping ((Bool) -> Void)) {
+        contactStore.requestAccess(for: .contacts){succeeded, err in
+            guard err == nil && succeeded else{
+                    resolve(false)
+                    return;
             }
-        break
-        default:
-            print("Unknown Authorization!")
-            resolve(false)
+            resolve(true)
         }
     }
 }

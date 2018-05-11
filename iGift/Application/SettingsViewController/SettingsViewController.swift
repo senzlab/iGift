@@ -11,7 +11,7 @@ import UIKit
 
 class SettingsViewController : BaseViewController, UITableViewDelegate, UITableViewDataSource {
 
-    let NUMBER_OF_ROWS = 4
+    let NUMBER_OF_ROWS = 5
     let HEIGHT_OF_ROW = 85
 
     override func viewDidLoad() {
@@ -24,9 +24,7 @@ class SettingsViewController : BaseViewController, UITableViewDelegate, UITableV
         self.title = "Settings"
     }
 
-
-
-    // --- Start of Table View Logic ---
+    // MARK: Start of Table View Logic
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return NUMBER_OF_ROWS
     }
@@ -46,28 +44,33 @@ class SettingsViewController : BaseViewController, UITableViewDelegate, UITableV
         // SetupUI and return cell for each row
         switch indexPath.row {
         case 0:
-            cell?.rowTitleLbl?.text = "Account"
-            cell?.rowSettingBtn?.setTitle("ADD", for: UIControlState.normal)
+            cell?.lblTitle?.text = "Account"
+            cell?.btnSetting?.setTitle("ADD", for: UIControlState.normal)
             break
         case 1:
-            cell?.rowTitleLbl?.text = "UserName - "
-            cell?.rowSettingBtn?.setTitle("CHANGE", for: UIControlState.normal)
+            cell?.lblTitle?.text = "UserName - "
+            cell?.btnSetting?.setTitle("CHANGE", for: UIControlState.normal)
             break
         case 2:
-            cell?.rowTitleLbl?.text = "Password"
-            cell?.rowSettingBtn?.setTitle("CHANGE", for: UIControlState.normal)
+            cell?.lblTitle?.text = "Password"
+            cell?.btnSetting?.setTitle("CHANGE", for: UIControlState.normal)
             break
         case 3:
-            cell?.rowTitleLbl?.text = "Terms of use"
-            cell?.rowSettingBtn?.setTitle("VIEW", for: UIControlState.normal)
+            cell?.lblTitle?.text = "Terms of use"
+            cell?.btnSetting?.setTitle("VIEW", for: UIControlState.normal)
             break
         case 4:
-            cell?.rowTitleLbl?.text = "About iGift"
-            cell?.rowSettingBtn?.setTitle("VIEW", for: UIControlState.normal)
+            cell?.lblTitle?.text = "About iGift"
+            cell?.btnSetting?.setTitle("VIEW", for: UIControlState.normal)
             break
         default:
              print("NO AVAILABLE CELL FOR INDEX - \(indexPath.row)!!")
         }
+
+        // Setup Click Listener
+        cell?.btnSetting?.tag = indexPath.row
+        cell?.btnSetting?.addTarget(self,action:#selector(buttonClicked),
+                                    for:.touchUpInside)
 
         return cell!
     }
@@ -75,6 +78,27 @@ class SettingsViewController : BaseViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return CGFloat(HEIGHT_OF_ROW)
     }
-    // --- End of Table View Logic ---
 
+    // MARK: Click Listener
+    @objc func buttonClicked(_ sender: CustomButton) {
+        switch sender.tag {
+        case 0:
+            self.loadView("AddAccountViewController")
+        break
+        case 1:
+            // Change User Btn
+        break
+        case 2:
+            // Change Password Btn
+        break
+        case 3:
+            // View Terms Btn
+        break
+        case 4:
+            // View About Btn
+            break
+        default:
+            print("UnIdentified Button Clicked")
+        }
+    }
 }

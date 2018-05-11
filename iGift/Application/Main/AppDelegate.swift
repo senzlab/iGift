@@ -21,29 +21,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Load Navigation View Controller to stack other viewcontroallers
         window = UIWindow.init(frame: UIScreen.main.bounds)
         let navController = NavigationViewController()
-        window!.rootViewController = navController
-        window!.makeKeyAndVisible()
 
         // Setup Global Styles for NavBar
-        setupNavBarStyles()
+        setupNavBarStyles(navController.navigationBar)
 
         // Setup Global Styles for StatusBar
         setupStatusBarStyles()
 
+        // Add Nav Controller into root
+        window!.rootViewController = navController
+        window!.makeKeyAndVisible()
+
         return true
     }
 
-    func setupNavBarStyles(){
+    func setupNavBarStyles(_ navigationBar: UINavigationBar) {
+        // Set Background color to nav bar
+        navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationBar.shadowImage = UIImage()
+        navigationBar.isTranslucent = true
+        navigationBar.backgroundColor = UIColor.fromHex(HexColors.PRIMARY_COLOR.rawValue)
+
+        // Set font and size on elements in nav bar
         let navigationBarAppearace = UINavigationBar.appearance()
-        navigationBarAppearace.tintColor = UIColor.fromHex(HexColors.WHITE_COLOR.rawValue)
-        navigationBarAppearace.barTintColor = UIColor.fromHex(HexColors.PRIMARY_COLOR.rawValue)
-        navigationBarAppearace.backgroundColor = UIColor.fromHex(0xf5944e)
-        // change navigation item title color
-        navigationBarAppearace.titleTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
+        navigationBarAppearace.titleTextAttributes = [NSAttributedStringKey.font: UIFont(name: Constants.MAIN_FONT_FAMILY.rawValue, size: 25)!, NSAttributedStringKey.foregroundColor: UIColor.white]
+        navigationBarAppearace.tintColor = UIColor.white
     }
 
-
-    func setupStatusBarStyles(){
+    func setupStatusBarStyles() {
+        // Make stutus bar content white
         UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
     }
     

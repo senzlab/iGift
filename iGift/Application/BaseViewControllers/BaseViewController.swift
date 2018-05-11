@@ -9,10 +9,15 @@
 import Foundation
 import UIKit
 
-class BaseViewController : UIViewController {
+class BaseViewController : ApplicationViewController {
 
     // Defaults
     var isNavBarHidden = true
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.hideKeyBoardOnLostFocus()
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

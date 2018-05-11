@@ -15,15 +15,26 @@ class NavigationViewController : UINavigationController {
         super.viewDidLoad()
         setupUi()
         loadInitialView()
-        // Do any additional setup after loading the view.
     }
 
     func setupUi() {
-        self.navigationBar.isTranslucent = false;
+        setupStatusBar()
+
+        // Added to avoid seeing the black background issue when navigating between views
+        view.backgroundColor = UIColor.fromHex(HexColors.PRIMARY_COLOR.rawValue)
+    }
+
+    func setupStatusBar() {
+        // Add solid color to the background of the status bar otherwise transparent.
+        let statusBarView = UIView(frame: UIApplication.shared.statusBarFrame)
+        let statusBarColor = UIColor.fromHex(HexColors.PRIMARY_COLOR.rawValue)
+        statusBarView.backgroundColor = statusBarColor
+        statusBarView.autoresizingMask = [.flexibleWidth, .flexibleTopMargin]
+        view.addSubview(statusBarView)
     }
 
     func loadInitialView() {
-        let homeViewController = HomeViewController(nibName: "HomeViewController", bundle: nil)
-        self.pushViewController(homeViewController, animated: true)
+        let initialViewController = RegisterViewController(nibName: "RegisterViewController", bundle: nil)
+        self.pushViewController(initialViewController, animated: true)
     }
 }

@@ -21,20 +21,20 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You need to setup sampath bank account, in order to send iGift." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hav-i4-Pnz" customClass="CustomLabel" customModule="iGift" customModuleProvider="target">
-                    <rect key="frame" x="30" y="20" width="260" height="93"/>
+                    <rect key="frame" x="30" y="50" width="260" height="134"/>
                     <fontDescription key="fontDescription" type="system" pointSize="28"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please note that, if you don't have a sampath bank account, you cannot send iGifts. You can only receive iGifts :)" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpm-UX-yfm" customClass="CustomLabel" customModule="iGift" customModuleProvider="target">
-                    <rect key="frame" x="30" y="133" width="260" height="154.5"/>
+                    <rect key="frame" x="30" y="204" width="260" height="200.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="28"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBa-29-K9c" customClass="CustomButton" customModule="iGift" customModuleProvider="target">
                     <rect key="frame" x="30" y="428" width="260" height="50"/>
-                    <color key="backgroundColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="f1q-ff-n3c"/>
                     </constraints>
@@ -54,7 +54,7 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oXl-2d-BiC" customClass="CustomButton" customModule="iGift" customModuleProvider="target">
                     <rect key="frame" x="30" y="488" width="260" height="50"/>
-                    <color key="backgroundColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="6AH-CH-38y"/>
                     </constraints>
@@ -73,13 +73,13 @@
                     </userDefinedRuntimeAttributes>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="0.96078431372549022" green="0.58039215686274503" blue="0.30588235294117649" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="fpm-UX-yfm" secondAttribute="trailing" constant="30" id="Cfa-VR-NTz"/>
                 <constraint firstItem="Hav-i4-Pnz" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="GS0-6Z-TX2"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="oXl-2d-BiC" secondAttribute="bottom" constant="30" id="HN7-aS-lWH"/>
-                <constraint firstItem="Hav-i4-Pnz" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="M93-t1-9OR">
-                    <variation key="heightClass=compact-widthClass=compact" constant="50"/>
+                <constraint firstItem="Hav-i4-Pnz" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="30" id="M93-t1-9OR">
+                    <variation key="heightClass=compact-widthClass=compact" constant="10"/>
                 </constraint>
                 <constraint firstItem="fpm-UX-yfm" firstAttribute="top" secondItem="Hav-i4-Pnz" secondAttribute="bottom" constant="20" id="Nlc-pa-XVE"/>
                 <constraint firstItem="fpm-UX-yfm" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="Pvy-B9-uFU"/>

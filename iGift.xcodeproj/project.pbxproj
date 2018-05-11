@@ -63,6 +63,10 @@
 		4087152320A4BE5F007B3E4C /* CustomTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4087152220A4BE5F007B3E4C /* CustomTableView.swift */; };
 		4087152620A4ED86007B3E4C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4087152520A4ED86007B3E4C /* RegisterViewController.swift */; };
 		4087152820A4ED96007B3E4C /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4087152720A4ED96007B3E4C /* RegisterViewController.xib */; };
+		4087152A20A5E5F8007B3E4C /* ApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4087152920A5E5F8007B3E4C /* ApplicationViewController.swift */; };
+		4087152C20A5EAB3007B3E4C /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4087152B20A5EAB3007B3E4C /* CustomTextField.swift */; };
+		4087152E20A5F89D007B3E4C /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4087152D20A5F89D007B3E4C /* UITextField.swift */; };
+		4087153020A5FEAD007B3E4C /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4087152F20A5FEAD007B3E4C /* UIViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -124,6 +128,10 @@
 		4087152220A4BE5F007B3E4C /* CustomTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableView.swift; sourceTree = "<group>"; };
 		4087152520A4ED86007B3E4C /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		4087152720A4ED96007B3E4C /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		4087152920A5E5F8007B3E4C /* ApplicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationViewController.swift; sourceTree = "<group>"; };
+		4087152B20A5EAB3007B3E4C /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		4087152D20A5F89D007B3E4C /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		4087152F20A5FEAD007B3E4C /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -401,6 +409,7 @@
 			isa = PBXGroup;
 			children = (
 				4021E72520A21E2F00B3DEB7 /* BaseViewController.swift */,
+				4087152920A5E5F8007B3E4C /* ApplicationViewController.swift */,
 			);
 			path = BaseViewControllers;
 			sourceTree = "<group>";
@@ -420,6 +429,8 @@
 				4021E72720A2234F00B3DEB7 /* UIColor.swift */,
 				408714FD20A34996007B3E4C /* UIFont.swift */,
 				0F7C392D20A41F1300DF5BF6 /* UITextViewPlaceholder.swift */,
+				4087152D20A5F89D007B3E4C /* UITextField.swift */,
+				4087152F20A5FEAD007B3E4C /* UIViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -432,6 +443,7 @@
 				4087151620A3FECF007B3E4C /* CustomImageView.swift */,
 				4087151920A488ED007B3E4C /* CustomSearchBar.swift */,
 				4087152220A4BE5F007B3E4C /* CustomTableView.swift */,
+				4087152B20A5EAB3007B3E4C /* CustomTextField.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -589,6 +601,7 @@
 				0F2EE36A20A59D8E003C9AEA /* CapturePhotoViewModel.swift in Sources */,
 				4087152320A4BE5F007B3E4C /* CustomTableView.swift in Sources */,
 				4087150E20A391B8007B3E4C /* CustomContactCell.swift in Sources */,
+				4087152A20A5E5F8007B3E4C /* ApplicationViewController.swift in Sources */,
 				4021E72A20A22B4000B3DEB7 /* IGiftsViewController.swift in Sources */,
 				4087150720A38737007B3E4C /* HexColors.swift in Sources */,
 				4087150220A34B59007B3E4C /* CustomLabel.swift in Sources */,
@@ -596,10 +609,13 @@
 				408714FE20A34996007B3E4C /* UIFont.swift in Sources */,
 				4021E6EF20A1CA1600B3DEB7 /* iGift.xcdatamodeld in Sources */,
 				0F7C393220A4218500DF5BF6 /* ChooseBackgroundViewContoller.swift in Sources */,
+				4087152E20A5F89D007B3E4C /* UITextField.swift in Sources */,
 				0F7C392E20A41F1300DF5BF6 /* UITextViewPlaceholder.swift in Sources */,
+				4087153020A5FEAD007B3E4C /* UIViewController.swift in Sources */,
 				4087150920A38742007B3E4C /* Constants.swift in Sources */,
 				0FC94F1420A6042700CDC810 /* AddArtViewController.swift in Sources */,
 				4021E6E720A1CA1600B3DEB7 /* AppDelegate.swift in Sources */,
+				4087152C20A5EAB3007B3E4C /* CustomTextField.swift in Sources */,
 				4087152120A4ACA6007B3E4C /* PhoneBook.swift in Sources */,
 				408714F420A337AD007B3E4C /* CustomSettingCell.swift in Sources */,
 				0FC94F1720A60EFA00CDC810 /* AddArtViewModel.swift in Sources */,
@@ -759,7 +775,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S67FEK7CTT;
+				DEVELOPMENT_TEAM = 67S5W9JU3Z;
 				INFOPLIST_FILE = "$(SRCROOT)/iGift/Config/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -775,7 +791,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S67FEK7CTT;
+				DEVELOPMENT_TEAM = 67S5W9JU3Z;
 				INFOPLIST_FILE = "$(SRCROOT)/iGift/Config/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
