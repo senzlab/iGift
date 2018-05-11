@@ -48,7 +48,12 @@ class ChooseBackgroundViewContoller: BaseViewController, UICollectionViewDataSou
     }
     
     //    MARK: UICollectionViewDelegate
-
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        GiftCard.shared.backgroundColor = ChooseBackgroundViewModel().colourForTheCell(indexpathNumber: indexPath.row)
+        GiftCard.shared.capturedImage = nil
+        self.navigationController?.popViewController(animated: true)
+    }
     
     //    MARK: UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

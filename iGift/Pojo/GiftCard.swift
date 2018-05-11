@@ -12,6 +12,7 @@ final class GiftCard {
 
     static let shared = GiftCard()
     var capturedImage: UIImage!
+    var backgroundColor: UIColor!
     
     private init() {}
 }

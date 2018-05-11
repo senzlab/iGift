@@ -14,6 +14,7 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
     @IBOutlet weak var currencyValueTextField: UITextField!
     @IBOutlet weak var giftMsgTextView: UITextView!
     @IBOutlet weak var capturedPhotoImageView: UIImageView!
+    @IBOutlet weak var rootView: UIView!
     
     var userTryingToGiveCurrencyValue: Bool = false
     var keyboardHeight: CGFloat!
@@ -40,6 +41,13 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
         if GiftCard.shared.capturedImage != nil {
             capturedPhotoImageView.isHidden = false
             capturedPhotoImageView.image = GiftCard.shared.capturedImage
+        }
+        else {
+            capturedPhotoImageView.isHidden = true
+        }
+        
+        if GiftCard.shared.backgroundColor != nil {
+            rootView.backgroundColor = GiftCard.shared.backgroundColor
         }
     }
     
@@ -118,6 +126,7 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
         
         giftMsgTextView.placeholder = "Write your message here"
         
+        GiftCard.shared.backgroundColor = nil
         GiftCard.shared.capturedImage = nil
         capturedPhotoImageView.isHidden = true
     }

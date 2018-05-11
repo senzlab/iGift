@@ -17,6 +17,7 @@
                 <outlet property="capturedPhotoImageView" destination="CTF-8A-KT8" id="7jv-bh-x43"/>
                 <outlet property="currencyValueTextField" destination="1ta-Cp-S2T" id="AYC-nF-j5s"/>
                 <outlet property="giftMsgTextView" destination="JEJ-We-bVa" id="Fif-dp-lty"/>
+                <outlet property="rootView" destination="H5G-bI-zak" id="RAC-YK-ILY"/>
                 <outlet property="sendGiftButton" destination="Gg0-Sr-2gU" id="Ac0-li-YCS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

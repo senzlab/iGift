@@ -137,7 +137,6 @@
 				0F2EE36520A59466003C9AEA /* CapturePhotoViewController.swift */,
 				0F2EE36620A59466003C9AEA /* CapturePhotoViewController.xib */,
 				0F2EE36920A59D8E003C9AEA /* CapturePhotoViewModel.swift */,
-				0F2EE36B20A5A6BE003C9AEA /* GiftCard.swift */,
 			);
 			path = CapturePhotoViewController;
 			sourceTree = "<group>";
@@ -467,6 +466,7 @@
 			isa = PBXGroup;
 			children = (
 				4087151D20A4A9BC007B3E4C /* PhoneContact.swift */,
+				0F2EE36B20A5A6BE003C9AEA /* GiftCard.swift */,
 			);
 			path = Pojo;
 			sourceTree = "<group>";
