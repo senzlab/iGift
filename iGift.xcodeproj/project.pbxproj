@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F2EE36720A59466003C9AEA /* CapturePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2EE36520A59466003C9AEA /* CapturePhotoViewController.swift */; };
+		0F2EE36820A59466003C9AEA /* CapturePhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F2EE36620A59466003C9AEA /* CapturePhotoViewController.xib */; };
+		0F2EE36A20A59D8E003C9AEA /* CapturePhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2EE36920A59D8E003C9AEA /* CapturePhotoViewModel.swift */; };
 		0F7C392E20A41F1300DF5BF6 /* UITextViewPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7C392D20A41F1300DF5BF6 /* UITextViewPlaceholder.swift */; };
 		0F7C393220A4218500DF5BF6 /* ChooseBackgroundViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7C393020A4218500DF5BF6 /* ChooseBackgroundViewContoller.swift */; };
 		0F7C393320A4218500DF5BF6 /* ChooseBackgroundViewContoller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F7C393120A4218500DF5BF6 /* ChooseBackgroundViewContoller.xib */; };
@@ -58,6 +61,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F2EE36520A59466003C9AEA /* CapturePhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturePhotoViewController.swift; sourceTree = "<group>"; };
+		0F2EE36620A59466003C9AEA /* CapturePhotoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CapturePhotoViewController.xib; sourceTree = "<group>"; };
+		0F2EE36920A59D8E003C9AEA /* CapturePhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturePhotoViewModel.swift; sourceTree = "<group>"; };
 		0F7C392D20A41F1300DF5BF6 /* UITextViewPlaceholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextViewPlaceholder.swift; sourceTree = "<group>"; };
 		0F7C393020A4218500DF5BF6 /* ChooseBackgroundViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseBackgroundViewContoller.swift; sourceTree = "<group>"; };
 		0F7C393120A4218500DF5BF6 /* ChooseBackgroundViewContoller.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseBackgroundViewContoller.xib; sourceTree = "<group>"; };
@@ -121,6 +127,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F2EE36420A5943F003C9AEA /* CapturePhotoViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0F2EE36520A59466003C9AEA /* CapturePhotoViewController.swift */,
+				0F2EE36620A59466003C9AEA /* CapturePhotoViewController.xib */,
+				0F2EE36920A59D8E003C9AEA /* CapturePhotoViewModel.swift */,
+			);
+			path = CapturePhotoViewController;
+			sourceTree = "<group>";
+		};
 		0F7C392F20A4213A00DF5BF6 /* ChooseBackgroundViewContoller */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +234,7 @@
 		4021E70020A1CD0000B3DEB7 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				0F2EE36420A5943F003C9AEA /* CapturePhotoViewController */,
 				4087152420A4ED4F007B3E4C /* RegisterViewController */,
 				4087151820A40667007B3E4C /* LoadingViewController */,
 				408714E920A31B02007B3E4C /* Shared */,
@@ -518,6 +535,7 @@
 				4021E71820A20F1700B3DEB7 /* Assets.xcassets in Resources */,
 				408714F020A3326E007B3E4C /* GeosansLight-Oblique.ttf in Resources */,
 				408714F620A337CC007B3E4C /* CustomSettingCell.xib in Resources */,
+				0F2EE36820A59466003C9AEA /* CapturePhotoViewController.xib in Resources */,
 				408714F120A3326E007B3E4C /* GeosansLight.ttf in Resources */,
 				4021E72E20A22B6700B3DEB7 /* SendIGiftsViewController.xib in Resources */,
 				4021E70620A1CFED00B3DEB7 /* HomeViewController.xib in Resources */,
@@ -536,6 +554,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F2EE36A20A59D8E003C9AEA /* CapturePhotoViewModel.swift in Sources */,
 				4087152320A4BE5F007B3E4C /* CustomTableView.swift in Sources */,
 				4087150E20A391B8007B3E4C /* CustomContactCell.swift in Sources */,
 				4021E72A20A22B4000B3DEB7 /* IGiftsViewController.swift in Sources */,
@@ -561,6 +580,7 @@
 				4021E71E20A21AD800B3DEB7 /* ContactsViewController.swift in Sources */,
 				4021E72820A2234F00B3DEB7 /* UIColor.swift in Sources */,
 				4021E72620A21E2F00B3DEB7 /* BaseViewController.swift in Sources */,
+				0F2EE36720A59466003C9AEA /* CapturePhotoViewController.swift in Sources */,
 				4021E73020A22B7500B3DEB7 /* SendIGiftsViewController.swift in Sources */,
 				0F9138F320A34E400011DF2C /* DesignIGiftViewController.swift in Sources */,
 				4087152620A4ED86007B3E4C /* RegisterViewController.swift in Sources */,
@@ -703,7 +723,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 67S5W9JU3Z;
+				DEVELOPMENT_TEAM = S67FEK7CTT;
 				INFOPLIST_FILE = "$(SRCROOT)/iGift/Config/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -719,7 +739,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 67S5W9JU3Z;
+				DEVELOPMENT_TEAM = S67FEK7CTT;
 				INFOPLIST_FILE = "$(SRCROOT)/iGift/Config/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

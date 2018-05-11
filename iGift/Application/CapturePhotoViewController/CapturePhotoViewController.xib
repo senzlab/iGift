@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CapturePhotoViewController" customModule="iGift" customModuleProvider="target">
+            <connections>
+                <outlet property="cameraPreviewView" destination="S02-Om-Hcs" id="GQN-u4-u2V"/>
+                <outlet property="captureButton" destination="k8F-RO-IKw" id="Xia-RX-Efl"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S02-Om-Hcs" userLabel="View_CameraPreview">
+                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                </view>
+                <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wYH-bl-EH5" userLabel="View_CaptureButtonHolder">
+                    <rect key="frame" x="0.0" y="444.5" width="375" height="222.5"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k8F-RO-IKw" userLabel="Button_Capture">
+                            <rect key="frame" x="152" y="76" width="70" height="70"/>
+                            <color key="backgroundColor" red="1" green="0.57254901960000004" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="70" id="5sb-wm-efD"/>
+                                <constraint firstAttribute="width" secondItem="k8F-RO-IKw" secondAttribute="height" multiplier="1:1" id="J2f-QP-arS"/>
+                            </constraints>
+                            <state key="normal" image="capture_cam"/>
+                            <connections>
+                                <action selector="captureAction:" destination="-1" eventType="touchUpInside" id="F0L-4d-WbK"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="k8F-RO-IKw" firstAttribute="centerX" secondItem="wYH-bl-EH5" secondAttribute="centerX" id="anD-J5-W3p"/>
+                        <constraint firstItem="k8F-RO-IKw" firstAttribute="centerY" secondItem="wYH-bl-EH5" secondAttribute="centerY" id="yEQ-y7-yY3"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="S02-Om-Hcs" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="1NH-AO-bfp"/>
+                <constraint firstItem="wYH-bl-EH5" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="3De-sI-h5S"/>
+                <constraint firstItem="wYH-bl-EH5" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="1/3" id="4Jf-a6-SGJ"/>
+                <constraint firstItem="S02-Om-Hcs" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="JlO-B7-vZ0"/>
+                <constraint firstItem="S02-Om-Hcs" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="hr9-de-hCL"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="S02-Om-Hcs" secondAttribute="bottom" id="iqo-D8-D4i"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="wYH-bl-EH5" secondAttribute="bottom" id="msf-SF-icU"/>
+                <constraint firstItem="wYH-bl-EH5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ztR-UM-XRT"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="capture_cam" width="32" height="32"/>
+    </resources>
+</document>
