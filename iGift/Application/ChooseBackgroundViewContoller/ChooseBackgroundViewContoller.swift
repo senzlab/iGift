@@ -14,6 +14,7 @@ class ChooseBackgroundViewContoller: BaseViewController, UICollectionViewDataSou
     
     let cellReusableIdentifier = "CellId"
     
+    //    MARK: UIViewController related
     override func viewDidLoad() {
         super.viewDidLoad()
         print((#file as NSString).lastPathComponent)
@@ -21,7 +22,6 @@ class ChooseBackgroundViewContoller: BaseViewController, UICollectionViewDataSou
         
         colorCollectionView.dataSource = self
         colorCollectionView.delegate = self
-        
         colorCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: cellReusableIdentifier)
     }
     
@@ -55,7 +55,7 @@ class ChooseBackgroundViewContoller: BaseViewController, UICollectionViewDataSou
         self.navigationController?.popViewController(animated: true)
     }
     
-    //    MARK: UICollectionViewDelegate
+    //    MARK: UICollectionViewDelegateFlowLayout
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
 //        Minimum spacing between cells are 1. Since there are two spaces like that we reduced 2 here

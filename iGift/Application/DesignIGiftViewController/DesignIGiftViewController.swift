@@ -102,12 +102,15 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
     }
     
     @IBAction func cameraAction(_ sender: UIButton) {
+        
         let capturePhotoViewController = CapturePhotoViewController(nibName: "CapturePhotoViewController", bundle: nil)
         self.navigationController?.pushViewController(capturePhotoViewController, animated: true)
     }
     
     @IBAction func addArtAction(_ sender: UIButton) {
         
+        let addArtViewController = AddArtViewController(nibName: "AddArtViewController", bundle: nil)
+        self.navigationController?.pushViewController(addArtViewController, animated: true)
     }
     
     @IBAction func changeBgColorAction(_ sender: UIButton) {

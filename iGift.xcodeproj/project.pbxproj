@@ -18,6 +18,9 @@
 		0F9138F320A34E400011DF2C /* DesignIGiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9138F120A34E400011DF2C /* DesignIGiftViewController.swift */; };
 		0F9138F420A34E400011DF2C /* DesignIGiftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F9138F220A34E400011DF2C /* DesignIGiftViewController.xib */; };
 		0FC94F1020A5F45E00CDC810 /* DeviceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC94F0F20A5F45E00CDC810 /* DeviceModel.swift */; };
+		0FC94F1420A6042700CDC810 /* AddArtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC94F1220A6042700CDC810 /* AddArtViewController.swift */; };
+		0FC94F1520A6042700CDC810 /* AddArtViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FC94F1320A6042700CDC810 /* AddArtViewController.xib */; };
+		0FC94F1720A60EFA00CDC810 /* AddArtViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC94F1620A60EFA00CDC810 /* AddArtViewModel.swift */; };
 		4021E6E720A1CA1600B3DEB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4021E6E620A1CA1600B3DEB7 /* AppDelegate.swift */; };
 		4021E6EC20A1CA1600B3DEB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4021E6EA20A1CA1600B3DEB7 /* Main.storyboard */; };
 		4021E6EF20A1CA1600B3DEB7 /* iGift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4021E6ED20A1CA1600B3DEB7 /* iGift.xcdatamodeld */; };
@@ -74,6 +77,9 @@
 		0F9138F120A34E400011DF2C /* DesignIGiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignIGiftViewController.swift; sourceTree = "<group>"; };
 		0F9138F220A34E400011DF2C /* DesignIGiftViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DesignIGiftViewController.xib; sourceTree = "<group>"; };
 		0FC94F0F20A5F45E00CDC810 /* DeviceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceModel.swift; sourceTree = "<group>"; };
+		0FC94F1220A6042700CDC810 /* AddArtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddArtViewController.swift; sourceTree = "<group>"; };
+		0FC94F1320A6042700CDC810 /* AddArtViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddArtViewController.xib; sourceTree = "<group>"; };
+		0FC94F1620A60EFA00CDC810 /* AddArtViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddArtViewModel.swift; sourceTree = "<group>"; };
 		4021E6E320A1CA1600B3DEB7 /* iGift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iGift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4021E6E620A1CA1600B3DEB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4021E6EB20A1CA1600B3DEB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -168,6 +174,16 @@
 			path = GeneralModels;
 			sourceTree = "<group>";
 		};
+		0FC94F1120A603E100CDC810 /* AddArtViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0FC94F1220A6042700CDC810 /* AddArtViewController.swift */,
+				0FC94F1320A6042700CDC810 /* AddArtViewController.xib */,
+				0FC94F1620A60EFA00CDC810 /* AddArtViewModel.swift */,
+			);
+			path = AddArtViewController;
+			sourceTree = "<group>";
+		};
 		4021E6DA20A1CA1600B3DEB7 = {
 			isa = PBXGroup;
 			children = (
@@ -247,6 +263,7 @@
 		4021E70020A1CD0000B3DEB7 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				0FC94F1120A603E100CDC810 /* AddArtViewController */,
 				0F2EE36420A5943F003C9AEA /* CapturePhotoViewController */,
 				4087152420A4ED4F007B3E4C /* RegisterViewController */,
 				4087151820A40667007B3E4C /* LoadingViewController */,
@@ -555,6 +572,7 @@
 				4021E70620A1CFED00B3DEB7 /* HomeViewController.xib in Resources */,
 				0F7C393320A4218500DF5BF6 /* ChooseBackgroundViewContoller.xib in Resources */,
 				4021E72020A21AF300B3DEB7 /* ContactsViewController.xib in Resources */,
+				0FC94F1520A6042700CDC810 /* AddArtViewController.xib in Resources */,
 				4087151320A391E2007B3E4C /* CustomPhoneBookCell.xib in Resources */,
 				4021E72C20A22B4D00B3DEB7 /* IGiftsViewController.xib in Resources */,
 				4087152820A4ED96007B3E4C /* RegisterViewController.xib in Resources */,
@@ -580,9 +598,11 @@
 				0F7C393220A4218500DF5BF6 /* ChooseBackgroundViewContoller.swift in Sources */,
 				0F7C392E20A41F1300DF5BF6 /* UITextViewPlaceholder.swift in Sources */,
 				4087150920A38742007B3E4C /* Constants.swift in Sources */,
+				0FC94F1420A6042700CDC810 /* AddArtViewController.swift in Sources */,
 				4021E6E720A1CA1600B3DEB7 /* AppDelegate.swift in Sources */,
 				4087152120A4ACA6007B3E4C /* PhoneBook.swift in Sources */,
 				408714F420A337AD007B3E4C /* CustomSettingCell.swift in Sources */,
+				0FC94F1720A60EFA00CDC810 /* AddArtViewModel.swift in Sources */,
 				4087151E20A4A9BC007B3E4C /* PhoneContact.swift in Sources */,
 				4087151720A3FECF007B3E4C /* CustomImageView.swift in Sources */,
 				4087151A20A488ED007B3E4C /* CustomSearchBar.swift in Sources */,
