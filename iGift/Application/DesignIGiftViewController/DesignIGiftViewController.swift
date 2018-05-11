@@ -13,6 +13,7 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
     @IBOutlet weak var sendGiftButton: UIButton!
     @IBOutlet weak var currencyValueTextField: UITextField!
     @IBOutlet weak var giftMsgTextView: UITextView!
+    @IBOutlet weak var capturedPhotoImageView: UIImageView!
     
     var userTryingToGiveCurrencyValue: Bool = false
     var keyboardHeight: CGFloat!
@@ -34,6 +35,14 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
         view.addGestureRecognizer(tap)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        if GiftCard.shared.capturedImage != nil {
+            capturedPhotoImageView.isHidden = false
+            capturedPhotoImageView.image = GiftCard.shared.capturedImage
+        }
+    }
+    
     //    MARK: UITextFieldDelegate
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField == currencyValueTextField {
@@ -47,7 +56,10 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
         
         if userTryingToGiveCurrencyValue {
             if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-                if self.view.frame.origin.y == 0 {
+                
+                print((#file as NSString).lastPathComponent, "# origin.y = ", self.view.frame.origin.y)
+                
+                if self.view.frame.origin.y == 0 || self.view.frame.origin.y == 88 {
                     
                     if keyboardHeight == nil {
                         keyboardHeight = keyboardSize.height
@@ -105,5 +117,8 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
         sendGiftButton.layer.cornerRadius = 0.5 * sendGiftButton.bounds.size.width;
         
         giftMsgTextView.placeholder = "Write your message here"
+        
+        GiftCard.shared.capturedImage = nil
+        capturedPhotoImageView.isHidden = true
     }
 }

@@ -33,8 +33,7 @@ class CapturePhotoViewModel: NSObject {
             if (imageSampleBuffer != nil) {
                 let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(imageSampleBuffer as! CMSampleBuffer)
                 var image: UIImage = UIImage(data: imageData!)!
-//                self.capturedImageView.image = image
-
+                GiftCard.shared.capturedImage = image
             }
         })
     }

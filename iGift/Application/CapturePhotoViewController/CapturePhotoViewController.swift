@@ -41,6 +41,9 @@ class CapturePhotoViewController: BaseViewController {
     @IBAction func captureAction(_ sender: UIButton) {
         
         CapturePhotoViewModel().capturePhoto(stillImageOutput: output!)
+        
+//        self.dismiss(animated: true, completion: nil)
+//        self.navigationController?.popViewController(animated: true)
     }
     
     func openCameraView() {
@@ -49,7 +52,6 @@ class CapturePhotoViewController: BaseViewController {
         session = AVCaptureSession()
         output = AVCaptureStillImageOutput()
         
-//        let camera = getDevice(position: .front)
         let camera = CapturePhotoViewModel().getDevice(position: .front)
         
         do {

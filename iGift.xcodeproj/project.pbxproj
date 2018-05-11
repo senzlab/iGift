@@ -10,6 +10,7 @@
 		0F2EE36720A59466003C9AEA /* CapturePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2EE36520A59466003C9AEA /* CapturePhotoViewController.swift */; };
 		0F2EE36820A59466003C9AEA /* CapturePhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F2EE36620A59466003C9AEA /* CapturePhotoViewController.xib */; };
 		0F2EE36A20A59D8E003C9AEA /* CapturePhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2EE36920A59D8E003C9AEA /* CapturePhotoViewModel.swift */; };
+		0F2EE36C20A5A6BE003C9AEA /* GiftCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2EE36B20A5A6BE003C9AEA /* GiftCard.swift */; };
 		0F7C392E20A41F1300DF5BF6 /* UITextViewPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7C392D20A41F1300DF5BF6 /* UITextViewPlaceholder.swift */; };
 		0F7C393220A4218500DF5BF6 /* ChooseBackgroundViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7C393020A4218500DF5BF6 /* ChooseBackgroundViewContoller.swift */; };
 		0F7C393320A4218500DF5BF6 /* ChooseBackgroundViewContoller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F7C393120A4218500DF5BF6 /* ChooseBackgroundViewContoller.xib */; };
@@ -64,6 +65,7 @@
 		0F2EE36520A59466003C9AEA /* CapturePhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturePhotoViewController.swift; sourceTree = "<group>"; };
 		0F2EE36620A59466003C9AEA /* CapturePhotoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CapturePhotoViewController.xib; sourceTree = "<group>"; };
 		0F2EE36920A59D8E003C9AEA /* CapturePhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturePhotoViewModel.swift; sourceTree = "<group>"; };
+		0F2EE36B20A5A6BE003C9AEA /* GiftCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiftCard.swift; sourceTree = "<group>"; };
 		0F7C392D20A41F1300DF5BF6 /* UITextViewPlaceholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextViewPlaceholder.swift; sourceTree = "<group>"; };
 		0F7C393020A4218500DF5BF6 /* ChooseBackgroundViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseBackgroundViewContoller.swift; sourceTree = "<group>"; };
 		0F7C393120A4218500DF5BF6 /* ChooseBackgroundViewContoller.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseBackgroundViewContoller.xib; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				0F2EE36520A59466003C9AEA /* CapturePhotoViewController.swift */,
 				0F2EE36620A59466003C9AEA /* CapturePhotoViewController.xib */,
 				0F2EE36920A59D8E003C9AEA /* CapturePhotoViewModel.swift */,
+				0F2EE36B20A5A6BE003C9AEA /* GiftCard.swift */,
 			);
 			path = CapturePhotoViewController;
 			sourceTree = "<group>";
@@ -584,6 +587,7 @@
 				4021E73020A22B7500B3DEB7 /* SendIGiftsViewController.swift in Sources */,
 				0F9138F320A34E400011DF2C /* DesignIGiftViewController.swift in Sources */,
 				4087152620A4ED86007B3E4C /* RegisterViewController.swift in Sources */,
+				0F2EE36C20A5A6BE003C9AEA /* GiftCard.swift in Sources */,
 				408714E820A31458007B3E4C /* AddAccountViewController.swift in Sources */,
 				4021E72220A21DCE00B3DEB7 /* SettingsViewController.swift in Sources */,
 			);
