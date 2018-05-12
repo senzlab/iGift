@@ -22,7 +22,10 @@ class DesignIGiftViewControllerModel: NSObject {
         UIGraphicsEndImageContext()
         
         if let image = screenshotImage, shouldSave {
-            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+            
+            let compressedImageData = image.lowestQualityJPEGNSData
+            
+            UIImageWriteToSavedPhotosAlbum(UIImage(data: compressedImageData as Data)!, nil, nil, nil)
         }
         
         return screenshotImage
