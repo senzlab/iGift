@@ -20,6 +20,8 @@ build/
 !default.perspectivev3
 
 xcuserdata/
+iGift.xcodeproj/project.xcworkspace/xcshareddata/
+iGift.xcodeproj/project.xcworkspace/xcuserdata/
 
 ## Other
 *.xccheckout
