@@ -92,7 +92,7 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
     }
     
     //    MARK: Gesture selectors
-    @objc func dismissKeyboard() {
+    @objc override func dismissKeyboard() {
         view.endEditing(true)
         userTryingToGiveCurrencyValue = false
         giftMsgTextView.isUserInteractionEnabled = true;

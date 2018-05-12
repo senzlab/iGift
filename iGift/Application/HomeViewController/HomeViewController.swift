@@ -23,19 +23,14 @@ class HomeViewController : BaseViewController {
     }
 
     @IBAction func onContactsBtnClicked(_ sender: Any) {
-        let contactsViewController = ContactsViewController(nibName: "ContactsViewController", bundle: nil)
-        self.navigationController?.pushViewController(contactsViewController, animated: true)
+        self.loadView("ContactsViewController")
     }
 
     @IBAction func onSettingsBtnClicked(_ sender: Any) {
-        let settingsViewController = SettingsViewController(nibName: "SettingsViewController", bundle: nil)
-        self.navigationController?.pushViewController(settingsViewController, animated: true)
+        self.loadView("SettingsViewController")
     }
 
-    @IBAction func onSendIGiftsBtnClicked(_ sender: Any) {
-//        let sendIGiftsViewController = SendIGiftsViewController(nibName: "SendIGiftsViewController", bundle: nil)
-//        self.navigationController?.pushViewController(sendIGiftsViewController, animated: true)
-        
+    @IBAction func onSendIGiftsBtnClicked(_ sender: Any) {        
         let designIGiftViewController = DesignIGiftViewController(nibName: "DesignIGiftViewController", bundle: nil)
         self.navigationController?.pushViewController(designIGiftViewController, animated: true)
     }

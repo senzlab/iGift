@@ -10,6 +10,6 @@ import Foundation
 import UIKit
 
 class CustomSettingCell: UITableViewCell {
-    @IBOutlet weak var rowTitleLbl      : CustomLabel?
-    @IBOutlet weak var rowSettingBtn    : CustomButton?
+    @IBOutlet weak var lblTitle      : CustomLabel?
+    @IBOutlet weak var btnSetting    : CustomButton?
 }

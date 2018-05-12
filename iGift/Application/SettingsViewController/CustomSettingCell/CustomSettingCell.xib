@@ -97,8 +97,8 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
-                <outlet property="rowSettingBtn" destination="Mps-NE-WDt" id="RfD-r4-xFe"/>
-                <outlet property="rowTitleLbl" destination="2BD-mz-6oc" id="wKR-Gf-XZh"/>
+                <outlet property="btnSetting" destination="Mps-NE-WDt" id="6PW-Cj-6P8"/>
+                <outlet property="lblTitle" destination="2BD-mz-6oc" id="Fng-Oz-I2F"/>
             </connections>
             <point key="canvasLocation" x="116.5" y="-197.5"/>
         </view>

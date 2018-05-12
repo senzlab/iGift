@@ -39,14 +39,15 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
     }
 
     func loadContacts() {
-        PhoneBook.sharedInstance.checkPermission {(value: Bool) in
+        PhoneBook.sharedInstance.requestAccess({value in
             if value {
                 self.dataArray = PhoneBook.sharedInstance.getContacts()
                 self.reloadTable()
             } else {
                 print("PhoneBook Permission Denied by user!!")
+                self.goBack(animated: true)
             }
-        }
+        })
     }
 
     func reloadTable() {
