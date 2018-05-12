@@ -75,6 +75,10 @@
 		C0E2163520A6EAE5002FF833 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E2163220A6EAE5002FF833 /* User.swift */; };
 		C0E2163720A6ED32002FF833 /* PreferenceUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E2163620A6ED31002FF833 /* PreferenceUtil.swift */; };
 		C0E2163920A6EF25002FF833 /* SenzUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E2163820A6EF25002FF833 /* SenzUtil.swift */; };
+		C0E2163C20A6F20E002FF833 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E2163B20A6F20E002FF833 /* SQLite.framework */; };
+		C0E2163E20A6F217002FF833 /* CommonCrypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E2163D20A6F217002FF833 /* CommonCrypto.framework */; };
+		C0E2164020A6F21A002FF833 /* SwiftSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E2163F20A6F21A002FF833 /* SwiftSocket.framework */; };
+		C0E2164220A6F21C002FF833 /* SwiftyRSA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E2164120A6F21C002FF833 /* SwiftyRSA.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -148,6 +152,10 @@
 		C0E2163220A6EAE5002FF833 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C0E2163620A6ED31002FF833 /* PreferenceUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceUtil.swift; sourceTree = "<group>"; };
 		C0E2163820A6EF25002FF833 /* SenzUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenzUtil.swift; sourceTree = "<group>"; };
+		C0E2163B20A6F20E002FF833 /* SQLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SQLite.framework; path = Carthage/Build/iOS/SQLite.framework; sourceTree = "<group>"; };
+		C0E2163D20A6F217002FF833 /* CommonCrypto.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CommonCrypto.framework; path = Carthage/Build/iOS/CommonCrypto.framework; sourceTree = "<group>"; };
+		C0E2163F20A6F21A002FF833 /* SwiftSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftSocket.framework; path = Carthage/Build/iOS/SwiftSocket.framework; sourceTree = "<group>"; };
+		C0E2164120A6F21C002FF833 /* SwiftyRSA.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyRSA.framework; path = Carthage/Build/iOS/SwiftyRSA.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +163,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0E2163C20A6F20E002FF833 /* SQLite.framework in Frameworks */,
+				C0E2163E20A6F217002FF833 /* CommonCrypto.framework in Frameworks */,
+				C0E2164020A6F21A002FF833 /* SwiftSocket.framework in Frameworks */,
+				C0E2164220A6F21C002FF833 /* SwiftyRSA.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +226,7 @@
 			children = (
 				4021E6E520A1CA1600B3DEB7 /* iGift */,
 				4021E6E420A1CA1600B3DEB7 /* Products */,
+				C0E2163A20A6F20E002FF833 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -533,6 +546,17 @@
 			path = RegisterViewController;
 			sourceTree = "<group>";
 		};
+		C0E2163A20A6F20E002FF833 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0E2164120A6F21C002FF833 /* SwiftyRSA.framework */,
+				C0E2163F20A6F21A002FF833 /* SwiftSocket.framework */,
+				C0E2163D20A6F217002FF833 /* CommonCrypto.framework */,
+				C0E2163B20A6F20E002FF833 /* SQLite.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -543,6 +567,7 @@
 				4021E6DF20A1CA1600B3DEB7 /* Sources */,
 				4021E6E020A1CA1600B3DEB7 /* Frameworks */,
 				4021E6E120A1CA1600B3DEB7 /* Resources */,
+				C0E2164320A6F284002FF833 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -616,6 +641,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C0E2164320A6F284002FF833 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/CommonCrypto.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SQLite.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftSocket.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyRSA.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4021E6DF20A1CA1600B3DEB7 /* Sources */ = {
@@ -808,6 +853,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S67FEK7CTT;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/iGift/Config/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -824,6 +873,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S67FEK7CTT;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/iGift/Config/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
