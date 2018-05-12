@@ -34,6 +34,9 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
 //        Added a tap gesture in order to dismiss the keyboard once it is visible since we haven't given Done button in the keyboard
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
+        
+//        Will initiate creating sticker image with pan attribute
+        NotificationCenter.default.addObserver(self, selector: #selector(createStickerImage(notification:)), name: .tappedOnArtItem, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -100,21 +103,7 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
     
     //    MARK: Action functions
     @IBAction func sendGiftAction(_ sender: UIButton) {
-        
-        let image = UIImage(named: "sticker_1")!
-        let imageView = UIImageView(image: image)
-        imageView.frame = CGRect(x: 0, y: 0, width: 80, height: 80)
-        rootView.addSubview(imageView)
-        
-        imageView.isUserInteractionEnabled = true
-        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(self.panGesture))
-        imageView.addGestureRecognizer(panGesture)
-    }
-    
-    @objc func panGesture(sender: UIPanGestureRecognizer){
-        let point = sender.location(in: view)
-        let panGesture = sender.view
-        panGesture?.center = point
+
     }
     
     @IBAction func cameraAction(_ sender: UIButton) {
@@ -148,5 +137,26 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
         GiftCard.shared.backgroundColor = nil
         GiftCard.shared.capturedImage = nil
         capturedPhotoImageView.isHidden = true
+    }
+    
+    @objc func createStickerImage(notification: NSNotification) {
+        
+        var receivedUserInfo = notification.userInfo
+        let imageName = receivedUserInfo![stickerNameNotifiKey] as! String
+        
+        let image = UIImage(named: imageName)!
+        let imageView = UIImageView(image: image)
+        imageView.frame = CGRect(x: 0, y: 0, width: 70, height: 70)
+        rootView.addSubview(imageView)
+        
+        imageView.isUserInteractionEnabled = true
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(self.panGesture))
+        imageView.addGestureRecognizer(panGesture)
+    }
+    
+    @objc func panGesture(sender: UIPanGestureRecognizer){
+        let point = sender.location(in: view)
+        let panGesture = sender.view
+        panGesture?.center = point
     }
 }

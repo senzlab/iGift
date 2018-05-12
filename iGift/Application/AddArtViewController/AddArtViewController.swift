@@ -56,6 +56,15 @@ class AddArtViewController: BaseViewController, UICollectionViewDataSource, UICo
         return CGSize(width: (stickerCollectionView.frame.size.width - 2)/3, height: stickerCollectionView.frame.size.height/4)
     }
     
+    //    MARK: UICollectionViewDelegate
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        NotificationCenter.default.post(name: .tappedOnArtItem, object: nil, userInfo: [ stickerNameNotifiKey: AddArtViewModel().imageNameForTheCell(indexpathNumber: indexPath.row)])
+        
+        goBack(animated: true)
+//        self.navigationController?.popViewController(animated: true)
+    }
+    
     //    MARK: Supportive functions
     func setupUi() {
         self.setNavBarHidden(false)

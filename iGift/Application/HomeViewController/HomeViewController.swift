@@ -30,7 +30,11 @@ class HomeViewController : BaseViewController {
         self.loadView("SettingsViewController")
     }
 
-    @IBAction func onSendIGiftsBtnClicked(_ sender: Any) {        
+    @IBAction func onSendIGiftsBtnClicked(_ sender: Any) {
+        
+//        let sendIGiftsViewController = SendIGiftsViewController(nibName: "SendIGiftsViewController", bundle: nil)
+//        self.navigationController?.pushViewController(sendIGiftsViewController, animated: true)
+        
         let designIGiftViewController = DesignIGiftViewController(nibName: "DesignIGiftViewController", bundle: nil)
         self.navigationController?.pushViewController(designIGiftViewController, animated: true)
     }
