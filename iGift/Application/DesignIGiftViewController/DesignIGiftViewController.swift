@@ -104,6 +104,7 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
     //    MARK: Action functions
     @IBAction func sendGiftAction(_ sender: UIButton) {
 
+        DesignIGiftViewControllerModel().takeScreenshot(true)
     }
     
     @IBAction func cameraAction(_ sender: UIButton) {

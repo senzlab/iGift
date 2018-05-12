@@ -54,5 +54,7 @@
 	<string>You can add any images captured by camera to your Gift card.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>You can save your iGift card in your photo library as well.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Save the gift you created.</string>
 </dict>
 </plist>
