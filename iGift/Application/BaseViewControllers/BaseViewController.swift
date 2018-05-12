@@ -17,6 +17,9 @@ class BaseViewController : ApplicationViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyBoardOnLostFocus()
+
+        // Ensure all view controllers frame stays within bounds
+        edgesForExtendedLayout = []
     }
 
     override func viewWillAppear(_ animated: Bool) {
