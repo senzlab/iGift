@@ -70,6 +70,11 @@
 		4087152C20A5EAB3007B3E4C /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4087152B20A5EAB3007B3E4C /* CustomTextField.swift */; };
 		4087152E20A5F89D007B3E4C /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4087152D20A5F89D007B3E4C /* UITextField.swift */; };
 		4087153020A5FEAD007B3E4C /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4087152F20A5FEAD007B3E4C /* UIViewController.swift */; };
+		C0E2163320A6EAE5002FF833 /* Senz.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E2163020A6EAE4002FF833 /* Senz.swift */; };
+		C0E2163420A6EAE5002FF833 /* Igift.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E2163120A6EAE4002FF833 /* Igift.swift */; };
+		C0E2163520A6EAE5002FF833 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E2163220A6EAE5002FF833 /* User.swift */; };
+		C0E2163720A6ED32002FF833 /* PreferenceUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E2163620A6ED31002FF833 /* PreferenceUtil.swift */; };
+		C0E2163920A6EF25002FF833 /* SenzUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E2163820A6EF25002FF833 /* SenzUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -138,6 +143,11 @@
 		4087152B20A5EAB3007B3E4C /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		4087152D20A5F89D007B3E4C /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		4087152F20A5FEAD007B3E4C /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		C0E2163020A6EAE4002FF833 /* Senz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Senz.swift; sourceTree = "<group>"; };
+		C0E2163120A6EAE4002FF833 /* Igift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Igift.swift; sourceTree = "<group>"; };
+		C0E2163220A6EAE5002FF833 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C0E2163620A6ED31002FF833 /* PreferenceUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceUtil.swift; sourceTree = "<group>"; };
+		C0E2163820A6EF25002FF833 /* SenzUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenzUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -424,6 +434,8 @@
 		4021E71920A2104A00B3DEB7 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				C0E2163820A6EF25002FF833 /* SenzUtil.swift */,
+				C0E2163620A6ED31002FF833 /* PreferenceUtil.swift */,
 				4021E71A20A2105B00B3DEB7 /* Extensions */,
 				4087152020A4ACA6007B3E4C /* PhoneBook.swift */,
 			);
@@ -503,6 +515,9 @@
 		4087151F20A4AC42007B3E4C /* Pojo */ = {
 			isa = PBXGroup;
 			children = (
+				C0E2163120A6EAE4002FF833 /* Igift.swift */,
+				C0E2163020A6EAE4002FF833 /* Senz.swift */,
+				C0E2163220A6EAE5002FF833 /* User.swift */,
 				4087151D20A4A9BC007B3E4C /* PhoneContact.swift */,
 				0F2EE36B20A5A6BE003C9AEA /* GiftCard.swift */,
 			);
@@ -613,6 +628,8 @@
 				4087152A20A5E5F8007B3E4C /* ApplicationViewController.swift in Sources */,
 				0F1081BD20A6E8770024C9BD /* UIImageExtension.swift in Sources */,
 				4021E72A20A22B4000B3DEB7 /* IGiftsViewController.swift in Sources */,
+				C0E2163420A6EAE5002FF833 /* Igift.swift in Sources */,
+				C0E2163920A6EF25002FF833 /* SenzUtil.swift in Sources */,
 				4087150720A38737007B3E4C /* HexColors.swift in Sources */,
 				4087150220A34B59007B3E4C /* CustomLabel.swift in Sources */,
 				4087151520A391EE007B3E4C /* CustomPhoneBookCell.swift in Sources */,
@@ -621,6 +638,7 @@
 				0F7C393220A4218500DF5BF6 /* ChooseBackgroundViewContoller.swift in Sources */,
 				0F1081BE20A6E8770024C9BD /* NotificationExtension.swift in Sources */,
 				4087152E20A5F89D007B3E4C /* UITextField.swift in Sources */,
+				C0E2163720A6ED32002FF833 /* PreferenceUtil.swift in Sources */,
 				0F7C392E20A41F1300DF5BF6 /* UITextViewPlaceholder.swift in Sources */,
 				4087153020A5FEAD007B3E4C /* UIViewController.swift in Sources */,
 				4087150920A38742007B3E4C /* Constants.swift in Sources */,
@@ -628,6 +646,7 @@
 				4021E6E720A1CA1600B3DEB7 /* AppDelegate.swift in Sources */,
 				4087152C20A5EAB3007B3E4C /* CustomTextField.swift in Sources */,
 				4087152120A4ACA6007B3E4C /* PhoneBook.swift in Sources */,
+				C0E2163520A6EAE5002FF833 /* User.swift in Sources */,
 				408714F420A337AD007B3E4C /* CustomSettingCell.swift in Sources */,
 				0FC94F1720A60EFA00CDC810 /* AddArtViewModel.swift in Sources */,
 				4087151E20A4A9BC007B3E4C /* PhoneContact.swift in Sources */,
@@ -648,6 +667,7 @@
 				0FC94F1020A5F45E00CDC810 /* DeviceModel.swift in Sources */,
 				4087152620A4ED86007B3E4C /* RegisterViewController.swift in Sources */,
 				0F2EE36C20A5A6BE003C9AEA /* GiftCard.swift in Sources */,
+				C0E2163320A6EAE5002FF833 /* Senz.swift in Sources */,
 				408714E820A31458007B3E4C /* AddAccountViewController.swift in Sources */,
 				4021E72220A21DCE00B3DEB7 /* SettingsViewController.swift in Sources */,
 			);
