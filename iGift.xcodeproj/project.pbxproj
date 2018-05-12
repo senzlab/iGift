@@ -79,6 +79,8 @@
 		C0E2163E20A6F217002FF833 /* CommonCrypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E2163D20A6F217002FF833 /* CommonCrypto.framework */; };
 		C0E2164020A6F21A002FF833 /* SwiftSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E2163F20A6F21A002FF833 /* SwiftSocket.framework */; };
 		C0E2164220A6F21C002FF833 /* SwiftyRSA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E2164120A6F21C002FF833 /* SwiftyRSA.framework */; };
+		C0E2165220A6F52F002FF833 /* CryptoUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E2165020A6F52F002FF833 /* CryptoUtil.swift */; };
+		C0E2165320A6F52F002FF833 /* SenzDb.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E2165120A6F52F002FF833 /* SenzDb.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -156,6 +158,8 @@
 		C0E2163D20A6F217002FF833 /* CommonCrypto.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CommonCrypto.framework; path = Carthage/Build/iOS/CommonCrypto.framework; sourceTree = "<group>"; };
 		C0E2163F20A6F21A002FF833 /* SwiftSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftSocket.framework; path = Carthage/Build/iOS/SwiftSocket.framework; sourceTree = "<group>"; };
 		C0E2164120A6F21C002FF833 /* SwiftyRSA.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyRSA.framework; path = Carthage/Build/iOS/SwiftyRSA.framework; sourceTree = "<group>"; };
+		C0E2165020A6F52F002FF833 /* CryptoUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoUtil.swift; sourceTree = "<group>"; };
+		C0E2165120A6F52F002FF833 /* SenzDb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenzDb.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -447,6 +451,8 @@
 		4021E71920A2104A00B3DEB7 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				C0E2165020A6F52F002FF833 /* CryptoUtil.swift */,
+				C0E2165120A6F52F002FF833 /* SenzDb.swift */,
 				C0E2163820A6EF25002FF833 /* SenzUtil.swift */,
 				C0E2163620A6ED31002FF833 /* PreferenceUtil.swift */,
 				4021E71A20A2105B00B3DEB7 /* Extensions */,
@@ -682,6 +688,7 @@
 				4021E6EF20A1CA1600B3DEB7 /* iGift.xcdatamodeld in Sources */,
 				0F7C393220A4218500DF5BF6 /* ChooseBackgroundViewContoller.swift in Sources */,
 				0F1081BE20A6E8770024C9BD /* NotificationExtension.swift in Sources */,
+				C0E2165320A6F52F002FF833 /* SenzDb.swift in Sources */,
 				4087152E20A5F89D007B3E4C /* UITextField.swift in Sources */,
 				C0E2163720A6ED32002FF833 /* PreferenceUtil.swift in Sources */,
 				0F7C392E20A41F1300DF5BF6 /* UITextViewPlaceholder.swift in Sources */,
@@ -703,6 +710,7 @@
 				4021E70420A1CFDF00B3DEB7 /* HomeViewController.swift in Sources */,
 				408714EB20A31B28007B3E4C /* CustomButton.swift in Sources */,
 				4021E73220A231D600B3DEB7 /* PhoneBookViewController.swift in Sources */,
+				C0E2165220A6F52F002FF833 /* CryptoUtil.swift in Sources */,
 				4021E71E20A21AD800B3DEB7 /* ContactsViewController.swift in Sources */,
 				4021E72820A2234F00B3DEB7 /* UIColor.swift in Sources */,
 				4021E72620A21E2F00B3DEB7 /* BaseViewController.swift in Sources */,
