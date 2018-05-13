@@ -24,6 +24,7 @@
 		0FC94F1420A6042700CDC810 /* AddArtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC94F1220A6042700CDC810 /* AddArtViewController.swift */; };
 		0FC94F1520A6042700CDC810 /* AddArtViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FC94F1320A6042700CDC810 /* AddArtViewController.xib */; };
 		0FC94F1720A60EFA00CDC810 /* AddArtViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC94F1620A60EFA00CDC810 /* AddArtViewModel.swift */; };
+		31C7D78CA4A3FDE08909D7CE /* Pods_iGift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14C8CC1954500D2FDE63CA5E /* Pods_iGift.framework */; };
 		4021E6E720A1CA1600B3DEB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4021E6E620A1CA1600B3DEB7 /* AppDelegate.swift */; };
 		4021E6EC20A1CA1600B3DEB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4021E6EA20A1CA1600B3DEB7 /* Main.storyboard */; };
 		4021E6EF20A1CA1600B3DEB7 /* iGift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4021E6ED20A1CA1600B3DEB7 /* iGift.xcdatamodeld */; };
@@ -108,6 +109,7 @@
 		0FC94F1220A6042700CDC810 /* AddArtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddArtViewController.swift; sourceTree = "<group>"; };
 		0FC94F1320A6042700CDC810 /* AddArtViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddArtViewController.xib; sourceTree = "<group>"; };
 		0FC94F1620A60EFA00CDC810 /* AddArtViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddArtViewModel.swift; sourceTree = "<group>"; };
+		14C8CC1954500D2FDE63CA5E /* Pods_iGift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iGift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4021E6E320A1CA1600B3DEB7 /* iGift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iGift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4021E6E620A1CA1600B3DEB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4021E6EB20A1CA1600B3DEB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 		40A7340720A82293009C0B9B /* SecurityAnswersViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecurityAnswersViewController.xib; sourceTree = "<group>"; };
 		40A7340920A822A7009C0B9B /* SecurityQuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityQuestionsViewController.swift; sourceTree = "<group>"; };
 		40A7340B20A822B8009C0B9B /* SecurityQuestionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecurityQuestionsViewController.xib; sourceTree = "<group>"; };
+		BF90EAD1A777AEBC93ABF445 /* Pods-iGift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iGift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iGift/Pods-iGift.debug.xcconfig"; sourceTree = "<group>"; };
 		C0E2163020A6EAE4002FF833 /* Senz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Senz.swift; sourceTree = "<group>"; };
 		C0E2163120A6EAE4002FF833 /* Igift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Igift.swift; sourceTree = "<group>"; };
 		C0E2163220A6EAE5002FF833 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -178,7 +181,19 @@
 		C0E2164120A6F21C002FF833 /* SwiftyRSA.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyRSA.framework; path = Carthage/Build/iOS/SwiftyRSA.framework; sourceTree = "<group>"; };
 		C0E2165020A6F52F002FF833 /* CryptoUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoUtil.swift; sourceTree = "<group>"; };
 		C0E2165120A6F52F002FF833 /* SenzDb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenzDb.swift; sourceTree = "<group>"; };
+		D65738BE925A263D5D5C084F /* Pods-iGift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iGift.release.xcconfig"; path = "Pods/Target Support Files/Pods-iGift/Pods-iGift.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9143CBAAF728C725783BB5D6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31C7D78CA4A3FDE08909D7CE /* Pods_iGift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		0F2EE36420A5943F003C9AEA /* CapturePhotoViewController */ = {
@@ -235,6 +250,7 @@
 				4021E6E520A1CA1600B3DEB7 /* iGift */,
 				4021E6E420A1CA1600B3DEB7 /* Products */,
 				C0E2163A20A6F20E002FF833 /* Frameworks */,
+				5B27B24A324EC1F7917A5AD9 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -607,6 +623,15 @@
 			path = SecurityAnswersViewController;
 			sourceTree = "<group>";
 		};
+		5B27B24A324EC1F7917A5AD9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BF90EAD1A777AEBC93ABF445 /* Pods-iGift.debug.xcconfig */,
+				D65738BE925A263D5D5C084F /* Pods-iGift.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C0E2163A20A6F20E002FF833 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -614,6 +639,7 @@
 				C0E2163F20A6F21A002FF833 /* SwiftSocket.framework */,
 				C0E2163D20A6F217002FF833 /* CommonCrypto.framework */,
 				C0E2163B20A6F20E002FF833 /* SQLite.framework */,
+				14C8CC1954500D2FDE63CA5E /* Pods_iGift.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -625,8 +651,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4021E6F820A1CA1700B3DEB7 /* Build configuration list for PBXNativeTarget "iGift" */;
 			buildPhases = (
+				275796CEF73CDB056D9A59B0 /* [CP] Check Pods Manifest.lock */,
 				4021E6DF20A1CA1600B3DEB7 /* Sources */,
 				4021E6E120A1CA1600B3DEB7 /* Resources */,
+				9143CBAAF728C725783BB5D6 /* Frameworks */,
+				B7E7D4FEC4B41BF729400F2C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -644,7 +673,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Creative Solutions";
 				TargetAttributes = {
 					4021E6E220A1CA1600B3DEB7 = {
@@ -705,6 +734,47 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		275796CEF73CDB056D9A59B0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iGift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B7E7D4FEC4B41BF729400F2C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-iGift/Pods-iGift-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyRSA/SwiftyRSA.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyRSA.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iGift/Pods-iGift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4021E6DF20A1CA1600B3DEB7 /* Sources */ = {
@@ -806,6 +876,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -813,6 +884,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -863,6 +935,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -870,6 +943,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -901,6 +975,7 @@
 		};
 		4021E6F920A1CA1700B3DEB7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF90EAD1A777AEBC93ABF445 /* Pods-iGift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -921,6 +996,7 @@
 		};
 		4021E6FA20A1CA1700B3DEB7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D65738BE925A263D5D5C084F /* Pods-iGift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

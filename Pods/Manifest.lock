@@ -1,0 +1,24 @@
+PODS:
+  - SQLite.swift (0.11.5):
+    - SQLite.swift/standard (= 0.11.5)
+  - SQLite.swift/standard (0.11.5)
+  - SwiftyRSA (1.4.0):
+    - SwiftyRSA/ObjC (= 1.4.0)
+  - SwiftyRSA/ObjC (1.4.0)
+
+DEPENDENCIES:
+  - SQLite.swift (~> 0.11.5)
+  - SwiftyRSA
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - SQLite.swift
+    - SwiftyRSA
+
+SPEC CHECKSUMS:
+  SQLite.swift: 6e5356850bb1791459f8c16d6ee9195b28714a2e
+  SwiftyRSA: 601e4585fece2c6c50ae93a67c77cc2426e55cb2
+
+PODFILE CHECKSUM: ac3744dfb428b8a22fa0d29a544b9528bc1de54c
+
+COCOAPODS: 1.5.2

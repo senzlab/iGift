@@ -1,0 +1,907 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		03F1A23F79FFB7948B5B6CDB0565605A /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966278471977207A6ABD73858996A6D3 /* Key.swift */; };
+		0427D097927CF0D990A826C0F7B5C682 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEDC2E512ACD5CB722F7ADF14560309F /* Foundation.framework */; };
+		0A8E735863CAAF2748A6F303A57AF84B /* CustomFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85DD2C4F697EFD79A78B1D1A054C102 /* CustomFunctions.swift */; };
+		0D03B6CEE26BC5711C6DD70EBA4B679F /* Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14423E3D5D7901D8E990231FE2322158 /* Schema.swift */; };
+		15800BA4DC40F0A6355900A678F06A58 /* Collation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190A2629EFD537650AD75CD6ECFCC370 /* Collation.swift */; };
+		18E3130B78FB3F6C3661670621AF6BAC /* EncryptedMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AB7CF8537A9208ECFEAACAD1AB9FD7 /* EncryptedMessage.swift */; };
+		1FBD1234215D63F5B8CBB6B0DEC5E76D /* CoreFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A21176A5D253ECD23C7042D8FB6BAE /* CoreFunctions.swift */; };
+		307877E914029C49E580C36FC51C93E9 /* DateAndTimeFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8909AD64324DDC16A593AF3E55084B /* DateAndTimeFunctions.swift */; };
+		316A39C6CB3312DD3F20E940A06E3422 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7570261E6ACC7105B21202B26AE43D97 /* Security.framework */; };
+		46DED8168369AD635ACD1EA9B7DCA8FD /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7355A57D6E18B8102A518352F582BB7F /* Operators.swift */; };
+		4A4864DB79016560BA1A469641A437F6 /* Signature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9733F63AA9BD00088A4E27B9C9B2F710 /* Signature.swift */; };
+		4B47377E86370468FE1389405498A91E /* PublicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8FE24035EDA6136518C1866C6C325E /* PublicKey.swift */; };
+		4CB569F4E2D0543E457DC6F433EA58F6 /* RTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289246BC7743F5EC42A93CD15B63445F /* RTree.swift */; };
+		53190EE324E31969CE694910B6B8A64C /* Coding.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8B3C5A69C1BB8004112DB8F39BF3DE /* Coding.swift */; };
+		5E68D70EFF838805C98865D341FF0DDE /* AggregateFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415786F2CA3BCFB818F3D076F2EE1453 /* AggregateFunctions.swift */; };
+		5F1281901D0C8847BAF4674AC938AA29 /* NSData+SHA.h in Headers */ = {isa = PBXBuildFile; fileRef = 9662B1A87340E67BCC3C414887267963 /* NSData+SHA.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		677FBE3BD37ECD2E1C1C4528E9EE549B /* SQLite-Bridging.h in Headers */ = {isa = PBXBuildFile; fileRef = DC4AE6F4CD3B5BB1EABD3180F5097A97 /* SQLite-Bridging.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6F7C15259882D27DCC097A4F0F5F0CB7 /* SQLite.swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C48FB58A8FDCB0BBCA4A76576F1AB0A4 /* SQLite.swift-dummy.m */; };
+		72495FB0FC77BBC743A86D41DE146B0B /* Blob.swift in Sources */ = {isa = PBXBuildFile; fileRef = B292C283B6F4DC27696990B51403A596 /* Blob.swift */; };
+		7619927DAA614761DFCE6F0726B1B044 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657A8C311E50FAFD368AA20C6F163638 /* Message.swift */; };
+		7EA2F7944F0973AAA32403D9597A0ACE /* SQLite.swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E972AF6E964ED532274C0C958EBCF38 /* SQLite.swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		878472D2CB7C8590EA581F4F6034EE72 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56582F8465A8C429B3E9D87D67B914C5 /* Query.swift */; };
+		88A3611254A24F711F67C66DB3BEA111 /* Pods-iGift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 55E763E366CEEF3C84B7DB22BB5593F7 /* Pods-iGift-dummy.m */; };
+		88C0E68A28E4A9F6A5BDC6CCE550C8B3 /* NSData+SHA.m in Sources */ = {isa = PBXBuildFile; fileRef = 19FB8978A55A3A6A2CDC3F27AF050640 /* NSData+SHA.m */; };
+		8D424F1E7B7C723B3013818202D804BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEDC2E512ACD5CB722F7ADF14560309F /* Foundation.framework */; };
+		8DB01050E42583A5B84BAAB5624DDE5A /* Value.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5880D714F35B41DAAA1D7D3B47189A /* Value.swift */; };
+		9013DB6B2F1BDDBFA856EC80D9CBD69B /* SwiftyRSA-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A80C95443072F8200E808E9DDCD6F356 /* SwiftyRSA-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		92207C82289FB8CC866B22797D838685 /* FTS4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098EEDA249D493F4A0A6DB1E49032620 /* FTS4.swift */; };
+		9F18D970861C25BC55989A278756B953 /* Setter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB196CE8103BC51EDFE8F1D2D6787F7 /* Setter.swift */; };
+		A4F445103CEE00AB8DC94810AB9D53D6 /* Asn1Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475825967E50693618BF2F40D1A861D9 /* Asn1Parser.swift */; };
+		A5FD72A103B9D57C90878300116564E4 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3927259F369A8C55D3BF5CF405AD91 /* Errors.swift */; };
+		B521D0D0135D2FAA904B83E49D357118 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280DD0B9968EB1ABC4E29F29128CD2C7 /* Helpers.swift */; };
+		B86B1D8017F68187EE5FE14DA4A95CA7 /* PrivateKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D94F3E5AE1101747C12CA2CB652A1F7 /* PrivateKey.swift */; };
+		B9DDB280CB3CF8BF886A20DDB5AEE923 /* SwiftyRSAError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD96C8179BA34EB9023A83C233CF222E /* SwiftyRSAError.swift */; };
+		BC9DF6ED6AD23642E60E643209637797 /* SQLite-Bridging.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B866AA3681CA31E250B73AA567A137E /* SQLite-Bridging.m */; };
+		BE2399A7D7E87D793D486DC206918E49 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEDC2E512ACD5CB722F7ADF14560309F /* Foundation.framework */; };
+		C8E9E32E0EB3FB24C4AAE1120C9A9138 /* SQLite.h in Headers */ = {isa = PBXBuildFile; fileRef = 20D26973DF42AAFDF0DB9C41F16BE774 /* SQLite.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CD497C25F39D23F5724A26DAF83FB6FC /* ClearMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1824801D0555D04069A09A6C3E239321 /* ClearMessage.swift */; };
+		D6D9C3AE3FC7DF731A57258CDF9DF126 /* Expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15160A6655D840A72246D8044A6EE76 /* Expression.swift */; };
+		DC6E87DC5208CA33F47DB8DC4AFF372C /* SwiftyRSA+ObjC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7227A5C64BF60E49FBF1823A512D4EA /* SwiftyRSA+ObjC.swift */; };
+		DE3A4CD202384A3739559F134DD7D862 /* Pods-iGift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F9E5027C39FA85721804EA99826EB855 /* Pods-iGift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E1D8B452971B5E4CED36C15A9D8821EE /* FTS5.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFDC8E9995AF2501EDE6EEB4FE8849A /* FTS5.swift */; };
+		E3406C6A632873BADA44A3C2AE2074FD /* Statement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E37C5A0811AE23CC8F0E1FE344EA19F /* Statement.swift */; };
+		E45EAA5003C1C804F0CE6A44F8D9033D /* SwiftyRSA.h in Headers */ = {isa = PBXBuildFile; fileRef = EFBE3138DAA0511AD07C6B22FD8FFEDE /* SwiftyRSA.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E6FECD443C47F869362FD03523676D6D /* Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B71765E1DD39FAC45661CB9CD562C66 /* Foundation.swift */; };
+		EABE8E908A6E795AA322C2C750F32DA3 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB64BC5731F04B26DC2EC747EBAE568 /* Connection.swift */; };
+		F021E1006667E9F0126AEA7A105DA00A /* fts3_tokenizer.h in Headers */ = {isa = PBXBuildFile; fileRef = F7B2B11B841D9B9A6321F3A283EAA76D /* fts3_tokenizer.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		F8BC68F66661F850AFF93B600A34E93E /* SwiftyRSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC74B0FB9FC05D85D0E0E418DFD38C8 /* SwiftyRSA.swift */; };
+		FC8FB514174178104EA4485085C0AFC7 /* SwiftyRSA-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2A9FAD6C38522128295DB6A7A87591 /* SwiftyRSA-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0A82A0AFE98856468FDA4351861DF252 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A36695BF4FE1D514250547E2518EEAAD;
+			remoteInfo = SwiftyRSA;
+		};
+		498AC81E594729883DB19E5D8FC6988D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4E774CFDC27D9C2A7F35205385ECEA29;
+			remoteInfo = SQLite.swift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		05A21176A5D253ECD23C7042D8FB6BAE /* CoreFunctions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CoreFunctions.swift; path = Sources/SQLite/Typed/CoreFunctions.swift; sourceTree = "<group>"; };
+		07B11AE9C8769C7D2F917F58EF1B3326 /* Pods-iGift-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-iGift-acknowledgements.plist"; sourceTree = "<group>"; };
+		08A548AD3BDF7AC2C0C77EF342030047 /* SwiftyRSA-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyRSA-prefix.pch"; sourceTree = "<group>"; };
+		098EEDA249D493F4A0A6DB1E49032620 /* FTS4.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FTS4.swift; path = Sources/SQLite/Extensions/FTS4.swift; sourceTree = "<group>"; };
+		0A6D0BD79B3321CA9EB942CC07A8D539 /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SQLite.framework; path = SQLite.swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0CB196CE8103BC51EDFE8F1D2D6787F7 /* Setter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Setter.swift; path = Sources/SQLite/Typed/Setter.swift; sourceTree = "<group>"; };
+		0E37C5A0811AE23CC8F0E1FE344EA19F /* Statement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Statement.swift; path = Sources/SQLite/Core/Statement.swift; sourceTree = "<group>"; };
+		14423E3D5D7901D8E990231FE2322158 /* Schema.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Schema.swift; path = Sources/SQLite/Typed/Schema.swift; sourceTree = "<group>"; };
+		1824801D0555D04069A09A6C3E239321 /* ClearMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ClearMessage.swift; path = SwiftyRSA/ClearMessage.swift; sourceTree = "<group>"; };
+		190A2629EFD537650AD75CD6ECFCC370 /* Collation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Collation.swift; path = Sources/SQLite/Typed/Collation.swift; sourceTree = "<group>"; };
+		19FB8978A55A3A6A2CDC3F27AF050640 /* NSData+SHA.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSData+SHA.m"; path = "SwiftyRSA/NSData+SHA.m"; sourceTree = "<group>"; };
+		1B71765E1DD39FAC45661CB9CD562C66 /* Foundation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Foundation.swift; path = Sources/SQLite/Foundation.swift; sourceTree = "<group>"; };
+		20D26973DF42AAFDF0DB9C41F16BE774 /* SQLite.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SQLite.h; path = Sources/SQLite/SQLite.h; sourceTree = "<group>"; };
+		280DD0B9968EB1ABC4E29F29128CD2C7 /* Helpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Helpers.swift; path = Sources/SQLite/Helpers.swift; sourceTree = "<group>"; };
+		289246BC7743F5EC42A93CD15B63445F /* RTree.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RTree.swift; path = Sources/SQLite/Extensions/RTree.swift; sourceTree = "<group>"; };
+		2B2A1A094F90404C9FE05060E2E40C04 /* Pods-iGift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iGift.debug.xcconfig"; sourceTree = "<group>"; };
+		2E972AF6E964ED532274C0C958EBCF38 /* SQLite.swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SQLite.swift-umbrella.h"; sourceTree = "<group>"; };
+		31B5EE8276470D257C8A4BB182B74785 /* Pods-iGift-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-iGift-frameworks.sh"; sourceTree = "<group>"; };
+		3E2A9FAD6C38522128295DB6A7A87591 /* SwiftyRSA-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyRSA-dummy.m"; sourceTree = "<group>"; };
+		3EB64BC5731F04B26DC2EC747EBAE568 /* Connection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Connection.swift; path = Sources/SQLite/Core/Connection.swift; sourceTree = "<group>"; };
+		415786F2CA3BCFB818F3D076F2EE1453 /* AggregateFunctions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AggregateFunctions.swift; path = Sources/SQLite/Typed/AggregateFunctions.swift; sourceTree = "<group>"; };
+		43ACC889542F971F004EE8A55D2A160B /* Pods-iGift-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-iGift-acknowledgements.markdown"; sourceTree = "<group>"; };
+		475825967E50693618BF2F40D1A861D9 /* Asn1Parser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Asn1Parser.swift; path = SwiftyRSA/Asn1Parser.swift; sourceTree = "<group>"; };
+		48E8E5DD4AC55A35136816D4678E109E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D94F3E5AE1101747C12CA2CB652A1F7 /* PrivateKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PrivateKey.swift; path = SwiftyRSA/PrivateKey.swift; sourceTree = "<group>"; };
+		55E763E366CEEF3C84B7DB22BB5593F7 /* Pods-iGift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-iGift-dummy.m"; sourceTree = "<group>"; };
+		56582F8465A8C429B3E9D87D67B914C5 /* Query.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Query.swift; path = Sources/SQLite/Typed/Query.swift; sourceTree = "<group>"; };
+		56B1F433E796D1D49FEFEBEEE427892F /* SwiftyRSA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyRSA.framework; path = SwiftyRSA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		657A8C311E50FAFD368AA20C6F163638 /* Message.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Message.swift; path = SwiftyRSA/Message.swift; sourceTree = "<group>"; };
+		6727073A8DD7B5ABA0CB00BE6B9E49C3 /* Pods-iGift-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-iGift-resources.sh"; sourceTree = "<group>"; };
+		7355A57D6E18B8102A518352F582BB7F /* Operators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = Sources/SQLite/Typed/Operators.swift; sourceTree = "<group>"; };
+		7570261E6ACC7105B21202B26AE43D97 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		7689FFB33D979D36FAEF80526F8238F9 /* SQLite.swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SQLite.swift.modulemap; sourceTree = "<group>"; };
+		7B866AA3681CA31E250B73AA567A137E /* SQLite-Bridging.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "SQLite-Bridging.m"; path = "Sources/SQLiteObjc/SQLite-Bridging.m"; sourceTree = "<group>"; };
+		8377A474EEC2809E6CA7E43AF4B3A640 /* SwiftyRSA.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyRSA.xcconfig; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		966278471977207A6ABD73858996A6D3 /* Key.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Key.swift; path = SwiftyRSA/Key.swift; sourceTree = "<group>"; };
+		9662B1A87340E67BCC3C414887267963 /* NSData+SHA.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSData+SHA.h"; path = "SwiftyRSA/NSData+SHA.h"; sourceTree = "<group>"; };
+		9733F63AA9BD00088A4E27B9C9B2F710 /* Signature.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Signature.swift; path = SwiftyRSA/Signature.swift; sourceTree = "<group>"; };
+		9999D370422D68627BCCF1004AA8F7B3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FC74B0FB9FC05D85D0E0E418DFD38C8 /* SwiftyRSA.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyRSA.swift; path = SwiftyRSA/SwiftyRSA.swift; sourceTree = "<group>"; };
+		A15160A6655D840A72246D8044A6EE76 /* Expression.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Expression.swift; path = Sources/SQLite/Typed/Expression.swift; sourceTree = "<group>"; };
+		A80C95443072F8200E808E9DDCD6F356 /* SwiftyRSA-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyRSA-umbrella.h"; sourceTree = "<group>"; };
+		AA8FE24035EDA6136518C1866C6C325E /* PublicKey.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PublicKey.swift; path = SwiftyRSA/PublicKey.swift; sourceTree = "<group>"; };
+		AD96C8179BA34EB9023A83C233CF222E /* SwiftyRSAError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyRSAError.swift; path = SwiftyRSA/SwiftyRSAError.swift; sourceTree = "<group>"; };
+		B292C283B6F4DC27696990B51403A596 /* Blob.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Blob.swift; path = Sources/SQLite/Core/Blob.swift; sourceTree = "<group>"; };
+		B85DD2C4F697EFD79A78B1D1A054C102 /* CustomFunctions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomFunctions.swift; path = Sources/SQLite/Typed/CustomFunctions.swift; sourceTree = "<group>"; };
+		B926BEA95D8E890DE0BE5534F5923791 /* Pods_iGift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_iGift.framework; path = "Pods-iGift.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC3927259F369A8C55D3BF5CF405AD91 /* Errors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Errors.swift; path = Sources/SQLite/Core/Errors.swift; sourceTree = "<group>"; };
+		C48FB58A8FDCB0BBCA4A76576F1AB0A4 /* SQLite.swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SQLite.swift-dummy.m"; sourceTree = "<group>"; };
+		C514F25DA7C0559E1404D4827880F2D4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE9CE0270FA0D4206C7B7F914427D4D9 /* SQLite.swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SQLite.swift-prefix.pch"; sourceTree = "<group>"; };
+		CEDC2E512ACD5CB722F7ADF14560309F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D07F39809CE6CD52386FEBFAD1C3CD34 /* Pods-iGift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iGift.release.xcconfig"; sourceTree = "<group>"; };
+		D5AB7CF8537A9208ECFEAACAD1AB9FD7 /* EncryptedMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EncryptedMessage.swift; path = SwiftyRSA/EncryptedMessage.swift; sourceTree = "<group>"; };
+		DC4AE6F4CD3B5BB1EABD3180F5097A97 /* SQLite-Bridging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SQLite-Bridging.h"; path = "Sources/SQLiteObjc/include/SQLite-Bridging.h"; sourceTree = "<group>"; };
+		E7227A5C64BF60E49FBF1823A512D4EA /* SwiftyRSA+ObjC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SwiftyRSA+ObjC.swift"; path = "SwiftyRSA/SwiftyRSA+ObjC.swift"; sourceTree = "<group>"; };
+		EB5880D714F35B41DAAA1D7D3B47189A /* Value.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Value.swift; path = Sources/SQLite/Core/Value.swift; sourceTree = "<group>"; };
+		EB8909AD64324DDC16A593AF3E55084B /* DateAndTimeFunctions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateAndTimeFunctions.swift; path = Sources/SQLite/Typed/DateAndTimeFunctions.swift; sourceTree = "<group>"; };
+		EB8B3C5A69C1BB8004112DB8F39BF3DE /* Coding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Coding.swift; path = Sources/SQLite/Typed/Coding.swift; sourceTree = "<group>"; };
+		ED1E3ECAF2E6057B1FB75E502050AABA /* Pods-iGift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-iGift.modulemap"; sourceTree = "<group>"; };
+		ED37CDA18D095F7B24E37ECB6B8BF2DC /* SwiftyRSA.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftyRSA.modulemap; sourceTree = "<group>"; };
+		EFBE3138DAA0511AD07C6B22FD8FFEDE /* SwiftyRSA.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SwiftyRSA.h; path = SwiftyRSA/SwiftyRSA.h; sourceTree = "<group>"; };
+		F7B2B11B841D9B9A6321F3A283EAA76D /* fts3_tokenizer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = fts3_tokenizer.h; path = Sources/SQLiteObjc/fts3_tokenizer.h; sourceTree = "<group>"; };
+		F9E5027C39FA85721804EA99826EB855 /* Pods-iGift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-iGift-umbrella.h"; sourceTree = "<group>"; };
+		FC3484A7F008029C9663C04D2511E7E6 /* SQLite.swift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SQLite.swift.xcconfig; sourceTree = "<group>"; };
+		FCFDC8E9995AF2501EDE6EEB4FE8849A /* FTS5.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FTS5.swift; path = Sources/SQLite/Extensions/FTS5.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		52B89CF1676CE085F0F7C3E3DFE1C708 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0427D097927CF0D990A826C0F7B5C682 /* Foundation.framework in Frameworks */,
+				316A39C6CB3312DD3F20E940A06E3422 /* Security.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BC74F4F642C61DB8C3732C4163A0A8E5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE2399A7D7E87D793D486DC206918E49 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC29D69A4652E1D68D7706D1B57C6FC7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D424F1E7B7C723B3013818202D804BC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0ABC5E0FE8C2358F22FA89BBDCD03F79 /* SwiftyRSA */ = {
+			isa = PBXGroup;
+			children = (
+				475825967E50693618BF2F40D1A861D9 /* Asn1Parser.swift */,
+				1824801D0555D04069A09A6C3E239321 /* ClearMessage.swift */,
+				D5AB7CF8537A9208ECFEAACAD1AB9FD7 /* EncryptedMessage.swift */,
+				966278471977207A6ABD73858996A6D3 /* Key.swift */,
+				657A8C311E50FAFD368AA20C6F163638 /* Message.swift */,
+				9662B1A87340E67BCC3C414887267963 /* NSData+SHA.h */,
+				19FB8978A55A3A6A2CDC3F27AF050640 /* NSData+SHA.m */,
+				4D94F3E5AE1101747C12CA2CB652A1F7 /* PrivateKey.swift */,
+				AA8FE24035EDA6136518C1866C6C325E /* PublicKey.swift */,
+				9733F63AA9BD00088A4E27B9C9B2F710 /* Signature.swift */,
+				EFBE3138DAA0511AD07C6B22FD8FFEDE /* SwiftyRSA.h */,
+				9FC74B0FB9FC05D85D0E0E418DFD38C8 /* SwiftyRSA.swift */,
+				AD96C8179BA34EB9023A83C233CF222E /* SwiftyRSAError.swift */,
+				6141BA80E8BECEB46A2D13C75663CD03 /* ObjC */,
+				95AE0866C8AE47F04370F5C87DE1A47E /* Support Files */,
+			);
+			name = SwiftyRSA;
+			path = SwiftyRSA;
+			sourceTree = "<group>";
+		};
+		3510E2AFDA41FAED9E3F1EC0A19CCA04 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B926BEA95D8E890DE0BE5534F5923791 /* Pods_iGift.framework */,
+				0A6D0BD79B3321CA9EB942CC07A8D539 /* SQLite.framework */,
+				56B1F433E796D1D49FEFEBEEE427892F /* SwiftyRSA.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				547FE7BE59B73C045A10943A669A2D8C /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		547FE7BE59B73C045A10943A669A2D8C /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CEDC2E512ACD5CB722F7ADF14560309F /* Foundation.framework */,
+				7570261E6ACC7105B21202B26AE43D97 /* Security.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		573455D885FFC5031C6F1C79D8A7C424 /* Pods-iGift */ = {
+			isa = PBXGroup;
+			children = (
+				C514F25DA7C0559E1404D4827880F2D4 /* Info.plist */,
+				ED1E3ECAF2E6057B1FB75E502050AABA /* Pods-iGift.modulemap */,
+				43ACC889542F971F004EE8A55D2A160B /* Pods-iGift-acknowledgements.markdown */,
+				07B11AE9C8769C7D2F917F58EF1B3326 /* Pods-iGift-acknowledgements.plist */,
+				55E763E366CEEF3C84B7DB22BB5593F7 /* Pods-iGift-dummy.m */,
+				31B5EE8276470D257C8A4BB182B74785 /* Pods-iGift-frameworks.sh */,
+				6727073A8DD7B5ABA0CB00BE6B9E49C3 /* Pods-iGift-resources.sh */,
+				F9E5027C39FA85721804EA99826EB855 /* Pods-iGift-umbrella.h */,
+				2B2A1A094F90404C9FE05060E2E40C04 /* Pods-iGift.debug.xcconfig */,
+				D07F39809CE6CD52386FEBFAD1C3CD34 /* Pods-iGift.release.xcconfig */,
+			);
+			name = "Pods-iGift";
+			path = "Target Support Files/Pods-iGift";
+			sourceTree = "<group>";
+		};
+		6141BA80E8BECEB46A2D13C75663CD03 /* ObjC */ = {
+			isa = PBXGroup;
+			children = (
+				E7227A5C64BF60E49FBF1823A512D4EA /* SwiftyRSA+ObjC.swift */,
+			);
+			name = ObjC;
+			sourceTree = "<group>";
+		};
+		6F2549A2FD51D9A0214EA61DA9319939 /* SQLite.swift */ = {
+			isa = PBXGroup;
+			children = (
+				CA2193F2F6375595EEDAD8057AAD6A15 /* standard */,
+				BA61BC3480E980ADAFEF365E43F13A03 /* Support Files */,
+			);
+			name = SQLite.swift;
+			path = SQLite.swift;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				A8258AFAD2153DC78A39F891DD3230AE /* Pods */,
+				3510E2AFDA41FAED9E3F1EC0A19CCA04 /* Products */,
+				CEF47ACC05B6151601DB01406B3E64A8 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		95AE0866C8AE47F04370F5C87DE1A47E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				48E8E5DD4AC55A35136816D4678E109E /* Info.plist */,
+				ED37CDA18D095F7B24E37ECB6B8BF2DC /* SwiftyRSA.modulemap */,
+				8377A474EEC2809E6CA7E43AF4B3A640 /* SwiftyRSA.xcconfig */,
+				3E2A9FAD6C38522128295DB6A7A87591 /* SwiftyRSA-dummy.m */,
+				08A548AD3BDF7AC2C0C77EF342030047 /* SwiftyRSA-prefix.pch */,
+				A80C95443072F8200E808E9DDCD6F356 /* SwiftyRSA-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftyRSA";
+			sourceTree = "<group>";
+		};
+		A8258AFAD2153DC78A39F891DD3230AE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6F2549A2FD51D9A0214EA61DA9319939 /* SQLite.swift */,
+				0ABC5E0FE8C2358F22FA89BBDCD03F79 /* SwiftyRSA */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BA61BC3480E980ADAFEF365E43F13A03 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				9999D370422D68627BCCF1004AA8F7B3 /* Info.plist */,
+				7689FFB33D979D36FAEF80526F8238F9 /* SQLite.swift.modulemap */,
+				FC3484A7F008029C9663C04D2511E7E6 /* SQLite.swift.xcconfig */,
+				C48FB58A8FDCB0BBCA4A76576F1AB0A4 /* SQLite.swift-dummy.m */,
+				CE9CE0270FA0D4206C7B7F914427D4D9 /* SQLite.swift-prefix.pch */,
+				2E972AF6E964ED532274C0C958EBCF38 /* SQLite.swift-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SQLite.swift";
+			sourceTree = "<group>";
+		};
+		CA2193F2F6375595EEDAD8057AAD6A15 /* standard */ = {
+			isa = PBXGroup;
+			children = (
+				415786F2CA3BCFB818F3D076F2EE1453 /* AggregateFunctions.swift */,
+				B292C283B6F4DC27696990B51403A596 /* Blob.swift */,
+				EB8B3C5A69C1BB8004112DB8F39BF3DE /* Coding.swift */,
+				190A2629EFD537650AD75CD6ECFCC370 /* Collation.swift */,
+				3EB64BC5731F04B26DC2EC747EBAE568 /* Connection.swift */,
+				05A21176A5D253ECD23C7042D8FB6BAE /* CoreFunctions.swift */,
+				B85DD2C4F697EFD79A78B1D1A054C102 /* CustomFunctions.swift */,
+				EB8909AD64324DDC16A593AF3E55084B /* DateAndTimeFunctions.swift */,
+				BC3927259F369A8C55D3BF5CF405AD91 /* Errors.swift */,
+				A15160A6655D840A72246D8044A6EE76 /* Expression.swift */,
+				1B71765E1DD39FAC45661CB9CD562C66 /* Foundation.swift */,
+				F7B2B11B841D9B9A6321F3A283EAA76D /* fts3_tokenizer.h */,
+				098EEDA249D493F4A0A6DB1E49032620 /* FTS4.swift */,
+				FCFDC8E9995AF2501EDE6EEB4FE8849A /* FTS5.swift */,
+				280DD0B9968EB1ABC4E29F29128CD2C7 /* Helpers.swift */,
+				7355A57D6E18B8102A518352F582BB7F /* Operators.swift */,
+				56582F8465A8C429B3E9D87D67B914C5 /* Query.swift */,
+				289246BC7743F5EC42A93CD15B63445F /* RTree.swift */,
+				14423E3D5D7901D8E990231FE2322158 /* Schema.swift */,
+				0CB196CE8103BC51EDFE8F1D2D6787F7 /* Setter.swift */,
+				20D26973DF42AAFDF0DB9C41F16BE774 /* SQLite.h */,
+				DC4AE6F4CD3B5BB1EABD3180F5097A97 /* SQLite-Bridging.h */,
+				7B866AA3681CA31E250B73AA567A137E /* SQLite-Bridging.m */,
+				0E37C5A0811AE23CC8F0E1FE344EA19F /* Statement.swift */,
+				EB5880D714F35B41DAAA1D7D3B47189A /* Value.swift */,
+			);
+			name = standard;
+			sourceTree = "<group>";
+		};
+		CEF47ACC05B6151601DB01406B3E64A8 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				573455D885FFC5031C6F1C79D8A7C424 /* Pods-iGift */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		2AB9CF371CDDB1A287B040EA3FF06C42 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE3A4CD202384A3739559F134DD7D862 /* Pods-iGift-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3744EB02D3CDB5A8E8E2CF159518EE4C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F021E1006667E9F0126AEA7A105DA00A /* fts3_tokenizer.h in Headers */,
+				677FBE3BD37ECD2E1C1C4528E9EE549B /* SQLite-Bridging.h in Headers */,
+				C8E9E32E0EB3FB24C4AAE1120C9A9138 /* SQLite.h in Headers */,
+				7EA2F7944F0973AAA32403D9597A0ACE /* SQLite.swift-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF356663C1ABB8A9BA57ED2A04BAC3A4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F1281901D0C8847BAF4674AC938AA29 /* NSData+SHA.h in Headers */,
+				9013DB6B2F1BDDBFA856EC80D9CBD69B /* SwiftyRSA-umbrella.h in Headers */,
+				E45EAA5003C1C804F0CE6A44F8D9033D /* SwiftyRSA.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		4E774CFDC27D9C2A7F35205385ECEA29 /* SQLite.swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 87670EE34C9785D6C8EA77B1865B3566 /* Build configuration list for PBXNativeTarget "SQLite.swift" */;
+			buildPhases = (
+				8914C04BABD1A80CDC808AA532A51EC2 /* Sources */,
+				DC29D69A4652E1D68D7706D1B57C6FC7 /* Frameworks */,
+				3744EB02D3CDB5A8E8E2CF159518EE4C /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SQLite.swift;
+			productName = SQLite.swift;
+			productReference = 0A6D0BD79B3321CA9EB942CC07A8D539 /* SQLite.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		905FD5EB9F7D50F85150DD07F40AEA0E /* Pods-iGift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5D89D1BE206EB4B9DE1971AD69485361 /* Build configuration list for PBXNativeTarget "Pods-iGift" */;
+			buildPhases = (
+				C79180C2D513BADD9A4B916F57DE4143 /* Sources */,
+				BC74F4F642C61DB8C3732C4163A0A8E5 /* Frameworks */,
+				2AB9CF371CDDB1A287B040EA3FF06C42 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DC826D643E0B38CBB0F04DCA0AB0E097 /* PBXTargetDependency */,
+				4946C0538B7D2EE4325B96AD7D232ECA /* PBXTargetDependency */,
+			);
+			name = "Pods-iGift";
+			productName = "Pods-iGift";
+			productReference = B926BEA95D8E890DE0BE5534F5923791 /* Pods_iGift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A36695BF4FE1D514250547E2518EEAAD /* SwiftyRSA */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 61EDEBC87E4D26D524763D309E59E94C /* Build configuration list for PBXNativeTarget "SwiftyRSA" */;
+			buildPhases = (
+				0BCE7EF0BE4702B12EB4D498EF6BD5E4 /* Sources */,
+				52B89CF1676CE085F0F7C3E3DFE1C708 /* Frameworks */,
+				FF356663C1ABB8A9BA57ED2A04BAC3A4 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftyRSA;
+			productName = SwiftyRSA;
+			productReference = 56B1F433E796D1D49FEFEBEEE427892F /* SwiftyRSA.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 3510E2AFDA41FAED9E3F1EC0A19CCA04 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				905FD5EB9F7D50F85150DD07F40AEA0E /* Pods-iGift */,
+				4E774CFDC27D9C2A7F35205385ECEA29 /* SQLite.swift */,
+				A36695BF4FE1D514250547E2518EEAAD /* SwiftyRSA */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0BCE7EF0BE4702B12EB4D498EF6BD5E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4F445103CEE00AB8DC94810AB9D53D6 /* Asn1Parser.swift in Sources */,
+				CD497C25F39D23F5724A26DAF83FB6FC /* ClearMessage.swift in Sources */,
+				18E3130B78FB3F6C3661670621AF6BAC /* EncryptedMessage.swift in Sources */,
+				03F1A23F79FFB7948B5B6CDB0565605A /* Key.swift in Sources */,
+				7619927DAA614761DFCE6F0726B1B044 /* Message.swift in Sources */,
+				88C0E68A28E4A9F6A5BDC6CCE550C8B3 /* NSData+SHA.m in Sources */,
+				B86B1D8017F68187EE5FE14DA4A95CA7 /* PrivateKey.swift in Sources */,
+				4B47377E86370468FE1389405498A91E /* PublicKey.swift in Sources */,
+				4A4864DB79016560BA1A469641A437F6 /* Signature.swift in Sources */,
+				DC6E87DC5208CA33F47DB8DC4AFF372C /* SwiftyRSA+ObjC.swift in Sources */,
+				FC8FB514174178104EA4485085C0AFC7 /* SwiftyRSA-dummy.m in Sources */,
+				F8BC68F66661F850AFF93B600A34E93E /* SwiftyRSA.swift in Sources */,
+				B9DDB280CB3CF8BF886A20DDB5AEE923 /* SwiftyRSAError.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8914C04BABD1A80CDC808AA532A51EC2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5E68D70EFF838805C98865D341FF0DDE /* AggregateFunctions.swift in Sources */,
+				72495FB0FC77BBC743A86D41DE146B0B /* Blob.swift in Sources */,
+				53190EE324E31969CE694910B6B8A64C /* Coding.swift in Sources */,
+				15800BA4DC40F0A6355900A678F06A58 /* Collation.swift in Sources */,
+				EABE8E908A6E795AA322C2C750F32DA3 /* Connection.swift in Sources */,
+				1FBD1234215D63F5B8CBB6B0DEC5E76D /* CoreFunctions.swift in Sources */,
+				0A8E735863CAAF2748A6F303A57AF84B /* CustomFunctions.swift in Sources */,
+				307877E914029C49E580C36FC51C93E9 /* DateAndTimeFunctions.swift in Sources */,
+				A5FD72A103B9D57C90878300116564E4 /* Errors.swift in Sources */,
+				D6D9C3AE3FC7DF731A57258CDF9DF126 /* Expression.swift in Sources */,
+				E6FECD443C47F869362FD03523676D6D /* Foundation.swift in Sources */,
+				92207C82289FB8CC866B22797D838685 /* FTS4.swift in Sources */,
+				E1D8B452971B5E4CED36C15A9D8821EE /* FTS5.swift in Sources */,
+				B521D0D0135D2FAA904B83E49D357118 /* Helpers.swift in Sources */,
+				46DED8168369AD635ACD1EA9B7DCA8FD /* Operators.swift in Sources */,
+				878472D2CB7C8590EA581F4F6034EE72 /* Query.swift in Sources */,
+				4CB569F4E2D0543E457DC6F433EA58F6 /* RTree.swift in Sources */,
+				0D03B6CEE26BC5711C6DD70EBA4B679F /* Schema.swift in Sources */,
+				9F18D970861C25BC55989A278756B953 /* Setter.swift in Sources */,
+				BC9DF6ED6AD23642E60E643209637797 /* SQLite-Bridging.m in Sources */,
+				6F7C15259882D27DCC097A4F0F5F0CB7 /* SQLite.swift-dummy.m in Sources */,
+				E3406C6A632873BADA44A3C2AE2074FD /* Statement.swift in Sources */,
+				8DB01050E42583A5B84BAAB5624DDE5A /* Value.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C79180C2D513BADD9A4B916F57DE4143 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88A3611254A24F711F67C66DB3BEA111 /* Pods-iGift-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4946C0538B7D2EE4325B96AD7D232ECA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftyRSA;
+			target = A36695BF4FE1D514250547E2518EEAAD /* SwiftyRSA */;
+			targetProxy = 0A82A0AFE98856468FDA4351861DF252 /* PBXContainerItemProxy */;
+		};
+		DC826D643E0B38CBB0F04DCA0AB0E097 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SQLite.swift;
+			target = 4E774CFDC27D9C2A7F35205385ECEA29 /* SQLite.swift */;
+			targetProxy = 498AC81E594729883DB19E5D8FC6988D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0C42328EBB6A12A918CF8421107689A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B2A1A094F90404C9FE05060E2E40C04 /* Pods-iGift.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-iGift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-iGift/Pods-iGift.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		1785A38F0090CA3475DC7886CFF2AA0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC3484A7F008029C9663C04D2511E7E6 /* SQLite.swift.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SQLite.swift/SQLite.swift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SQLite.swift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SQLite.swift/SQLite.swift.modulemap";
+				PRODUCT_MODULE_NAME = SQLite;
+				PRODUCT_NAME = SQLite;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		199D972A13F2B4C56847F7A89CCA83BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		20D803BC864573C4AFBD66EBC986F175 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8377A474EEC2809E6CA7E43AF4B3A640 /* SwiftyRSA.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyRSA/SwiftyRSA-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyRSA/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftyRSA/SwiftyRSA.modulemap";
+				PRODUCT_MODULE_NAME = SwiftyRSA;
+				PRODUCT_NAME = SwiftyRSA;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		60883BF19678C178C601F4568F6DD436 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC3484A7F008029C9663C04D2511E7E6 /* SQLite.swift.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SQLite.swift/SQLite.swift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SQLite.swift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SQLite.swift/SQLite.swift.modulemap";
+				PRODUCT_MODULE_NAME = SQLite;
+				PRODUCT_NAME = SQLite;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		73BDED1BF481F621BB3ABBF90BE8DA2B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8377A474EEC2809E6CA7E43AF4B3A640 /* SwiftyRSA.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyRSA/SwiftyRSA-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyRSA/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftyRSA/SwiftyRSA.modulemap";
+				PRODUCT_MODULE_NAME = SwiftyRSA;
+				PRODUCT_NAME = SwiftyRSA;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C45AD52C2E4678ACC5A06F83D241B3FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D07F39809CE6CD52386FEBFAD1C3CD34 /* Pods-iGift.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-iGift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-iGift/Pods-iGift.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FDB2FC4A1E5891381CD9D922145497F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				199D972A13F2B4C56847F7A89CCA83BC /* Debug */,
+				FDB2FC4A1E5891381CD9D922145497F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5D89D1BE206EB4B9DE1971AD69485361 /* Build configuration list for PBXNativeTarget "Pods-iGift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C42328EBB6A12A918CF8421107689A7 /* Debug */,
+				C45AD52C2E4678ACC5A06F83D241B3FA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		61EDEBC87E4D26D524763D309E59E94C /* Build configuration list for PBXNativeTarget "SwiftyRSA" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73BDED1BF481F621BB3ABBF90BE8DA2B /* Debug */,
+				20D803BC864573C4AFBD66EBC986F175 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		87670EE34C9785D6C8EA77B1865B3566 /* Build configuration list for PBXNativeTarget "SQLite.swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1785A38F0090CA3475DC7886CFF2AA0C /* Debug */,
+				60883BF19678C178C601F4568F6DD436 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
