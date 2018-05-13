@@ -9,10 +9,11 @@
 import Foundation
 
 class PreferenceUtil {
+    static let instance = PreferenceUtil()
     
     static let PUBLIC_KEY = "PUBLIC_KEY"
     static let PRIVATE_KEY = "PRIVATE_KEY"
-    
+    static let Z_ADDRESS = "Z_ADDRESS"
     
     let userDefaults = UserDefaults.standard
     

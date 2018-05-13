@@ -9,6 +9,8 @@
 import Foundation
 
 class SenzUtil {
+    static let instance = SenzUtil()
+    
     func parse(msg: String) -> Senz? {
         let tokens = msg.components(separatedBy: " ")
         let senz = Senz()
@@ -41,15 +43,18 @@ class SenzUtil {
         return senz
     }
     
-    func regSenz(fromZaddress: String, toZaddress: String, pubkey: String) -> String {
-        let uid = fromZaddress + String(Int(Date().timeIntervalSince1970 * 1000))
+    func regSenz(uid: String, zAddress: String) -> String? {
+        let pubkey = PreferenceUtil.instance.get(key: PreferenceUtil.PUBLIC_KEY)
         let senz = "SHARE" +
             " #uid " + uid +
             " #pubkey " + pubkey +
-            " @" + toZaddress +
-            " ^" + fromZaddress
-        
-        return senz
+            " @" + "senzswitch" +
+            " ^" + zAddress
+        let signature = CryptoUtil.instance.sign(payload: senz)
+        return senz + " " + signature
     }
     
+    func uid(zAddress: String) -> String {
+        return zAddress + String(Int(Date().timeIntervalSince1970 * 1000))
+    }
 }
