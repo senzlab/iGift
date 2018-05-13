@@ -1,10 +1,10 @@
-## iGift
+## igift
 
 iGift app on blockchain
 
 ## install
 
-we are using pods to get crypto and some other libraries
+we are using pods to setup the libraries
 
 ```
 # clone
@@ -17,7 +17,7 @@ open iGift.xcworkspace
 
 ## setup pods
 
-if want to manually setup pods, please use below command
+manually setup pods via
 
 ```
 pod install --repo-update
