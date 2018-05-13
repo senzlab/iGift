@@ -47,6 +47,10 @@ class ApplicationViewController : UIViewController {
             return ContactsViewController(nibName: "ContactsViewController", bundle: nil)
         case "HomeViewController":
             return HomeViewController(nibName: "HomeViewController", bundle: nil)
+        case "SecurityAnswersViewController":
+            return SecurityAnswersViewController(nibName: "SecurityAnswersViewController", bundle: nil)
+        case "SecurityQuestionsViewController":
+            return SecurityQuestionsViewController(nibName: "SecurityQuestionsViewController", bundle: nil)
         default:
             return nil
         }

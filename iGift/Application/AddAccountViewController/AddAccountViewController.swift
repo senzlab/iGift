@@ -6,7 +6,6 @@
 //  Copyright © 2018 Creative Solutions. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class AddAccountViewController : BaseViewController {
@@ -17,11 +16,6 @@ class AddAccountViewController : BaseViewController {
     }
 
     func setupUi() {
-        // NavBar
-        self.setNavBarHidden(false)
-        self.navigationController?.navigationBar.isTranslucent = false
-        self.navigationController?.navigationBar.barTintColor = UIColor.fromHex(HexColors.PRIMARY_COLOR.rawValue)
-        self.navigationController?.navigationBar.backgroundColor = UIColor.fromHex(HexColors.PRIMARY_COLOR.rawValue)
         self.title = "Add account"
     }
 

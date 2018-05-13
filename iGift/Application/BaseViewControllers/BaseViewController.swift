@@ -6,17 +6,17 @@
 //  Copyright © 2018 Creative Solutions. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class BaseViewController : ApplicationViewController {
 
     // Defaults
-    var isNavBarHidden = true
+    var isNavBarHidden = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyBoardOnLostFocus()
+        self.setEmptyBackButton()
 
         // Ensure all view controllers frame stays within bounds
         edgesForExtendedLayout = []
@@ -34,5 +34,10 @@ class BaseViewController : ApplicationViewController {
 
     func setNavBarHidden(_ hide: Bool) {
         self.isNavBarHidden = hide
+    }
+
+    func setEmptyBackButton() {
+        self.navigationItem.backBarButtonItem =
+            UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
 }

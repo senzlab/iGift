@@ -67,18 +67,18 @@
 		4087152620A4ED86007B3E4C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4087152520A4ED86007B3E4C /* RegisterViewController.swift */; };
 		4087152820A4ED96007B3E4C /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4087152720A4ED96007B3E4C /* RegisterViewController.xib */; };
 		4087152A20A5E5F8007B3E4C /* ApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4087152920A5E5F8007B3E4C /* ApplicationViewController.swift */; };
-		4087152C20A5EAB3007B3E4C /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4087152B20A5EAB3007B3E4C /* CustomTextField.swift */; };
 		4087152E20A5F89D007B3E4C /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4087152D20A5F89D007B3E4C /* UITextField.swift */; };
 		4087153020A5FEAD007B3E4C /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4087152F20A5FEAD007B3E4C /* UIViewController.swift */; };
+		40A7340220A81DCD009C0B9B /* KeyboardScrollableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A7340120A81DCD009C0B9B /* KeyboardScrollableViewController.swift */; };
+		40A7340620A82288009C0B9B /* SecurityAnswersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A7340520A82288009C0B9B /* SecurityAnswersViewController.swift */; };
+		40A7340820A82293009C0B9B /* SecurityAnswersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40A7340720A82293009C0B9B /* SecurityAnswersViewController.xib */; };
+		40A7340A20A822A7009C0B9B /* SecurityQuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A7340920A822A7009C0B9B /* SecurityQuestionsViewController.swift */; };
+		40A7340C20A822B8009C0B9B /* SecurityQuestionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40A7340B20A822B8009C0B9B /* SecurityQuestionsViewController.xib */; };
 		C0E2163320A6EAE5002FF833 /* Senz.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E2163020A6EAE4002FF833 /* Senz.swift */; };
 		C0E2163420A6EAE5002FF833 /* Igift.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E2163120A6EAE4002FF833 /* Igift.swift */; };
 		C0E2163520A6EAE5002FF833 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E2163220A6EAE5002FF833 /* User.swift */; };
 		C0E2163720A6ED32002FF833 /* PreferenceUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E2163620A6ED31002FF833 /* PreferenceUtil.swift */; };
 		C0E2163920A6EF25002FF833 /* SenzUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E2163820A6EF25002FF833 /* SenzUtil.swift */; };
-		C0E2163C20A6F20E002FF833 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E2163B20A6F20E002FF833 /* SQLite.framework */; };
-		C0E2163E20A6F217002FF833 /* CommonCrypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E2163D20A6F217002FF833 /* CommonCrypto.framework */; };
-		C0E2164020A6F21A002FF833 /* SwiftSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E2163F20A6F21A002FF833 /* SwiftSocket.framework */; };
-		C0E2164220A6F21C002FF833 /* SwiftyRSA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E2164120A6F21C002FF833 /* SwiftyRSA.framework */; };
 		C0E2165220A6F52F002FF833 /* CryptoUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E2165020A6F52F002FF833 /* CryptoUtil.swift */; };
 		C0E2165320A6F52F002FF833 /* SenzDb.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E2165120A6F52F002FF833 /* SenzDb.swift */; };
 /* End PBXBuildFile section */
@@ -146,9 +146,13 @@
 		4087152520A4ED86007B3E4C /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		4087152720A4ED96007B3E4C /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
 		4087152920A5E5F8007B3E4C /* ApplicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationViewController.swift; sourceTree = "<group>"; };
-		4087152B20A5EAB3007B3E4C /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		4087152D20A5F89D007B3E4C /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		4087152F20A5FEAD007B3E4C /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		40A7340120A81DCD009C0B9B /* KeyboardScrollableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardScrollableViewController.swift; sourceTree = "<group>"; };
+		40A7340520A82288009C0B9B /* SecurityAnswersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityAnswersViewController.swift; sourceTree = "<group>"; };
+		40A7340720A82293009C0B9B /* SecurityAnswersViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecurityAnswersViewController.xib; sourceTree = "<group>"; };
+		40A7340920A822A7009C0B9B /* SecurityQuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityQuestionsViewController.swift; sourceTree = "<group>"; };
+		40A7340B20A822B8009C0B9B /* SecurityQuestionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecurityQuestionsViewController.xib; sourceTree = "<group>"; };
 		C0E2163020A6EAE4002FF833 /* Senz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Senz.swift; sourceTree = "<group>"; };
 		C0E2163120A6EAE4002FF833 /* Igift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Igift.swift; sourceTree = "<group>"; };
 		C0E2163220A6EAE5002FF833 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -161,20 +165,6 @@
 		C0E2165020A6F52F002FF833 /* CryptoUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoUtil.swift; sourceTree = "<group>"; };
 		C0E2165120A6F52F002FF833 /* SenzDb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenzDb.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		4021E6E020A1CA1600B3DEB7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C0E2163C20A6F20E002FF833 /* SQLite.framework in Frameworks */,
-				C0E2163E20A6F217002FF833 /* CommonCrypto.framework in Frameworks */,
-				C0E2164020A6F21A002FF833 /* SwiftSocket.framework in Frameworks */,
-				C0E2164220A6F21C002FF833 /* SwiftyRSA.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		0F2EE36420A5943F003C9AEA /* CapturePhotoViewController */ = {
@@ -305,6 +295,8 @@
 		4021E70020A1CD0000B3DEB7 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				40A7340420A82223009C0B9B /* SecurityAnswersViewController */,
+				40A7340320A82203009C0B9B /* SecurityQuestionsViewController */,
 				0FC94F1120A603E100CDC810 /* AddArtViewController */,
 				0F2EE36420A5943F003C9AEA /* CapturePhotoViewController */,
 				4087152420A4ED4F007B3E4C /* RegisterViewController */,
@@ -444,6 +436,7 @@
 			children = (
 				4021E72520A21E2F00B3DEB7 /* BaseViewController.swift */,
 				4087152920A5E5F8007B3E4C /* ApplicationViewController.swift */,
+				40A7340120A81DCD009C0B9B /* KeyboardScrollableViewController.swift */,
 			);
 			path = BaseViewControllers;
 			sourceTree = "<group>";
@@ -483,7 +476,6 @@
 				4087151620A3FECF007B3E4C /* CustomImageView.swift */,
 				4087151920A488ED007B3E4C /* CustomSearchBar.swift */,
 				4087152220A4BE5F007B3E4C /* CustomTableView.swift */,
-				4087152B20A5EAB3007B3E4C /* CustomTextField.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -552,6 +544,24 @@
 			path = RegisterViewController;
 			sourceTree = "<group>";
 		};
+		40A7340320A82203009C0B9B /* SecurityQuestionsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				40A7340920A822A7009C0B9B /* SecurityQuestionsViewController.swift */,
+				40A7340B20A822B8009C0B9B /* SecurityQuestionsViewController.xib */,
+			);
+			path = SecurityQuestionsViewController;
+			sourceTree = "<group>";
+		};
+		40A7340420A82223009C0B9B /* SecurityAnswersViewController */ = {
+			isa = PBXGroup;
+			children = (
+				40A7340520A82288009C0B9B /* SecurityAnswersViewController.swift */,
+				40A7340720A82293009C0B9B /* SecurityAnswersViewController.xib */,
+			);
+			path = SecurityAnswersViewController;
+			sourceTree = "<group>";
+		};
 		C0E2163A20A6F20E002FF833 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -571,9 +581,7 @@
 			buildConfigurationList = 4021E6F820A1CA1700B3DEB7 /* Build configuration list for PBXNativeTarget "iGift" */;
 			buildPhases = (
 				4021E6DF20A1CA1600B3DEB7 /* Sources */,
-				4021E6E020A1CA1600B3DEB7 /* Frameworks */,
 				4021E6E120A1CA1600B3DEB7 /* Resources */,
-				C0E2164320A6F284002FF833 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -634,6 +642,8 @@
 				408714F020A3326E007B3E4C /* GeosansLight-Oblique.ttf in Resources */,
 				408714F620A337CC007B3E4C /* CustomSettingCell.xib in Resources */,
 				0F2EE36820A59466003C9AEA /* CapturePhotoViewController.xib in Resources */,
+				40A7340820A82293009C0B9B /* SecurityAnswersViewController.xib in Resources */,
+				40A7340C20A822B8009C0B9B /* SecurityQuestionsViewController.xib in Resources */,
 				408714F120A3326E007B3E4C /* GeosansLight.ttf in Resources */,
 				4021E72E20A22B6700B3DEB7 /* SendIGiftsViewController.xib in Resources */,
 				4021E70620A1CFED00B3DEB7 /* HomeViewController.xib in Resources */,
@@ -647,26 +657,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		C0E2164320A6F284002FF833 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/CommonCrypto.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/SQLite.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/SwiftSocket.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/SwiftyRSA.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4021E6DF20A1CA1600B3DEB7 /* Sources */ = {
@@ -684,6 +674,7 @@
 				4087150720A38737007B3E4C /* HexColors.swift in Sources */,
 				4087150220A34B59007B3E4C /* CustomLabel.swift in Sources */,
 				4087151520A391EE007B3E4C /* CustomPhoneBookCell.swift in Sources */,
+				40A7340620A82288009C0B9B /* SecurityAnswersViewController.swift in Sources */,
 				408714FE20A34996007B3E4C /* UIFont.swift in Sources */,
 				4021E6EF20A1CA1600B3DEB7 /* iGift.xcdatamodeld in Sources */,
 				0F7C393220A4218500DF5BF6 /* ChooseBackgroundViewContoller.swift in Sources */,
@@ -696,7 +687,6 @@
 				4087150920A38742007B3E4C /* Constants.swift in Sources */,
 				0FC94F1420A6042700CDC810 /* AddArtViewController.swift in Sources */,
 				4021E6E720A1CA1600B3DEB7 /* AppDelegate.swift in Sources */,
-				4087152C20A5EAB3007B3E4C /* CustomTextField.swift in Sources */,
 				4087152120A4ACA6007B3E4C /* PhoneBook.swift in Sources */,
 				C0E2163520A6EAE5002FF833 /* User.swift in Sources */,
 				408714F420A337AD007B3E4C /* CustomSettingCell.swift in Sources */,
@@ -714,6 +704,7 @@
 				4021E71E20A21AD800B3DEB7 /* ContactsViewController.swift in Sources */,
 				4021E72820A2234F00B3DEB7 /* UIColor.swift in Sources */,
 				4021E72620A21E2F00B3DEB7 /* BaseViewController.swift in Sources */,
+				40A7340220A81DCD009C0B9B /* KeyboardScrollableViewController.swift in Sources */,
 				0F2EE36720A59466003C9AEA /* CapturePhotoViewController.swift in Sources */,
 				4021E73020A22B7500B3DEB7 /* SendIGiftsViewController.swift in Sources */,
 				0F9138F320A34E400011DF2C /* DesignIGiftViewController.swift in Sources */,
@@ -722,6 +713,7 @@
 				0F2EE36C20A5A6BE003C9AEA /* GiftCard.swift in Sources */,
 				C0E2163320A6EAE5002FF833 /* Senz.swift in Sources */,
 				408714E820A31458007B3E4C /* AddAccountViewController.swift in Sources */,
+				40A7340A20A822A7009C0B9B /* SecurityQuestionsViewController.swift in Sources */,
 				4021E72220A21DCE00B3DEB7 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -860,7 +852,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S67FEK7CTT;
+				DEVELOPMENT_TEAM = 67S5W9JU3Z;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -880,7 +872,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S67FEK7CTT;
+				DEVELOPMENT_TEAM = 67S5W9JU3Z;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",

@@ -9,7 +9,13 @@
 import UIKit
 
 extension UITextField {
-    class func applyStyle(txtField: UITextField, borderWidth: Float = 1.0, borderColor: UIColor = UIColor.white, textColor: UIColor = UIColor.white, placeHolderColor: UIColor = UIColor.white) {
+    class func applyStyle(
+        txtField: UITextField,
+        borderWidth: Float = 1.0,
+        borderColor: UIColor = UIColor.white,
+        textColor: UIColor = UIColor.white,
+        placeHolderColor: UIColor = UIColor.white,
+        fontFamily: String = Constants.MAIN_FONT_FAMILY.rawValue) {
 
         // Apply Border
         let border = CALayer()
@@ -23,11 +29,14 @@ extension UITextField {
         // Set Cursor Color
         txtField.tintColor = textColor
 
+        // Set font
+        txtField.font = txtField.font?.fontWithName(name: fontFamily)
 
-        // Set Placeholder Color
+        // Set Placeholder style
         if let placeholder = txtField.placeholder {
         txtField.attributedPlaceholder = NSAttributedString(string: placeholder,
-                                                            attributes: [NSAttributedStringKey.foregroundColor: placeHolderColor.withAlphaComponent(0.5)])
+                                                            attributes: [NSAttributedStringKey.foregroundColor: placeHolderColor.withAlphaComponent(0.7),
+                                                                         NSAttributedStringKey.font : txtField.font!])
         }
     }
 }

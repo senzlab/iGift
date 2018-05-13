@@ -30,7 +30,6 @@ class CapturePhotoViewController: BaseViewController {
     
     //    MARK: Supportive functions
     func setupUi() {
-        self.setNavBarHidden(false)
         self.title = "Capture Photo"
 
         //        Creating a circular button

@@ -65,7 +65,6 @@ class ChooseBackgroundViewContoller: BaseViewController, UICollectionViewDataSou
     
     //    MARK: Supportive functions
     func setupUi() {
-        self.setNavBarHidden(false)
         self.title = "Choose background"
     }
 }

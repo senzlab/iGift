@@ -67,7 +67,6 @@ class AddArtViewController: BaseViewController, UICollectionViewDataSource, UICo
     
     //    MARK: Supportive functions
     func setupUi() {
-        self.setNavBarHidden(false)
         self.title = "Add sticker"
     }
 }

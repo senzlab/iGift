@@ -127,7 +127,6 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
     
     //    MARK: Supportive functions
     func setupUi() {
-        self.setNavBarHidden(false)
         self.title = "Design iGifts"
         
 //        Creating a circular button

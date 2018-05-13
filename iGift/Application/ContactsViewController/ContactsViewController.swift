@@ -21,8 +21,6 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
     }
 
     func setupUi() {
-        // NavBar
-        self.setNavBarHidden(false)
         self.title = "Contacts"
 
     }

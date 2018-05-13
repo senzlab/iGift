@@ -17,7 +17,6 @@ class SendIGiftsViewController : BaseViewController {
     }
 
     func setupUi() {
-        self.setNavBarHidden(false)
         self.title = "Send iGifts"
     }
 }

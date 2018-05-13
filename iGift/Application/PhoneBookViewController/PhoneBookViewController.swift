@@ -31,8 +31,6 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
     }
 
     func setupUi() {
-        // NavBar
-        self.setNavBarHidden(false)
         self.configureCustomSearchController()
         self.title = "Phone Book"
 

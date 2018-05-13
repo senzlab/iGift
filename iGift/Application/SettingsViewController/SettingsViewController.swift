@@ -20,7 +20,6 @@ class SettingsViewController : BaseViewController, UITableViewDelegate, UITableV
     }
 
     func setupUi() {
-        self.setNavBarHidden(false)
         self.title = "Settings"
     }
 
