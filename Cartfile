@@ -1,4 +1,0 @@
-github "soffes/CommonCrypto"
-github "stephencelis/SQLite.swift" ~> 0.11.5
-github "swiftsocket/SwiftSocket"
-github "TakeScoop/SwiftyRSA"
