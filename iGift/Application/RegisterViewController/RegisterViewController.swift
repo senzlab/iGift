@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 import Foundation
-import Alamofire
 
 // Class that load all view controllers on the main thread
 class RegisterViewController : KeyboardScrollableViewController {
