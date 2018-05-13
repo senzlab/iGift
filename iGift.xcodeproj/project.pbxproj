@@ -92,6 +92,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F0C35D420A8ABDA008B77C4 /* iGift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iGift.entitlements; sourceTree = "<group>"; };
 		0F1081BB20A6E8760024C9BD /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		0F1081BC20A6E8770024C9BD /* NotificationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
 		0F1081BF20A6E8AD0024C9BD /* DesignIGiftViewControllerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignIGiftViewControllerModel.swift; sourceTree = "<group>"; };
@@ -265,6 +266,7 @@
 		4021E6E520A1CA1600B3DEB7 /* iGift */ = {
 			isa = PBXGroup;
 			children = (
+				0F0C35D420A8ABDA008B77C4 /* iGift.entitlements */,
 				0FC94F0E20A5F42000CDC810 /* GeneralModels */,
 				4087151F20A4AC42007B3E4C /* Pojo */,
 				4021E70920A1D59500B3DEB7 /* Data */,
@@ -679,6 +681,11 @@
 					4021E6E220A1CA1600B3DEB7 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -978,8 +985,9 @@
 			baseConfigurationReference = BF90EAD1A777AEBC93ABF445 /* Pods-iGift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = iGift/iGift.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 67S5W9JU3Z;
+				DEVELOPMENT_TEAM = U7ADR33282;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -999,8 +1007,9 @@
 			baseConfigurationReference = D65738BE925A263D5D5C084F /* Pods-iGift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = iGift/iGift.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 67S5W9JU3Z;
+				DEVELOPMENT_TEAM = U7ADR33282;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",

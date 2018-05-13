@@ -56,5 +56,9 @@
 	<string>You can save your iGift card in your photo library as well.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Save the gift you created.</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
 </dict>
 </plist>

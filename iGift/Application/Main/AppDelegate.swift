@@ -8,12 +8,12 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -31,6 +31,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Add Nav Controller into root
         window!.rootViewController = navController
         window!.makeKeyAndVisible()
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) {
+            (granted, error) in
+            //Parse errors and track state
+        }
+        
+        application.registerForRemoteNotifications()
 
         return true
     }
@@ -123,5 +130,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+    //    MARK: Push notifications related functions
+    //    Reference : https://www.appcoda.com/push-notification-ios/
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        
+        let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
+        print((#file as NSString).lastPathComponent, " # deviceToken = ", deviceTokenString)
+//        5FF8F2CDC4A13DC616AE046EE04839B6EB26F70ABF57BFD96F8E228076FF60AA
+    }
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print((#file as NSString).lastPathComponent, " # Reason to fail register remote notification : ", error.localizedDescription)
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        print((#file as NSString).lastPathComponent, " # userInfo = ", userInfo)
+    }
 }
 
