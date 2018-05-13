@@ -42,7 +42,8 @@ class RegisterViewController : KeyboardScrollableViewController {
         // gengerate key pair
         // do register
         CryptoUtil.instance.initKeys()
-        doReg()
+        //doReg()
+        self.loadView("SecurityQuestionsViewController")
     }
     
     func doReg() {
@@ -95,7 +96,7 @@ class RegisterViewController : KeyboardScrollableViewController {
             
             // todo save zaddress, password
             
-            self.loadView("SecurityQuestionsViewController")
+            //self.loadView("SecurityQuestionsViewController")
         }
         task.resume()
     }
