@@ -40,8 +40,7 @@ class HomeViewController : BaseViewController {
     }
 
     @IBAction func onIGiftsBtnClicked(_ sender: Any) {
-        let iGiftsViewController = IGiftsViewController(nibName: "IGiftsViewController", bundle: nil)
-        self.navigationController?.pushViewController(iGiftsViewController, animated: true)
+        self.loadView("IGiftsViewController")
     }
 
 }

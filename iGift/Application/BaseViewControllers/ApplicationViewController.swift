@@ -33,6 +33,7 @@ class ApplicationViewController : UIViewController {
         }
     }
 
+
     func getNewInstance(_ name: String) -> UIViewController? {
         switch name {
         case "AddAccountViewController":
@@ -51,6 +52,9 @@ class ApplicationViewController : UIViewController {
             return SecurityAnswersViewController(nibName: "SecurityAnswersViewController", bundle: nil)
         case "SecurityQuestionsViewController":
             return SecurityQuestionsViewController(nibName: "SecurityQuestionsViewController", bundle: nil)
+        case "IGiftsViewController":
+            return IGiftsReceivedViewController(nibName: "IGiftsReceivedViewController", bundle: nil)
+//            return IGiftsViewController(nibName: "IGiftsViewController", bundle: nil)
         default:
             return nil
         }

@@ -44,6 +44,13 @@
 		4021E73020A22B7500B3DEB7 /* SendIGiftsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4021E72F20A22B7500B3DEB7 /* SendIGiftsViewController.swift */; };
 		4021E73220A231D600B3DEB7 /* PhoneBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4021E73120A231D600B3DEB7 /* PhoneBookViewController.swift */; };
 		4021E73420A231E100B3DEB7 /* PhoneBookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4021E73320A231E100B3DEB7 /* PhoneBookViewController.xib */; };
+		404B1A2420A84B7500E06B71 /* IGiftsSentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404B1A2320A84B7500E06B71 /* IGiftsSentViewController.swift */; };
+		404B1A2620A84B8000E06B71 /* IGiftsSentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 404B1A2520A84B8000E06B71 /* IGiftsSentViewController.xib */; };
+		404B1A2820A84B8A00E06B71 /* IGiftsReceivedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 404B1A2720A84B8A00E06B71 /* IGiftsReceivedViewController.xib */; };
+		404B1A2A20A84B9200E06B71 /* IGiftsReceivedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404B1A2920A84B9200E06B71 /* IGiftsReceivedViewController.swift */; };
+		404B1A2D20A84BF800E06B71 /* CustomIGiftCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404B1A2C20A84BF800E06B71 /* CustomIGiftCell.swift */; };
+		404B1A2F20A84C0100E06B71 /* CustomIGiftCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 404B1A2E20A84C0100E06B71 /* CustomIGiftCell.xib */; };
+		404B1A3120A86C9600E06B71 /* TimeUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404B1A3020A86C9600E06B71 /* TimeUtil.swift */; };
 		408714E620A31214007B3E4C /* AddAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 408714E520A31214007B3E4C /* AddAccountViewController.xib */; };
 		408714E820A31458007B3E4C /* AddAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408714E720A31458007B3E4C /* AddAccountViewController.swift */; };
 		408714EB20A31B28007B3E4C /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408714EA20A31B28007B3E4C /* CustomButton.swift */; };
@@ -123,6 +130,13 @@
 		4021E72F20A22B7500B3DEB7 /* SendIGiftsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendIGiftsViewController.swift; sourceTree = "<group>"; };
 		4021E73120A231D600B3DEB7 /* PhoneBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneBookViewController.swift; sourceTree = "<group>"; };
 		4021E73320A231E100B3DEB7 /* PhoneBookViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneBookViewController.xib; sourceTree = "<group>"; };
+		404B1A2320A84B7500E06B71 /* IGiftsSentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGiftsSentViewController.swift; sourceTree = "<group>"; };
+		404B1A2520A84B8000E06B71 /* IGiftsSentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IGiftsSentViewController.xib; sourceTree = "<group>"; };
+		404B1A2720A84B8A00E06B71 /* IGiftsReceivedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IGiftsReceivedViewController.xib; sourceTree = "<group>"; };
+		404B1A2920A84B9200E06B71 /* IGiftsReceivedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGiftsReceivedViewController.swift; sourceTree = "<group>"; };
+		404B1A2C20A84BF800E06B71 /* CustomIGiftCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomIGiftCell.swift; sourceTree = "<group>"; };
+		404B1A2E20A84C0100E06B71 /* CustomIGiftCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomIGiftCell.xib; sourceTree = "<group>"; };
+		404B1A3020A86C9600E06B71 /* TimeUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeUtil.swift; sourceTree = "<group>"; };
 		408714E520A31214007B3E4C /* AddAccountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddAccountViewController.xib; sourceTree = "<group>"; };
 		408714E720A31458007B3E4C /* AddAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountViewController.swift; sourceTree = "<group>"; };
 		408714EA20A31B28007B3E4C /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
@@ -425,6 +439,9 @@
 		4021E71520A209E800B3DEB7 /* IGiftsViewController */ = {
 			isa = PBXGroup;
 			children = (
+				404B1A2B20A84BD000E06B71 /* CustomIGiftCell */,
+				404B1A2220A84B1F00E06B71 /* IGiftsSentViewController */,
+				404B1A2120A84B0200E06B71 /* IGiftsReceivedViewController */,
 				4021E72920A22B4000B3DEB7 /* IGiftsViewController.swift */,
 				4021E72B20A22B4D00B3DEB7 /* IGiftsViewController.xib */,
 			);
@@ -450,6 +467,7 @@
 				C0E2163620A6ED31002FF833 /* PreferenceUtil.swift */,
 				4021E71A20A2105B00B3DEB7 /* Extensions */,
 				4087152020A4ACA6007B3E4C /* PhoneBook.swift */,
+				404B1A3020A86C9600E06B71 /* TimeUtil.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -466,6 +484,33 @@
 				4087152F20A5FEAD007B3E4C /* UIViewController.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		404B1A2120A84B0200E06B71 /* IGiftsReceivedViewController */ = {
+			isa = PBXGroup;
+			children = (
+				404B1A2720A84B8A00E06B71 /* IGiftsReceivedViewController.xib */,
+				404B1A2920A84B9200E06B71 /* IGiftsReceivedViewController.swift */,
+			);
+			path = IGiftsReceivedViewController;
+			sourceTree = "<group>";
+		};
+		404B1A2220A84B1F00E06B71 /* IGiftsSentViewController */ = {
+			isa = PBXGroup;
+			children = (
+				404B1A2320A84B7500E06B71 /* IGiftsSentViewController.swift */,
+				404B1A2520A84B8000E06B71 /* IGiftsSentViewController.xib */,
+			);
+			path = IGiftsSentViewController;
+			sourceTree = "<group>";
+		};
+		404B1A2B20A84BD000E06B71 /* CustomIGiftCell */ = {
+			isa = PBXGroup;
+			children = (
+				404B1A2C20A84BF800E06B71 /* CustomIGiftCell.swift */,
+				404B1A2E20A84C0100E06B71 /* CustomIGiftCell.xib */,
+			);
+			path = CustomIGiftCell;
 			sourceTree = "<group>";
 		};
 		408714E920A31B02007B3E4C /* Shared */ = {
@@ -637,9 +682,12 @@
 				408714E620A31214007B3E4C /* AddAccountViewController.xib in Resources */,
 				4021E73420A231E100B3DEB7 /* PhoneBookViewController.xib in Resources */,
 				4021E6EC20A1CA1600B3DEB7 /* Main.storyboard in Resources */,
+				404B1A2620A84B8000E06B71 /* IGiftsSentViewController.xib in Resources */,
 				0F9138F420A34E400011DF2C /* DesignIGiftViewController.xib in Resources */,
 				4021E71820A20F1700B3DEB7 /* Assets.xcassets in Resources */,
+				404B1A2F20A84C0100E06B71 /* CustomIGiftCell.xib in Resources */,
 				408714F020A3326E007B3E4C /* GeosansLight-Oblique.ttf in Resources */,
+				404B1A2820A84B8A00E06B71 /* IGiftsReceivedViewController.xib in Resources */,
 				408714F620A337CC007B3E4C /* CustomSettingCell.xib in Resources */,
 				0F2EE36820A59466003C9AEA /* CapturePhotoViewController.xib in Resources */,
 				40A7340820A82293009C0B9B /* SecurityAnswersViewController.xib in Resources */,
@@ -663,6 +711,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				404B1A2420A84B7500E06B71 /* IGiftsSentViewController.swift in Sources */,
 				0F2EE36A20A59D8E003C9AEA /* CapturePhotoViewModel.swift in Sources */,
 				4087152320A4BE5F007B3E4C /* CustomTableView.swift in Sources */,
 				4087150E20A391B8007B3E4C /* CustomContactCell.swift in Sources */,
@@ -696,6 +745,7 @@
 				4087151A20A488ED007B3E4C /* CustomSearchBar.swift in Sources */,
 				0F7C393520A4507300DF5BF6 /* ChooseBackgroundViewModel.swift in Sources */,
 				0F1081C020A6E8AD0024C9BD /* DesignIGiftViewControllerModel.swift in Sources */,
+				404B1A2D20A84BF800E06B71 /* CustomIGiftCell.swift in Sources */,
 				4021E70820A1D55600B3DEB7 /* NavigationViewController.swift in Sources */,
 				4021E70420A1CFDF00B3DEB7 /* HomeViewController.swift in Sources */,
 				408714EB20A31B28007B3E4C /* CustomButton.swift in Sources */,
@@ -713,7 +763,9 @@
 				0F2EE36C20A5A6BE003C9AEA /* GiftCard.swift in Sources */,
 				C0E2163320A6EAE5002FF833 /* Senz.swift in Sources */,
 				408714E820A31458007B3E4C /* AddAccountViewController.swift in Sources */,
+				404B1A2A20A84B9200E06B71 /* IGiftsReceivedViewController.swift in Sources */,
 				40A7340A20A822A7009C0B9B /* SecurityQuestionsViewController.swift in Sources */,
+				404B1A3120A86C9600E06B71 /* TimeUtil.swift in Sources */,
 				4021E72220A21DCE00B3DEB7 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

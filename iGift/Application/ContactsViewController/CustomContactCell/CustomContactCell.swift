@@ -6,7 +6,6 @@
 //  Copyright © 2018 Creative Solutions. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class CustomContactCell: UITableViewCell {
