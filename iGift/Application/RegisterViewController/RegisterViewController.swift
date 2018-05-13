@@ -49,8 +49,10 @@ class RegisterViewController : KeyboardScrollableViewController {
     func doReg() {
         // todo validate input fields
         
-        // zaddress
+        // ui fields
         let zAddress = txtFieldUsername.text
+        let password = txtFieldPassword.text
+        let confirmPassword = txtFieldConfirmPassword.text
         
         // data
         let uid = SenzUtil.instance.uid(zAddress: zAddress!)
