@@ -136,7 +136,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
         print((#file as NSString).lastPathComponent, " # deviceToken = ", deviceTokenString)
-//        5FF8F2CDC4A13DC616AE046EE04839B6EB26F70ABF57BFD96F8E228076FF60AA
     }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
