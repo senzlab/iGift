@@ -10,7 +10,7 @@ import UIKit
 
 class DesignIGiftViewControllerModel: NSObject {
     
-    func takeScreenshot(_ shouldSave: Bool = true) -> UIImage? {
+    func takeScreenshot(_ shouldSave: Bool = true, viewController:UIViewController) -> UIImage? {
         
         var screenshotImage :UIImage?
         let layer = UIApplication.shared.keyWindow!.layer
@@ -20,6 +20,11 @@ class DesignIGiftViewControllerModel: NSObject {
         layer.render(in:context)
         screenshotImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
+        
+        let neglectHeight = statusBarHeight + navigationBarHeight(viewController: viewController)
+        
+//        Crop the captured image without navigation and status bar
+        screenshotImage = screenshotImage?.cropWithoutNavigationAndStatusBar(rect: CGRect(x: 0.0, y: neglectHeight, width: screenWidth, height: (screenHeight - neglectHeight)))
         
         if let image = screenshotImage, shouldSave {
             

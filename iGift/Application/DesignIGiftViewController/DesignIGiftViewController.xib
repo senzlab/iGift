@@ -156,7 +156,7 @@
                             </constraints>
                         </view>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JEJ-We-bVa" userLabel="TextView_GiftMsg">
-                            <rect key="frame" x="8" y="20" width="267" height="390"/>
+                            <rect key="frame" x="20" y="20" width="255" height="390"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -169,7 +169,7 @@
                         <constraint firstAttribute="bottom" secondItem="NOv-JQ-tns" secondAttribute="bottom" id="9YA-Wl-DXn"/>
                         <constraint firstAttribute="bottom" secondItem="CTF-8A-KT8" secondAttribute="bottom" id="BlG-i7-PPT"/>
                         <constraint firstAttribute="trailing" secondItem="NOv-JQ-tns" secondAttribute="trailing" id="MOz-lN-BMs"/>
-                        <constraint firstItem="JEJ-We-bVa" firstAttribute="leading" secondItem="H5G-bI-zak" secondAttribute="leading" constant="8" id="MsV-PP-5uN"/>
+                        <constraint firstItem="JEJ-We-bVa" firstAttribute="leading" secondItem="H5G-bI-zak" secondAttribute="leading" constant="20" id="MsV-PP-5uN"/>
                         <constraint firstItem="CTF-8A-KT8" firstAttribute="top" secondItem="H5G-bI-zak" secondAttribute="top" id="Mw5-ju-uTY"/>
                         <constraint firstItem="NOv-JQ-tns" firstAttribute="top" secondItem="JEJ-We-bVa" secondAttribute="bottom" constant="20" id="NSM-LL-zwz"/>
                         <constraint firstAttribute="trailing" secondItem="8Lb-9T-ayU" secondAttribute="trailing" id="SAb-cm-Ypq"/>

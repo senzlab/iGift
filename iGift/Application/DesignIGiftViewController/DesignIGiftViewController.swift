@@ -104,7 +104,11 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
     //    MARK: Action functions
     @IBAction func sendGiftAction(_ sender: UIButton) {
 
-        DesignIGiftViewControllerModel().takeScreenshot()
+        sendGiftButton.isHidden = true
+        
+        DesignIGiftViewControllerModel().takeScreenshot(viewController: self)
+        
+        sendGiftButton.isHidden = false
     }
     
     @IBAction func cameraAction(_ sender: UIButton) {
