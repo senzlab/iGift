@@ -137,6 +137,9 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
         GiftCard.shared.backgroundColor = nil
         GiftCard.shared.capturedImage = nil
         capturedPhotoImageView.isHidden = true
+        
+//        The way of retrieving image and show to the user from user documents
+//        capturedPhotoImageView.image = UIImage(contentsOfFile: readFileInPath(relativeFilePath: Constants.IMAGES_DIR.rawValue))
     }
     
     @objc func createStickerImage(notification: NSNotification) {

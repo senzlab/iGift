@@ -29,7 +29,7 @@ class DesignIGiftViewControllerModel: NSObject {
             UIImageWriteToSavedPhotosAlbum(UIImage(data: compressedImageData as Data)!, nil, nil, nil)
             
 //            Save inside the user documents directory
-            let fileWriteStatus = createFileInPath(relativeFilePath: Constants.IMAGES_DIR.rawValue, fileName: "uniqueid_1.jpeg", imageData: compressedImageData as Data)
+            let fileWriteStatus = createFileInPath(relativeFilePath: Constants.IMAGES_DIR.rawValue, fileName: "uniqueid.jpeg", imageData: compressedImageData as Data)
             print((#file as NSString).lastPathComponent, " # fileWriteStatus = ", fileWriteStatus)
         }
         

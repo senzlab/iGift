@@ -66,17 +66,9 @@ func createFileInPath(relativeFilePath:String, fileName:String, imageData:Data) 
 func readFileInPath(relativeFilePath:String) -> String {
     print((#file as NSString).lastPathComponent, "-", #function, "-", #line)
     
-    let absoluteFilePath = "\(documentsDirectoryPath())/\(relativeFilePath)"
+    let absoluteFilePath = "\(documentsDirectoryPath())/\(relativeFilePath)/uniqueid.jpeg"
     
-    var fileContent: String
-    
-    do {
-        fileContent = try String(contentsOfFile: absoluteFilePath, encoding: String.Encoding.utf8)
-    } catch {
-        return "Error reading file"
-    }
-    
-    return fileContent
+    return absoluteFilePath
 }
 
 func deleteFileInPath(relativeFilePath:String) -> Bool {
