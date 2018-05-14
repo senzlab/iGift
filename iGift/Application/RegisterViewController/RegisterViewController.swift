@@ -61,44 +61,18 @@ class RegisterViewController : KeyboardScrollableViewController {
             "uid": uid,
             "msg": regSenz
         ]
-        guard let jsonData = try? JSONSerialization.data(withJSONObject: data) else {
-            print("error decoding json")
-            return
-        }
-        let jsonStr = String(data: jsonData, encoding: String.Encoding.utf8)?
-            .replacingOccurrences(of: "\\", with: "")
-
-        // request
-        let url = URL(string: "http://10.2.2.9:7171/uzers")!
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.httpBody = jsonStr?.data(using: .utf8)
+        let url = "http://10.2.2.9:7171/uzers"
         
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            // check for errors
-            guard let data = data, error == nil else {
-                print("error request")
-                return
+        // send post
+        Httpz.instance.doPost(url: url, param: data, onComplete: {success in
+            if success {
+                // success request
+                self.loadView("SecurityQuestionsViewController")
+            } else {
+                // fail request
             }
-            
-            // status should be 200
-            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
-                // registration fail
-                print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                return
-            }
-            
-            // registration done
-//            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.WritingOptions(rawValue: 0))
-//            if let responseJSON = responseJSON as? [String: Any] {
-//                print(responseJSON)
-//            }
-            
-            // todo save zaddress, password
-            
-            //self.loadView("SecurityQuestionsViewController")
-        }
-        task.resume()
+        })
+        
     }
 
 }

@@ -11,7 +11,7 @@ import Foundation
 class SenzUtil {
     static let instance = SenzUtil()
     
-    func parse(msg: String) -> Senz? {
+    func parse(msg: String) -> Senz {
         let tokens = msg.components(separatedBy: " ")
         let senz = Senz()
         

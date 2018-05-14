@@ -83,6 +83,7 @@
 		40A7340820A82293009C0B9B /* SecurityAnswersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40A7340720A82293009C0B9B /* SecurityAnswersViewController.xib */; };
 		40A7340A20A822A7009C0B9B /* SecurityQuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A7340920A822A7009C0B9B /* SecurityQuestionsViewController.swift */; };
 		40A7340C20A822B8009C0B9B /* SecurityQuestionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40A7340B20A822B8009C0B9B /* SecurityQuestionsViewController.xib */; };
+		C0C58F6F20A9567700DD14BB /* Httpz.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C58F6E20A9567700DD14BB /* Httpz.swift */; };
 		C0E2163320A6EAE5002FF833 /* Senz.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E2163020A6EAE4002FF833 /* Senz.swift */; };
 		C0E2163420A6EAE5002FF833 /* Igift.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E2163120A6EAE4002FF833 /* Igift.swift */; };
 		C0E2163520A6EAE5002FF833 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E2163220A6EAE5002FF833 /* User.swift */; };
@@ -173,6 +174,7 @@
 		40A7340920A822A7009C0B9B /* SecurityQuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityQuestionsViewController.swift; sourceTree = "<group>"; };
 		40A7340B20A822B8009C0B9B /* SecurityQuestionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecurityQuestionsViewController.xib; sourceTree = "<group>"; };
 		BF90EAD1A777AEBC93ABF445 /* Pods-iGift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iGift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iGift/Pods-iGift.debug.xcconfig"; sourceTree = "<group>"; };
+		C0C58F6E20A9567700DD14BB /* Httpz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Httpz.swift; sourceTree = "<group>"; };
 		C0E2163020A6EAE4002FF833 /* Senz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Senz.swift; sourceTree = "<group>"; };
 		C0E2163120A6EAE4002FF833 /* Igift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Igift.swift; sourceTree = "<group>"; };
 		C0E2163220A6EAE5002FF833 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -489,6 +491,7 @@
 				4021E71A20A2105B00B3DEB7 /* Extensions */,
 				4087152020A4ACA6007B3E4C /* PhoneBook.swift */,
 				404B1A3020A86C9600E06B71 /* TimeUtil.swift */,
+				C0C58F6E20A9567700DD14BB /* Httpz.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -843,6 +846,7 @@
 				4087152620A4ED86007B3E4C /* RegisterViewController.swift in Sources */,
 				0F2EE36C20A5A6BE003C9AEA /* GiftCard.swift in Sources */,
 				C0E2163320A6EAE5002FF833 /* Senz.swift in Sources */,
+				C0C58F6F20A9567700DD14BB /* Httpz.swift in Sources */,
 				408714E820A31458007B3E4C /* AddAccountViewController.swift in Sources */,
 				404B1A2A20A84B9200E06B71 /* IGiftsReceivedViewController.swift in Sources */,
 				40A7340A20A822A7009C0B9B /* SecurityQuestionsViewController.swift in Sources */,
