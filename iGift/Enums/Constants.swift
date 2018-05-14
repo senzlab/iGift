@@ -10,4 +10,5 @@ import Foundation
 
 enum Constants: String {
     case MAIN_FONT_FAMILY = "GeosansLight"
+    case IMAGES_DIR = "iGiftImages"
 }

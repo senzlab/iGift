@@ -18,6 +18,7 @@
 		0F7C393220A4218500DF5BF6 /* ChooseBackgroundViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7C393020A4218500DF5BF6 /* ChooseBackgroundViewContoller.swift */; };
 		0F7C393320A4218500DF5BF6 /* ChooseBackgroundViewContoller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F7C393120A4218500DF5BF6 /* ChooseBackgroundViewContoller.xib */; };
 		0F7C393520A4507300DF5BF6 /* ChooseBackgroundViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7C393420A4507300DF5BF6 /* ChooseBackgroundViewModel.swift */; };
+		0F87F3CA20A9432500C33259 /* FileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F87F3C920A9432500C33259 /* FileModel.swift */; };
 		0F9138F320A34E400011DF2C /* DesignIGiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9138F120A34E400011DF2C /* DesignIGiftViewController.swift */; };
 		0F9138F420A34E400011DF2C /* DesignIGiftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F9138F220A34E400011DF2C /* DesignIGiftViewController.xib */; };
 		0FC94F1020A5F45E00CDC810 /* DeviceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC94F0F20A5F45E00CDC810 /* DeviceModel.swift */; };
@@ -104,6 +105,7 @@
 		0F7C393020A4218500DF5BF6 /* ChooseBackgroundViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseBackgroundViewContoller.swift; sourceTree = "<group>"; };
 		0F7C393120A4218500DF5BF6 /* ChooseBackgroundViewContoller.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseBackgroundViewContoller.xib; sourceTree = "<group>"; };
 		0F7C393420A4507300DF5BF6 /* ChooseBackgroundViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseBackgroundViewModel.swift; sourceTree = "<group>"; };
+		0F87F3C920A9432500C33259 /* FileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileModel.swift; sourceTree = "<group>"; };
 		0F9138F120A34E400011DF2C /* DesignIGiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignIGiftViewController.swift; sourceTree = "<group>"; };
 		0F9138F220A34E400011DF2C /* DesignIGiftViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DesignIGiftViewController.xib; sourceTree = "<group>"; };
 		0FC94F0F20A5F45E00CDC810 /* DeviceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceModel.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				0FC94F0F20A5F45E00CDC810 /* DeviceModel.swift */,
+				0F87F3C920A9432500C33259 /* FileModel.swift */,
 			);
 			path = GeneralModels;
 			sourceTree = "<group>";
@@ -795,6 +798,7 @@
 				4087152A20A5E5F8007B3E4C /* ApplicationViewController.swift in Sources */,
 				0F1081BD20A6E8770024C9BD /* UIImageExtension.swift in Sources */,
 				4021E72A20A22B4000B3DEB7 /* IGiftsViewController.swift in Sources */,
+				0F87F3CA20A9432500C33259 /* FileModel.swift in Sources */,
 				C0E2163420A6EAE5002FF833 /* Igift.swift in Sources */,
 				C0E2163920A6EF25002FF833 /* SenzUtil.swift in Sources */,
 				4087150720A38737007B3E4C /* HexColors.swift in Sources */,
