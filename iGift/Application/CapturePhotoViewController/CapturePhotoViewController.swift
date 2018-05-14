@@ -66,7 +66,7 @@ class CapturePhotoViewController: BaseViewController {
                 previewLayer = AVCaptureVideoPreviewLayer(session: session!)
                 previewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
                 previewLayer?.connection?.videoOrientation = AVCaptureVideoOrientation.portrait
-                previewLayer?.frame = cameraPreviewView.frame
+                previewLayer?.frame = cameraPreviewView.bounds
                 cameraPreviewView.layer.addSublayer(previewLayer!)
                 session?.startRunning()
             }
