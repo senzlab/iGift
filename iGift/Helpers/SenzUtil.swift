@@ -50,7 +50,7 @@ class SenzUtil {
             " #uid " + uid +
             " #pubkey " + pubkey +
             " #dev " + "apple" +
-            " #devid " + devId
+            " #devid " + devId +
             " @" + "senzswitch" +
             " ^" + zAddress
         let signature = CryptoUtil.instance.sign(payload: senz)
