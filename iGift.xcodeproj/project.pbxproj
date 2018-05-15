@@ -54,8 +54,8 @@
 		404B1A2D20A84BF800E06B71 /* CustomIGiftCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404B1A2C20A84BF800E06B71 /* CustomIGiftCell.swift */; };
 		404B1A2F20A84C0100E06B71 /* CustomIGiftCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 404B1A2E20A84C0100E06B71 /* CustomIGiftCell.xib */; };
 		404B1A3120A86C9600E06B71 /* TimeUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404B1A3020A86C9600E06B71 /* TimeUtil.swift */; };
-		408714E620A31214007B3E4C /* AddAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 408714E520A31214007B3E4C /* AddAccountViewController.xib */; };
-		408714E820A31458007B3E4C /* AddAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408714E720A31458007B3E4C /* AddAccountViewController.swift */; };
+		408714E620A31214007B3E4C /* AddAccountInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 408714E520A31214007B3E4C /* AddAccountInfoViewController.xib */; };
+		408714E820A31458007B3E4C /* AddAccountInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408714E720A31458007B3E4C /* AddAccountInfoViewController.swift */; };
 		408714EB20A31B28007B3E4C /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408714EA20A31B28007B3E4C /* CustomButton.swift */; };
 		408714F020A3326E007B3E4C /* GeosansLight-Oblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 408714EE20A3326D007B3E4C /* GeosansLight-Oblique.ttf */; };
 		408714F120A3326E007B3E4C /* GeosansLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 408714EF20A3326D007B3E4C /* GeosansLight.ttf */; };
@@ -84,6 +84,15 @@
 		40A7340820A82293009C0B9B /* SecurityAnswersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40A7340720A82293009C0B9B /* SecurityAnswersViewController.xib */; };
 		40A7340A20A822A7009C0B9B /* SecurityQuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A7340920A822A7009C0B9B /* SecurityQuestionsViewController.swift */; };
 		40A7340C20A822B8009C0B9B /* SecurityQuestionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40A7340B20A822B8009C0B9B /* SecurityQuestionsViewController.xib */; };
+		58148C7120AB3F5D00FE9AAD /* VerifyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58148C6F20AB3F5D00FE9AAD /* VerifyAccountViewController.swift */; };
+		58148C7220AB3F5D00FE9AAD /* VerifyAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58148C7020AB3F5D00FE9AAD /* VerifyAccountViewController.xib */; };
+		58148C7720AB43A000FE9AAD /* SaltConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58148C7520AB43A000FE9AAD /* SaltConfirmViewController.swift */; };
+		58148C7820AB43A000FE9AAD /* SaltConfirmViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58148C7620AB43A000FE9AAD /* SaltConfirmViewController.xib */; };
+		58B96F5C20AB296200E67D35 /* AddAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58B96F5A20AB296100E67D35 /* AddAccountViewController.xib */; };
+		58B96F5D20AB296200E67D35 /* AddAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B96F5B20AB296100E67D35 /* AddAccountViewController.swift */; };
+		58B96F5F20AB2DDC00E67D35 /* ViewControllerUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B96F5E20AB2DDC00E67D35 /* ViewControllerUtil.swift */; };
+		58B96F6320AB35A700E67D35 /* ConfirmAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B96F6120AB35A600E67D35 /* ConfirmAccountViewController.swift */; };
+		58B96F6420AB35A700E67D35 /* ConfirmAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58B96F6220AB35A600E67D35 /* ConfirmAccountViewController.xib */; };
 		C0C58F6F20A9567700DD14BB /* Httpz.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C58F6E20A9567700DD14BB /* Httpz.swift */; };
 		C0E2163320A6EAE5002FF833 /* Senz.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E2163020A6EAE4002FF833 /* Senz.swift */; };
 		C0E2163420A6EAE5002FF833 /* Igift.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E2163120A6EAE4002FF833 /* Igift.swift */; };
@@ -145,8 +154,8 @@
 		404B1A2C20A84BF800E06B71 /* CustomIGiftCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomIGiftCell.swift; sourceTree = "<group>"; };
 		404B1A2E20A84C0100E06B71 /* CustomIGiftCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomIGiftCell.xib; sourceTree = "<group>"; };
 		404B1A3020A86C9600E06B71 /* TimeUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeUtil.swift; sourceTree = "<group>"; };
-		408714E520A31214007B3E4C /* AddAccountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddAccountViewController.xib; sourceTree = "<group>"; };
-		408714E720A31458007B3E4C /* AddAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountViewController.swift; sourceTree = "<group>"; };
+		408714E520A31214007B3E4C /* AddAccountInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddAccountInfoViewController.xib; sourceTree = "<group>"; };
+		408714E720A31458007B3E4C /* AddAccountInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountInfoViewController.swift; sourceTree = "<group>"; };
 		408714EA20A31B28007B3E4C /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		408714EE20A3326D007B3E4C /* GeosansLight-Oblique.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeosansLight-Oblique.ttf"; sourceTree = "<group>"; };
 		408714EF20A3326D007B3E4C /* GeosansLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GeosansLight.ttf; sourceTree = "<group>"; };
@@ -175,6 +184,15 @@
 		40A7340720A82293009C0B9B /* SecurityAnswersViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecurityAnswersViewController.xib; sourceTree = "<group>"; };
 		40A7340920A822A7009C0B9B /* SecurityQuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityQuestionsViewController.swift; sourceTree = "<group>"; };
 		40A7340B20A822B8009C0B9B /* SecurityQuestionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecurityQuestionsViewController.xib; sourceTree = "<group>"; };
+		58148C6F20AB3F5D00FE9AAD /* VerifyAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyAccountViewController.swift; sourceTree = "<group>"; };
+		58148C7020AB3F5D00FE9AAD /* VerifyAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VerifyAccountViewController.xib; sourceTree = "<group>"; };
+		58148C7520AB43A000FE9AAD /* SaltConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaltConfirmViewController.swift; sourceTree = "<group>"; };
+		58148C7620AB43A000FE9AAD /* SaltConfirmViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SaltConfirmViewController.xib; sourceTree = "<group>"; };
+		58B96F5A20AB296100E67D35 /* AddAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddAccountViewController.xib; sourceTree = "<group>"; };
+		58B96F5B20AB296100E67D35 /* AddAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAccountViewController.swift; sourceTree = "<group>"; };
+		58B96F5E20AB2DDC00E67D35 /* ViewControllerUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerUtil.swift; sourceTree = "<group>"; };
+		58B96F6120AB35A600E67D35 /* ConfirmAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmAccountViewController.swift; sourceTree = "<group>"; };
+		58B96F6220AB35A600E67D35 /* ConfirmAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfirmAccountViewController.xib; sourceTree = "<group>"; };
 		BF90EAD1A777AEBC93ABF445 /* Pods-iGift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iGift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iGift/Pods-iGift.debug.xcconfig"; sourceTree = "<group>"; };
 		C0C58F6E20A9567700DD14BB /* Httpz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Httpz.swift; sourceTree = "<group>"; };
 		C0E2163020A6EAE4002FF833 /* Senz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Senz.swift; sourceTree = "<group>"; };
@@ -352,7 +370,7 @@
 				4021E71220A2098700B3DEB7 /* TermsOfUseViewController */,
 				4021E71120A2097200B3DEB7 /* ChangePasswordViewController */,
 				4021E71020A2095D00B3DEB7 /* ChangeUserNameViewController */,
-				4021E70F20A2094900B3DEB7 /* AddAccountViewController */,
+				4021E70F20A2094900B3DEB7 /* AddAccountInfoViewController */,
 				4021E70E20A2093800B3DEB7 /* SettingsViewController */,
 				4021E70D20A2090400B3DEB7 /* PhoneBookViewController */,
 				4021E70C20A208F100B3DEB7 /* ContactsViewController */,
@@ -415,13 +433,17 @@
 			path = SettingsViewController;
 			sourceTree = "<group>";
 		};
-		4021E70F20A2094900B3DEB7 /* AddAccountViewController */ = {
+		4021E70F20A2094900B3DEB7 /* AddAccountInfoViewController */ = {
 			isa = PBXGroup;
 			children = (
-				408714E520A31214007B3E4C /* AddAccountViewController.xib */,
-				408714E720A31458007B3E4C /* AddAccountViewController.swift */,
+				408714E520A31214007B3E4C /* AddAccountInfoViewController.xib */,
+				408714E720A31458007B3E4C /* AddAccountInfoViewController.swift */,
+				58B96F5920AB28A300E67D35 /* AddAccountViewController */,
+				58B96F6020AB350F00E67D35 /* ConfirmAccountViewController */,
+				58148C6E20AB3EFF00FE9AAD /* VerifyAccountViewController */,
+				58148C7420AB434600FE9AAD /* SaltConfirmViewController */,
 			);
-			path = AddAccountViewController;
+			path = AddAccountInfoViewController;
 			sourceTree = "<group>";
 		};
 		4021E71020A2095D00B3DEB7 /* ChangeUserNameViewController */ = {
@@ -494,6 +516,7 @@
 				4087152020A4ACA6007B3E4C /* PhoneBook.swift */,
 				404B1A3020A86C9600E06B71 /* TimeUtil.swift */,
 				C0C58F6E20A9567700DD14BB /* Httpz.swift */,
+				58B96F5E20AB2DDC00E67D35 /* ViewControllerUtil.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -634,6 +657,42 @@
 			path = SecurityAnswersViewController;
 			sourceTree = "<group>";
 		};
+		58148C6E20AB3EFF00FE9AAD /* VerifyAccountViewController */ = {
+			isa = PBXGroup;
+			children = (
+				58148C6F20AB3F5D00FE9AAD /* VerifyAccountViewController.swift */,
+				58148C7020AB3F5D00FE9AAD /* VerifyAccountViewController.xib */,
+			);
+			path = VerifyAccountViewController;
+			sourceTree = "<group>";
+		};
+		58148C7420AB434600FE9AAD /* SaltConfirmViewController */ = {
+			isa = PBXGroup;
+			children = (
+				58148C7520AB43A000FE9AAD /* SaltConfirmViewController.swift */,
+				58148C7620AB43A000FE9AAD /* SaltConfirmViewController.xib */,
+			);
+			path = SaltConfirmViewController;
+			sourceTree = "<group>";
+		};
+		58B96F5920AB28A300E67D35 /* AddAccountViewController */ = {
+			isa = PBXGroup;
+			children = (
+				58B96F5B20AB296100E67D35 /* AddAccountViewController.swift */,
+				58B96F5A20AB296100E67D35 /* AddAccountViewController.xib */,
+			);
+			path = AddAccountViewController;
+			sourceTree = "<group>";
+		};
+		58B96F6020AB350F00E67D35 /* ConfirmAccountViewController */ = {
+			isa = PBXGroup;
+			children = (
+				58B96F6120AB35A600E67D35 /* ConfirmAccountViewController.swift */,
+				58B96F6220AB35A600E67D35 /* ConfirmAccountViewController.xib */,
+			);
+			path = ConfirmAccountViewController;
+			sourceTree = "<group>";
+		};
 		5B27B24A324EC1F7917A5AD9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -667,6 +726,7 @@
 				4021E6E120A1CA1600B3DEB7 /* Resources */,
 				9143CBAAF728C725783BB5D6 /* Frameworks */,
 				B7E7D4FEC4B41BF729400F2C /* [CP] Embed Pods Frameworks */,
+				78EF924B98F75FB3850460D8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -724,17 +784,20 @@
 				4021E6F420A1CA1700B3DEB7 /* LaunchScreen.storyboard in Resources */,
 				4087151020A391C8007B3E4C /* CustomContactCell.xib in Resources */,
 				4021E72420A21DE100B3DEB7 /* SettingsViewController.xib in Resources */,
-				408714E620A31214007B3E4C /* AddAccountViewController.xib in Resources */,
+				408714E620A31214007B3E4C /* AddAccountInfoViewController.xib in Resources */,
 				4021E73420A231E100B3DEB7 /* PhoneBookViewController.xib in Resources */,
 				4021E6EC20A1CA1600B3DEB7 /* Main.storyboard in Resources */,
 				404B1A2620A84B8000E06B71 /* IGiftsSentViewController.xib in Resources */,
 				0F9138F420A34E400011DF2C /* DesignIGiftViewController.xib in Resources */,
 				4021E71820A20F1700B3DEB7 /* Assets.xcassets in Resources */,
+				58148C7220AB3F5D00FE9AAD /* VerifyAccountViewController.xib in Resources */,
 				404B1A2F20A84C0100E06B71 /* CustomIGiftCell.xib in Resources */,
+				58B96F5C20AB296200E67D35 /* AddAccountViewController.xib in Resources */,
 				408714F020A3326E007B3E4C /* GeosansLight-Oblique.ttf in Resources */,
 				404B1A2820A84B8A00E06B71 /* IGiftsReceivedViewController.xib in Resources */,
 				408714F620A337CC007B3E4C /* CustomSettingCell.xib in Resources */,
 				0F2EE36820A59466003C9AEA /* CapturePhotoViewController.xib in Resources */,
+				58148C7820AB43A000FE9AAD /* SaltConfirmViewController.xib in Resources */,
 				40A7340820A82293009C0B9B /* SecurityAnswersViewController.xib in Resources */,
 				40A7340C20A822B8009C0B9B /* SecurityQuestionsViewController.xib in Resources */,
 				408714F120A3326E007B3E4C /* GeosansLight.ttf in Resources */,
@@ -744,6 +807,7 @@
 				4021E72020A21AF300B3DEB7 /* ContactsViewController.xib in Resources */,
 				0FC94F1520A6042700CDC810 /* AddArtViewController.xib in Resources */,
 				4087151320A391E2007B3E4C /* CustomPhoneBookCell.xib in Resources */,
+				58B96F6420AB35A700E67D35 /* ConfirmAccountViewController.xib in Resources */,
 				4021E72C20A22B4D00B3DEB7 /* IGiftsViewController.xib in Resources */,
 				4087152820A4ED96007B3E4C /* RegisterViewController.xib in Resources */,
 			);
@@ -768,6 +832,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		78EF924B98F75FB3850460D8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iGift/Pods-iGift-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B7E7D4FEC4B41BF729400F2C /* [CP] Embed Pods Frameworks */ = {
@@ -812,6 +891,7 @@
 				4087151520A391EE007B3E4C /* CustomPhoneBookCell.swift in Sources */,
 				40A7340620A82288009C0B9B /* SecurityAnswersViewController.swift in Sources */,
 				408714FE20A34996007B3E4C /* UIFont.swift in Sources */,
+				58B96F5F20AB2DDC00E67D35 /* ViewControllerUtil.swift in Sources */,
 				4021E6EF20A1CA1600B3DEB7 /* iGift.xcdatamodeld in Sources */,
 				0F7C393220A4218500DF5BF6 /* ChooseBackgroundViewContoller.swift in Sources */,
 				0F1081BE20A6E8770024C9BD /* NotificationExtension.swift in Sources */,
@@ -819,14 +899,17 @@
 				4087152E20A5F89D007B3E4C /* UITextField.swift in Sources */,
 				C0E2163720A6ED32002FF833 /* PreferenceUtil.swift in Sources */,
 				0F7C392E20A41F1300DF5BF6 /* UITextViewPlaceholder.swift in Sources */,
+				58B96F5D20AB296200E67D35 /* AddAccountViewController.swift in Sources */,
 				4087153020A5FEAD007B3E4C /* UIViewController.swift in Sources */,
 				4087150920A38742007B3E4C /* Constants.swift in Sources */,
 				0FC94F1420A6042700CDC810 /* AddArtViewController.swift in Sources */,
+				58148C7720AB43A000FE9AAD /* SaltConfirmViewController.swift in Sources */,
 				4021E6E720A1CA1600B3DEB7 /* AppDelegate.swift in Sources */,
 				4087152120A4ACA6007B3E4C /* PhoneBook.swift in Sources */,
 				C0E2163520A6EAE5002FF833 /* User.swift in Sources */,
 				408714F420A337AD007B3E4C /* CustomSettingCell.swift in Sources */,
 				0FC94F1720A60EFA00CDC810 /* AddArtViewModel.swift in Sources */,
+				58148C7120AB3F5D00FE9AAD /* VerifyAccountViewController.swift in Sources */,
 				4087151E20A4A9BC007B3E4C /* PhoneContact.swift in Sources */,
 				4087151720A3FECF007B3E4C /* CustomImageView.swift in Sources */,
 				4087151A20A488ED007B3E4C /* CustomSearchBar.swift in Sources */,
@@ -838,6 +921,7 @@
 				408714EB20A31B28007B3E4C /* CustomButton.swift in Sources */,
 				4021E73220A231D600B3DEB7 /* PhoneBookViewController.swift in Sources */,
 				C0E2165220A6F52F002FF833 /* CryptoUtil.swift in Sources */,
+				58B96F6320AB35A700E67D35 /* ConfirmAccountViewController.swift in Sources */,
 				4021E71E20A21AD800B3DEB7 /* ContactsViewController.swift in Sources */,
 				4021E72820A2234F00B3DEB7 /* UIColor.swift in Sources */,
 				4021E72620A21E2F00B3DEB7 /* BaseViewController.swift in Sources */,
@@ -851,7 +935,7 @@
 				0F2EE36C20A5A6BE003C9AEA /* GiftCard.swift in Sources */,
 				C0E2163320A6EAE5002FF833 /* Senz.swift in Sources */,
 				C0C58F6F20A9567700DD14BB /* Httpz.swift in Sources */,
-				408714E820A31458007B3E4C /* AddAccountViewController.swift in Sources */,
+				408714E820A31458007B3E4C /* AddAccountInfoViewController.swift in Sources */,
 				404B1A2A20A84B9200E06B71 /* IGiftsReceivedViewController.swift in Sources */,
 				40A7340A20A822A7009C0B9B /* SecurityQuestionsViewController.swift in Sources */,
 				404B1A3120A86C9600E06B71 /* TimeUtil.swift in Sources */,
