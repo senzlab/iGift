@@ -34,7 +34,8 @@ class NavigationViewController : UINavigationController {
     }
 
     func loadInitialView() {
-        let initialViewController = RegisterViewController(nibName: "RegisterViewController", bundle: nil)
-        self.pushViewController(initialViewController, animated: true)
+        
+        let termsOfUseViewController = TermsOfUseViewController(nibName: "TermsOfUseViewController", bundle: nil)
+        self.pushViewController(termsOfUseViewController, animated: true)
     }
 }
