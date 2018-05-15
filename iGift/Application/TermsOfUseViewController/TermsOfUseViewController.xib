@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TermsOfUseViewController" customModule="iGift" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top label" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G6a-ae-G5W" userLabel="Label_Top" customClass="CustomLabel" customModule="iGift" customModuleProvider="target">
+                    <rect key="frame" x="30" y="80" width="315" height="31"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bottom label" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TD4-NX-wId" userLabel="Label_Bottom" customClass="CustomLabel" customModule="iGift" customModuleProvider="target">
+                    <rect key="frame" x="30" y="131" width="315" height="31"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c2L-78-2HT" userLabel="Button_Accept" customClass="CustomButton" customModule="iGift" customModuleProvider="target">
+                    <rect key="frame" x="30" y="507" width="315" height="55"/>
+                    <color key="backgroundColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="55" id="l5x-ii-Iue"/>
+                    </constraints>
+                    <state key="normal" title="ACCEPT">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isRoundedCorners" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isShadowUnder" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="acceptAction:" destination="-1" eventType="touchUpInside" id="1Ok-4N-Yzw"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OJb-hQ-UUu" userLabel="Button_Reject" customClass="CustomButton" customModule="iGift" customModuleProvider="target">
+                    <rect key="frame" x="30" y="582" width="315" height="55"/>
+                    <color key="backgroundColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="55" id="86M-5O-Jp1"/>
+                    </constraints>
+                    <state key="normal" title="REJECT">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isRoundedCorners" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isShadowUnder" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="rejectAction:" destination="-1" eventType="touchUpInside" id="DPG-c9-nD2"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="TD4-NX-wId" firstAttribute="top" secondItem="G6a-ae-G5W" secondAttribute="bottom" constant="20" id="DBH-cR-GRJ"/>
+                <constraint firstItem="c2L-78-2HT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="G6w-09-ilL"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="TD4-NX-wId" secondAttribute="trailing" constant="30" id="Ogn-A7-gDh"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="c2L-78-2HT" secondAttribute="trailing" constant="30" id="RPp-Sb-ylj"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OJb-hQ-UUu" secondAttribute="trailing" constant="30" id="UXP-00-3c4"/>
+                <constraint firstItem="TD4-NX-wId" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="c2D-sq-ykR"/>
+                <constraint firstItem="OJb-hQ-UUu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="cgA-6e-sZx"/>
+                <constraint firstItem="G6a-ae-G5W" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="ci3-Uk-AzJ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="G6a-ae-G5W" secondAttribute="trailing" constant="30" id="dLf-72-6do"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="OJb-hQ-UUu" secondAttribute="bottom" constant="30" id="fLv-gS-1AQ"/>
+                <constraint firstItem="G6a-ae-G5W" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="60" id="hPA-En-Ffw"/>
+                <constraint firstItem="OJb-hQ-UUu" firstAttribute="top" secondItem="c2L-78-2HT" secondAttribute="bottom" constant="20" id="yux-xb-L1Y"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
+        </view>
+    </objects>
+</document>

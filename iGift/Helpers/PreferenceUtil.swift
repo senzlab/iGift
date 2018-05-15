@@ -20,6 +20,7 @@ class PreferenceUtil {
     static let QUESTION2 = "QUESTION2"
     static let QUESTION3 = "QUESTION3"
     static let ACCOUNT = "ACCOUNT"
+    static let PHONE_NUMBER = "PHONE_NUMBER"
     
     let userDefaults = UserDefaults.standard
     

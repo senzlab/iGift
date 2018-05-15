@@ -34,7 +34,14 @@ class NavigationViewController : UINavigationController {
     }
 
     func loadInitialView() {
-        let initialViewController = RegisterViewController(nibName: "RegisterViewController", bundle: nil)
-        self.pushViewController(initialViewController, animated: true)
+        
+        if (PreferenceUtil.instance.get(key: PreferenceUtil.PHONE_NUMBER).isEmpty) {
+            let termsOfUseViewController = TermsOfUseViewController(nibName: "TermsOfUseViewController", bundle: nil)
+            self.pushViewController(termsOfUseViewController, animated: true)
+        }
+        else {
+            let homeViewController = HomeViewController(nibName: "HomeViewController", bundle: nil)
+            self.pushViewController(homeViewController, animated: true)
+        }
     }
 }

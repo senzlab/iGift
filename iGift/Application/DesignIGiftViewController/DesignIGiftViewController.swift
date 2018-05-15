@@ -142,6 +142,8 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
         GiftCard.shared.capturedImage = nil
         capturedPhotoImageView.isHidden = true
         
+        giftMsgTextView.font = giftMsgTextView.font?.fontWithName(name: Constants.MAIN_FONT_FAMILY.rawValue)
+        
 //        The way of retrieving image and show to the user from user documents
 //        capturedPhotoImageView.image = UIImage(contentsOfFile: readFileInPath(relativeFilePath: Constants.IMAGES_DIR.rawValue))
     }

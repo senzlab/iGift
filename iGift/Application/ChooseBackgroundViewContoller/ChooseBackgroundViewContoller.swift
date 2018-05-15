@@ -42,7 +42,7 @@ class ChooseBackgroundViewContoller: BaseViewController, UICollectionViewDataSou
         colorView.layer.cornerRadius = 0.5 * colorView.bounds.size.width;
         cell.contentView.addSubview(colorView)
 
-        cell.backgroundColor = UIColor.fromHex(0xFF9224)
+        cell.backgroundColor = UIColor.fromHex(0xF5944E)
         
         return cell
     }
