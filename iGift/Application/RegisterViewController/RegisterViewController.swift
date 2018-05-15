@@ -39,6 +39,15 @@ class RegisterViewController : KeyboardScrollableViewController {
     }
 
     @IBAction func onRegisterClicked(_ sender: Any) {
+        
+        let notificationAcceptStatus = RegisterViewModel().hasUserAccpetedRemoteNotifications()
+        
+//        If user hasn't accept remote notifications, do not proceed with the registration
+        if !notificationAcceptStatus {
+            RegisterViewModel().askUserToRegisterRemoteNotifications(viewController: self)
+            return
+        }
+        
         // gengerate key pair
         // do register
         CryptoUtil.instance.initKeys()
