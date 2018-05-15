@@ -14,13 +14,14 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var navController: NavigationViewController!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
         // Load Navigation View Controller to stack other viewcontroallers
         window = UIWindow.init(frame: UIScreen.main.bounds)
-        let navController = NavigationViewController()
+        navController = NavigationViewController()
 
         // Setup Global Styles for NavBar
         setupNavBarStyles(navController.navigationBar)
@@ -153,16 +154,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let z = SenzUtil.instance.parse(msg: senzConnect as String)
             print(z.attr["#from"]!)
             print(z.attr["#pubkey"]!)
+            
+            let contactsViewController = ContactsViewController(nibName: "ContactsViewController", bundle: nil)
+            navController.pushViewController(contactsViewController, animated: true)
         }
-        
-        if let senzIgift = userInfo["senz_igift"] as? NSString {
+        else if let senzIgift = userInfo["senz_igift"] as? NSString {
             print((#file as NSString).lastPathComponent, " # senzIgift = ", senzIgift)
             
             let z = SenzUtil.instance.parse(msg: senzIgift as String)
             print(z.attr["#from"]!)
             print(z.attr["#uid"]!)
+            
+            let igiftsReceivedViewController = IGiftsReceivedViewController(nibName: "IGiftsReceivedViewController", bundle: nil)
+            navController.pushViewController(igiftsReceivedViewController, animated: true)
         }
-        
     }
 }
 
