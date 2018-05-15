@@ -51,8 +51,7 @@ class RegisterViewController : KeyboardScrollableViewController {
         // gengerate key pair
         // do register
         CryptoUtil.instance.initKeys()
-        //doReg()
-        self.loadView("SecurityQuestionsViewController")
+        doReg()
     }
     
     func doReg() {
@@ -65,7 +64,7 @@ class RegisterViewController : KeyboardScrollableViewController {
         
         // data
         let uid = SenzUtil.instance.uid(zAddress: zAddress!)
-        let regSenz = SenzUtil.instance.regSenz(uid: uid, zAddress: zAddress!)
+        let regSenz = SenzUtil.instance.regSenz(uid: uid, zAddress: (zAddress?.trimmingCharacters(in: .whitespacesAndNewlines))!)
         let data = [
             "uid": uid,
             "msg": regSenz
@@ -75,6 +74,9 @@ class RegisterViewController : KeyboardScrollableViewController {
         // send post
         Httpz.instance.doPost(url: url, param: data, onComplete: {success in
             if success {
+                
+                PreferenceUtil.instance.put(key: PreferenceUtil.PHONE_NUMBER, value: zAddress!)
+                
                 // success request
                 self.loadView("SecurityQuestionsViewController")
             } else {
