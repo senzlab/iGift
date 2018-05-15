@@ -40,6 +40,7 @@ class SettingsViewController : BaseViewController, UITableViewDelegate, UITableV
             cell = nibArray.object(at: 0) as? CustomSettingCell
         }
 
+        cell?.btnForgot.isHidden = true
         // SetupUI and return cell for each row
         switch indexPath.row {
         case 0:
@@ -47,8 +48,10 @@ class SettingsViewController : BaseViewController, UITableViewDelegate, UITableV
             cell?.btnSetting?.setTitle("ADD", for: UIControlState.normal)
             break
         case 1:
-            cell?.lblTitle?.text = "UserName - "
+            cell?.lblTitle?.text = "Phone no"
             cell?.btnSetting?.setTitle("CHANGE", for: UIControlState.normal)
+            cell?.btnForgot.setTitle("FORGOT", for: UIControlState.normal)
+            cell?.btnForgot.isHidden = false
             break
         case 2:
             cell?.lblTitle?.text = "Password"

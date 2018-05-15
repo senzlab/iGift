@@ -21,13 +21,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You need to setup sampath bank account, in order to send iGift." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hav-i4-Pnz" customClass="CustomLabel" customModule="iGift" customModuleProvider="target">
-                    <rect key="frame" x="30" y="50" width="260" height="134"/>
+                    <rect key="frame" x="30" y="50" width="260" height="93"/>
                     <fontDescription key="fontDescription" type="system" pointSize="28"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please note that, if you don't have a sampath bank account, you cannot send iGifts. You can only receive iGifts :)" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpm-UX-yfm" customClass="CustomLabel" customModule="iGift" customModuleProvider="target">
-                    <rect key="frame" x="30" y="204" width="260" height="200.5"/>
+                    <rect key="frame" x="30" y="163" width="260" height="154.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="28"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
