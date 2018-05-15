@@ -16,6 +16,7 @@ class KeyboardScrollableViewController : BaseViewController, UITextFieldDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         self.registerForKeyboardNotifications()
+        self.hideKeyBoardOnLostFocus()
     }
 
     override func viewWillDisappear(_ animated: Bool) {

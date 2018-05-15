@@ -75,6 +75,9 @@ class RegisterViewController : KeyboardScrollableViewController {
         // send post
         Httpz.instance.doPost(url: url, param: data, onComplete: {success in
             if success {
+                
+//                PreferenceUtil.instance.put(key: "", value: "")
+                
                 // success request
                 self.loadView("SecurityQuestionsViewController")
             } else {

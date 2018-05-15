@@ -15,7 +15,6 @@ class BaseViewController : ApplicationViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.hideKeyBoardOnLostFocus()
         self.setEmptyBackButton()
 
         // Ensure all view controllers frame stays within bounds
