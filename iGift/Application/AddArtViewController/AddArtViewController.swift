@@ -44,7 +44,7 @@ class AddArtViewController: BaseViewController, UICollectionViewDataSource, UICo
         imageView.frame = CGRect(x: (cell.frame.size.width/2 - imageViewWidth/2), y: (cell.frame.size.height/2 - imageViewWidth/2), width: imageViewWidth, height: imageViewWidth)
         cell.contentView.addSubview(imageView)
         
-        cell.backgroundColor = UIColor.fromHex(0xFF9224)
+        cell.backgroundColor = UIColor.fromHex(0xF5944E)
 
         return cell
     }
