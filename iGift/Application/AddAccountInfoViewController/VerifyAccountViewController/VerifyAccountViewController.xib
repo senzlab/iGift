@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VerifyAccountViewController" customModule="iGift" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="iN0-l3-epB" id="Rwp-aE-8Vi"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You need to setup Sampath bank account in order to send iGift.." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hav-i4-Pnz" customClass="CustomLabel" customModule="iGift" customModuleProvider="target">
+                    <rect key="frame" x="30" y="50" width="260" height="93"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please note that, if you do't have a sampath bank account, you cannot send iGifts. YOu can only recevive iGifts :)" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpm-UX-yfm" customClass="CustomLabel" customModule="iGift" customModuleProvider="target">
+                    <rect key="frame" x="30" y="163" width="260" height="185.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBa-29-K9c" customClass="CustomButton" customModule="iGift" customModuleProvider="target">
+                    <rect key="frame" x="30" y="428" width="260" height="50"/>
+                    <color key="backgroundColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="f1q-ff-n3c"/>
+                    </constraints>
+                    <state key="normal" title="OK">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isRoundedCorners" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isShadowUnder" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="onOKClicked:" destination="-1" eventType="touchUpInside" id="CbW-19-tTI"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oXl-2d-BiC" customClass="CustomButton" customModule="iGift" customModuleProvider="target">
+                    <rect key="frame" x="30" y="488" width="260" height="50"/>
+                    <color key="backgroundColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="6AH-CH-38y"/>
+                    </constraints>
+                    <state key="normal" title="CANCEL">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isRoundedCorners" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isShadowUnder" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="onCancelClicked:" destination="-1" eventType="touchUpInside" id="aWv-8c-luJ"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="fpm-UX-yfm" secondAttribute="trailing" constant="30" id="Cfa-VR-NTz"/>
+                <constraint firstItem="Hav-i4-Pnz" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="GS0-6Z-TX2"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="oXl-2d-BiC" secondAttribute="bottom" constant="30" id="HN7-aS-lWH"/>
+                <constraint firstItem="Hav-i4-Pnz" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="30" id="M93-t1-9OR">
+                    <variation key="heightClass=compact-widthClass=compact" constant="10"/>
+                </constraint>
+                <constraint firstItem="fpm-UX-yfm" firstAttribute="top" secondItem="Hav-i4-Pnz" secondAttribute="bottom" constant="20" id="Nlc-pa-XVE"/>
+                <constraint firstItem="fpm-UX-yfm" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="Pvy-B9-uFU"/>
+                <constraint firstItem="cBa-29-K9c" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="RxT-AC-b7P"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="cBa-29-K9c" secondAttribute="trailing" constant="30" id="bnP-NM-DGD"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="oXl-2d-BiC" secondAttribute="trailing" constant="30" id="cZ2-Aj-lbC"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Hav-i4-Pnz" secondAttribute="trailing" constant="30" id="psz-xD-7du"/>
+                <constraint firstItem="oXl-2d-BiC" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="vCw-5u-vPL"/>
+                <constraint firstItem="oXl-2d-BiC" firstAttribute="top" secondItem="cBa-29-K9c" secondAttribute="bottom" constant="10" id="yJu-Zf-abe"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="33" y="54"/>
+        </view>
+    </objects>
+</document>

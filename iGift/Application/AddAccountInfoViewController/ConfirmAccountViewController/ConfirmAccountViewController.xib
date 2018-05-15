@@ -10,8 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddAccountViewController" customModule="iGift" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ConfirmAccountViewController" customModule="iGift" customModuleProvider="target">
             <connections>
+                <outlet property="LblFirstText" destination="Hav-i4-Pnz" id="JNr-96-rch"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Rwp-aE-8Vi"/>
             </connections>
         </placeholder>
@@ -20,14 +21,15 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You need to setup sampath bank account, in order to send iGift." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hav-i4-Pnz" customClass="CustomLabel" customModule="iGift" customModuleProvider="target">
-                    <rect key="frame" x="30" y="50" width="260" height="93"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hav-i4-Pnz" customClass="CustomLabel" customModule="iGift" customModuleProvider="target">
+                    <rect key="frame" x="30" y="50" width="260" height="0.0"/>
                     <fontDescription key="fontDescription" type="system" pointSize="28"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please note that, if you don't have a sampath bank account, you cannot send iGifts. You can only receive iGifts :)" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpm-UX-yfm" customClass="CustomLabel" customModule="iGift" customModuleProvider="target">
-                    <rect key="frame" x="30" y="163" width="260" height="154.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpm-UX-yfm" customClass="CustomLabel" customModule="iGift" customModuleProvider="target">
+                    <rect key="frame" x="30" y="70" width="260" height="216.5"/>
+                    <string key="text">To confirm the account, please find the transation amount cia sampath vishwa or by visiting nearest sampath bank and enter in next window.</string>
                     <fontDescription key="fontDescription" type="system" pointSize="28"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
@@ -38,7 +40,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="f1q-ff-n3c"/>
                     </constraints>
-                    <state key="normal" title="OK">
+                    <state key="normal" title="NEXT">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <userDefinedRuntimeAttributes>
@@ -51,6 +53,9 @@
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isShadowUnder" value="YES"/>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="onNextClicked:" destination="-1" eventType="touchUpInside" id="BbG-3T-MJ5"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oXl-2d-BiC" customClass="CustomButton" customModule="iGift" customModuleProvider="target">
                     <rect key="frame" x="30" y="488" width="260" height="50"/>
@@ -71,6 +76,9 @@
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isShadowUnder" value="YES"/>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="onCancelClicked:" destination="-1" eventType="touchUpInside" id="aWv-8c-luJ"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

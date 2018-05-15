@@ -13,7 +13,7 @@ class ApplicationViewController : UIViewController {
 
 
     func loadAccountView() {
-        loadView("AddAccountViewController")
+        loadView("AddAccountInfoViewController")
     }
 
     func loadView(_ name: String) {
@@ -36,6 +36,17 @@ class ApplicationViewController : UIViewController {
 
     func getNewInstance(_ name: String) -> UIViewController? {
         switch name {
+            
+        case "VerifyAccountViewController":
+            return VerifyAccountViewController(nibName: "VerifyAccountViewController", bundle: nil)
+        case "SaltConfirmViewController":
+            return SaltConfirmViewController(nibName: "SaltConfirmViewController", bundle: nil)
+            
+        case "ConfirmAccountViewController":
+            return ConfirmAccountViewController(nibName: "ConfirmAccountViewController", bundle: nil)
+            
+        case "AddAccountInfoViewController":
+            return AddAccountInfoViewController(nibName: "AddAccountInfoViewController", bundle: nil)
         case "AddAccountViewController":
             return AddAccountViewController(nibName: "AddAccountViewController", bundle: nil)
         case "SettingsViewController":

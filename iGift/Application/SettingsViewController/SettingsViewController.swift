@@ -85,7 +85,7 @@ class SettingsViewController : BaseViewController, UITableViewDelegate, UITableV
     @objc func buttonClicked(_ sender: CustomButton) {
         switch sender.tag {
         case 0:
-            self.loadView("AddAccountViewController")
+            self.loadView("AddAccountInfoViewController")
         break
         case 1:
             // Change User Btn

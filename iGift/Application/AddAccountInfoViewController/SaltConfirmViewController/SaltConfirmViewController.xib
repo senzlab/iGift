@@ -10,12 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterViewController" customModule="iGift" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SaltConfirmViewController" customModule="iGift" customModuleProvider="target">
             <connections>
                 <outlet property="scrollView" destination="rwL-IR-92e" id="uy8-Kp-pKY"/>
-                <outlet property="txtFieldConfirmPassword" destination="Y6h-PW-SD2" id="F9l-2K-UPC"/>
-                <outlet property="txtFieldPassword" destination="apv-kU-s5W" id="kA4-fs-ak1"/>
-                <outlet property="txtFieldUsername" destination="7FG-bQ-ehw" id="35X-WL-TyK"/>
+                <outlet property="txtFieldTransactionAmt" destination="7FG-bQ-ehw" id="vAs-nS-i5x"/>
                 <outlet property="view" destination="iN0-l3-epB" id="4Uy-rE-kAa"/>
             </connections>
         </placeholder>
@@ -31,9 +29,9 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="hkw-jc-gu9">
-                                    <rect key="frame" x="50" y="118.5" width="275" height="250"/>
+                                    <rect key="frame" x="50" y="218.5" width="275" height="50"/>
                                     <subviews>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" minimumFontSize="22" translatesAutoresizingMaskIntoConstraints="NO" id="7FG-bQ-ehw">
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Transaction amount" minimumFontSize="22" translatesAutoresizingMaskIntoConstraints="NO" id="7FG-bQ-ehw">
                                             <rect key="frame" x="0.0" y="0.0" width="275" height="50"/>
                                             <color key="backgroundColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="0.0" colorSpace="calibratedRGB"/>
                                             <color key="tintColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="0.0" colorSpace="calibratedRGB"/>
@@ -47,36 +45,10 @@
                                                 <outlet property="delegate" destination="-1" id="gSK-ld-kSo"/>
                                             </connections>
                                         </textField>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="22" translatesAutoresizingMaskIntoConstraints="NO" id="apv-kU-s5W">
-                                            <rect key="frame" x="0.0" y="100" width="275" height="50"/>
-                                            <color key="backgroundColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="0.0" colorSpace="calibratedRGB"/>
-                                            <color key="tintColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="0.0" colorSpace="calibratedRGB"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                            <connections>
-                                                <outlet property="delegate" destination="-1" id="jeo-4C-Hg1"/>
-                                            </connections>
-                                        </textField>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm password" minimumFontSize="22" translatesAutoresizingMaskIntoConstraints="NO" id="Y6h-PW-SD2">
-                                            <rect key="frame" x="0.0" y="200" width="275" height="50"/>
-                                            <color key="backgroundColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="0.0" colorSpace="calibratedRGB"/>
-                                            <color key="tintColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="0.0" colorSpace="calibratedRGB"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                            <connections>
-                                                <outlet property="delegate" destination="-1" id="jQr-eS-Ayf"/>
-                                            </connections>
-                                        </textField>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Y6h-PW-SD2" firstAttribute="leading" secondItem="hkw-jc-gu9" secondAttribute="leading" id="5Jj-5u-3ok"/>
-                                        <constraint firstItem="apv-kU-s5W" firstAttribute="leading" secondItem="hkw-jc-gu9" secondAttribute="leading" id="LhH-Ck-eu7"/>
-                                        <constraint firstAttribute="trailing" secondItem="apv-kU-s5W" secondAttribute="trailing" id="OTe-K4-Ypc"/>
                                         <constraint firstAttribute="trailing" secondItem="7FG-bQ-ehw" secondAttribute="trailing" id="Wvw-8P-IG8"/>
                                         <constraint firstItem="7FG-bQ-ehw" firstAttribute="leading" secondItem="hkw-jc-gu9" secondAttribute="leading" id="duo-56-69C"/>
-                                        <constraint firstAttribute="trailing" secondItem="Y6h-PW-SD2" secondAttribute="trailing" id="rJn-Wx-aT1"/>
                                     </constraints>
                                 </stackView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q1I-ir-BJl" customClass="CustomButton" customModule="iGift" customModuleProvider="target">
@@ -87,7 +59,7 @@
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                     <color key="tintColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
-                                    <state key="normal" title="REGISTER">
+                                    <state key="normal" title="CONFIRM">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <userDefinedRuntimeAttributes>
@@ -101,7 +73,7 @@
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isShadowUnder" value="YES"/>
                                     </userDefinedRuntimeAttributes>
                                     <connections>
-                                        <action selector="onRegisterClicked:" destination="-1" eventType="touchUpInside" id="bi8-ht-z1U"/>
+                                        <action selector="onConfirmClicked:" destination="-1" eventType="touchUpInside" id="1Fw-et-A1Z"/>
                                     </connections>
                                 </button>
                             </subviews>
