@@ -144,6 +144,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         print((#file as NSString).lastPathComponent, " # userInfo = ", userInfo)
+        
+        UIApplication.shared.applicationIconBadgeNumber = 0
     }
 }
 
