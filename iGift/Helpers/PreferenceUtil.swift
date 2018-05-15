@@ -16,6 +16,7 @@ class PreferenceUtil {
     static let Z_ADDRESS = "Z_ADDRESS"
     static let DEVICE_ID = "DEVICE_ID"
     static let ACCOUNT = "ACCOUNT"
+    static let PHONE_NUMBER = "PHONE_NUMBER"
     
     let userDefaults = UserDefaults.standard
     
