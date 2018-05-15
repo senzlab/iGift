@@ -146,6 +146,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print((#file as NSString).lastPathComponent, " # userInfo = ", userInfo)
         
         UIApplication.shared.applicationIconBadgeNumber = 0
+        
+        if let senzConnect = userInfo["senz_connect"] as? NSString {
+            print((#file as NSString).lastPathComponent, " # senzConnect = ", senzConnect)
+            
+            let z = SenzUtil.instance.parse(msg: senzConnect as String)
+            print(z.attr["#from"]!)
+            print(z.attr["#pubkey"]!)
+        }
+        
+        if let senzIgift = userInfo["senz_igift"] as? NSString {
+            print((#file as NSString).lastPathComponent, " # senzIgift = ", senzIgift)
+            
+            let z = SenzUtil.instance.parse(msg: senzIgift as String)
+            print(z.attr["#from"]!)
+            print(z.attr["#uid"]!)
+        }
+        
     }
 }
 

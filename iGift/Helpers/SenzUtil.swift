@@ -29,17 +29,17 @@ class SenzUtil {
                 let key = token
                 let nxtTkn = tokens[i + 1]
                 if nxtTkn.hasPrefix("#") || nxtTkn.hasPrefix("@") {
-                    print(key)
+//                    print(key)
                     senz.attr[key] = ""
                 } else{
-                    print(key + " " + nxtTkn)
+//                    print(key + " " + nxtTkn)
                     senz.attr[key] = nxtTkn
                     i += 1
                 }
             }
         }
         
-        print(senz)
+//        print(senz)
         return senz
     }
     
