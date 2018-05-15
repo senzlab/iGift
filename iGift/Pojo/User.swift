@@ -13,6 +13,7 @@ class User {
     var zid: String = ""
     var phone: String = ""
     var isActive: Bool = false
+    var isRequester: Bool = false
     
     init(id: Int64) {
         self.id = id
