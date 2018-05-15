@@ -19,6 +19,7 @@ class SenzDb {
     private let zid = Expression<String>("zid")
     private let phone = Expression<String>("phone")
     private let isActive = Expression<Bool>("is_active")
+    private let isRequester = Expression<Bool>("is_requester")
 
     // promize table
     private let igifts = Table("igifts")
@@ -52,8 +53,8 @@ class SenzDb {
                 table.column(_uid, primaryKey: true)
                 table.column(zid, unique: true)
                 table.column(phone)
-                table.column(timestamp)
-                table.column(timestamp)
+                table.column(isActive)
+                table.column(isRequester)
 
             })
         } catch {
@@ -85,7 +86,8 @@ class SenzDb {
             let insert = users.insert(
                 zid <- user.zid,
                 phone <- user.phone,
-                isActive <- user.isActive
+                isActive <- user.isActive,
+                isRequester <- user.isRequester
             )
             return try db!.run(insert)
         } catch {
@@ -130,6 +132,7 @@ class SenzDb {
                 u.zid = i[zid]
                 u.phone = i[phone]
                 u.isActive = i[isActive]
+                u.isRequester = i[isRequester]
                 l.append(u)
             }
         } catch {
