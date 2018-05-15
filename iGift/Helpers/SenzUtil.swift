@@ -54,6 +54,61 @@ class SenzUtil {
         return senz + " " + signature
     }
     
+    func connectSenz(to: String) -> String {
+        let pubkey = PreferenceUtil.instance.get(key: PreferenceUtil.PUBLIC_KEY)
+        let zAddress = PreferenceUtil.instance.get(key: PreferenceUtil.Z_ADDRESS)
+        let senz = "SHARE" +
+            " #uid " + uid(zAddress: zAddress) +
+            " #pubkey " + pubkey +
+            " @" + to +
+            " ^" + zAddress
+        let signature = CryptoUtil.instance.sign(payload: senz)
+        return senz + " " + signature
+    }
+    
+    func accountSenz(account: String) -> String {
+        let zAddress = PreferenceUtil.instance.get(key: PreferenceUtil.Z_ADDRESS)
+        let senz = "SHARE" +
+            " #uid " + uid(zAddress: zAddress) +
+            " #acc " + account +
+            " @" + "sampath" +
+            " ^" + zAddress
+        let signature = CryptoUtil.instance.sign(payload: senz)
+        return senz + " " + signature
+    }
+    
+    func salSenz(salt: String) -> String {
+        let zAddress = PreferenceUtil.instance.get(key: PreferenceUtil.Z_ADDRESS)
+        let senz = "SHARE" +
+            " #uid " + uid(zAddress: zAddress) +
+            " #salt " + salt +
+            " @" + "sampath" +
+            " ^" + zAddress
+        let signature = CryptoUtil.instance.sign(payload: senz)
+        return senz + " " + signature
+    }
+    
+    func transferSenz(amount: String, blob: String, to: String) -> String {
+        let zAddress = PreferenceUtil.instance.get(key: PreferenceUtil.Z_ADDRESS)
+        let account = PreferenceUtil.instance.get(key: PreferenceUtil.ACCOUNT)
+        let senz = "SHARE" +
+            " #uid " + uid(zAddress: zAddress) +
+            " #id " + NSUUID().uuidString
+            " #amnt " + amount +
+            " #blob " + blob +
+            " #account " + account +
+            " #to " + to +
+            " #type " + "TRANSFER" +
+            " @" + "sampath" +
+            " ^" + zAddress
+        let signature = CryptoUtil.instance.sign(payload: senz)
+        return senz + " " + signature
+    }
+    
+    func redeemSenz() {
+        
+    }
+    
     func uid(zAddress: String) -> String {
         return zAddress + String(Int(Date().timeIntervalSince1970 * 1000))
     }
