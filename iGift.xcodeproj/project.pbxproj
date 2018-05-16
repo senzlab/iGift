@@ -29,6 +29,8 @@
 		0FC94F1520A6042700CDC810 /* AddArtViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FC94F1320A6042700CDC810 /* AddArtViewController.xib */; };
 		0FC94F1720A60EFA00CDC810 /* AddArtViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC94F1620A60EFA00CDC810 /* AddArtViewModel.swift */; };
 		0FFFDDC520ABE9BC00F044DD /* UIViewExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFFDDC420ABE9BC00F044DD /* UIViewExtention.swift */; };
+		0FFFDDC920ABF89A00F044DD /* ShowGiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFFDDC720ABF89A00F044DD /* ShowGiftViewController.swift */; };
+		0FFFDDCA20ABF89A00F044DD /* ShowGiftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FFFDDC820ABF89A00F044DD /* ShowGiftViewController.xib */; };
 		31C7D78CA4A3FDE08909D7CE /* Pods_iGift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14C8CC1954500D2FDE63CA5E /* Pods_iGift.framework */; };
 		4021E6E720A1CA1600B3DEB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4021E6E620A1CA1600B3DEB7 /* AppDelegate.swift */; };
 		4021E6EC20A1CA1600B3DEB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4021E6EA20A1CA1600B3DEB7 /* Main.storyboard */; };
@@ -130,6 +132,8 @@
 		0FC94F1320A6042700CDC810 /* AddArtViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddArtViewController.xib; sourceTree = "<group>"; };
 		0FC94F1620A60EFA00CDC810 /* AddArtViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddArtViewModel.swift; sourceTree = "<group>"; };
 		0FFFDDC420ABE9BC00F044DD /* UIViewExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtention.swift; sourceTree = "<group>"; };
+		0FFFDDC720ABF89A00F044DD /* ShowGiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowGiftViewController.swift; sourceTree = "<group>"; };
+		0FFFDDC820ABF89A00F044DD /* ShowGiftViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowGiftViewController.xib; sourceTree = "<group>"; };
 		14C8CC1954500D2FDE63CA5E /* Pods_iGift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iGift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4021E6E320A1CA1600B3DEB7 /* iGift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iGift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4021E6E620A1CA1600B3DEB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -285,6 +289,15 @@
 			path = AddArtViewController;
 			sourceTree = "<group>";
 		};
+		0FFFDDC620ABF87700F044DD /* ShowGiftViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0FFFDDC720ABF89A00F044DD /* ShowGiftViewController.swift */,
+				0FFFDDC820ABF89A00F044DD /* ShowGiftViewController.xib */,
+			);
+			path = ShowGiftViewController;
+			sourceTree = "<group>";
+		};
 		4021E6DA20A1CA1600B3DEB7 = {
 			isa = PBXGroup;
 			children = (
@@ -367,6 +380,7 @@
 		4021E70020A1CD0000B3DEB7 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				0FFFDDC620ABF87700F044DD /* ShowGiftViewController */,
 				0F1D5CA820AB1AB300A5D900 /* TermsOfUseViewController */,
 				40A7340420A82223009C0B9B /* SecurityAnswersViewController */,
 				40A7340320A82203009C0B9B /* SecurityQuestionsViewController */,
@@ -819,6 +833,7 @@
 				4087151320A391E2007B3E4C /* CustomPhoneBookCell.xib in Resources */,
 				58B96F6420AB35A700E67D35 /* ConfirmAccountViewController.xib in Resources */,
 				4021E72C20A22B4D00B3DEB7 /* IGiftsViewController.xib in Resources */,
+				0FFFDDCA20ABF89A00F044DD /* ShowGiftViewController.xib in Resources */,
 				4087152820A4ED96007B3E4C /* RegisterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -941,6 +956,7 @@
 				40A7340220A81DCD009C0B9B /* KeyboardScrollableViewController.swift in Sources */,
 				0F2EE36720A59466003C9AEA /* CapturePhotoViewController.swift in Sources */,
 				4021E73020A22B7500B3DEB7 /* SendIGiftsViewController.swift in Sources */,
+				0FFFDDC920ABF89A00F044DD /* ShowGiftViewController.swift in Sources */,
 				0F9138F320A34E400011DF2C /* DesignIGiftViewController.swift in Sources */,
 				0FC94F1020A5F45E00CDC810 /* DeviceModel.swift in Sources */,
 				4087152620A4ED86007B3E4C /* RegisterViewController.swift in Sources */,
