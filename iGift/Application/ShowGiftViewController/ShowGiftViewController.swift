@@ -12,6 +12,8 @@ class ShowGiftViewController: BaseViewController {
 
     @IBOutlet weak var giftImageView: UIImageView!
     
+    @IBOutlet weak var redeemButton: CircleButton!
+    
     //    MARK: UIViewController related
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +25,11 @@ class ShowGiftViewController: BaseViewController {
         
 //        Previewing an image from remote URL. Added anujarosha.lk in Info.plist for testing
         giftImageView.downloadedFrom(link: "http://anujarosha.lk/images/original/my_trip_to_MtLavinia2.jpg")
+    }
+    
+    //    MARK: Action functions
+    @IBAction func redeemAction(_ sender: UIButton) {
+        
     }
     
     //    MARK: Supportive functions
