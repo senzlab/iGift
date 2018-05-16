@@ -31,6 +31,7 @@
 		0FFFDDC520ABE9BC00F044DD /* UIViewExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFFDDC420ABE9BC00F044DD /* UIViewExtention.swift */; };
 		0FFFDDC920ABF89A00F044DD /* ShowGiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFFDDC720ABF89A00F044DD /* ShowGiftViewController.swift */; };
 		0FFFDDCA20ABF89A00F044DD /* ShowGiftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FFFDDC820ABF89A00F044DD /* ShowGiftViewController.xib */; };
+		0FFFDDCC20ABFD4B00F044DD /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFFDDCB20ABFD4B00F044DD /* UIImageViewExtension.swift */; };
 		31C7D78CA4A3FDE08909D7CE /* Pods_iGift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14C8CC1954500D2FDE63CA5E /* Pods_iGift.framework */; };
 		4021E6E720A1CA1600B3DEB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4021E6E620A1CA1600B3DEB7 /* AppDelegate.swift */; };
 		4021E6EC20A1CA1600B3DEB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4021E6EA20A1CA1600B3DEB7 /* Main.storyboard */; };
@@ -134,6 +135,7 @@
 		0FFFDDC420ABE9BC00F044DD /* UIViewExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtention.swift; sourceTree = "<group>"; };
 		0FFFDDC720ABF89A00F044DD /* ShowGiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowGiftViewController.swift; sourceTree = "<group>"; };
 		0FFFDDC820ABF89A00F044DD /* ShowGiftViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowGiftViewController.xib; sourceTree = "<group>"; };
+		0FFFDDCB20ABFD4B00F044DD /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		14C8CC1954500D2FDE63CA5E /* Pods_iGift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iGift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4021E6E320A1CA1600B3DEB7 /* iGift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iGift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4021E6E620A1CA1600B3DEB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -554,6 +556,7 @@
 				4087152D20A5F89D007B3E4C /* UITextField.swift */,
 				4087152F20A5FEAD007B3E4C /* UIViewController.swift */,
 				0FFFDDC420ABE9BC00F044DD /* UIViewExtention.swift */,
+				0FFFDDCB20ABFD4B00F044DD /* UIImageViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -931,6 +934,7 @@
 				0FC94F1420A6042700CDC810 /* AddArtViewController.swift in Sources */,
 				58148C7720AB43A000FE9AAD /* SaltConfirmViewController.swift in Sources */,
 				4021E6E720A1CA1600B3DEB7 /* AppDelegate.swift in Sources */,
+				0FFFDDCC20ABFD4B00F044DD /* UIImageViewExtension.swift in Sources */,
 				4087152120A4ACA6007B3E4C /* PhoneBook.swift in Sources */,
 				C0E2163520A6EAE5002FF833 /* User.swift in Sources */,
 				408714F420A337AD007B3E4C /* CustomSettingCell.swift in Sources */,
