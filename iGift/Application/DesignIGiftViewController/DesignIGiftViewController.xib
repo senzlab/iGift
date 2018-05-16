@@ -16,6 +16,7 @@
             <connections>
                 <outlet property="capturedPhotoImageView" destination="CTF-8A-KT8" id="7jv-bh-x43"/>
                 <outlet property="currencyValueTextField" destination="1ta-Cp-S2T" id="AYC-nF-j5s"/>
+                <outlet property="giftModifyView" destination="8Lb-9T-ayU" id="4f1-Qz-iQR"/>
                 <outlet property="giftMsgTextView" destination="JEJ-We-bVa" id="Fif-dp-lty"/>
                 <outlet property="rootView" destination="H5G-bI-zak" id="RAC-YK-ILY"/>
                 <outlet property="sendGiftButton" destination="Gg0-Sr-2gU" id="Ac0-li-YCS"/>
@@ -43,7 +44,7 @@
                                             <rect key="frame" x="8" y="0.0" width="151" height="40"/>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                         </textField>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -96,7 +97,7 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Lb-9T-ayU" userLabel="View_GiftModify">
-                            <rect key="frame" x="295" y="0.0" width="80" height="220"/>
+                            <rect key="frame" x="295" y="0.0" width="80" height="280"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ru-gx-OKd" userLabel="Button_Camera">
                                     <rect key="frame" x="8" y="20" width="64" height="64"/>
@@ -109,8 +110,19 @@
                                         <action selector="cameraAction:" destination="-1" eventType="touchUpInside" id="zLa-5U-b4k"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BMC-eN-4na" userLabel="Button_AddArt">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yxo-Bd-nN2" userLabel="Button_Msg">
                                     <rect key="frame" x="8" y="84" width="64" height="64"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="yxo-Bd-nN2" secondAttribute="height" multiplier="1:1" id="RAt-Fu-LMK"/>
+                                        <constraint firstAttribute="width" constant="64" id="yDh-0G-Wdn"/>
+                                    </constraints>
+                                    <state key="normal" image="msgg"/>
+                                    <connections>
+                                        <action selector="showHideMsgAction:" destination="-1" eventType="touchUpInside" id="Bfn-cf-BPN"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BMC-eN-4na" userLabel="Button_AddArt">
+                                    <rect key="frame" x="8" y="148" width="64" height="64"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="64" id="GK1-zI-aoA"/>
                                         <constraint firstAttribute="width" secondItem="BMC-eN-4na" secondAttribute="height" multiplier="1:1" id="QnE-vJ-OTr"/>
@@ -121,7 +133,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAs-6C-Cie" userLabel="Button_ChangeBgColor">
-                                    <rect key="frame" x="8" y="148" width="64" height="64"/>
+                                    <rect key="frame" x="8" y="212" width="64" height="64"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="AAs-6C-Cie" secondAttribute="height" multiplier="1:1" id="5N4-ah-1X2"/>
                                         <constraint firstAttribute="width" constant="64" id="iul-FH-snU"/>
@@ -135,11 +147,13 @@
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="AAs-6C-Cie" firstAttribute="top" secondItem="BMC-eN-4na" secondAttribute="bottom" id="1py-a5-HYx"/>
-                                <constraint firstItem="BMC-eN-4na" firstAttribute="top" secondItem="8ru-gx-OKd" secondAttribute="bottom" id="2e2-4q-1s5"/>
+                                <constraint firstItem="BMC-eN-4na" firstAttribute="top" secondItem="yxo-Bd-nN2" secondAttribute="bottom" id="2e2-4q-1s5"/>
+                                <constraint firstItem="yxo-Bd-nN2" firstAttribute="top" secondItem="8ru-gx-OKd" secondAttribute="bottom" id="BDD-GK-uNF"/>
                                 <constraint firstItem="BMC-eN-4na" firstAttribute="centerX" secondItem="8Lb-9T-ayU" secondAttribute="centerX" id="R3a-c5-Vbo"/>
                                 <constraint firstItem="8ru-gx-OKd" firstAttribute="top" secondItem="8Lb-9T-ayU" secondAttribute="top" constant="20" id="VFr-Po-27P"/>
-                                <constraint firstAttribute="height" constant="220" id="bq0-4v-s2y"/>
+                                <constraint firstAttribute="height" constant="280" id="bq0-4v-s2y"/>
                                 <constraint firstItem="8ru-gx-OKd" firstAttribute="centerX" secondItem="8Lb-9T-ayU" secondAttribute="centerX" id="i4a-Xk-G1U"/>
+                                <constraint firstItem="yxo-Bd-nN2" firstAttribute="centerX" secondItem="8Lb-9T-ayU" secondAttribute="centerX" id="n7q-q1-bea"/>
                                 <constraint firstAttribute="width" constant="80" id="xns-W1-xcW"/>
                                 <constraint firstItem="AAs-6C-Cie" firstAttribute="centerX" secondItem="8Lb-9T-ayU" secondAttribute="centerX" id="y4E-qh-xTT"/>
                             </constraints>
@@ -186,6 +200,7 @@
         <image name="art" width="32" height="32"/>
         <image name="background" width="32" height="32"/>
         <image name="capture" width="32" height="32"/>
+        <image name="msgg" width="32" height="32"/>
         <image name="send_white" width="32" height="32"/>
     </resources>
 </document>
