@@ -62,6 +62,7 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
         //TODO, set 'New request' and 'New send'
         cell?.lblUserStatus?.setTitle("New request", for: .normal)
     
+        cell?.selectionStyle = .none
         
         return cell!
     }
