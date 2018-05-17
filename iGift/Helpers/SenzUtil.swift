@@ -29,24 +29,21 @@ class SenzUtil {
                 let key = token
                 let nxtTkn = tokens[i + 1]
                 if nxtTkn.hasPrefix("#") || nxtTkn.hasPrefix("@") {
-//                    print(key)
                     senz.attr[key] = ""
                 } else{
-//                    print(key + " " + nxtTkn)
                     senz.attr[key] = nxtTkn
                     i += 1
                 }
             }
         }
         
-//        print(senz)
         return senz
     }
     
     func regSenz(uid: String, zAddress: String) -> String? {
         let pubkey = PreferenceUtil.instance.get(key: PreferenceUtil.PUBLIC_KEY)
         let devId = PreferenceUtil.instance.get(key: PreferenceUtil.DEVICE_ID)
-        let senz = "SHARE" +
+        let senz = "PUT" +
             " #uid " + uid +
             " #pubkey " + pubkey +
             " #dev " + "apple" +
@@ -63,7 +60,8 @@ class SenzUtil {
         let senz = "SHARE" +
             " #uid " + uid(zAddress: zAddress) +
             " #pubkey " + pubkey +
-            " @" + to +
+            " #to " + to +
+            " @" + "senzswitch" +
             " ^" + zAddress
         let signature = CryptoUtil.instance.sign(payload: senz)
         return senz + " " + signature
