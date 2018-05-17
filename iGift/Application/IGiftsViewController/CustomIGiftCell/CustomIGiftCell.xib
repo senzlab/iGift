@@ -78,7 +78,7 @@
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nya-Wh-00h" customClass="CustomButton" customModule="iGift" customModuleProvider="target">
+                                                        <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nya-Wh-00h" customClass="CustomButton" customModule="iGift" customModuleProvider="target">
                                                             <rect key="frame" x="214.5" y="0.0" width="60" height="21.5"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="60" id="63x-Pv-n7X"/>

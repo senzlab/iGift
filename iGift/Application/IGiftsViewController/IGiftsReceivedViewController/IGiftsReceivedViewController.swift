@@ -12,32 +12,36 @@ class IGiftsReceivedViewController : BaseViewController, UITableViewDelegate, UI
 
     @IBOutlet weak var tblView: UITableView!
 
-    var dataArray = [Igift(id: 1,
-                           user: "Prasad Mathugama",
-                           timestamp: Int64(Date().timeIntervalSinceNow),
-                           isMyIgift: true,
-                           isViewed: true,
-                           account: "123243545",
-                           amount: "101231230 LKR"),
-                     Igift(id: 1,
-                           user: "Jessica Rusten",
-                           timestamp: 0,
-                           isMyIgift: true,
-                           isViewed: true,
-                           account: "58776879780",
-                           amount: "10 LKR"),
-                     Igift(id: 1,
-                           user: "Martin Hallburg", timestamp: Int64(Date().timeIntervalSinceNow),
-                           isMyIgift: false,
-                           isViewed: false,
-                           account: "33333333",
-                           amount: "103453450 LKR")]
+    var dataArray: [Igift]!
+    
+//    var dataArray = [Igift(id: 1,
+//                           user: "Prasad Mathugama",
+//                           timestamp: Int64(Date().timeIntervalSinceNow),
+//                           isMyIgift: true,
+//                           isViewed: true,
+//                           account: "123243545",
+//                           amount: "101231230 LKR"),
+//                     Igift(id: 1,
+//                           user: "Jessica Rusten",
+//                           timestamp: 0,
+//                           isMyIgift: true,
+//                           isViewed: true,
+//                           account: "58776879780",
+//                           amount: "10 LKR"),
+//                     Igift(id: 1,
+//                           user: "Martin Hallburg", timestamp: Int64(Date().timeIntervalSinceNow),
+//                           isMyIgift: false,
+//                           isViewed: false,
+//                           account: "33333333",
+//                           amount: "103453450 LKR")]
 
     let HEIGHT_OF_ROW = 85
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.setupUi()
+        dataArray = SenzDb.instance.getIgifts(myGifts: false)
     }
 
     func setupUi() {

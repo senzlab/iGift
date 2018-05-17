@@ -12,32 +12,35 @@ class IGiftsSentViewController : BaseViewController, UITableViewDelegate, UITabl
 
     @IBOutlet weak var tblView: UITableView!
 
-    var dataArray = [Igift(id: 1,
-                           user: "Lamda Lakmal",
-                           timestamp: 0,
-                           isMyIgift: true,
-                           isViewed: true,
-                           account: "54321",
-                           amount: "100 LKR"),
-                     Igift(id: 1,
-                           user: "Haskeller Eranga",
-                           timestamp: 0,
-                           isMyIgift: true,
-                           isViewed: false,
-                           account: "1232232212343",
-                           amount: "100 LKR"),
-                    Igift(id: 1,
-                           user: "Nalla Hewage", timestamp: 0,
-                           isMyIgift: false,
-                           isViewed: true,
-                           account: "54321",
-                           amount: "100 LKR")]
+    var dataArray: [Igift]!
+    
+//    var dataArray = [Igift(id: 1,
+//                           user: "Lamda Lakmal",
+//                           timestamp: 0,
+//                           isMyIgift: true,
+//                           isViewed: true,
+//                           account: "54321",
+//                           amount: "100 LKR"),
+//                     Igift(id: 1,
+//                           user: "Haskeller Eranga",
+//                           timestamp: 0,
+//                           isMyIgift: true,
+//                           isViewed: false,
+//                           account: "1232232212343",
+//                           amount: "100 LKR"),
+//                    Igift(id: 1,
+//                           user: "Nalla Hewage", timestamp: 0,
+//                           isMyIgift: false,
+//                           isViewed: true,
+//                           account: "54321",
+//                           amount: "100 LKR")]
 
     let HEIGHT_OF_ROW = 85
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUi()
+        dataArray = SenzDb.instance.getIgifts(myGifts: false)
     }
 
     func setupUi() {

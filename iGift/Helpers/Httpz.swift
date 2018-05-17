@@ -119,16 +119,19 @@ class Httpz {
                 
                 if let response = String(bytes: data, encoding: .utf8) {
                     print(response)
+                    
+                    client.close()
                     return response
                 }
             case .failure(let error):
                 print(error)
             }
+            
+            client.close()
         case .failure(let error):
             print(error)
         }
         
-        client.close()
         return nil
     }
     
