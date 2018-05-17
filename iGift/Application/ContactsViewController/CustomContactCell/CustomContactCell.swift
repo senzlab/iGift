@@ -12,6 +12,7 @@ class CustomContactCell: UITableViewCell {
     @IBOutlet weak var lblName          : CustomLabel?
     @IBOutlet weak var lblMessage       : CustomLabel?
     @IBOutlet weak var profileImg       : CustomImageView?
+    @IBOutlet weak var lblUserStatus        : CustomButton?
 }
 
 

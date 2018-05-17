@@ -19,8 +19,8 @@ class IGiftsViewController: UITabBarController {
         
         self.tabBar.tintColor = UIColor.fromHex(HexColors.PRIMARY_COLOR.rawValue)
         self.tabBar.backgroundColor = UIColor.white
-        receivedViewController.tabBarItem = UITabBarItem(title: "Received", image: nil, tag: 0)
-        sentViewController.tabBarItem = UITabBarItem(title: "Sent", image: nil, tag: 0)
+        receivedViewController.tabBarItem = UITabBarItem(title: "Received", image: UIImage(named: "received"), tag: 0)
+        sentViewController.tabBarItem = UITabBarItem(title: "Sent", image: UIImage(named: "sent"), tag: 0)
         
 //        receivedViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
 //        sentViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .downloads, tag: 1)

@@ -15,9 +15,12 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
     let NUMBER_OF_ROWS = 1
     let HEIGHT_OF_ROW = 85
 
+    var dataArray: [User]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
          self.setupUi()
+        dataArray = SenzDb.instance.getUsers()
     }
 
     func setupUi() {
@@ -35,7 +38,7 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
 
     // --- Start of Table View Logic ---
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return NUMBER_OF_ROWS
+        return dataArray.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -50,16 +53,16 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
             cell = nibArray.object(at: 0) as? CustomContactCell
         }
 
+        let data = dataArray[indexPath.row]
+        
         // SetupUI and return cell for each row
-        switch indexPath.row {
-        case 0:
-            cell?.lblName?.text = "Eranga"
-            cell?.lblMessage?.text = "He thinks he is Lamda!"
-            break
-        default:
-            print("NO AVAILABLE CELL FOR INDEX - \(indexPath.row)!!")
-        }
-
+        
+        cell?.lblName?.text = data.phone
+        cell?.lblMessage?.text = data.phone
+        //TODO, set 'New request' and 'New send'
+        cell?.lblUserStatus?.setTitle("New request", for: .normal)
+    
+        
         return cell!
     }
 

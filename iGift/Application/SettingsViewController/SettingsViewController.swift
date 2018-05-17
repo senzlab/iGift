@@ -49,13 +49,15 @@ class SettingsViewController : BaseViewController, UITableViewDelegate, UITableV
             break
         case 1:
             cell?.lblTitle?.text = "Phone no"
-            cell?.btnSetting?.setTitle("CHANGE", for: UIControlState.normal)
-            cell?.btnForgot.setTitle("FORGOT", for: UIControlState.normal)
-            cell?.btnForgot.isHidden = false
+            
+            cell?.btnForgot.setTitle("077123456", for: UIControlState.normal)
+            
             break
         case 2:
             cell?.lblTitle?.text = "Password"
+            cell?.btnSetting?.setTitle("FORGOT", for: UIControlState.normal)
             cell?.btnSetting?.setTitle("CHANGE", for: UIControlState.normal)
+            cell?.btnForgot.isHidden = false
             break
         case 3:
             cell?.lblTitle?.text = "Terms of use"
