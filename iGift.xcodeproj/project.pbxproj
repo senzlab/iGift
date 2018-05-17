@@ -732,7 +732,6 @@
 				4021E6E120A1CA1600B3DEB7 /* Resources */,
 				9143CBAAF728C725783BB5D6 /* Frameworks */,
 				B7E7D4FEC4B41BF729400F2C /* [CP] Embed Pods Frameworks */,
-				78EF924B98F75FB3850460D8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -841,21 +840,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		78EF924B98F75FB3850460D8 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iGift/Pods-iGift-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		B7E7D4FEC4B41BF729400F2C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -864,11 +848,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-iGift/Pods-iGift-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftSocket/SwiftSocket.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyRSA/SwiftyRSA.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSocket.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyRSA.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
