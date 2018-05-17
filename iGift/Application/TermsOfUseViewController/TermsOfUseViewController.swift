@@ -30,6 +30,6 @@ class TermsOfUseViewController: BaseViewController {
     
     @IBAction func rejectAction(_ sender: UIButton) {
         
-        goBack(animated: true)
+        ViewControllerUtil.showAlert(alertTitle: "Title", alertMessage: "Message")
     }
 }
