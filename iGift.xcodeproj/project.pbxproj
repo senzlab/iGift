@@ -95,6 +95,7 @@
 		58148C7220AB3F5D00FE9AAD /* VerifyAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58148C7020AB3F5D00FE9AAD /* VerifyAccountViewController.xib */; };
 		58148C7720AB43A000FE9AAD /* SaltConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58148C7520AB43A000FE9AAD /* SaltConfirmViewController.swift */; };
 		58148C7820AB43A000FE9AAD /* SaltConfirmViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58148C7620AB43A000FE9AAD /* SaltConfirmViewController.xib */; };
+		581DFB5020ADF60E00C32EE6 /* UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581DFB4F20ADF60E00C32EE6 /* UITextView.swift */; };
 		581FE12820AD574300E3638E /* IGiftsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581FE12620AD574300E3638E /* IGiftsViewController.swift */; };
 		58B96F5C20AB296200E67D35 /* AddAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58B96F5A20AB296100E67D35 /* AddAccountViewController.xib */; };
 		58B96F5D20AB296200E67D35 /* AddAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B96F5B20AB296100E67D35 /* AddAccountViewController.swift */; };
@@ -203,6 +204,7 @@
 		58148C7020AB3F5D00FE9AAD /* VerifyAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VerifyAccountViewController.xib; sourceTree = "<group>"; };
 		58148C7520AB43A000FE9AAD /* SaltConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaltConfirmViewController.swift; sourceTree = "<group>"; };
 		58148C7620AB43A000FE9AAD /* SaltConfirmViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SaltConfirmViewController.xib; sourceTree = "<group>"; };
+		581DFB4F20ADF60E00C32EE6 /* UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextView.swift; sourceTree = "<group>"; };
 		581FE12620AD574300E3638E /* IGiftsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGiftsViewController.swift; sourceTree = "<group>"; };
 		58B96F5A20AB296100E67D35 /* AddAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddAccountViewController.xib; sourceTree = "<group>"; };
 		58B96F5B20AB296100E67D35 /* AddAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAccountViewController.swift; sourceTree = "<group>"; };
@@ -562,6 +564,7 @@
 				4087152F20A5FEAD007B3E4C /* UIViewController.swift */,
 				0FFFDDC420ABE9BC00F044DD /* UIViewExtention.swift */,
 				0FFFDDCB20ABFD4B00F044DD /* UIImageViewExtension.swift */,
+				581DFB4F20ADF60E00C32EE6 /* UITextView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -924,6 +927,7 @@
 				C0E2163920A6EF25002FF833 /* SenzUtil.swift in Sources */,
 				4087150720A38737007B3E4C /* HexColors.swift in Sources */,
 				581FE12820AD574300E3638E /* IGiftsViewController.swift in Sources */,
+				581DFB5020ADF60E00C32EE6 /* UITextView.swift in Sources */,
 				4087150220A34B59007B3E4C /* CustomLabel.swift in Sources */,
 				0FFFDDD420AC3D7B00F044DD /* ChangePasswordViewController.swift in Sources */,
 				4087151520A391EE007B3E4C /* CustomPhoneBookCell.swift in Sources */,
@@ -1125,7 +1129,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iGift/iGift.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3828B998CV;
+				DEVELOPMENT_TEAM = 5JA7G4U2EA;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1133,7 +1137,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/iGift/Config/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.creative.igift;
+				PRODUCT_BUNDLE_IDENTIFIER = com.assethubAustralia.cams;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1147,7 +1151,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iGift/iGift.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3828B998CV;
+				DEVELOPMENT_TEAM = 5JA7G4U2EA;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1155,7 +1159,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/iGift/Config/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.creative.igift;
+				PRODUCT_BUNDLE_IDENTIFIER = com.assethubAustralia.cams;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -20,6 +20,10 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
          self.setupUi()
+        
+        let user = User(id: 1)
+        user.phone = "1234445"
+        SenzDb.instance.createUser(user: user)
         dataArray = SenzDb.instance.getUsers()
     }
 
