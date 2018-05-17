@@ -52,7 +52,7 @@ class RegisterViewController : KeyboardScrollableViewController {
         
 //        // gengerate key pair
 //        // do register
-//        CryptoUtil.instance.initKeys()
+        CryptoUtil.instance.initKeys()
         doReg()
     }
     
@@ -68,16 +68,17 @@ class RegisterViewController : KeyboardScrollableViewController {
         let uid = SenzUtil.instance.uid(zAddress: zAddress!)
         let regSenz = SenzUtil.instance.regSenz(uid: uid, zAddress: (zAddress?.trimmingCharacters(in: .whitespacesAndNewlines))!)
         
-        PreferenceUtil.instance.put(key: PreferenceUtil.PHONE_NUMBER, value: self.txtFieldUsername.text!)
-        self.loadView("SecurityQuestionsViewController")
+//        PreferenceUtil.instance.put(key: PreferenceUtil.PHONE_NUMBER, value: self.txtFieldUsername.text!)
+//        self.loadView("SecurityQuestionsViewController")
         
         // send reg
-//        let z = Httpz.instance.pushSenz(senz: regSenz!)
-//        if z == nil {
-//            // login fail
-//            ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Regaistration fail")
-//        } else {
-//            self.loadView("SecurityQuestionsViewController")
-//        }
+        let z = Httpz.instance.pushSenz(senz: regSenz!)
+        if z == nil {
+            // login fail
+            ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Regaistration fail")
+        } else {
+            PreferenceUtil.instance.put(key: PreferenceUtil.PHONE_NUMBER, value: self.txtFieldUsername.text!)
+            self.loadView("SecurityQuestionsViewController")
+        }
     }
 }

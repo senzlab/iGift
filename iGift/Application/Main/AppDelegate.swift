@@ -137,6 +137,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
         print((#file as NSString).lastPathComponent, " # deviceToken = ", deviceTokenString)
+        
+        PreferenceUtil.instance.put(key: PreferenceUtil.DEVICE_ID, value: deviceTokenString)
     }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
@@ -152,8 +154,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print((#file as NSString).lastPathComponent, " # senzConnect = ", senzConnect)
             
             let z = SenzUtil.instance.parse(msg: senzConnect as String)
-            print(z.attr["#from"]!)
-            print(z.attr["#pubkey"]!)
+            let phoneNumber:String = z.attr["#from"]!
+            
+            let senzUser = User(id: 1)
+            senzUser.zid = phoneNumber
+            senzUser.phone = phoneNumber
+            
+            let success: Int64 = SenzDb.instance.createUser(user: senzUser)
+            print(" # User success = ", success)
             
             let contactsViewController = ContactsViewController(nibName: "ContactsViewController", bundle: nil)
             navController.pushViewController(contactsViewController, animated: true)
@@ -162,8 +170,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print((#file as NSString).lastPathComponent, " # senzIgift = ", senzIgift)
             
             let z = SenzUtil.instance.parse(msg: senzIgift as String)
-            print(z.attr["#from"]!)
-            print(z.attr["#uid"]!)
+
+            let senzGift = Igift(id: 1)
+            senzGift.uid = z.attr["#uid"]!
+            senzGift.isMyIgift = false
+            senzGift.isViewed = false
+            
+            let success: Int64 = SenzDb.instance.createIgift(igift: senzGift)
+            print(" # Gift success = ", success)
             
             let igiftsReceivedViewController = IGiftsReceivedViewController(nibName: "IGiftsReceivedViewController", bundle: nil)
             navController.pushViewController(igiftsReceivedViewController, animated: true)
