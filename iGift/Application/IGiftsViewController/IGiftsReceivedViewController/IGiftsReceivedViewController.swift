@@ -81,12 +81,20 @@ class IGiftsReceivedViewController : BaseViewController, UITableViewDelegate, UI
         cell?.lblName?.text = data.user
         cell?.lblTime?.text = TimeUtil.sharedInstance.timeAgoSinceDate(data.timestamp)
         cell?.lblAmount?.text = data.amount
+        
+        cell?.selectionStyle = .none
 
         return cell!
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return CGFloat(HEIGHT_OF_ROW)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let showGiftViewController = ShowGiftViewController(nibName: "ShowGiftViewController", bundle: nil)
+        self.navigationController?.pushViewController(showGiftViewController, animated: true)
     }
 }
 
