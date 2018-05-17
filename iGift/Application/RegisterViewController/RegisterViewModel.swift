@@ -27,7 +27,6 @@ class RegisterViewModel: NSObject {
     }
     
     func askUserToRegisterRemoteNotifications(viewController: UIViewController) {
-        
         registrationStatus = false
         
         let alertController = UIAlertController(title: "Alert", message: "This is an alert.", preferredStyle: .alert)

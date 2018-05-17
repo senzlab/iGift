@@ -28,6 +28,13 @@
 		0FC94F1420A6042700CDC810 /* AddArtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC94F1220A6042700CDC810 /* AddArtViewController.swift */; };
 		0FC94F1520A6042700CDC810 /* AddArtViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FC94F1320A6042700CDC810 /* AddArtViewController.xib */; };
 		0FC94F1720A60EFA00CDC810 /* AddArtViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC94F1620A60EFA00CDC810 /* AddArtViewModel.swift */; };
+		0FFFDDC520ABE9BC00F044DD /* UIViewExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFFDDC420ABE9BC00F044DD /* UIViewExtention.swift */; };
+		0FFFDDC920ABF89A00F044DD /* ShowGiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFFDDC720ABF89A00F044DD /* ShowGiftViewController.swift */; };
+		0FFFDDCA20ABF89A00F044DD /* ShowGiftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FFFDDC820ABF89A00F044DD /* ShowGiftViewController.xib */; };
+		0FFFDDCC20ABFD4B00F044DD /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFFDDCB20ABFD4B00F044DD /* UIImageViewExtension.swift */; };
+		0FFFDDD020AC2FAC00F044DD /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFFDDCF20AC2FAC00F044DD /* CircleButton.swift */; };
+		0FFFDDD420AC3D7B00F044DD /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFFDDD220AC3D7B00F044DD /* ChangePasswordViewController.swift */; };
+		0FFFDDD520AC3D7B00F044DD /* ChangePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FFFDDD320AC3D7B00F044DD /* ChangePasswordViewController.xib */; };
 		31C7D78CA4A3FDE08909D7CE /* Pods_iGift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14C8CC1954500D2FDE63CA5E /* Pods_iGift.framework */; };
 		4021E6E720A1CA1600B3DEB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4021E6E620A1CA1600B3DEB7 /* AppDelegate.swift */; };
 		4021E6EC20A1CA1600B3DEB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4021E6EA20A1CA1600B3DEB7 /* Main.storyboard */; };
@@ -127,6 +134,13 @@
 		0FC94F1220A6042700CDC810 /* AddArtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddArtViewController.swift; sourceTree = "<group>"; };
 		0FC94F1320A6042700CDC810 /* AddArtViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddArtViewController.xib; sourceTree = "<group>"; };
 		0FC94F1620A60EFA00CDC810 /* AddArtViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddArtViewModel.swift; sourceTree = "<group>"; };
+		0FFFDDC420ABE9BC00F044DD /* UIViewExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtention.swift; sourceTree = "<group>"; };
+		0FFFDDC720ABF89A00F044DD /* ShowGiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowGiftViewController.swift; sourceTree = "<group>"; };
+		0FFFDDC820ABF89A00F044DD /* ShowGiftViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowGiftViewController.xib; sourceTree = "<group>"; };
+		0FFFDDCB20ABFD4B00F044DD /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		0FFFDDCF20AC2FAC00F044DD /* CircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
+		0FFFDDD220AC3D7B00F044DD /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		0FFFDDD320AC3D7B00F044DD /* ChangePasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangePasswordViewController.xib; sourceTree = "<group>"; };
 		14C8CC1954500D2FDE63CA5E /* Pods_iGift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iGift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4021E6E320A1CA1600B3DEB7 /* iGift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iGift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4021E6E620A1CA1600B3DEB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -281,6 +295,24 @@
 			path = AddArtViewController;
 			sourceTree = "<group>";
 		};
+		0FFFDDC620ABF87700F044DD /* ShowGiftViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0FFFDDC720ABF89A00F044DD /* ShowGiftViewController.swift */,
+				0FFFDDC820ABF89A00F044DD /* ShowGiftViewController.xib */,
+			);
+			path = ShowGiftViewController;
+			sourceTree = "<group>";
+		};
+		0FFFDDD120AC3D6100F044DD /* ChangePasswordViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0FFFDDD220AC3D7B00F044DD /* ChangePasswordViewController.swift */,
+				0FFFDDD320AC3D7B00F044DD /* ChangePasswordViewController.xib */,
+			);
+			path = ChangePasswordViewController;
+			sourceTree = "<group>";
+		};
 		4021E6DA20A1CA1600B3DEB7 = {
 			isa = PBXGroup;
 			children = (
@@ -363,6 +395,8 @@
 		4021E70020A1CD0000B3DEB7 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				0FFFDDD120AC3D6100F044DD /* ChangePasswordViewController */,
+				0FFFDDC620ABF87700F044DD /* ShowGiftViewController */,
 				0F1D5CA820AB1AB300A5D900 /* TermsOfUseViewController */,
 				40A7340420A82223009C0B9B /* SecurityAnswersViewController */,
 				40A7340320A82203009C0B9B /* SecurityQuestionsViewController */,
@@ -379,7 +413,6 @@
 				4021E6FB20A1CAD900B3DEB7 /* HomeViewController */,
 				4021E71420A209D700B3DEB7 /* SendIGiftViewController */,
 				4021E71320A209A600B3DEB7 /* AboutViewController */,
-				4021E71120A2097200B3DEB7 /* ChangePasswordViewController */,
 				4021E71020A2095D00B3DEB7 /* ChangeUserNameViewController */,
 				4021E70F20A2094900B3DEB7 /* AddAccountInfoViewController */,
 				4021E70E20A2093800B3DEB7 /* SettingsViewController */,
@@ -464,13 +497,6 @@
 			path = ChangeUserNameViewController;
 			sourceTree = "<group>";
 		};
-		4021E71120A2097200B3DEB7 /* ChangePasswordViewController */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ChangePasswordViewController;
-			sourceTree = "<group>";
-		};
 		4021E71320A209A600B3DEB7 /* AboutViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -534,6 +560,8 @@
 				0F7C392D20A41F1300DF5BF6 /* UITextViewPlaceholder.swift */,
 				4087152D20A5F89D007B3E4C /* UITextField.swift */,
 				4087152F20A5FEAD007B3E4C /* UIViewController.swift */,
+				0FFFDDC420ABE9BC00F044DD /* UIViewExtention.swift */,
+				0FFFDDCB20ABFD4B00F044DD /* UIImageViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -573,6 +601,7 @@
 				4087151620A3FECF007B3E4C /* CustomImageView.swift */,
 				4087151920A488ED007B3E4C /* CustomSearchBar.swift */,
 				4087152220A4BE5F007B3E4C /* CustomTableView.swift */,
+				0FFFDDCF20AC2FAC00F044DD /* CircleButton.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -729,7 +758,6 @@
 				4021E6E120A1CA1600B3DEB7 /* Resources */,
 				9143CBAAF728C725783BB5D6 /* Frameworks */,
 				B7E7D4FEC4B41BF729400F2C /* [CP] Embed Pods Frameworks */,
-				78EF924B98F75FB3850460D8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -802,6 +830,7 @@
 				408714F620A337CC007B3E4C /* CustomSettingCell.xib in Resources */,
 				0F2EE36820A59466003C9AEA /* CapturePhotoViewController.xib in Resources */,
 				58148C7820AB43A000FE9AAD /* SaltConfirmViewController.xib in Resources */,
+				0FFFDDD520AC3D7B00F044DD /* ChangePasswordViewController.xib in Resources */,
 				40A7340820A82293009C0B9B /* SecurityAnswersViewController.xib in Resources */,
 				40A7340C20A822B8009C0B9B /* SecurityQuestionsViewController.xib in Resources */,
 				408714F120A3326E007B3E4C /* GeosansLight.ttf in Resources */,
@@ -812,6 +841,8 @@
 				0FC94F1520A6042700CDC810 /* AddArtViewController.xib in Resources */,
 				4087151320A391E2007B3E4C /* CustomPhoneBookCell.xib in Resources */,
 				58B96F6420AB35A700E67D35 /* ConfirmAccountViewController.xib in Resources */,
+				4021E72C20A22B4D00B3DEB7 /* IGiftsViewController.xib in Resources */,
+				0FFFDDCA20ABF89A00F044DD /* ShowGiftViewController.xib in Resources */,
 				4087152820A4ED96007B3E4C /* RegisterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -837,21 +868,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		78EF924B98F75FB3850460D8 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iGift/Pods-iGift-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		B7E7D4FEC4B41BF729400F2C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -860,11 +876,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-iGift/Pods-iGift-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftSocket/SwiftSocket.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyRSA/SwiftyRSA.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSocket.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyRSA.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -887,10 +905,12 @@
 				0F1081BD20A6E8770024C9BD /* UIImageExtension.swift in Sources */,
 				0F87F3CA20A9432500C33259 /* FileModel.swift in Sources */,
 				C0E2163420A6EAE5002FF833 /* Igift.swift in Sources */,
+				0FFFDDC520ABE9BC00F044DD /* UIViewExtention.swift in Sources */,
 				C0E2163920A6EF25002FF833 /* SenzUtil.swift in Sources */,
 				4087150720A38737007B3E4C /* HexColors.swift in Sources */,
 				581FE12820AD574300E3638E /* IGiftsViewController.swift in Sources */,
 				4087150220A34B59007B3E4C /* CustomLabel.swift in Sources */,
+				0FFFDDD420AC3D7B00F044DD /* ChangePasswordViewController.swift in Sources */,
 				4087151520A391EE007B3E4C /* CustomPhoneBookCell.swift in Sources */,
 				40A7340620A82288009C0B9B /* SecurityAnswersViewController.swift in Sources */,
 				408714FE20A34996007B3E4C /* UIFont.swift in Sources */,
@@ -908,6 +928,7 @@
 				0FC94F1420A6042700CDC810 /* AddArtViewController.swift in Sources */,
 				58148C7720AB43A000FE9AAD /* SaltConfirmViewController.swift in Sources */,
 				4021E6E720A1CA1600B3DEB7 /* AppDelegate.swift in Sources */,
+				0FFFDDCC20ABFD4B00F044DD /* UIImageViewExtension.swift in Sources */,
 				4087152120A4ACA6007B3E4C /* PhoneBook.swift in Sources */,
 				C0E2163520A6EAE5002FF833 /* User.swift in Sources */,
 				408714F420A337AD007B3E4C /* CustomSettingCell.swift in Sources */,
@@ -922,6 +943,7 @@
 				4021E70820A1D55600B3DEB7 /* NavigationViewController.swift in Sources */,
 				4021E70420A1CFDF00B3DEB7 /* HomeViewController.swift in Sources */,
 				408714EB20A31B28007B3E4C /* CustomButton.swift in Sources */,
+				0FFFDDD020AC2FAC00F044DD /* CircleButton.swift in Sources */,
 				4021E73220A231D600B3DEB7 /* PhoneBookViewController.swift in Sources */,
 				C0E2165220A6F52F002FF833 /* CryptoUtil.swift in Sources */,
 				58B96F6320AB35A700E67D35 /* ConfirmAccountViewController.swift in Sources */,
@@ -933,6 +955,7 @@
 				40A7340220A81DCD009C0B9B /* KeyboardScrollableViewController.swift in Sources */,
 				0F2EE36720A59466003C9AEA /* CapturePhotoViewController.swift in Sources */,
 				4021E73020A22B7500B3DEB7 /* SendIGiftsViewController.swift in Sources */,
+				0FFFDDC920ABF89A00F044DD /* ShowGiftViewController.swift in Sources */,
 				0F9138F320A34E400011DF2C /* DesignIGiftViewController.swift in Sources */,
 				0FC94F1020A5F45E00CDC810 /* DeviceModel.swift in Sources */,
 				4087152620A4ED86007B3E4C /* RegisterViewController.swift in Sources */,

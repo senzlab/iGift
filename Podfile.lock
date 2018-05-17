@@ -1,4 +1,5 @@
 PODS:
+
   - SQLite.swift (0.11.3):
     - SQLite.swift/standard (= 0.11.3)
   - SQLite.swift/standard (0.11.3)
@@ -7,6 +8,7 @@ PODS:
   - SwiftyRSA/ObjC (1.4.0)
 
 DEPENDENCIES:
+
   - SQLite.swift (= 0.11.3)
   - SwiftyRSA
 

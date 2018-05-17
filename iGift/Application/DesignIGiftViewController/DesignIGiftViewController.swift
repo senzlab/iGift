@@ -15,6 +15,7 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
     @IBOutlet weak var giftMsgTextView: UITextView!
     @IBOutlet weak var capturedPhotoImageView: UIImageView!
     @IBOutlet weak var rootView: UIView!
+    @IBOutlet weak var giftModifyView: UIView!
     
     var userTryingToGiveCurrencyValue: Bool = false
     var keyboardHeight: CGFloat!
@@ -105,16 +106,30 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
     @IBAction func sendGiftAction(_ sender: UIButton) {
 
         sendGiftButton.isHidden = true
+        giftModifyView.isHidden = true
         
-        DesignIGiftViewControllerModel().takeScreenshot(viewController: self)
-        
+        let img = DesignIGiftViewControllerModel().takeSnapShotOfTheView(view: rootView)
+
         sendGiftButton.isHidden = false
+        giftModifyView.isHidden = false
+        let z = "SHARE #blob " + img! + " @eraga"
+        
+        Httpz.instance.pushSenz(senz: SenzUtil.instance.transferSenz(amount: "3000", blob: img!, to: "+9775432015"))
     }
     
     @IBAction func cameraAction(_ sender: UIButton) {
         
         let capturePhotoViewController = CapturePhotoViewController(nibName: "CapturePhotoViewController", bundle: nil)
         self.navigationController?.pushViewController(capturePhotoViewController, animated: true)
+    }
+    
+    @IBAction func showHideMsgAction(_ sender: UIButton) {
+        
+        if giftMsgTextView.isHidden {
+            giftMsgTextView.isHidden = false
+        } else {
+            giftMsgTextView.isHidden = true
+        }
     }
     
     @IBAction func addArtAction(_ sender: UIButton) {

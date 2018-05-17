@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftSocket
 
 class Httpz {
     
@@ -103,6 +104,32 @@ class Httpz {
             onComplete(false, "")
         }
         task.resume()
+    }
+    
+    func pushSenz(senz: String) -> String? {
+        let client = TCPClient(address: "10.2.2.9", port: 7171)
+        print(senz)
+        switch client.connect(timeout: 1) {
+        case .success:
+            switch client.send(string: senz + ";") {
+            case .success:
+                guard let data = client.read(1024*10) else {
+                    return nil
+                }
+                
+                if let response = String(bytes: data, encoding: .utf8) {
+                    print(response)
+                    return response
+                }
+            case .failure(let error):
+                print(error)
+            }
+        case .failure(let error):
+            print(error)
+        }
+        
+        client.close()
+        return nil
     }
     
 }

@@ -62,7 +62,6 @@ class PhoneBook {
         return results
     }
 
-
     func checkPermission() -> CNAuthorizationStatus{
         return CNContactStore.authorizationStatus(for: .contacts)
     }

@@ -59,16 +59,17 @@ class RegisterViewController : KeyboardScrollableViewController {
     }
     
     func doReg() {
-        // todo validate input fields
-        
         // ui fields
         let zAddress = txtFieldUsername.text
         let password = txtFieldPassword.text
         let confirmPassword = txtFieldConfirmPassword.text
         
+        // todo validate input fileds
+        
         // data
         let uid = SenzUtil.instance.uid(zAddress: zAddress!)
         let regSenz = SenzUtil.instance.regSenz(uid: uid, zAddress: (zAddress?.trimmingCharacters(in: .whitespacesAndNewlines))!)
+<<<<<<< HEAD
         let data = [
             "uid": uid,
             "msg": regSenz
@@ -87,7 +88,18 @@ class RegisterViewController : KeyboardScrollableViewController {
                 // fail request
             }
         })
+=======
+        self.loadView("SecurityQuestionsViewController")
+>>>>>>> 083ea1d6d94e64650fcac103b392bfabfa042edd
         
+        // send reg
+        let z = Httpz.instance.pushSenz(senz: regSenz!)
+        if z == nil {
+            // login fail
+            ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Regaistration fail")
+        } else {
+            self.loadView("SecurityQuestionsViewController")
+        }
     }
 
 }
