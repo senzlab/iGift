@@ -42,20 +42,18 @@ class RegisterViewController : KeyboardScrollableViewController {
 
     @IBAction func onRegisterClicked(_ sender: Any) {
         
-        self.loadView("SecurityQuestionsViewController")
+        let notificationAcceptStatus = RegisterViewModel().hasUserAccpetedRemoteNotifications()
         
-//        let notificationAcceptStatus = RegisterViewModel().hasUserAccpetedRemoteNotifications()
-//        
-////        If user hasn't accept remote notifications, do not proceed with the registration
-//        if !notificationAcceptStatus {
-//            RegisterViewModel().askUserToRegisterRemoteNotifications(viewController: self)
-//            return
-//        }
-//        
+//        If user hasn't accept remote notifications, do not proceed with the registration
+        if !notificationAcceptStatus {
+            RegisterViewModel().askUserToRegisterRemoteNotifications(viewController: self)
+            return
+        }
+        
 //        // gengerate key pair
 //        // do register
-//        CryptoUtil.instance.initKeys()
-//        doReg()
+        CryptoUtil.instance.initKeys()
+        doReg()
     }
     
     func doReg() {
@@ -70,14 +68,17 @@ class RegisterViewController : KeyboardScrollableViewController {
         let uid = SenzUtil.instance.uid(zAddress: zAddress!)
         let regSenz = SenzUtil.instance.regSenz(uid: uid, zAddress: (zAddress?.trimmingCharacters(in: .whitespacesAndNewlines))!)
         
+//        PreferenceUtil.instance.put(key: PreferenceUtil.PHONE_NUMBER, value: self.txtFieldUsername.text!)
+//        self.loadView("SecurityQuestionsViewController")
+        
         // send reg
         let z = Httpz.instance.pushSenz(senz: regSenz!)
         if z == nil {
             // login fail
             ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Regaistration fail")
         } else {
+            PreferenceUtil.instance.put(key: PreferenceUtil.PHONE_NUMBER, value: self.txtFieldUsername.text!)
             self.loadView("SecurityQuestionsViewController")
         }
     }
-
 }

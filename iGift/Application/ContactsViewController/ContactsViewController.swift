@@ -69,5 +69,10 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return CGFloat(HEIGHT_OF_ROW)
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let designIGiftViewController = DesignIGiftViewController(nibName: "DesignIGiftViewController", bundle: nil)
+        self.navigationController?.pushViewController(designIGiftViewController, animated: true)
+    }
 
 }
