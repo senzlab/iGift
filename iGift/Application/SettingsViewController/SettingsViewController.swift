@@ -44,18 +44,38 @@ class SettingsViewController : BaseViewController, UITableViewDelegate, UITableV
         // SetupUI and return cell for each row
         switch indexPath.row {
         case 0:
-            cell?.lblTitle?.text = "Account"
+            
+            let accountNumber:String? = PreferenceUtil.instance.get(key: PreferenceUtil.ACCOUNT)
+            var labelTitle:String = ""
+            
+            if accountNumber == nil {
+                labelTitle = "Account"
+            }
+            else {
+                labelTitle = "Account \(accountNumber ?? "")"
+            }
+            
+            cell?.lblTitle?.text = labelTitle
             cell?.btnSetting?.setTitle("ADD", for: UIControlState.normal)
             break
         case 1:
-            cell?.lblTitle?.text = "Phone no"
             
-            cell?.btnForgot.setTitle("077123456", for: UIControlState.normal)
+            let phoneNumber:String? = PreferenceUtil.instance.get(key: PreferenceUtil.PHONE_NUMBER)
+            var labelTitle:String = ""
             
+            if phoneNumber == nil {
+                labelTitle = "Phone no"
+            }
+            else {
+                labelTitle = "Phone no \(phoneNumber ?? "")"
+            }
+            
+            cell?.lblTitle?.text = labelTitle
+            cell?.btnSetting?.isHidden = true
             break
         case 2:
             cell?.lblTitle?.text = "Password"
-            cell?.btnSetting?.setTitle("FORGOT", for: UIControlState.normal)
+            cell?.btnForgot?.setTitle("FORGOT", for: UIControlState.normal)
             cell?.btnSetting?.setTitle("CHANGE", for: UIControlState.normal)
             cell?.btnForgot.isHidden = false
             break
@@ -73,7 +93,11 @@ class SettingsViewController : BaseViewController, UITableViewDelegate, UITableV
 
         // Setup Click Listener
         cell?.btnSetting?.tag = indexPath.row
+        cell?.btnForgot?.tag = indexPath.row
+        
         cell?.btnSetting?.addTarget(self,action:#selector(buttonClicked),
+                                    for:.touchUpInside)
+        cell?.btnForgot?.addTarget(self,action:#selector(firstButtonClicked),
                                     for:.touchUpInside)
 
         return cell!
@@ -90,16 +114,44 @@ class SettingsViewController : BaseViewController, UITableViewDelegate, UITableV
             self.loadView("AddAccountInfoViewController")
         break
         case 1:
+            print("Case 1")
             // Change User Btn
         break
         case 2:
+            print("Case 2")
             // Change Password Btn
+            self.loadView("ChangePasswordViewController")
         break
         case 3:
+            print("Case 3")
             // View Terms Btn
+            self.loadView("TermsOfUseViewController")
         break
         case 4:
+            print("Case 4")
             // View About Btn
+            break
+        default:
+            print("UnIdentified Button Clicked")
+        }
+    }
+    
+    @objc func firstButtonClicked(_ sender: CustomButton) {
+        switch sender.tag {
+        case 0:
+            break
+        case 1:
+            print("Case 1")
+            break
+        case 2:
+            print("Case 2")
+            self.loadView("SecurityQuestionsViewController")
+            break
+        case 3:
+            print("Case 3")
+            break
+        case 4:
+            print("Case 4")
             break
         default:
             print("UnIdentified Button Clicked")
