@@ -108,28 +108,35 @@ class Httpz {
     
     func pushSenz(senz: String) -> String? {
         let client = TCPClient(address: "10.2.2.9", port: 7171)
-        print("# 1 #", senz)
+        print(senz)
         switch client.connect(timeout: 10) {
         case .success:
             switch client.send(string: senz + ";") {
             case .success:
-                guard let data = client.read(1024*10) else {
+                guard let data = client.read(1024 * 10, timeout: 60) else {
+                    client.close()
                     return nil
                 }
                 
                 if let response = String(bytes: data, encoding: .utf8) {
                     print(response)
+                    
+                    client.close()
                     return response
                 }
             case .failure(let error):
-                print("# 2 #", error)
+                print(error)
+                
+                client.close()
+                return nil
             }
         case .failure(let error):
-            print("# 3 #", error)
+            print(error)
+            
+            client.close()
+            return nil
         }
         
-        client.close()
         return nil
     }
-    
 }

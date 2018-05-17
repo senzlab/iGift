@@ -67,6 +67,10 @@ class ApplicationViewController : UIViewController {
 //            return IGiftsReceivedViewController(nibName: "IGiftsReceivedViewController", bundle: nil)
 //            return IGiftsViewController(nibName: "IGiftsViewController", bundle: nil)
             return IGiftsViewController()
+        case "ChangePasswordViewController":
+            return ChangePasswordViewController(nibName: "ChangePasswordViewController", bundle: nil)
+        case "TermsOfUseViewController":
+            return TermsOfUseViewController(nibName: "TermsOfUseViewController", bundle: nil)
         default:
             return nil
         }

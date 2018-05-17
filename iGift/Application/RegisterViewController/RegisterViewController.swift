@@ -44,41 +44,40 @@ class RegisterViewController : KeyboardScrollableViewController {
         
         self.loadView("SecurityQuestionsViewController")
         
-//        let notificationAcceptStatus = RegisterViewModel().hasUserAccpetedRemoteNotifications()
-//        
-////        If user hasn't accept remote notifications, do not proceed with the registration
-//        if !notificationAcceptStatus {
-//            RegisterViewModel().askUserToRegisterRemoteNotifications(viewController: self)
-//            return
-//        }
-//        
-////        // gengerate key pair
-////        // do register
-//        CryptoUtil.instance.initKeys()
-//        doReg()
+
+        let notificationAcceptStatus = RegisterViewModel().hasUserAccpetedRemoteNotifications()
+
+//
+//        If user hasn't accept remote notifications, do not proceed with the registration
+        if !notificationAcceptStatus {
+            RegisterViewModel().askUserToRegisterRemoteNotifications(viewController: self)
+            return
+        }
+
+        // gengerate key pair
+        // do register
+        CryptoUtil.instance.initKeys()
+        doReg()
+
     }
     
     func doReg() {
         // ui fields
-        let zAddress = txtFieldUsername.text
-        let password = txtFieldPassword.text
-        let confirmPassword = txtFieldConfirmPassword.text
+        let zAddress = txtFieldUsername.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        let password = txtFieldPassword.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        let confirmPassword = txtFieldConfirmPassword.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         
         // todo validate input fileds
         
-        // data
+        // reg
         let uid = SenzUtil.instance.uid(zAddress: zAddress!)
-        let regSenz = SenzUtil.instance.regSenz(uid: uid, zAddress: (zAddress?.trimmingCharacters(in: .whitespacesAndNewlines))!)
-        
-//        PreferenceUtil.instance.put(key: PreferenceUtil.PHONE_NUMBER, value: self.txtFieldUsername.text!)
-//        self.loadView("SecurityQuestionsViewController")
-        
-        // send reg
+        let regSenz = SenzUtil.instance.regSenz(uid: uid, zAddress: zAddress!)
         let z = Httpz.instance.pushSenz(senz: regSenz!)
         if z == nil {
-            // login fail
+            // reg fail
             ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Regaistration fail")
         } else {
+            // reg done
             PreferenceUtil.instance.put(key: PreferenceUtil.PHONE_NUMBER, value: self.txtFieldUsername.text!)
             self.loadView("SecurityQuestionsViewController")
         }

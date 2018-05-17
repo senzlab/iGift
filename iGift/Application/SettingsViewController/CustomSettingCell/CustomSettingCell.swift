@@ -12,5 +12,5 @@ import UIKit
 class CustomSettingCell: UITableViewCell {
     @IBOutlet weak var lblTitle      : CustomLabel?
     @IBOutlet weak var btnSetting    : CustomButton?
-    @IBOutlet weak var btnForgot: CustomButton!
+    @IBOutlet weak var btnForgot     : CustomButton!
 }
