@@ -108,10 +108,13 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
         sendGiftButton.isHidden = true
         giftModifyView.isHidden = true
         
-        DesignIGiftViewControllerModel().takeSnapShotOfTheView(view: rootView)
-        
+        let img = DesignIGiftViewControllerModel().takeSnapShotOfTheView(view: rootView)
+
         sendGiftButton.isHidden = false
         giftModifyView.isHidden = false
+        let z = "SHARE #blob " + img! + " @eraga"
+        
+        Httpz.instance.pushSenz(senz: SenzUtil.instance.transferSenz(amount: "3000", blob: img!, to: "+9775432015"))
     }
     
     @IBAction func cameraAction(_ sender: UIButton) {

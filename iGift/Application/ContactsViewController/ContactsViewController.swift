@@ -22,7 +22,6 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
 
     func setupUi() {
         self.title = "Contacts"
-
     }
 
     @IBAction func onAddContactBtnClicked(_ sender: Any) {

@@ -65,30 +65,15 @@ class RegisterViewController : KeyboardScrollableViewController {
         // data
         let uid = SenzUtil.instance.uid(zAddress: zAddress!)
         let regSenz = SenzUtil.instance.regSenz(uid: uid, zAddress: (zAddress?.trimmingCharacters(in: .whitespacesAndNewlines))!)
-        let data = [
-            "uid": uid,
-            "msg": regSenz
-        ]
-        let url = "http://10.2.2.9:7171/uzers"
-        
-        // send post
-//        Httpz.instance.doPost(url: url, param: data, onComplete: {success in
-//            if success {
-//
-//                PreferenceUtil.instance.put(key: PreferenceUtil.PHONE_NUMBER, value: zAddress!)
-//
-//                // success request
-//                self.loadView("SecurityQuestionsViewController")
-//            } else {
-//                // fail request
-//            }
-//        })
-        
+        self.loadView("SecurityQuestionsViewController")
+        // send reg
         let z = Httpz.instance.pushSenz(senz: regSenz!)
-        if z == "DONE" {
+        if z == nil {
+            // login fail
+            print("failll.....")
             self.loadView("SecurityQuestionsViewController")
         } else {
-            print("failll.....")
+            print("succcess.....")
             self.loadView("SecurityQuestionsViewController")
         }
     }

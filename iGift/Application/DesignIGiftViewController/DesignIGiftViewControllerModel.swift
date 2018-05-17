@@ -41,7 +41,7 @@ class DesignIGiftViewControllerModel: NSObject {
         return screenshotImage
     }
     
-    func takeSnapShotOfTheView(view: UIView) -> UIImage {
+    func takeSnapShotOfTheView(view: UIView) -> String? {
         
         var screenshotImage :UIImage?
         
@@ -57,8 +57,10 @@ class DesignIGiftViewControllerModel: NSObject {
 //            Save inside the user documents directory
             let fileWriteStatus = createFileInPath(relativeFilePath: Constants.IMAGES_DIR.rawValue, fileName: "uniqueid.jpeg", imageData: compressedImageData as Data)
             print((#file as NSString).lastPathComponent, " # fileWriteStatus = ", fileWriteStatus)
+            
+            return compressedImageData.base64EncodedString()
         }
         
-        return screenshotImage!
+        return nil
     }
 }
