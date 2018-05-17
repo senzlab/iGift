@@ -41,7 +41,7 @@ class IGiftsSentViewController : BaseViewController, UITableViewDelegate, UITabl
     }
 
     func setupUi() {
-        self.title = "iGifts"
+        self.title = "Sent"
 
     }
 

@@ -2,21 +2,47 @@
 //  IGiftsViewController.swift
 //  iGift
 //
-//  Created by Lakmal Caldera on 5/9/18.
+//  Created by Isuru_Jayathissa on 5/17/18.
 //  Copyright © 2018 Creative Solutions. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-class IGiftsViewController : BaseViewController {
+class IGiftsViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupUi()
+
+        
+        let receivedViewController = IGiftsReceivedViewController(nibName: "IGiftsReceivedViewController", bundle: nil)
+        let sentViewController = IGiftsSentViewController(nibName: "IGiftsSentViewController", bundle: nil)
+        
+        self.tabBar.tintColor = UIColor.fromHex(HexColors.PRIMARY_COLOR.rawValue)
+        self.tabBar.backgroundColor = UIColor.white
+        receivedViewController.tabBarItem = UITabBarItem(title: "Received", image: nil, tag: 0)
+        sentViewController.tabBarItem = UITabBarItem(title: "Sent", image: nil, tag: 0)
+        
+//        receivedViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
+//        sentViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .downloads, tag: 1)
+        
+        let controllers = [receivedViewController, sentViewController]
+        self.viewControllers = controllers
     }
 
-    func setupUi() {
-        self.title = "iGifts"
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
+    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
 }
