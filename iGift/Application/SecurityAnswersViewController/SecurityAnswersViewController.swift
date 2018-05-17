@@ -40,5 +40,9 @@ class SecurityAnswersViewController : KeyboardScrollableViewController {
         print(self.txtFieldATwo.text!)
         print(self.txtFieldAThree.text!)
         self.loadView("HomeViewController")
+        
+        PreferenceUtil.instance.put(key: PreferenceUtil.QUESTION1, value: self.txtFieldAOne.text!)
+        PreferenceUtil.instance.put(key: PreferenceUtil.QUESTION2, value: self.txtFieldATwo.text!)
+        PreferenceUtil.instance.put(key: PreferenceUtil.QUESTION3, value: self.txtFieldAThree.text!)
     }
 }

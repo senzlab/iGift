@@ -65,16 +65,16 @@ class RegisterViewController : KeyboardScrollableViewController {
         // data
         let uid = SenzUtil.instance.uid(zAddress: zAddress!)
         let regSenz = SenzUtil.instance.regSenz(uid: uid, zAddress: (zAddress?.trimmingCharacters(in: .whitespacesAndNewlines))!)
+        
         self.loadView("SecurityQuestionsViewController")
         
         // send reg
-        let z = Httpz.instance.pushSenz(senz: regSenz!)
-        if z == nil {
-            // login fail
-            ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Regaistration fail")
-        } else {
-            self.loadView("SecurityQuestionsViewController")
-        }
+//        let z = Httpz.instance.pushSenz(senz: regSenz!)
+//        if z == nil {
+//            // login fail
+//            ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Regaistration fail")
+//        } else {
+//            self.loadView("SecurityQuestionsViewController")
+//        }
     }
-
 }
