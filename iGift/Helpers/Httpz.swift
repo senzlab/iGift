@@ -114,6 +114,7 @@ class Httpz {
             switch client.send(string: senz + ";") {
             case .success:
                 guard let data = client.read(1024 * 10, timeout: 60) else {
+                    client.close()
                     return nil
                 }
                 
@@ -125,14 +126,17 @@ class Httpz {
                 }
             case .failure(let error):
                 print(error)
+                
+                client.close()
+                return nil
             }
-            
-            client.close()
         case .failure(let error):
             print(error)
+            
+            client.close()
+            return nil
         }
         
         return nil
     }
-    
 }
