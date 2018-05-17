@@ -34,7 +34,7 @@ class NavigationViewController : UINavigationController {
     }
 
     func loadInitialView() {
-        
+
         if (PreferenceUtil.instance.get(key: PreferenceUtil.PHONE_NUMBER).isEmpty) {
             let termsOfUseViewController = TermsOfUseViewController(nibName: "TermsOfUseViewController", bundle: nil)
             self.pushViewController(termsOfUseViewController, animated: true)
