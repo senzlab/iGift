@@ -64,8 +64,9 @@ class ApplicationViewController : UIViewController {
         case "SecurityQuestionsViewController":
             return SecurityQuestionsViewController(nibName: "SecurityQuestionsViewController", bundle: nil)
         case "IGiftsViewController":
-            return IGiftsReceivedViewController(nibName: "IGiftsReceivedViewController", bundle: nil)
+//            return IGiftsReceivedViewController(nibName: "IGiftsReceivedViewController", bundle: nil)
 //            return IGiftsViewController(nibName: "IGiftsViewController", bundle: nil)
+            return IGiftsViewController()
         default:
             return nil
         }

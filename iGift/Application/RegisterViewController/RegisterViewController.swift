@@ -14,6 +14,7 @@ import Foundation
 class RegisterViewController : KeyboardScrollableViewController {
 
     @IBOutlet weak var txtFieldUsername: UITextField!
+    @IBOutlet weak var txtFieldConfirmUsername: UITextField!
     @IBOutlet weak var txtFieldPassword: UITextField!
     @IBOutlet weak var txtFieldConfirmPassword: UITextField!
 
@@ -29,6 +30,7 @@ class RegisterViewController : KeyboardScrollableViewController {
 
     func setupStylesForTextFields(){
         UITextField.applyStyle(txtField: self.txtFieldUsername)
+        UITextField.applyStyle(txtField: self.txtFieldConfirmUsername)
         UITextField.applyStyle(txtField: self.txtFieldPassword)
         UITextField.applyStyle(txtField: self.txtFieldConfirmPassword)
     }
@@ -40,18 +42,20 @@ class RegisterViewController : KeyboardScrollableViewController {
 
     @IBAction func onRegisterClicked(_ sender: Any) {
         
-        let notificationAcceptStatus = RegisterViewModel().hasUserAccpetedRemoteNotifications()
+        self.loadView("SecurityQuestionsViewController")
         
-//        If user hasn't accept remote notifications, do not proceed with the registration
-        if !notificationAcceptStatus {
-            RegisterViewModel().askUserToRegisterRemoteNotifications(viewController: self)
-            return
-        }
-        
-        // gengerate key pair
-        // do register
-        CryptoUtil.instance.initKeys()
-        doReg()
+//        let notificationAcceptStatus = RegisterViewModel().hasUserAccpetedRemoteNotifications()
+//        
+////        If user hasn't accept remote notifications, do not proceed with the registration
+//        if !notificationAcceptStatus {
+//            RegisterViewModel().askUserToRegisterRemoteNotifications(viewController: self)
+//            return
+//        }
+//        
+//        // gengerate key pair
+//        // do register
+//        CryptoUtil.instance.initKeys()
+//        doReg()
     }
     
     func doReg() {
@@ -69,8 +73,8 @@ class RegisterViewController : KeyboardScrollableViewController {
             "uid": uid,
             "msg": regSenz
         ]
-        let url = "http://10.2.2.9:7171/uzers"
-        
+        let url =  "http://10.2.2.9:7171/uzers" //"https://uatweb.sampath.lk/uzers"//
+        //
         // send post
         Httpz.instance.doPost(url: url, param: data, onComplete: {success in
             if success {

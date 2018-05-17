@@ -26,10 +26,8 @@
 import sqlite3
 #elseif SQLITE_SWIFT_SQLCIPHER
 import SQLCipher
-#elseif os(Linux)
+#elseif SWIFT_PACKAGE || COCOAPODS
 import CSQLite
-#else
-import SQLite3
 #endif
 
 /// A single SQL statement.
@@ -202,30 +200,12 @@ extension Statement : Sequence {
 
 }
 
-public protocol FailableIterator : IteratorProtocol {
-    func failableNext() throws -> Self.Element?
-}
+extension Statement : IteratorProtocol {
 
-extension FailableIterator {
-    public func next() -> Element? {
-        return try! failableNext()
+    public func next() -> [Binding?]? {
+        return try! step() ? Array(row) : nil
     }
-}
 
-extension Array {
-    public init<I: FailableIterator>(_ failableIterator: I) throws where I.Element == Element {
-        self.init()
-        while let row = try failableIterator.failableNext() {
-            append(row)
-        }
-    }
-}
-
-extension Statement : FailableIterator {
-    public typealias Element = [Binding?]
-    public func failableNext() throws -> [Binding?]? {
-        return try step() ? Array(row) : nil
-    }
 }
 
 extension Statement : CustomStringConvertible {

@@ -43,8 +43,6 @@
 		4021E72420A21DE100B3DEB7 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4021E72320A21DE100B3DEB7 /* SettingsViewController.xib */; };
 		4021E72620A21E2F00B3DEB7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4021E72520A21E2F00B3DEB7 /* BaseViewController.swift */; };
 		4021E72820A2234F00B3DEB7 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4021E72720A2234F00B3DEB7 /* UIColor.swift */; };
-		4021E72A20A22B4000B3DEB7 /* IGiftsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4021E72920A22B4000B3DEB7 /* IGiftsViewController.swift */; };
-		4021E72C20A22B4D00B3DEB7 /* IGiftsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4021E72B20A22B4D00B3DEB7 /* IGiftsViewController.xib */; };
 		4021E72E20A22B6700B3DEB7 /* SendIGiftsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4021E72D20A22B6700B3DEB7 /* SendIGiftsViewController.xib */; };
 		4021E73020A22B7500B3DEB7 /* SendIGiftsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4021E72F20A22B7500B3DEB7 /* SendIGiftsViewController.swift */; };
 		4021E73220A231D600B3DEB7 /* PhoneBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4021E73120A231D600B3DEB7 /* PhoneBookViewController.swift */; };
@@ -90,6 +88,7 @@
 		58148C7220AB3F5D00FE9AAD /* VerifyAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58148C7020AB3F5D00FE9AAD /* VerifyAccountViewController.xib */; };
 		58148C7720AB43A000FE9AAD /* SaltConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58148C7520AB43A000FE9AAD /* SaltConfirmViewController.swift */; };
 		58148C7820AB43A000FE9AAD /* SaltConfirmViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58148C7620AB43A000FE9AAD /* SaltConfirmViewController.xib */; };
+		581FE12820AD574300E3638E /* IGiftsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581FE12620AD574300E3638E /* IGiftsViewController.swift */; };
 		58B96F5C20AB296200E67D35 /* AddAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58B96F5A20AB296100E67D35 /* AddAccountViewController.xib */; };
 		58B96F5D20AB296200E67D35 /* AddAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B96F5B20AB296100E67D35 /* AddAccountViewController.swift */; };
 		58B96F5F20AB2DDC00E67D35 /* ViewControllerUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B96F5E20AB2DDC00E67D35 /* ViewControllerUtil.swift */; };
@@ -145,8 +144,6 @@
 		4021E72320A21DE100B3DEB7 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		4021E72520A21E2F00B3DEB7 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		4021E72720A2234F00B3DEB7 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
-		4021E72920A22B4000B3DEB7 /* IGiftsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGiftsViewController.swift; sourceTree = "<group>"; };
-		4021E72B20A22B4D00B3DEB7 /* IGiftsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IGiftsViewController.xib; sourceTree = "<group>"; };
 		4021E72D20A22B6700B3DEB7 /* SendIGiftsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendIGiftsViewController.xib; sourceTree = "<group>"; };
 		4021E72F20A22B7500B3DEB7 /* SendIGiftsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendIGiftsViewController.swift; sourceTree = "<group>"; };
 		4021E73120A231D600B3DEB7 /* PhoneBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneBookViewController.swift; sourceTree = "<group>"; };
@@ -192,6 +189,7 @@
 		58148C7020AB3F5D00FE9AAD /* VerifyAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VerifyAccountViewController.xib; sourceTree = "<group>"; };
 		58148C7520AB43A000FE9AAD /* SaltConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaltConfirmViewController.swift; sourceTree = "<group>"; };
 		58148C7620AB43A000FE9AAD /* SaltConfirmViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SaltConfirmViewController.xib; sourceTree = "<group>"; };
+		581FE12620AD574300E3638E /* IGiftsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGiftsViewController.swift; sourceTree = "<group>"; };
 		58B96F5A20AB296100E67D35 /* AddAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddAccountViewController.xib; sourceTree = "<group>"; };
 		58B96F5B20AB296100E67D35 /* AddAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAccountViewController.swift; sourceTree = "<group>"; };
 		58B96F5E20AB2DDC00E67D35 /* ViewControllerUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerUtil.swift; sourceTree = "<group>"; };
@@ -495,8 +493,7 @@
 				404B1A2B20A84BD000E06B71 /* CustomIGiftCell */,
 				404B1A2220A84B1F00E06B71 /* IGiftsSentViewController */,
 				404B1A2120A84B0200E06B71 /* IGiftsReceivedViewController */,
-				4021E72920A22B4000B3DEB7 /* IGiftsViewController.swift */,
-				4021E72B20A22B4D00B3DEB7 /* IGiftsViewController.xib */,
+				581FE12620AD574300E3638E /* IGiftsViewController.swift */,
 			);
 			path = IGiftsViewController;
 			sourceTree = "<group>";
@@ -815,7 +812,6 @@
 				0FC94F1520A6042700CDC810 /* AddArtViewController.xib in Resources */,
 				4087151320A391E2007B3E4C /* CustomPhoneBookCell.xib in Resources */,
 				58B96F6420AB35A700E67D35 /* ConfirmAccountViewController.xib in Resources */,
-				4021E72C20A22B4D00B3DEB7 /* IGiftsViewController.xib in Resources */,
 				4087152820A4ED96007B3E4C /* RegisterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -889,11 +885,11 @@
 				4087150E20A391B8007B3E4C /* CustomContactCell.swift in Sources */,
 				4087152A20A5E5F8007B3E4C /* ApplicationViewController.swift in Sources */,
 				0F1081BD20A6E8770024C9BD /* UIImageExtension.swift in Sources */,
-				4021E72A20A22B4000B3DEB7 /* IGiftsViewController.swift in Sources */,
 				0F87F3CA20A9432500C33259 /* FileModel.swift in Sources */,
 				C0E2163420A6EAE5002FF833 /* Igift.swift in Sources */,
 				C0E2163920A6EF25002FF833 /* SenzUtil.swift in Sources */,
 				4087150720A38737007B3E4C /* HexColors.swift in Sources */,
+				581FE12820AD574300E3638E /* IGiftsViewController.swift in Sources */,
 				4087150220A34B59007B3E4C /* CustomLabel.swift in Sources */,
 				4087151520A391EE007B3E4C /* CustomPhoneBookCell.swift in Sources */,
 				40A7340620A82288009C0B9B /* SecurityAnswersViewController.swift in Sources */,

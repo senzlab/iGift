@@ -14,6 +14,7 @@
             <connections>
                 <outlet property="scrollView" destination="rwL-IR-92e" id="uy8-Kp-pKY"/>
                 <outlet property="txtFieldConfirmPassword" destination="Y6h-PW-SD2" id="F9l-2K-UPC"/>
+                <outlet property="txtFieldConfirmUsername" destination="lky-jj-v9E" id="dqu-X8-fmC"/>
                 <outlet property="txtFieldPassword" destination="apv-kU-s5W" id="kA4-fs-ak1"/>
                 <outlet property="txtFieldUsername" destination="7FG-bQ-ehw" id="35X-WL-TyK"/>
                 <outlet property="view" destination="iN0-l3-epB" id="4Uy-rE-kAa"/>
@@ -31,9 +32,9 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="hkw-jc-gu9">
-                                    <rect key="frame" x="50" y="118.5" width="275" height="250"/>
+                                    <rect key="frame" x="50" y="68.5" width="275" height="350"/>
                                     <subviews>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" minimumFontSize="22" translatesAutoresizingMaskIntoConstraints="NO" id="7FG-bQ-ehw">
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone no" minimumFontSize="22" translatesAutoresizingMaskIntoConstraints="NO" id="7FG-bQ-ehw">
                                             <rect key="frame" x="0.0" y="0.0" width="275" height="50"/>
                                             <color key="backgroundColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="0.0" colorSpace="calibratedRGB"/>
                                             <color key="tintColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="0.0" colorSpace="calibratedRGB"/>
@@ -47,8 +48,22 @@
                                                 <outlet property="delegate" destination="-1" id="gSK-ld-kSo"/>
                                             </connections>
                                         </textField>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="22" translatesAutoresizingMaskIntoConstraints="NO" id="apv-kU-s5W">
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Phone no" minimumFontSize="22" translatesAutoresizingMaskIntoConstraints="NO" id="lky-jj-v9E">
                                             <rect key="frame" x="0.0" y="100" width="275" height="50"/>
+                                            <color key="backgroundColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="0.0" colorSpace="calibratedRGB"/>
+                                            <color key="tintColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="0.0" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="RPd-sJ-HO1"/>
+                                            </constraints>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="-1" id="s0v-Wd-MCk"/>
+                                            </connections>
+                                        </textField>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="22" translatesAutoresizingMaskIntoConstraints="NO" id="apv-kU-s5W">
+                                            <rect key="frame" x="0.0" y="200" width="275" height="50"/>
                                             <color key="backgroundColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="0.0" colorSpace="calibratedRGB"/>
                                             <color key="tintColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="0.0" colorSpace="calibratedRGB"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -59,7 +74,7 @@
                                             </connections>
                                         </textField>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm password" minimumFontSize="22" translatesAutoresizingMaskIntoConstraints="NO" id="Y6h-PW-SD2">
-                                            <rect key="frame" x="0.0" y="200" width="275" height="50"/>
+                                            <rect key="frame" x="0.0" y="300" width="275" height="50"/>
                                             <color key="backgroundColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="0.0" colorSpace="calibratedRGB"/>
                                             <color key="tintColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="0.0" colorSpace="calibratedRGB"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -72,10 +87,12 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="Y6h-PW-SD2" firstAttribute="leading" secondItem="hkw-jc-gu9" secondAttribute="leading" id="5Jj-5u-3ok"/>
+                                        <constraint firstAttribute="trailing" secondItem="apv-kU-s5W" secondAttribute="trailing" id="HE1-5O-YIW"/>
                                         <constraint firstItem="apv-kU-s5W" firstAttribute="leading" secondItem="hkw-jc-gu9" secondAttribute="leading" id="LhH-Ck-eu7"/>
                                         <constraint firstAttribute="trailing" secondItem="apv-kU-s5W" secondAttribute="trailing" id="OTe-K4-Ypc"/>
                                         <constraint firstAttribute="trailing" secondItem="7FG-bQ-ehw" secondAttribute="trailing" id="Wvw-8P-IG8"/>
                                         <constraint firstItem="7FG-bQ-ehw" firstAttribute="leading" secondItem="hkw-jc-gu9" secondAttribute="leading" id="duo-56-69C"/>
+                                        <constraint firstItem="apv-kU-s5W" firstAttribute="leading" secondItem="hkw-jc-gu9" secondAttribute="leading" id="f37-G5-jtB"/>
                                         <constraint firstAttribute="trailing" secondItem="Y6h-PW-SD2" secondAttribute="trailing" id="rJn-Wx-aT1"/>
                                     </constraints>
                                 </stackView>

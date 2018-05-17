@@ -67,13 +67,13 @@
                                                     <rect key="frame" x="0.0" y="28.5" width="274.5" height="21.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iua-UD-aWk" customClass="CustomLabel" customModule="iGift" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="89.5" height="21.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="83.5" height="21.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6TT-hz-Wgt" customClass="CustomLabel" customModule="iGift" customModuleProvider="target">
-                                                            <rect key="frame" x="89.5" y="0.0" width="125" height="21.5"/>
+                                                            <rect key="frame" x="83.5" y="0.0" width="131" height="21.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
