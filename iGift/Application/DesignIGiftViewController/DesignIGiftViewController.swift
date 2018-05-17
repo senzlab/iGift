@@ -183,4 +183,25 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
         let panGesture = sender.view
         panGesture?.center = point
     }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if textField == currencyValueTextField{
+            if let text = textField.text{
+                textField.text = "Rs " + text
+            }
+            
+        }
+        
+        return true
+    }
+    
 }
+
+
+
+
+
+
+
+
