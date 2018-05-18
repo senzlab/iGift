@@ -20,6 +20,9 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
     var userTryingToGiveCurrencyValue: Bool = false
     var keyboardHeight: CGFloat!
     
+//    var currencyValueString: String = ""
+    let currencyType = "Rs "
+    
     //    MARK: UIViewController related
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +30,8 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
         self.setupUi()
         
         currencyValueTextField.delegate = self
+//        giftMsgTextView.alignTextVerticallyInContainer()
+        
         
 //        Notify keyboard visibility to the view
         NotificationCenter.default.addObserver(self, selector: #selector(DesignIGiftViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
@@ -56,13 +61,7 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
         }
     }
     
-    //    MARK: UITextFieldDelegate
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        if textField == currencyValueTextField {
-            userTryingToGiveCurrencyValue = true
-            giftMsgTextView.isUserInteractionEnabled = false;
-        }
-    }
+    
     
     //    MARK: Observer selectors
     @objc func keyboardWillShow(notification: NSNotification) {
@@ -105,6 +104,8 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
     //    MARK: Action functions
     @IBAction func sendGiftAction(_ sender: UIButton) {
 
+//       let currencyValueString = currencyValueTextField.text.replacingOccurrences(of: currencyType, with: "", options: NSString.CompareOptions.literal, range: nil)
+        
         sendGiftButton.isHidden = true
         giftModifyView.isHidden = true
         
@@ -183,4 +184,41 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
         let panGesture = sender.view
         panGesture?.center = point
     }
+    
+    
+    //    MARK: UITextFieldDelegate
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField == currencyValueTextField {
+            userTryingToGiveCurrencyValue = true
+            giftMsgTextView.isUserInteractionEnabled = false;
+        }
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        
+        if textField == currencyValueTextField{
+            if let text = textField.text{
+                
+                if text == currencyType{
+                    textField.text = ""
+                    return true
+                }
+                textField.text = currencyType + text.replacingOccurrences(of: currencyType, with: "", options: NSString.CompareOptions.literal, range: nil)
+                
+            }
+            
+        }
+        
+        return true
+    }
+    
 }
+
+
+
+
+
+
+
+
