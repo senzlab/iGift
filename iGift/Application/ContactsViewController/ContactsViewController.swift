@@ -72,8 +72,29 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let designIGiftViewController = DesignIGiftViewController(nibName: "DesignIGiftViewController", bundle: nil)
-        self.navigationController?.pushViewController(designIGiftViewController, animated: true)
+        
+        showAlertWithTwoActions(alertTitle: "Title", alertMessage: "Message")
+        
+//        let designIGiftViewController = DesignIGiftViewController(nibName: "DesignIGiftViewController", bundle: nil)
+//        self.navigationController?.pushViewController(designIGiftViewController, animated: true)
     }
-
+    
+    func showAlertWithTwoActions(alertTitle:String, alertMessage:String) {
+        
+        let alertController = UIAlertController(title:alertTitle, message:alertMessage, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+            print("You've pressed OK");
+            
+            let designIGiftViewController = DesignIGiftViewController(nibName: "DesignIGiftViewController", bundle: nil)
+            self.navigationController?.pushViewController(designIGiftViewController, animated: true)            
+        }
+        let cancelAction = UIAlertAction(title: "CANCEL", style: .default) { (action:UIAlertAction) in
+            print("You've pressed CANCEL");
+            
+        }
+        
+        alertController.addAction(okAction)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
 }
