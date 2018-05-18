@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Contacts
 
-class ContactsViewController : BaseViewController, UITableViewDelegate, UITableViewDataSource {
+class ContactsViewController : BaseViewController, UITableViewDelegate, UITableViewDataSource, AlertViewControllerDelegate {
 
     let NUMBER_OF_ROWS = 1
     let HEIGHT_OF_ROW = 85
@@ -73,28 +73,20 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        showAlertWithTwoActions(alertTitle: "Title", alertMessage: "Message")
-        
-//        let designIGiftViewController = DesignIGiftViewController(nibName: "DesignIGiftViewController", bundle: nil)
-//        self.navigationController?.pushViewController(designIGiftViewController, animated: true)
+        let viewControllerUtil = ViewControllerUtil()
+        viewControllerUtil.delegate = self
+        viewControllerUtil.showAlertWithTwoActions(alertTitle: "Title", alertMessage: "Message", viewController:self)
     }
     
-    func showAlertWithTwoActions(alertTitle:String, alertMessage:String) {
+    //    MARK: AlertViewControllerDelegate
+    func executeTaskForAction(actionTitle: String) {
         
-        let alertController = UIAlertController(title:alertTitle, message:alertMessage, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
-            print("You've pressed OK");
-            
+        if actionTitle == "OK" {
             let designIGiftViewController = DesignIGiftViewController(nibName: "DesignIGiftViewController", bundle: nil)
-            self.navigationController?.pushViewController(designIGiftViewController, animated: true)            
+            self.navigationController?.pushViewController(designIGiftViewController, animated: true)
         }
-        let cancelAction = UIAlertAction(title: "CANCEL", style: .default) { (action:UIAlertAction) in
-            print("You've pressed CANCEL");
+        else if actionTitle == "CANCEL" {
             
-        }
-        
-        alertController.addAction(okAction)
-        alertController.addAction(cancelAction)
-        self.present(alertController, animated: true, completion: nil)
+        } else {}
     }
 }

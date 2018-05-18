@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol AlertViewControllerDelegate: class {
+    func executeTaskForAction(actionTitle : String)
+}
+
 class ViewControllerUtil: NSObject {
+    
+    weak var delegate : AlertViewControllerDelegate?
 
     class func showAlert(alertTitle:String, alertMessage:String){
         
@@ -20,5 +26,27 @@ class ViewControllerUtil: NSObject {
         
         perent.showDetailViewController(alert, sender: nil)
         
+    }
+    
+    func showAlertWithTwoActions(alertTitle:String, alertMessage:String, viewController: UIViewController) {
+        
+        let alertController = UIAlertController(title:alertTitle, message:alertMessage, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+            
+            self.callDelegate(title: "OK")
+        }
+        let cancelAction = UIAlertAction(title: "CANCEL", style: .default) { (action:UIAlertAction) in
+            
+            self.callDelegate(title: "CANCEL")
+        }
+        
+        alertController.addAction(okAction)
+        alertController.addAction(cancelAction)
+        viewController.present(alertController, animated: true, completion: nil)
+    }
+    
+    func callDelegate(title: String) {
+        
+        delegate?.executeTaskForAction(actionTitle : title)
     }
 }
