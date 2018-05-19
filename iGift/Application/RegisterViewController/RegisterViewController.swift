@@ -41,14 +41,9 @@ class RegisterViewController : KeyboardScrollableViewController {
     }
 
     @IBAction func onRegisterClicked(_ sender: Any) {
-        
-        self.loadView("SecurityQuestionsViewController")
-        
-
         let notificationAcceptStatus = RegisterViewModel().hasUserAccpetedRemoteNotifications()
 
-//
-//        If user hasn't accept remote notifications, do not proceed with the registration
+        // If user hasn't accept remote notifications, do not proceed with the registration
         if !notificationAcceptStatus {
             RegisterViewModel().askUserToRegisterRemoteNotifications(viewController: self)
             return

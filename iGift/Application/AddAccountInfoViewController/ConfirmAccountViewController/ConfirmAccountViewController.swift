@@ -11,7 +11,6 @@ import UIKit
 class ConfirmAccountViewController : BaseViewController {
 
     @IBOutlet weak var LblFirstText: CustomLabel!
-    var accountNo:String!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUi()

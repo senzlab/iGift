@@ -39,26 +39,10 @@ class AddAccountViewController : KeyboardScrollableViewController {
     }
 
     @IBAction func onAddAccountClicked(_ sender: Any) {
+        // vavidate account
         
-        //Account validation
-        if self.txtFieldAccount.text != self.txtFieldConfirmAccount.text{
-            ViewControllerUtil.showAlert(alertTitle: "Nitice", alertMessage: "Message")
-            return
-        }
-        
-        self.loadView("VerifyAccountViewController")
-        
-//        let viewController = getNewInstance("ConfirmAccountViewController")  as? ConfirmAccountViewController
-//        if let controller = viewController {
-//            controller.accountNo = txtFieldConfirmAccount.text
-//            DispatchQueue.main.async {
-//                self.navigationController?.pushViewController(controller, animated: true)
-//            }
-//        } else {
-//            print("Trying to load an unregistered view controller. Please look into ApplicationViewController class to register view controller")
-//        }
-        
+        let viewController = VerifyAccountViewController(nibName: "VerifyAccountViewController", bundle: nil)
+        viewController.account = txtFieldAccount.text!
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
-    
-
 }

@@ -9,8 +9,8 @@
 import UIKit
 
 class VerifyAccountViewController : BaseViewController {
-
     
+    var account: String? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +18,6 @@ class VerifyAccountViewController : BaseViewController {
     }
 
     func setupUi() {
-    
         self.title = "Verify account"
     }
 
