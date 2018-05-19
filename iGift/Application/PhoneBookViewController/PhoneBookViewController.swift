@@ -12,14 +12,13 @@ import Contacts
 import ContactsUI
 import StoreKit
 
-
 class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, UISearchBarDelegate {
 
     @IBOutlet weak var tblView: UITableView!
     @IBOutlet weak var searchPlaceHolder: UIView!
 
-    var dataArray = [PhoneContact]()
-    var filteredArray = [PhoneContact]()
+    var dataArray = [SenzContact]()
+    var filteredArray = [SenzContact]()
     var shouldShowSearchResults = false
     var searchBar: CustomSearchBar!
     let HEIGHT_OF_ROW = 60
@@ -53,9 +52,6 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
         }
     }
 
-
-    // MARK: UITableView Delegate Methods
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if shouldShowSearchResults {
             return filteredArray.count
@@ -66,7 +62,6 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
         // Try to find reusable cell
         var cell = tableView.dequeueReusableCell(withIdentifier: "CustomPhoneBookCell") as? CustomPhoneBookCell
 
@@ -78,11 +73,11 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
         }
 
         // Select Array to use to load table
-        let tableArray : [PhoneContact] = shouldShowSearchResults ? self.filteredArray : self.dataArray
+        let tableArray : [SenzContact] = shouldShowSearchResults ? self.filteredArray : self.dataArray
 
         // Setup Cells in table
         cell?.lblName?.text = tableArray[indexPath.row].name
-        cell?.lblPhoneNo?.text = tableArray[indexPath.row].phoneNumber.count > 0 ? dataArray[indexPath.row].phoneNumber.joined(separator: ", ") : "No Number"
+        cell?.lblPhoneNo?.text = tableArray[indexPath.row].phone
 
         cell?.selectionStyle = .none
         return cell!
@@ -98,14 +93,10 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
         self.searchPlaceHolder.addSubview(searchBar)
     }
 
-
-    // MARK: UISearchBarDelegate functions
-
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         shouldShowSearchResults = true
         self.reloadTable()
     }
-
 
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         shouldShowSearchResults = false
@@ -113,7 +104,6 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
         searchBar.resignFirstResponder()
         self.reloadTable()
     }
-
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if !shouldShowSearchResults {
@@ -127,7 +117,7 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         filteredArray = dataArray.filter({ (phoneRecord) -> Bool in
-            return phoneRecord.name!.lowercased().range(of:searchText.lowercased()) != nil
+            return phoneRecord.name.lowercased().range(of:searchText.lowercased()) != nil
         })
         self.reloadTable()
     }

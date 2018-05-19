@@ -8,100 +8,97 @@
 
 import Foundation
 import ContactsUI
+import PhoneNumberKit
 
 class PhoneBook {
     
     static let instance = PhoneBook()
 
     let contactStore = CNContactStore()
+    let phoneNumberKit = PhoneNumberKit()
     
-    lazy var contacts: [PhoneContact] = {
+    lazy var contacts: [SenzContact] = {
+        var results: [SenzContact] = []
+        
         // data we need
         let keysToFetch = [
             CNContactFormatter.descriptorForRequiredKeys(for: .fullName),
             CNContactPhoneNumbersKey,
             CNContactGivenNameKey,
-            CNContactFamilyNameKey] as [Any]
+            CNContactFamilyNameKey,
+            CNContactThumbnailImageDataKey] as [Any]
         
-        // fetch all records
-        var allContainers: [CNContainer] = []
+        // get contacts
+        let request = CNContactFetchRequest(keysToFetch: keysToFetch as! [CNKeyDescriptor])
         do {
-            allContainers = try contactStore.containers(matching: nil)
-        } catch {
-            print("Error fetching containers")
-        }
-        
-        var results: [PhoneContact] = []
-        for container in allContainers {
-            let fetchPredicate = CNContact.predicateForContactsInContainer(withIdentifier: container.identifier)
-            do {
-                let containerResults = try contactStore.unifiedContacts(matching: fetchPredicate, keysToFetch: keysToFetch as! [CNKeyDescriptor])
-                let tranformedResults = containerResults.map({ (contact:CNContact) -> PhoneContact in
-                    return PhoneContact(contact: contact)
-                })
-                results.append(contentsOf: tranformedResults)
-            } catch {
-                print("Error fetching containers")
+            try contactStore.enumerateContacts(with: request) { (contact, stop) in
+                for num in contact.phoneNumbers {
+                    let phn = self.internationalize(phone: num.value.stringValue)
+                    if phn != nil {
+                        results.append(SenzContact(name: contact.givenName, phone: phn!, thumbnail: contact.thumbnailImageData))
+                    }
+                }
             }
+        } catch {
+            print(error.localizedDescription)
         }
         
         return results
     }()
 
-    func getContacts() -> [PhoneContact] {
+    func getContacts() -> [SenzContact] {
         return contacts
     }
     
-    func getContact(phone: String) -> PhoneContact? {
+    func getContact(phone: String) -> SenzContact? {
         for contact in self.contacts {
-            if (!contact.phoneNumber.isEmpty) {
-                for p in contact.phoneNumber {
-                    if (p == phone) {
-                        return contact
-                    }
-                }
+            let phn = contact.phone.replacingOccurrences(of: " ", with: "")
+            if (!phn.isEmpty && phn == phone) {
+                return contact
             }
         }
         
         return nil
     }
     
-    func getAllContacts() -> [PhoneContact] {
-        // PLEASE READ - MAKE SURE TO REQUEST PERMISSION FIRST, OTHERWISE APP WILL
-
+    func getAllContacts() -> [SenzContact] {
+        var contacts = [SenzContact]()
+        
         // data we need
         let keysToFetch = [
             CNContactFormatter.descriptorForRequiredKeys(for: .fullName),
             CNContactPhoneNumbersKey,
             CNContactGivenNameKey,
-            CNContactFamilyNameKey] as [Any]
-
-        // fetch all records
-        var allContainers: [CNContainer] = []
+            CNContactFamilyNameKey,
+            CNContactThumbnailImageDataKey] as [Any]
+        
+        // get contacts
+        let request = CNContactFetchRequest(keysToFetch: keysToFetch as! [CNKeyDescriptor])
         do {
-            allContainers = try contactStore.containers(matching: nil)
-        } catch {
-            print("Error fetching containers")
-        }
-
-        var results: [PhoneContact] = []
-        for container in allContainers {
-            let fetchPredicate = CNContact.predicateForContactsInContainer(withIdentifier: container.identifier)
-            do {
-                let containerResults = try contactStore.unifiedContacts(matching: fetchPredicate, keysToFetch: keysToFetch as! [CNKeyDescriptor])
-                let tranformedResults = containerResults.map({ (contact:CNContact) -> PhoneContact in
-                    return PhoneContact(contact: contact)
-                })
-                results.append(contentsOf: tranformedResults)
-            } catch {
-                print("Error fetching containers")
+            try contactStore.enumerateContacts(with: request) { (contact, stop) in
+                for num in contact.phoneNumbers {
+                    let phn = self.internationalize(phone: num.value.stringValue)
+                    if phn != nil {
+                        contacts.append(SenzContact(name: contact.givenName, phone: phn!, thumbnail: contact.thumbnailImageData))
+                    }
+                }
             }
+        } catch {
+            print(error.localizedDescription)
         }
 
-        return results
+        return contacts
+    }
+    
+    func internationalize(phone: String) -> String? {
+        do {
+            return phoneNumberKit.format(try phoneNumberKit.parse(phone), toType: .international)
+        } catch {
+            return nil
+        }
     }
 
-    func checkPermission() -> CNAuthorizationStatus{
+    func checkPermission() -> CNAuthorizationStatus {
         return CNContactStore.authorizationStatus(for: .contacts)
     }
 

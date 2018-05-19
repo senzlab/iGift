@@ -8,6 +8,6 @@ target 'iGift' do
 
   pod 'SQLite.swift', '0.11.3'
   pod 'SwiftSocket'
-
+  pod 'PhoneNumberKit', '~> 2.1'
 
 end

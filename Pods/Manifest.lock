@@ -1,4 +1,10 @@
 PODS:
+  - PhoneNumberKit (2.1.0):
+    - PhoneNumberKit/PhoneNumberKitCore (= 2.1.0)
+    - PhoneNumberKit/UIKit (= 2.1.0)
+  - PhoneNumberKit/PhoneNumberKitCore (2.1.0)
+  - PhoneNumberKit/UIKit (2.1.0):
+    - PhoneNumberKit/PhoneNumberKitCore
   - SQLite.swift (0.11.3):
     - SQLite.swift/standard (= 0.11.3)
   - SQLite.swift/standard (0.11.3)
@@ -8,15 +14,24 @@ PODS:
   - SwiftyRSA/ObjC (1.4.0)
 
 DEPENDENCIES:
+  - PhoneNumberKit (~> 2.1)
   - SQLite.swift (= 0.11.3)
   - SwiftSocket
   - SwiftyRSA
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - PhoneNumberKit
+    - SQLite.swift
+    - SwiftSocket
+    - SwiftyRSA
+
 SPEC CHECKSUMS:
+  PhoneNumberKit: 62003f40ff75315fd3738286558bc365365ac222
   SQLite.swift: 99b36c22084427f0abbeb957556ce1528cf10bb3
   SwiftSocket: 6f4c9c63fbc5c1d61188936bb3c599fd546f40ae
   SwiftyRSA: 601e4585fece2c6c50ae93a67c77cc2426e55cb2
 
-PODFILE CHECKSUM: 3187a9de41399ea5738c8ca518e9229c4690cdb5
+PODFILE CHECKSUM: d41456ede9875eb4d3a0dd014a275eec474d8c83
 
-COCOAPODS: 1.4.0.rc.1
+COCOAPODS: 1.5.2

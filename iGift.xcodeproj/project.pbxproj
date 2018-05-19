@@ -102,6 +102,7 @@
 		58B96F5F20AB2DDC00E67D35 /* ViewControllerUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B96F5E20AB2DDC00E67D35 /* ViewControllerUtil.swift */; };
 		58B96F6320AB35A700E67D35 /* ConfirmAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B96F6120AB35A600E67D35 /* ConfirmAccountViewController.swift */; };
 		58B96F6420AB35A700E67D35 /* ConfirmAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58B96F6220AB35A600E67D35 /* ConfirmAccountViewController.xib */; };
+		C085C4DC20B075200085092F /* SenzContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = C085C4DB20B075200085092F /* SenzContact.swift */; };
 		C0C58F6F20A9567700DD14BB /* Httpz.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C58F6E20A9567700DD14BB /* Httpz.swift */; };
 		C0E2163320A6EAE5002FF833 /* Senz.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E2163020A6EAE4002FF833 /* Senz.swift */; };
 		C0E2163420A6EAE5002FF833 /* Igift.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E2163120A6EAE4002FF833 /* Igift.swift */; };
@@ -212,6 +213,7 @@
 		58B96F6120AB35A600E67D35 /* ConfirmAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmAccountViewController.swift; sourceTree = "<group>"; };
 		58B96F6220AB35A600E67D35 /* ConfirmAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfirmAccountViewController.xib; sourceTree = "<group>"; };
 		BF90EAD1A777AEBC93ABF445 /* Pods-iGift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iGift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iGift/Pods-iGift.debug.xcconfig"; sourceTree = "<group>"; };
+		C085C4DB20B075200085092F /* SenzContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenzContact.swift; sourceTree = "<group>"; };
 		C0C58F6E20A9567700DD14BB /* Httpz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Httpz.swift; sourceTree = "<group>"; };
 		C0E2163020A6EAE4002FF833 /* Senz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Senz.swift; sourceTree = "<group>"; };
 		C0E2163120A6EAE4002FF833 /* Igift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Igift.swift; sourceTree = "<group>"; };
@@ -660,6 +662,7 @@
 				C0E2163220A6EAE5002FF833 /* User.swift */,
 				4087151D20A4A9BC007B3E4C /* PhoneContact.swift */,
 				0F2EE36B20A5A6BE003C9AEA /* GiftCard.swift */,
+				C085C4DB20B075200085092F /* SenzContact.swift */,
 			);
 			path = Pojo;
 			sourceTree = "<group>";
@@ -761,7 +764,6 @@
 				4021E6E120A1CA1600B3DEB7 /* Resources */,
 				9143CBAAF728C725783BB5D6 /* Frameworks */,
 				B7E7D4FEC4B41BF729400F2C /* [CP] Embed Pods Frameworks */,
-				31133334C84D2831A3ABF226 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -871,21 +873,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		31133334C84D2831A3ABF226 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iGift/Pods-iGift-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		B7E7D4FEC4B41BF729400F2C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -893,12 +880,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-iGift/Pods-iGift-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/PhoneNumberKit/PhoneNumberKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftSocket/SwiftSocket.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyRSA/SwiftyRSA.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PhoneNumberKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSocket.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyRSA.framework",
@@ -939,6 +928,7 @@
 				0F1081BE20A6E8770024C9BD /* NotificationExtension.swift in Sources */,
 				C0E2165320A6F52F002FF833 /* SenzDb.swift in Sources */,
 				4087152E20A5F89D007B3E4C /* UITextField.swift in Sources */,
+				C085C4DC20B075200085092F /* SenzContact.swift in Sources */,
 				C0E2163720A6ED32002FF833 /* PreferenceUtil.swift in Sources */,
 				0F7C392E20A41F1300DF5BF6 /* UITextViewPlaceholder.swift in Sources */,
 				58B96F5D20AB296200E67D35 /* AddAccountViewController.swift in Sources */,
