@@ -114,7 +114,7 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
         sendGiftButton.isHidden = false
         giftModifyView.isHidden = false
         
-        let z = Httpz.instance.pushSenz(senz: SenzUtil.instance.transferSenz(amount: "3000", blob: blob, to: user!.phone))
+        let z = Httpz.instance.pushSenz(senz: SenzUtil.instance.transferSenz(amount: amount, blob: blob, to: user!.phone))
         if z == nil {
             // fail to send igift
             ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to send iGift")

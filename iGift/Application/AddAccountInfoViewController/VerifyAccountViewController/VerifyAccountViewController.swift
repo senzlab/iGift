@@ -23,12 +23,21 @@ class VerifyAccountViewController : BaseViewController {
 
     @IBAction func onOKClicked(_ sender: Any) {
         // push senz to add account
-        
-        // save account
-        
-        // save account status
-        
-        self.loadView("ConfirmAccountViewController")
+        let z = Httpz.instance.pushSenz(senz: SenzUtil.instance.accountSenz(account: account!))
+        if (z == nil) {
+            // fail to add account
+            ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to add account")
+        } else {
+            // verify response
+            if (SenzUtil.instance.verifyStatus(z: z!)) {
+                // done add account
+                PreferenceUtil.instance.put(key: PreferenceUtil.ACCOUNT, value: account!)
+                PreferenceUtil.instance.put(key: PreferenceUtil.ACCOUNT_STATUS, value: "PENDING")
+                self.loadView("ConfirmAccountViewController")
+            } else {
+                ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to verify account")
+            }
+        }
     }
     
     @IBAction func onCancelClicked(_ sender: Any) {

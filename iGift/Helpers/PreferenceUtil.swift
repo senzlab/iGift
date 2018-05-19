@@ -13,13 +13,14 @@ class PreferenceUtil {
     
     static let PUBLIC_KEY = "PUBLIC_KEY"
     static let PRIVATE_KEY = "PRIVATE_KEY"
+    static let PHONE_NUMBER = "PHONE_NUMBER"
     static let PASSWORD = "PASSWORD"
     static let DEVICE_ID = "DEVICE_ID"
     static let QUESTION1 = "QUESTION1"
     static let QUESTION2 = "QUESTION2"
     static let QUESTION3 = "QUESTION3"
     static let ACCOUNT = "ACCOUNT"
-    static let PHONE_NUMBER = "PHONE_NUMBER"
+    static let ACCOUNT_STATUS = "ACCOUNT_STATUS"
     
     let userDefaults = UserDefaults.standard
     

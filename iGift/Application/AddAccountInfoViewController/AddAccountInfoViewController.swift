@@ -24,7 +24,7 @@ class AddAccountInfoViewController : BaseViewController {
     }
     
     @IBAction func onCancelClicked(_ sender: Any) {
-        //cancel button functionality
+        // cancel button functionality
     }
 }
 

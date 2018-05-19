@@ -30,7 +30,6 @@ class AddAccountViewController : KeyboardScrollableViewController {
     func setupStylesForTextFields(){
         UITextField.applyStyle(txtField: self.txtFieldAccount)
         UITextField.applyStyle(txtField: self.txtFieldConfirmAccount)
-        
     }
 
     override func viewDidLayoutSubviews() {
@@ -39,10 +38,12 @@ class AddAccountViewController : KeyboardScrollableViewController {
     }
 
     @IBAction func onAddAccountClicked(_ sender: Any) {
-        // vavidate account
+        // validate account
+        let acc = txtFieldAccount.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let confAcc = txtFieldConfirmAccount.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
         let viewController = VerifyAccountViewController(nibName: "VerifyAccountViewController", bundle: nil)
-        viewController.account = txtFieldAccount.text!
+        viewController.account = acc
         self.navigationController?.pushViewController(viewController, animated: true)
     }
 }

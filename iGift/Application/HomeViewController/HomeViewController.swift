@@ -32,9 +32,22 @@ class HomeViewController : BaseViewController {
     }
 
     @IBAction func onSendIGiftsBtnClicked(_ sender: Any) {
-        let contactsViewController = ContactsViewController(nibName: "ContactsViewController", bundle: nil)
-        contactsViewController.forNewIgift = true
-        self.navigationController?.pushViewController(contactsViewController, animated: true)
+        if (PreferenceUtil.instance.get(key: PreferenceUtil.ACCOUNT).isEmpty) {
+            // no account
+            // verified account
+            self.loadView("AddAccountInfoViewController")
+        } else {
+            // have account
+            if (PreferenceUtil.instance.get(key: PreferenceUtil.ACCOUNT_STATUS) == "VERIFIED") {
+                // verified account
+                let contactsViewController = ContactsViewController(nibName: "ContactsViewController", bundle: nil)
+                contactsViewController.forNewIgift = true
+                self.navigationController?.pushViewController(contactsViewController, animated: true)
+            } else {
+                // not verified account
+                self.loadView("ConfirmAccountViewController")
+            }
+        }
     }
 
     @IBAction func onIGiftsBtnClicked(_ sender: Any) {

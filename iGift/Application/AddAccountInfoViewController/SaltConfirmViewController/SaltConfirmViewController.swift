@@ -15,8 +15,6 @@ class SaltConfirmViewController : KeyboardScrollableViewController {
 
     @IBOutlet weak var txtFieldTransactionAmt: UITextField!
     
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUi()
@@ -37,11 +35,19 @@ class SaltConfirmViewController : KeyboardScrollableViewController {
     }
 
     @IBAction func onConfirmClicked(_ sender: Any) {
-        // todo send salt confirm senz
-        
-        // update account status
-        
-        self.navigationController?.popToRootViewController(animated: true)
+        // send salt confirm senz
+        let salt = txtFieldTransactionAmt.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let z = Httpz.instance.pushSenz(senz: SenzUtil.instance.salSenz(salt: salt))
+        if (z != nil) {
+            ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to verify account")
+        } else {
+            if (SenzUtil.instance.verifyStatus(z: z!)) {
+                PreferenceUtil.instance.put(key: PreferenceUtil.ACCOUNT_STATUS, value: "VERIFIED")
+                self.navigationController?.popToRootViewController(animated: true)
+            } else {
+                ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to verify account")
+            }
+        }
     }
 
 }

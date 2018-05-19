@@ -125,4 +125,15 @@ class SenzUtil {
         return zAddress + String(TimeUtil.sharedInstance.timestamp())
     }
     
+    func verifyStatus(z: String) -> Bool {
+        let senz = parse(msg: z)
+        if (senz != nil) {
+            if (senz.attr["#status"] == "SUCCESS") {
+                return true
+            }
+        }
+        
+        return false
+    }
+    
 }
