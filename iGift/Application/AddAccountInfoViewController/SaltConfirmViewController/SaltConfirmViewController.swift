@@ -29,8 +29,6 @@ class SaltConfirmViewController : KeyboardScrollableViewController {
 
     func setupStylesForTextFields(){
         UITextField.applyStyle(txtField: self.txtFieldTransactionAmt)
-        
-        
     }
 
     override func viewDidLayoutSubviews() {
@@ -39,16 +37,11 @@ class SaltConfirmViewController : KeyboardScrollableViewController {
     }
 
     @IBAction func onConfirmClicked(_ sender: Any) {
+        // todo send salt confirm senz
         
-        //Account validation
-        if self.txtFieldTransactionAmt.text != ""{
-            ViewControllerUtil.showAlert(alertTitle: "Nitice", alertMessage: "Message")
-            return
-        }
+        // update account status
         
         self.navigationController?.popToRootViewController(animated: true)
-        
     }
-    
 
 }

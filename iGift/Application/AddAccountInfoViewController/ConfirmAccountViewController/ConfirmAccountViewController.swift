@@ -18,12 +18,11 @@ class ConfirmAccountViewController : BaseViewController {
     }
 
     func setupUi() {
-        self.LblFirstText.text = "We have done test transaction from '\(accountNo ?? "")' account"
         self.title = "Confirm account"
     }
 
     @IBAction func onNextClicked(_ sender: Any) {
-        self.loadView("VerifyAccountViewController")
+        self.loadView("SaltConfirmViewController")
     }
     
     @IBAction func onCancelClicked(_ sender: Any) {

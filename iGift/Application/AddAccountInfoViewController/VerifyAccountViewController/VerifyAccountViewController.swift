@@ -23,7 +23,13 @@ class VerifyAccountViewController : BaseViewController {
     }
 
     @IBAction func onOKClicked(_ sender: Any) {
-        self.loadView("SaltConfirmViewController")
+        // push senz to add account
+        
+        // save account
+        
+        // save account status
+        
+        self.loadView("ConfirmAccountViewController")
     }
     
     @IBAction func onCancelClicked(_ sender: Any) {

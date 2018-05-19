@@ -46,16 +46,17 @@ class AddAccountViewController : KeyboardScrollableViewController {
             return
         }
         
-        let viewController = getNewInstance("ConfirmAccountViewController")  as? ConfirmAccountViewController
+        self.loadView("VerifyAccountViewController")
         
-        if let controller = viewController {
-            controller.accountNo = txtFieldConfirmAccount.text
-            DispatchQueue.main.async {
-                self.navigationController?.pushViewController(controller, animated: true)
-            }
-        } else {
-            print("Trying to load an unregistered view controller. Please look into ApplicationViewController class to register view controller")
-        }
+//        let viewController = getNewInstance("ConfirmAccountViewController")  as? ConfirmAccountViewController
+//        if let controller = viewController {
+//            controller.accountNo = txtFieldConfirmAccount.text
+//            DispatchQueue.main.async {
+//                self.navigationController?.pushViewController(controller, animated: true)
+//            }
+//        } else {
+//            print("Trying to load an unregistered view controller. Please look into ApplicationViewController class to register view controller")
+//        }
         
     }
     
