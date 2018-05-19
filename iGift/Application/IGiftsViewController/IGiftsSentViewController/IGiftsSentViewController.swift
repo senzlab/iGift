@@ -24,7 +24,6 @@ class IGiftsSentViewController : BaseViewController, UITableViewDelegate, UITabl
 
     func setupUi() {
         self.title = "Sent"
-
     }
 
     func reloadTable() {

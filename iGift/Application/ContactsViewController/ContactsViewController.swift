@@ -10,12 +10,13 @@ import Foundation
 import UIKit
 import Contacts
 
-class ContactsViewController : BaseViewController, UITableViewDelegate, UITableViewDataSource, AlertViewControllerDelegate {
+class ContactsViewController : BaseViewController, UITableViewDelegate, UITableViewDataSource {
 
     let NUMBER_OF_ROWS = 1
     let HEIGHT_OF_ROW = 85
 
     var dataArray: [User]!
+    var forNewIgift: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +25,11 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
     }
 
     func setupUi() {
-        self.title = "Contacts"
+        if (forNewIgift) {
+            self.title = "Choose contact"
+        } else {
+            self.title = "Contacts"
+        }
     }
 
     @IBAction func onAddContactBtnClicked(_ sender: Any) {
@@ -91,10 +96,6 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
                 confirmRequest(user: user)
             }
         }
-        
-        //let viewControllerUtil = ViewControllerUtil()
-        //viewControllerUtil.delegate = self
-        //viewControllerUtil.showAlertWithTwoActions(alertTitle: "Title", alertMessage: "Message", viewController:self)
     }
     
     func confirmRequest(user: User) {
@@ -118,17 +119,5 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
         }))
         
         present(alert, animated: true, completion: nil)
-    }
-    
-    //    MARK: AlertViewControllerDelegate
-    func executeTaskForAction(actionTitle: String) {
-        
-        if actionTitle == "OK" {
-            let designIGiftViewController = DesignIGiftViewController(nibName: "DesignIGiftViewController", bundle: nil)
-            self.navigationController?.pushViewController(designIGiftViewController, animated: true)
-        }
-        else if actionTitle == "CANCEL" {
-            
-        } else {}
     }
 }

@@ -11,7 +11,6 @@ import UIKit
 
 class HomeViewController : BaseViewController {
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUi()
@@ -23,7 +22,9 @@ class HomeViewController : BaseViewController {
     }
 
     @IBAction func onContactsBtnClicked(_ sender: Any) {
-        self.loadView("ContactsViewController")
+        let contactsViewController = ContactsViewController(nibName: "ContactsViewController", bundle: nil)
+        contactsViewController.forNewIgift = false
+        self.navigationController?.pushViewController(contactsViewController, animated: true)
     }
 
     @IBAction func onSettingsBtnClicked(_ sender: Any) {
@@ -31,8 +32,8 @@ class HomeViewController : BaseViewController {
     }
 
     @IBAction func onSendIGiftsBtnClicked(_ sender: Any) {
-        
         let contactsViewController = ContactsViewController(nibName: "ContactsViewController", bundle: nil)
+        contactsViewController.forNewIgift = true
         self.navigationController?.pushViewController(contactsViewController, animated: true)
     }
 
