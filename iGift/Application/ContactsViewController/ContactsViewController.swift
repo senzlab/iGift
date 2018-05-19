@@ -41,13 +41,11 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
         }
     }
 
-    // --- Start of Table View Logic ---
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataArray.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
         // Try to find reusable cell
         var cell = tableView.dequeueReusableCell(withIdentifier: "CustomContactCell") as? CustomContactCell
 
@@ -59,9 +57,6 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
         }
 
         let data = dataArray[indexPath.row]
-        
-        // SetupUI and return cell for each row
-        
         let senzContact = PhoneBook.instance.getContact(phone: data.phone)
         cell?.lblName?.text = senzContact?.name
         cell?.lblMessage?.text = senzContact?.phone

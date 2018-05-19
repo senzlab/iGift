@@ -61,35 +61,6 @@ class PhoneBook {
         return nil
     }
     
-    func getAllContacts() -> [SenzContact] {
-        var contacts = [SenzContact]()
-        
-        // data we need
-        let keysToFetch = [
-            CNContactFormatter.descriptorForRequiredKeys(for: .fullName),
-            CNContactPhoneNumbersKey,
-            CNContactGivenNameKey,
-            CNContactFamilyNameKey,
-            CNContactThumbnailImageDataKey] as [Any]
-        
-        // get contacts
-        let request = CNContactFetchRequest(keysToFetch: keysToFetch as! [CNKeyDescriptor])
-        do {
-            try contactStore.enumerateContacts(with: request) { (contact, stop) in
-                for num in contact.phoneNumbers {
-                    let phn = self.internationalize(phone: num.value.stringValue)
-                    if phn != nil {
-                        contacts.append(SenzContact(name: contact.givenName, phone: phn!, thumbnail: contact.thumbnailImageData))
-                    }
-                }
-            }
-        } catch {
-            print(error.localizedDescription)
-        }
-
-        return contacts
-    }
-    
     func internationalize(phone: String) -> String? {
         do {
             return phoneNumberKit.format(try phoneNumberKit.parse(phone), toType: .international)

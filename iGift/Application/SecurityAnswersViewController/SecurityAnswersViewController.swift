@@ -19,17 +19,6 @@ class SecurityAnswersViewController : KeyboardScrollableViewController {
         self.setupUi()
     }
 
-    func setupUi() {
-        self.title = "Answer questions"
-        self.setupStylesForTextFields()
-    }
-
-    func setupStylesForTextFields(){
-        UITextField.applyStyle(txtField: self.txtFieldAOne)
-        UITextField.applyStyle(txtField: self.txtFieldATwo)
-        UITextField.applyStyle(txtField: self.txtFieldAThree)
-    }
-
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.setupStylesForTextFields()
@@ -44,5 +33,16 @@ class SecurityAnswersViewController : KeyboardScrollableViewController {
         PreferenceUtil.instance.put(key: PreferenceUtil.QUESTION1, value: self.txtFieldAOne.text!)
         PreferenceUtil.instance.put(key: PreferenceUtil.QUESTION2, value: self.txtFieldATwo.text!)
         PreferenceUtil.instance.put(key: PreferenceUtil.QUESTION3, value: self.txtFieldAThree.text!)
+    }
+    
+    func setupUi() {
+        self.title = "Answer questions"
+        self.setupStylesForTextFields()
+    }
+
+    func setupStylesForTextFields(){
+        UITextField.applyStyle(txtField: self.txtFieldAOne)
+        UITextField.applyStyle(txtField: self.txtFieldATwo)
+        UITextField.applyStyle(txtField: self.txtFieldAThree)
     }
 }

@@ -60,7 +60,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Make stutus bar content white
         UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
     }
-    
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -87,7 +86,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     // MARK: - Core Data stack
-
     lazy var persistentContainer: NSPersistentContainer = {
         /*
          The persistent container for the application. This implementation
@@ -116,7 +114,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }()
 
     // MARK: - Core Data Saving support
-
     func saveContext () {
         let context = persistentContainer.viewContext
         if context.hasChanges {
@@ -134,10 +131,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //    MARK: Push notifications related functions
     //    Reference : https://www.appcoda.com/push-notification-ios/
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        
         let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
         print((#file as NSString).lastPathComponent, " # deviceToken = ", deviceTokenString)
-        
         PreferenceUtil.instance.put(key: PreferenceUtil.DEVICE_ID, value: deviceTokenString)
     }
     
@@ -149,19 +144,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print((#file as NSString).lastPathComponent, " # userInfo = ", userInfo)
         
         UIApplication.shared.applicationIconBadgeNumber = 0
-        
         if let senzConnect = userInfo["senz_connect"] as? NSString {
             print((#file as NSString).lastPathComponent, " # senzConnect = ", senzConnect)
             
             let z = SenzUtil.instance.parse(msg: senzConnect as String)
-            let phoneNumber:String = z.attr["#from"]!
-            
             let senzUser = User(id: 1)
+            let phoneNumber:String = z.attr["#from"]!
             senzUser.zid = phoneNumber
             senzUser.phone = phoneNumber
-            
-            let success: Int64 = SenzDb.instance.createUser(user: senzUser)
-            print(" # User success = ", success)
+            SenzDb.instance.createUser(user: senzUser)
             
             let contactsViewController = ContactsViewController(nibName: "ContactsViewController", bundle: nil)
             navController.pushViewController(contactsViewController, animated: true)
@@ -170,19 +161,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print((#file as NSString).lastPathComponent, " # senzIgift = ", senzIgift)
             
             let z = SenzUtil.instance.parse(msg: senzIgift as String)
-
             let senzGift = Igift(id: 1)
             senzGift.uid = z.attr["#uid"]!
             senzGift.user = z.attr["#from"]!
             senzGift.amount = z.attr["#amnt"]!
-            //senzGift.cid = z.attr["#id"]!
+            senzGift.cid = z.attr["#id"]!
             senzGift.state = "TRANSFER"
             senzGift.timestamp = TimeUtil.sharedInstance.timestamp()
             senzGift.isMyIgift = false
             senzGift.isViewed = false
-            
-            let success: Int64 = SenzDb.instance.createIgift(igift: senzGift)
-            print(" # Gift success = ", success)
+            SenzDb.instance.createIgift(igift: senzGift)
             
             let igiftsReceivedViewController = IGiftsReceivedViewController(nibName: "IGiftsReceivedViewController", bundle: nil)
             navController.pushViewController(igiftsReceivedViewController, animated: true)

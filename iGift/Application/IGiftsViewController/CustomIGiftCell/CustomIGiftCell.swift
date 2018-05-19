@@ -22,7 +22,6 @@ class CustomIGiftCell: UITableViewCell {
 
     func setAccountNo(_ value : String) {
         self.btnRedeem?.isHidden = true
-
         self.lblAccountNo?.isHidden = false
         self.lblAccountNo?.text = value
     }

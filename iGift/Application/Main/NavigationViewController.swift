@@ -19,13 +19,11 @@ class NavigationViewController : UINavigationController {
 
     func setupUi() {
         setupStatusBar()
-
-        // Added to avoid seeing the black background issue when navigating between views
         view.backgroundColor = UIColor.fromHex(HexColors.PRIMARY_COLOR.rawValue)
     }
 
     func setupStatusBar() {
-        // Add solid color to the background of the status bar otherwise transparent.
+        // Add solid color to the background of the status bar otherwise transparent
         let statusBarView = UIView(frame: UIApplication.shared.statusBarFrame)
         let statusBarColor = UIColor.fromHex(HexColors.PRIMARY_COLOR.rawValue)
         statusBarView.backgroundColor = statusBarColor
@@ -34,12 +32,13 @@ class NavigationViewController : UINavigationController {
     }
 
     func loadInitialView() {
-
         if (PreferenceUtil.instance.get(key: PreferenceUtil.PHONE_NUMBER).isEmpty) {
             let termsOfUseViewController = TermsOfUseViewController(nibName: "TermsOfUseViewController", bundle: nil)
             self.pushViewController(termsOfUseViewController, animated: true)
-        }
-        else {
+        } else if(PreferenceUtil.instance.get(key: PreferenceUtil.QUESTION1).isEmpty) {
+            let homeViewController = HomeViewController(nibName: "SecurityQuestionsViewController", bundle: nil)
+            self.pushViewController(homeViewController, animated: true)
+        } else {
             let homeViewController = HomeViewController(nibName: "HomeViewController", bundle: nil)
             self.pushViewController(homeViewController, animated: true)
         }

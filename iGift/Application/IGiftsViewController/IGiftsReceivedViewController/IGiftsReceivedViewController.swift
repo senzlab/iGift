@@ -50,14 +50,14 @@ class IGiftsReceivedViewController : BaseViewController, UITableViewDelegate, UI
         }
 
         let data = dataArray[indexPath.row]
-
-        // Set if redeemed show button if not show account ??
         if data.state == "TRANSFER" {
             cell?.setRedeem()
+        } else {
+            cell?.setAccountNo(data.account)
         }
         cell?.lblName?.text = PhoneBook.instance.getContact(phone: data.user)?.name
         cell?.lblTime?.text = TimeUtil.sharedInstance.timeAgoSinceDate(data.timestamp)
-        cell?.lblAmount?.text = data.amount
+        cell?.lblAmount?.text = data.amount + ".00"
         
         cell?.selectionStyle = .none
 

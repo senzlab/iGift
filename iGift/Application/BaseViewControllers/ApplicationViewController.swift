@@ -11,7 +11,6 @@ import UIKit
 // Class that load all view controllers on the main thread
 class ApplicationViewController : UIViewController {
 
-
     func loadAccountView() {
         loadView("AddAccountInfoViewController")
     }
@@ -33,18 +32,14 @@ class ApplicationViewController : UIViewController {
         }
     }
 
-
     func getNewInstance(_ name: String) -> UIViewController? {
         switch name {
-            
         case "VerifyAccountViewController":
             return VerifyAccountViewController(nibName: "VerifyAccountViewController", bundle: nil)
         case "SaltConfirmViewController":
             return SaltConfirmViewController(nibName: "SaltConfirmViewController", bundle: nil)
-            
         case "ConfirmAccountViewController":
             return ConfirmAccountViewController(nibName: "ConfirmAccountViewController", bundle: nil)
-            
         case "AddAccountInfoViewController":
             return AddAccountInfoViewController(nibName: "AddAccountInfoViewController", bundle: nil)
         case "AddAccountViewController":
@@ -64,8 +59,6 @@ class ApplicationViewController : UIViewController {
         case "SecurityQuestionsViewController":
             return SecurityQuestionsViewController(nibName: "SecurityQuestionsViewController", bundle: nil)
         case "IGiftsViewController":
-//            return IGiftsReceivedViewController(nibName: "IGiftsReceivedViewController", bundle: nil)
-//            return IGiftsViewController(nibName: "IGiftsViewController", bundle: nil)
             return IGiftsViewController()
         case "ChangePasswordViewController":
             return ChangePasswordViewController(nibName: "ChangePasswordViewController", bundle: nil)

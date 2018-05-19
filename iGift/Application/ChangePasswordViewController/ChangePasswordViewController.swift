@@ -31,7 +31,6 @@ class ChangePasswordViewController : KeyboardScrollableViewController {
         UITextField.applyStyle(txtField: self.txtcurrentPassword)
         UITextField.applyStyle(txtField: self.txtFieldNewPw)
         UITextField.applyStyle(txtField: self.txtFieldNewConfirmPw)
-        
     }
 
     override func viewDidLayoutSubviews() {
@@ -40,11 +39,7 @@ class ChangePasswordViewController : KeyboardScrollableViewController {
     }
 
     @IBAction func onAddAccountClicked(_ sender: Any) {
-        
         //button action
-        
-        
     }
-    
 
 }

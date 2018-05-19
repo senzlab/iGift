@@ -38,7 +38,6 @@ class IGiftsSentViewController : BaseViewController, UITableViewDelegate, UITabl
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
         // Try to find reusable cell
         var cell = tableView.dequeueReusableCell(withIdentifier: "CustomIGiftCell") as? CustomIGiftCell
 
@@ -50,11 +49,10 @@ class IGiftsSentViewController : BaseViewController, UITableViewDelegate, UITabl
         }
 
         let data = dataArray[indexPath.row]
-        
-        cell?.setAccountNo("2299112234410")
+        cell?.setAccountNo(data.account)
         cell?.lblName?.text = PhoneBook.instance.getContact(phone: data.user)?.name
         cell?.lblTime?.text = TimeUtil.sharedInstance.timeAgoSinceDate(data.timestamp)
-        cell?.lblAmount?.text = data.amount
+        cell?.lblAmount?.text = data.amount + ".00"
         
         cell?.selectionStyle = .none
         

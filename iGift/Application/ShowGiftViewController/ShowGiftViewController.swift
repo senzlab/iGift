@@ -16,14 +16,34 @@ class ShowGiftViewController: BaseViewController {
     
     @IBOutlet weak var redeemButton: CircleButton!
     
-    //    MARK: UIViewController related
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUi()
+        self.setupPreview()
+    }
+    
+    @IBAction func redeemAction(_ sender: UIButton) {
         
+    }
+
+    func setupUi() {
+        self.title = "Show Gift"
+        
+        if iGift!.isMyIgift {
+            redeemButton.isHidden = true
+        } else {
+            if iGift!.state == "TRANSFER" {
+                redeemButton.isHidden = false
+            } else {
+                redeemButton.isHidden = true
+            }
+        }
+    }
+    
+    func setupPreview() {
         if iGift != nil {
             if iGift!.isViewed {
-               giftImageView.image = UIImage(contentsOfFile: readFileInPath(relativeFilePath: Constants.IMAGES_DIR.rawValue, fileName: iGift!.uid + ".jpeg"))
+                giftImageView.image = UIImage(contentsOfFile: readFileInPath(relativeFilePath: Constants.IMAGES_DIR.rawValue, fileName: iGift!.uid + ".jpeg"))
             } else {
                 // download image
                 let senz = SenzUtil.instance.blobSenz(uid: iGift!.uid)
@@ -44,26 +64,6 @@ class ShowGiftViewController: BaseViewController {
                     // mark as viewed
                     SenzDb.instance.markAsViewed(id: iGift!.uid)
                 }
-            }
-        }
-    }
-    
-    //  MARK: Action functions
-    @IBAction func redeemAction(_ sender: UIButton) {
-        
-    }
-    
-    // MARK: Supportive functions
-    func setupUi() {
-        self.title = "Show Gift"
-        
-        if iGift!.isMyIgift {
-            redeemButton.isHidden = true
-        } else {
-            if iGift!.state == "TRANSFER" {
-                redeemButton.isHidden = false
-            } else {
-                redeemButton.isHidden = true
             }
         }
     }
