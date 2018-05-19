@@ -43,7 +43,7 @@
                                             </constraints>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                            <textInputTraits key="textInputTraits"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             <connections>
                                                 <outlet property="delegate" destination="-1" id="gSK-ld-kSo"/>
                                             </connections>
@@ -57,7 +57,7 @@
                                             </constraints>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                            <textInputTraits key="textInputTraits"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                             <connections>
                                                 <outlet property="delegate" destination="-1" id="s0v-Wd-MCk"/>
                                             </connections>
@@ -68,7 +68,7 @@
                                             <color key="tintColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="0.0" colorSpace="calibratedRGB"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                            <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                             <connections>
                                                 <outlet property="delegate" destination="-1" id="jeo-4C-Hg1"/>
                                             </connections>
@@ -79,7 +79,7 @@
                                             <color key="tintColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="0.0" colorSpace="calibratedRGB"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                            <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                             <connections>
                                                 <outlet property="delegate" destination="-1" id="jQr-eS-Ayf"/>
                                             </connections>
