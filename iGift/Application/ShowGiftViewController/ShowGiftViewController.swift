@@ -19,10 +19,8 @@ class ShowGiftViewController: BaseViewController {
     //    MARK: UIViewController related
     override func viewDidLoad() {
         super.viewDidLoad()
-        print((#file as NSString).lastPathComponent)
         self.setupUi()
         
-//        Previewing an image by taking from application documents directory
         if iGift != nil {
             if iGift!.isViewed {
                giftImageView.image = UIImage(contentsOfFile: readFileInPath(relativeFilePath: Constants.IMAGES_DIR.rawValue, fileName: iGift!.uid + ".jpeg"))
@@ -50,13 +48,23 @@ class ShowGiftViewController: BaseViewController {
         }
     }
     
-    //    MARK: Action functions
+    //  MARK: Action functions
     @IBAction func redeemAction(_ sender: UIButton) {
         
     }
     
-    //    MARK: Supportive functions
+    // MARK: Supportive functions
     func setupUi() {
         self.title = "Show Gift"
+        
+        if iGift!.isMyIgift {
+            redeemButton.isHidden = true
+        } else {
+            if iGift!.state == "TRANSFER" {
+                redeemButton.isHidden = false
+            } else {
+                redeemButton.isHidden = true
+            }
+        }
     }
 }
