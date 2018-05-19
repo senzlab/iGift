@@ -52,7 +52,7 @@ class IGiftsSentViewController : BaseViewController, UITableViewDelegate, UITabl
         let data = dataArray[indexPath.row]
         
         cell?.setAccountNo("2299112234410")
-        cell?.lblName?.text = data.user
+        cell?.lblName?.text = PhoneBook.instance.getContact(phone: data.user)?.name
         cell?.lblTime?.text = TimeUtil.sharedInstance.timeAgoSinceDate(data.timestamp)
         cell?.lblAmount?.text = data.amount
         

@@ -57,23 +57,26 @@ class RegisterViewController : KeyboardScrollableViewController {
     
     func doReg() {
         // ui fields
-        let zAddress = txtFieldUsername.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        let phoneNo = txtFieldUsername.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         let password = txtFieldPassword.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         let confirmPassword = txtFieldConfirmPassword.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         
         // todo validate input fileds
-        
-        // reg
-        let uid = SenzUtil.instance.uid(zAddress: zAddress!)
-        let regSenz = SenzUtil.instance.regSenz(uid: uid, zAddress: zAddress!)
-        let z = Httpz.instance.pushSenz(senz: regSenz!)
-        if z == nil {
-            // reg fail
-            ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Regaistration fail")
+        if let phn = PhoneBook.instance.internationalize(phone: phoneNo!) {
+            // reg
+            let uid = SenzUtil.instance.uid(zAddress: phn.replacingOccurrences(of: " ", with: ""))
+            let regSenz = SenzUtil.instance.regSenz(uid: uid, zAddress: phn.replacingOccurrences(of: " ", with: ""))
+            let z = Httpz.instance.pushSenz(senz: regSenz!)
+            if z == nil {
+                // reg fail
+                ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Regaistration fail")
+            } else {
+                // reg done
+                PreferenceUtil.instance.put(key: PreferenceUtil.PHONE_NUMBER, value: self.txtFieldUsername.text!)
+                self.loadView("SecurityQuestionsViewController")
+            }
         } else {
-            // reg done
-            PreferenceUtil.instance.put(key: PreferenceUtil.PHONE_NUMBER, value: self.txtFieldUsername.text!)
-            self.loadView("SecurityQuestionsViewController")
+            ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Invalid phone no")
         }
     }
 }

@@ -55,7 +55,7 @@ class IGiftsReceivedViewController : BaseViewController, UITableViewDelegate, UI
         if data.state == "TRANSFER" {
             cell?.setRedeem()
         }
-        cell?.lblName?.text = data.user
+        cell?.lblName?.text = PhoneBook.instance.getContact(phone: data.user)?.name
         cell?.lblTime?.text = TimeUtil.sharedInstance.timeAgoSinceDate(data.timestamp)
         cell?.lblAmount?.text = data.amount
         
