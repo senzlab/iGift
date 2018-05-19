@@ -18,12 +18,11 @@ class IGiftsSentViewController : BaseViewController, UITableViewDelegate, UITabl
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupUi()
         dataArray = SenzDb.instance.getIgifts(myGifts: true)
     }
-
-    func setupUi() {
-        self.title = "Sent"
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.tabBarController?.navigationItem.title = "Sent iGifts"
     }
 
     func reloadTable() {
