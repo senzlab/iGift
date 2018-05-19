@@ -21,7 +21,7 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUi()
-        dataArray = SenzDb.instance.getUsers()
+        dataArray = SenzDb.instance.getUsers(active: forNewIgift)
     }
 
     func setupUi() {
@@ -86,9 +86,11 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
         let user = dataArray[indexPath.row]
         if user.isActive {
             // goto new igift
-            let designIGiftViewController = DesignIGiftViewController(nibName: "DesignIGiftViewController", bundle: nil)
-            designIGiftViewController.user = user
-            self.navigationController?.pushViewController(designIGiftViewController, animated: true)
+            if (forNewIgift) {
+                let designIGiftViewController = DesignIGiftViewController(nibName: "DesignIGiftViewController", bundle: nil)
+                designIGiftViewController.user = user
+                self.navigationController?.pushViewController(designIGiftViewController, animated: true)
+            }
         } else {
             // send request
             if !user.isRequester {
@@ -99,7 +101,7 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
     }
     
     func confirmRequest(user: User) {
-        let alert = UIAlertController(title: "Confirm", message: "Would like to accept the request of " + user.phone + "?", preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "Confirm", message: "Would like to accept the request from " + user.phone + "?", preferredStyle: UIAlertControllerStyle.alert)
         
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action: UIAlertAction!) in
             // send request

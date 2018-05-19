@@ -126,10 +126,11 @@ class SenzDb {
         return false
     }
 
-    func getUsers() -> [User] {
+    func getUsers(active: Bool) -> [User] {
         var l = [User]()
+        let q = active ? users.filter(isActive == active) : self.users
         do {
-            for i in try db!.prepare(self.users) {
+            for i in try db!.prepare(q) {
                 let u = User(id: i[_uid])
                 u.zid = i[zid]
                 u.phone = i[phone]

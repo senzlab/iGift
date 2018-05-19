@@ -119,22 +119,27 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
             // fail to send igift
             ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to send iGift")
         } else {
-            // save image
-            let filename = uid + ".jpeg"
-            createFileInPath(relativeFilePath: Constants.IMAGES_DIR.rawValue, fileName: filename, imageData: compressedImageData as Data)
-            
-            // save igift
-            let ig = Igift(id: 1)
-            ig.uid = uid
-            ig.amount = amount
-            ig.state = "TRANSFER"
-            ig.isMyIgift = true
-            ig.user = user!.phone
-            ig.timestamp = TimeUtil.sharedInstance.timestamp()
-            SenzDb.instance.createIgift(igift: ig)
-            
-            // exit view controller
-            navigationController?.popViewController(animated: true)
+            if (SenzUtil.instance.verifyStatus(z: z!)) {
+                // save image
+                let filename = uid + ".jpeg"
+                createFileInPath(relativeFilePath: Constants.IMAGES_DIR.rawValue, fileName: filename, imageData: compressedImageData as Data)
+                
+                // save igift
+                let ig = Igift(id: 1)
+                ig.uid = uid
+                ig.amount = amount
+                ig.state = "TRANSFER"
+                ig.isMyIgift = true
+                ig.user = user!.phone
+                ig.timestamp = TimeUtil.sharedInstance.timestamp()
+                SenzDb.instance.createIgift(igift: ig)
+                
+                // exit view controller
+                navigationController?.popViewController(animated: true)
+            } else {
+                // fail
+                ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to send iGift")
+            }
         }
     }
     
