@@ -10,26 +10,73 @@ import Foundation
 import ContactsUI
 
 class PhoneBook {
+    
+    static let instance = PhoneBook()
 
-    // Singleton
-    static let sharedInstance = PhoneBook()
-    private init() {}
-
-    // MARK: Instance Variables
     let contactStore = CNContactStore()
+    
+    lazy var contacts: [PhoneContact] = {
+        // data we need
+        let keysToFetch = [
+            CNContactFormatter.descriptorForRequiredKeys(for: .fullName),
+            CNContactPhoneNumbersKey,
+            CNContactGivenNameKey,
+            CNContactFamilyNameKey] as [Any]
+        
+        // fetch all records
+        var allContainers: [CNContainer] = []
+        do {
+            allContainers = try contactStore.containers(matching: nil)
+        } catch {
+            print("Error fetching containers")
+        }
+        
+        var results: [PhoneContact] = []
+        for container in allContainers {
+            let fetchPredicate = CNContact.predicateForContactsInContainer(withIdentifier: container.identifier)
+            do {
+                let containerResults = try contactStore.unifiedContacts(matching: fetchPredicate, keysToFetch: keysToFetch as! [CNKeyDescriptor])
+                let tranformedResults = containerResults.map({ (contact:CNContact) -> PhoneContact in
+                    return PhoneContact(contact: contact)
+                })
+                results.append(contentsOf: tranformedResults)
+            } catch {
+                print("Error fetching containers")
+            }
+        }
+        
+        return results
+    }()
 
-    // MARK: Instance Methods
     func getContacts() -> [PhoneContact] {
+        return contacts
+    }
+    
+    func getContact(phone: String) -> PhoneContact? {
+        for contact in self.contacts {
+            if (!contact.phoneNumber.isEmpty) {
+                for p in contact.phoneNumber {
+                    if (p == phone) {
+                        return contact
+                    }
+                }
+            }
+        }
+        
+        return nil
+    }
+    
+    func getAllContacts() -> [PhoneContact] {
         // PLEASE READ - MAKE SURE TO REQUEST PERMISSION FIRST, OTHERWISE APP WILL
 
-        // Declare which data you want to read
+        // data we need
         let keysToFetch = [
             CNContactFormatter.descriptorForRequiredKeys(for: .fullName),
             CNContactPhoneNumbersKey,
             CNContactGivenNameKey,
             CNContactFamilyNameKey] as [Any]
 
-        // Fetch all records
+        // fetch all records
         var allContainers: [CNContainer] = []
         do {
             allContainers = try contactStore.containers(matching: nil)
@@ -37,22 +84,14 @@ class PhoneBook {
             print("Error fetching containers")
         }
 
-        // Declare return array
         var results: [PhoneContact] = []
-
-        // Filter results into return array
         for container in allContainers {
             let fetchPredicate = CNContact.predicateForContactsInContainer(withIdentifier: container.identifier)
-
             do {
-
                 let containerResults = try contactStore.unifiedContacts(matching: fetchPredicate, keysToFetch: keysToFetch as! [CNKeyDescriptor])
-
-                // Map data to POJO
                 let tranformedResults = containerResults.map({ (contact:CNContact) -> PhoneContact in
                     return PhoneContact(contact: contact)
                 })
-
                 results.append(contentsOf: tranformedResults)
             } catch {
                 print("Error fetching containers")

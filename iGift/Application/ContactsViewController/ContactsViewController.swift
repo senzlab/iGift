@@ -33,7 +33,7 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
     }
 
     @IBAction func onAddContactBtnClicked(_ sender: Any) {
-        let permission = PhoneBook.sharedInstance.checkPermission()
+        let permission = PhoneBook.instance.checkPermission()
         if (permission == CNAuthorizationStatus.denied) {
             UIApplication.shared.open(URL(string:UIApplicationOpenSettingsURLString)!)
         } else {
@@ -86,11 +86,9 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
         let user = dataArray[indexPath.row]
         if user.isActive {
             // goto new igift
-            if (forNewIgift) {
-                let designIGiftViewController = DesignIGiftViewController(nibName: "DesignIGiftViewController", bundle: nil)
-                designIGiftViewController.user = user
-                self.navigationController?.pushViewController(designIGiftViewController, animated: true)
-            }
+            let designIGiftViewController = DesignIGiftViewController(nibName: "DesignIGiftViewController", bundle: nil)
+            designIGiftViewController.user = user
+            self.navigationController?.pushViewController(designIGiftViewController, animated: true)
         } else {
             // send request
             if !user.isRequester {

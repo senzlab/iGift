@@ -33,13 +33,12 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
     func setupUi() {
         self.configureCustomSearchController()
         self.title = "Phone Book"
-
     }
 
     func loadContacts() {
-        PhoneBook.sharedInstance.requestAccess({value in
+        PhoneBook.instance.requestAccess({value in
             if value {
-                self.dataArray = PhoneBook.sharedInstance.getContacts()
+                self.dataArray = PhoneBook.instance.getContacts()
                 self.reloadTable()
             } else {
                 print("PhoneBook Permission Denied by user!!")
