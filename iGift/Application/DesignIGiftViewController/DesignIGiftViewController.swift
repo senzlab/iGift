@@ -62,7 +62,6 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
         }
     }
     
-    
     //    MARK: Observer selectors
     @objc func keyboardWillShow(notification: NSNotification) {
         
@@ -103,23 +102,44 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
     
     //    MARK: Action functions
     @IBAction func sendGiftAction(_ sender: UIButton) {
-
-//       let currencyValueString = currencyValueTextField.text.replacingOccurrences(of: currencyType, with: "", options: NSString.CompareOptions.literal, range: nil)
-        
+        let amount = currencyValueTextField.text!.replacingOccurrences(of: currencyType, with: "", options: NSString.CompareOptions.literal, range: nil)
         sendGiftButton.isHidden = true
         giftModifyView.isHidden = true
         
+        let screenshot = view.takeSnapshot()
+        let compressedImageData = screenshot.lowestQualityJPEGNSData
+        let blob = compressedImageData.base64EncodedString()
         let uid = NSUUID().uuidString
-        let img = DesignIGiftViewControllerModel().takeSnapShotOfTheView(view: rootView, fileName: uid + ".jpeg")
-
+        
         sendGiftButton.isHidden = false
         giftModifyView.isHidden = false
         
-        Httpz.instance.pushSenz(senz: SenzUtil.instance.transferSenz(amount: "3000", blob: img!, to: "+94775432015"))
+        let z = Httpz.instance.pushSenz(senz: SenzUtil.instance.transferSenz(amount: "3000", blob: blob, to: user!.phone))
+        if z == nil {
+            // fail to send igift
+            ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to send iGift")
+        } else {
+            // save image
+            let filename = uid + ".jpeg"
+            createFileInPath(relativeFilePath: Constants.IMAGES_DIR.rawValue, fileName: filename, imageData: compressedImageData as Data)
+            
+            // save igift
+            let ig = Igift(id: 1)
+            ig.uid = uid
+            ig.amount = amount
+            ig.state = "TRANSFER"
+            ig.isMyIgift = true
+            ig.user = user!.phone
+            ig.timestamp = TimeUtil.sharedInstance.timestamp()
+            SenzDb.instance.createIgift(igift: ig)
+            
+            // exit view controller
+            navigationController?.popViewController(animated: true)
+        }
     }
     
     @IBAction func cameraAction(_ sender: UIButton) {
-        
+
         let capturePhotoViewController = CapturePhotoViewController(nibName: "CapturePhotoViewController", bundle: nil)
         self.navigationController?.pushViewController(capturePhotoViewController, animated: true)
     }
@@ -134,22 +154,19 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
     }
     
     @IBAction func addArtAction(_ sender: UIButton) {
-        
         let addArtViewController = AddArtViewController(nibName: "AddArtViewController", bundle: nil)
         self.navigationController?.pushViewController(addArtViewController, animated: true)
     }
     
     @IBAction func changeBgColorAction(_ sender: UIButton) {
-        
         let chooseBackgroundViewContoller = ChooseBackgroundViewContoller(nibName: "ChooseBackgroundViewContoller", bundle: nil)
         self.navigationController?.pushViewController(chooseBackgroundViewContoller, animated: true)
     }
     
-    //    MARK: Supportive functions
     func setupUi() {
         self.title = "New iGift"
         
-//        Creating a circular button
+        // creating a circular button
         sendGiftButton.layer.cornerRadius = 0.5 * sendGiftButton.bounds.size.width;
         
         giftMsgTextView.placeholder = "Write your message here"
@@ -157,15 +174,11 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
         GiftCard.shared.backgroundColor = nil
         GiftCard.shared.capturedImage = nil
         capturedPhotoImageView.isHidden = true
-        
+    
         giftMsgTextView.font = giftMsgTextView.font?.fontWithName(name: Constants.MAIN_FONT_FAMILY.rawValue)
-        
-//        The way of retrieving image and show to the user from user documents
-//        capturedPhotoImageView.image = UIImage(contentsOfFile: readFileInPath(relativeFilePath: Constants.IMAGES_DIR.rawValue))
     }
     
     @objc func createStickerImage(notification: NSNotification) {
-        
         var receivedUserInfo = notification.userInfo
         let imageName = receivedUserInfo![stickerNameNotifiKey] as! String
         
@@ -185,8 +198,7 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
         panGesture?.center = point
     }
     
-    
-    //    MARK: UITextFieldDelegate
+    // MARK: UITextFieldDelegate
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField == currencyValueTextField {
             userTryingToGiveCurrencyValue = true
@@ -195,19 +207,14 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        
         if textField == currencyValueTextField{
             if let text = textField.text{
-                
                 if text == currencyType{
                     textField.text = ""
                     return true
                 }
                 textField.text = currencyType + text.replacingOccurrences(of: currencyType, with: "", options: NSString.CompareOptions.literal, range: nil)
-                
             }
-            
         }
         
         return true

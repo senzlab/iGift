@@ -19,11 +19,7 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         self.setupUi()
-        
-        let user = User(id: 1)
-        user.phone = "1234445"
-        SenzDb.instance.createUser(user: user)
+        self.setupUi()
         dataArray = SenzDb.instance.getUsers()
     }
 
@@ -69,7 +65,8 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
             } else {
                 cell?.lblUserStatus?.setTitle("New request", for: .normal)
             }
-
+        } else {
+            cell?.lblUserStatus?.isHidden = true
         }
         cell?.selectionStyle = .none
         
@@ -105,6 +102,15 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
         
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action: UIAlertAction!) in
             // send request
+            let senz = SenzUtil.instance.connectSenz(to: user.phone)
+            let z = Httpz.instance.pushSenz(senz: senz)
+            if z == nil {
+                // reg fail
+                ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to confirm request")
+            } else {
+                // reg done
+                SenzDb.instance.markAsActive(id: user.zid)
+            }
         }))
         
         alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: { (action: UIAlertAction!) in

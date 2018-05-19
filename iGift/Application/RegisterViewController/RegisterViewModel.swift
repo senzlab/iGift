@@ -16,12 +16,11 @@ class RegisterViewModel: NSObject {
     func hasUserAccpetedRemoteNotifications() -> Bool {
         
         let notificationType = UIApplication.shared.currentUserNotificationSettings!.types
-//      Notifications are NOT enabled
         if notificationType == [] {
+            //Notifications are NOT enabled
             return false
-        }
-//            Notifications are Enabled
-        else {
+        } else {
+            //Notifications are Enabled
             return true
         }
     }

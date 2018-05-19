@@ -52,16 +52,25 @@ class IGiftsSentViewController : BaseViewController, UITableViewDelegate, UITabl
         }
 
         let data = dataArray[indexPath.row]
-
+        
+        cell?.setAccountNo("2299112234410")
         cell?.lblName?.text = data.user
         cell?.lblTime?.text = TimeUtil.sharedInstance.timeAgoSinceDate(data.timestamp)
         cell?.lblAmount?.text = data.amount
-
+        
+        cell?.selectionStyle = .none
+        
         return cell!
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return CGFloat(HEIGHT_OF_ROW)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let showGiftViewController = ShowGiftViewController(nibName: "ShowGiftViewController", bundle: nil)
+        showGiftViewController.iGift = dataArray[indexPath.row]
+        self.navigationController?.pushViewController(showGiftViewController, animated: true)
     }
 }
 
