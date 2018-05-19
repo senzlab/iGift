@@ -113,7 +113,16 @@ class Httpz {
         case .success:
             switch client.send(string: senz + ";") {
             case .success:
-                guard let data = client.read(1024 * 10, timeout: 60) else {
+                // read all data from socket
+                var data = [UInt8]()
+                while (true) {
+                    guard let resp = client.read(1024 * 10, timeout: 60) else {
+                        break
+                    }
+                    data += resp
+                }
+                
+                if data.isEmpty {
                     client.close()
                     return nil
                 }

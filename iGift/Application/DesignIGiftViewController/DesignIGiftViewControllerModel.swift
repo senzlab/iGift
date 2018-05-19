@@ -41,7 +41,7 @@ class DesignIGiftViewControllerModel: NSObject {
         return screenshotImage
     }
     
-    func takeSnapShotOfTheView(view: UIView) -> String? {
+    func takeSnapShotOfTheView(view: UIView, fileName: String) -> String? {
         
         var screenshotImage :UIImage?
         
@@ -52,10 +52,10 @@ class DesignIGiftViewControllerModel: NSObject {
             let compressedImageData = image.lowestQualityJPEGNSData
             
 //            Save in the photo library
-            UIImageWriteToSavedPhotosAlbum(UIImage(data: compressedImageData as Data)!, nil, nil, nil)
+            //UIImageWriteToSavedPhotosAlbum(UIImage(data: compressedImageData as Data)!, nil, nil, nil)
             
 //            Save inside the user documents directory
-            let fileWriteStatus = createFileInPath(relativeFilePath: Constants.IMAGES_DIR.rawValue, fileName: "uniqueid.jpeg", imageData: compressedImageData as Data)
+            let fileWriteStatus = createFileInPath(relativeFilePath: Constants.IMAGES_DIR.rawValue, fileName: fileName, imageData: compressedImageData as Data)
             print((#file as NSString).lastPathComponent, " # fileWriteStatus = ", fileWriteStatus)
             
             return compressedImageData.base64EncodedString()

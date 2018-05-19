@@ -63,10 +63,10 @@ func createFileInPath(relativeFilePath:String, fileName:String, imageData:Data) 
     return true
 }
 
-func readFileInPath(relativeFilePath:String) -> String {
+func readFileInPath(relativeFilePath:String, fileName: String) -> String {
     print((#file as NSString).lastPathComponent, "-", #function, "-", #line)
     
-    let absoluteFilePath = "\(documentsDirectoryPath())/\(relativeFilePath)/uniqueid.jpeg"
+    let absoluteFilePath = "\(documentsDirectoryPath())/\(relativeFilePath)/\(fileName)"
     
     return absoluteFilePath
 }

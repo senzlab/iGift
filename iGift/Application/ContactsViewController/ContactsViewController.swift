@@ -63,9 +63,14 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
         
         cell?.lblName?.text = data.phone
         cell?.lblMessage?.text = data.phone
-        //TODO, set 'New request' and 'New send'
-        cell?.lblUserStatus?.setTitle("New request", for: .normal)
-    
+        if (!data.isActive) {
+            if data.isRequester {
+                cell?.lblUserStatus?.setTitle("Sent request", for: .normal)
+            } else {
+                cell?.lblUserStatus?.setTitle("New request", for: .normal)
+            }
+
+        }
         cell?.selectionStyle = .none
         
         return cell!
@@ -76,10 +81,37 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let user = dataArray[indexPath.row]
+        if user.isActive {
+            // goto new igift
+            let designIGiftViewController = DesignIGiftViewController(nibName: "DesignIGiftViewController", bundle: nil)
+            designIGiftViewController.user = user
+            self.navigationController?.pushViewController(designIGiftViewController, animated: true)
+        } else {
+            // send request
+            if !user.isRequester {
+                // ask to confirm request
+                confirmRequest(user: user)
+            }
+        }
         
-        let viewControllerUtil = ViewControllerUtil()
-        viewControllerUtil.delegate = self
-        viewControllerUtil.showAlertWithTwoActions(alertTitle: "Title", alertMessage: "Message", viewController:self)
+        //let viewControllerUtil = ViewControllerUtil()
+        //viewControllerUtil.delegate = self
+        //viewControllerUtil.showAlertWithTwoActions(alertTitle: "Title", alertMessage: "Message", viewController:self)
+    }
+    
+    func confirmRequest(user: User) {
+        let alert = UIAlertController(title: "Confirm", message: "Would like to accept the request of " + user.phone + "?", preferredStyle: UIAlertControllerStyle.alert)
+        
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action: UIAlertAction!) in
+            // send request
+        }))
+        
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: { (action: UIAlertAction!) in
+            // do nothing
+        }))
+        
+        present(alert, animated: true, completion: nil)
     }
     
     //    MARK: AlertViewControllerDelegate

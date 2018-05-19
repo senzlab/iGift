@@ -58,7 +58,6 @@ class RegisterViewController : KeyboardScrollableViewController {
         // do register
         CryptoUtil.instance.initKeys()
         doReg()
-
     }
     
     func doReg() {

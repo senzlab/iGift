@@ -13,7 +13,6 @@ class PreferenceUtil {
     
     static let PUBLIC_KEY = "PUBLIC_KEY"
     static let PRIVATE_KEY = "PRIVATE_KEY"
-    static let Z_ADDRESS = "Z_ADDRESS"
     static let PASSWORD = "PASSWORD"
     static let DEVICE_ID = "DEVICE_ID"
     static let QUESTION1 = "QUESTION1"

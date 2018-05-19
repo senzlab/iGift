@@ -76,6 +76,9 @@ class TimeUtil {
         } else {
             return "Just now"
         }
-
+    }
+    
+    func timestamp() -> Int64 {
+        return Int64(Date().timeIntervalSince1970 * 1000);
     }
 }

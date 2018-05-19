@@ -56,7 +56,7 @@ class SenzUtil {
     
     func connectSenz(to: String) -> String {
         let pubkey = PreferenceUtil.instance.get(key: PreferenceUtil.PUBLIC_KEY)
-        let zAddress = PreferenceUtil.instance.get(key: PreferenceUtil.Z_ADDRESS)
+        let zAddress = PreferenceUtil.instance.get(key: PreferenceUtil.PHONE_NUMBER)
         let senz = "SHARE" +
             " #uid " + uid(zAddress: zAddress) +
             " #pubkey " + pubkey +
@@ -68,7 +68,7 @@ class SenzUtil {
     }
     
     func accountSenz(account: String) -> String {
-        let zAddress = PreferenceUtil.instance.get(key: PreferenceUtil.Z_ADDRESS)
+        let zAddress = PreferenceUtil.instance.get(key: PreferenceUtil.PHONE_NUMBER)
         let senz = "SHARE" +
             " #uid " + uid(zAddress: zAddress) +
             " #acc " + account +
@@ -79,7 +79,7 @@ class SenzUtil {
     }
     
     func salSenz(salt: String) -> String {
-        let zAddress = PreferenceUtil.instance.get(key: PreferenceUtil.Z_ADDRESS)
+        let zAddress = PreferenceUtil.instance.get(key: PreferenceUtil.PHONE_NUMBER)
         let senz = "SHARE" +
             " #uid " + uid(zAddress: zAddress) +
             " #salt " + salt +
@@ -90,14 +90,15 @@ class SenzUtil {
     }
     
     func transferSenz(amount: String, blob: String, to: String) -> String {
-        let zAddress = PreferenceUtil.instance.get(key: PreferenceUtil.Z_ADDRESS)
+        let zAddress = PreferenceUtil.instance.get(key: PreferenceUtil.PHONE_NUMBER)
         let account = PreferenceUtil.instance.get(key: PreferenceUtil.ACCOUNT)
         let senz = "SHARE" +
             " #uid " + uid(zAddress: zAddress) +
             " #id " + NSUUID().uuidString +
             " #amnt " + amount +
+            " #bnk " + "sampath" +
             " #blob " + blob +
-            " #account " + account +
+            " #acc " + account +
             " #to " + to +
             " #type " + "TRANSFER" +
             " @" + "sampath" +
@@ -110,7 +111,18 @@ class SenzUtil {
         
     }
     
-    func uid(zAddress: String) -> String {
-        return zAddress + String(Int(Date().timeIntervalSince1970 * 1000))
+    func blobSenz(uid: String) -> String {
+        let zAddress = PreferenceUtil.instance.get(key: PreferenceUtil.PHONE_NUMBER)
+        let senz = "GET" +
+            " #uid " + uid +
+            " @" + "senzswitch" +
+            " ^" + zAddress
+        let signature = CryptoUtil.instance.sign(payload: senz)
+        return senz + " " + signature
     }
+    
+    func uid(zAddress: String) -> String {
+        return zAddress + String(TimeUtil.sharedInstance.timestamp())
+    }
+    
 }

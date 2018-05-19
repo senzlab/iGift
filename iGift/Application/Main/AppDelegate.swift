@@ -173,6 +173,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
             let senzGift = Igift(id: 1)
             senzGift.uid = z.attr["#uid"]!
+            senzGift.user = z.attr["#from"]!
+            senzGift.amount = z.attr["#amnt"]!
+            //senzGift.cid = z.attr["#id"]!
+            senzGift.state = "TRANSFER"
+            senzGift.timestamp = TimeUtil.sharedInstance.timestamp()
             senzGift.isMyIgift = false
             senzGift.isViewed = false
             

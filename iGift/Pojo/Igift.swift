@@ -15,6 +15,7 @@ class Igift {
     var timestamp: Int64
     var isMyIgift: Bool
     var isViewed: Bool
+    var cid: String
     var account: String
     var amount: String
     var blob: String
@@ -26,6 +27,7 @@ class Igift {
          timestamp: Int64 = 0,
          isMyIgift: Bool = true,
          isViewed: Bool = true,
+         cid: String = "",
          account: String = "",
          amount: String = "",
          blob: String = "",
@@ -37,6 +39,7 @@ class Igift {
         self.timestamp = timestamp
         self.isMyIgift = isMyIgift
         self.isViewed = isViewed
+        self.cid = cid
         self.account = account
         self.amount = amount
         self.blob = blob

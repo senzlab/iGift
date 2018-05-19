@@ -13,27 +13,6 @@ class IGiftsReceivedViewController : BaseViewController, UITableViewDelegate, UI
     @IBOutlet weak var tblView: UITableView!
 
     var dataArray: [Igift]!
-    
-//    var dataArray = [Igift(id: 1,
-//                           user: "Prasad Mathugama",
-//                           timestamp: Int64(Date().timeIntervalSinceNow),
-//                           isMyIgift: true,
-//                           isViewed: true,
-//                           account: "123243545",
-//                           amount: "101231230 LKR"),
-//                     Igift(id: 1,
-//                           user: "Jessica Rusten",
-//                           timestamp: 0,
-//                           isMyIgift: true,
-//                           isViewed: true,
-//                           account: "58776879780",
-//                           amount: "10 LKR"),
-//                     Igift(id: 1,
-//                           user: "Martin Hallburg", timestamp: Int64(Date().timeIntervalSinceNow),
-//                           isMyIgift: false,
-//                           isViewed: false,
-//                           account: "33333333",
-//                           amount: "103453450 LKR")]
 
     let HEIGHT_OF_ROW = 85
 
@@ -76,12 +55,9 @@ class IGiftsReceivedViewController : BaseViewController, UITableViewDelegate, UI
         let data = dataArray[indexPath.row]
 
         // Set if redeemed show button if not show account ??
-        if data.isViewed {
+        if data.state == "TRANSFER" {
             cell?.setRedeem()
-        } else {
-            cell?.setAccountNo(data.account)
         }
-
         cell?.lblName?.text = data.user
         cell?.lblTime?.text = TimeUtil.sharedInstance.timeAgoSinceDate(data.timestamp)
         cell?.lblAmount?.text = data.amount
@@ -96,8 +72,8 @@ class IGiftsReceivedViewController : BaseViewController, UITableViewDelegate, UI
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         let showGiftViewController = ShowGiftViewController(nibName: "ShowGiftViewController", bundle: nil)
+        showGiftViewController.iGift = dataArray[indexPath.row]
         self.navigationController?.pushViewController(showGiftViewController, animated: true)
     }
 }

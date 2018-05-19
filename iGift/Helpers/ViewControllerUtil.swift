@@ -29,14 +29,11 @@ class ViewControllerUtil: NSObject {
     }
     
     func showAlertWithTwoActions(alertTitle:String, alertMessage:String, viewController: UIViewController) {
-        
         let alertController = UIAlertController(title:alertTitle, message:alertMessage, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
-            
             self.callDelegate(title: "OK")
         }
         let cancelAction = UIAlertAction(title: "CANCEL", style: .default) { (action:UIAlertAction) in
-            
             self.callDelegate(title: "CANCEL")
         }
         

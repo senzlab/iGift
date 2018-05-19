@@ -21,6 +21,7 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
     var keyboardHeight: CGFloat!
     
 //    var currencyValueString: String = ""
+    var user: User? = nil
     let currencyType = "Rs "
     
     //    MARK: UIViewController related
@@ -60,7 +61,6 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
             rootView.backgroundColor = GiftCard.shared.backgroundColor
         }
     }
-    
     
     
     //    MARK: Observer selectors
@@ -109,13 +109,13 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
         sendGiftButton.isHidden = true
         giftModifyView.isHidden = true
         
-        let img = DesignIGiftViewControllerModel().takeSnapShotOfTheView(view: rootView)
+        let uid = NSUUID().uuidString
+        let img = DesignIGiftViewControllerModel().takeSnapShotOfTheView(view: rootView, fileName: uid + ".jpeg")
 
         sendGiftButton.isHidden = false
         giftModifyView.isHidden = false
-        let z = "SHARE #blob " + img! + " @eraga"
         
-        Httpz.instance.pushSenz(senz: SenzUtil.instance.transferSenz(amount: "3000", blob: img!, to: "+9775432015"))
+        Httpz.instance.pushSenz(senz: SenzUtil.instance.transferSenz(amount: "3000", blob: img!, to: "+94775432015"))
     }
     
     @IBAction func cameraAction(_ sender: UIButton) {
@@ -147,7 +147,7 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
     
     //    MARK: Supportive functions
     func setupUi() {
-        self.title = "Design iGifts"
+        self.title = "New iGift"
         
 //        Creating a circular button
         sendGiftButton.layer.cornerRadius = 0.5 * sendGiftButton.bounds.size.width;

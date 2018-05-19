@@ -29,6 +29,7 @@ class SenzDb {
     private let timestamp = Expression<Int64>("timestamp")
     private let isMyIgift = Expression<Bool>("is_my_igift")
     private let isViewed = Expression<Bool>("is_viewed")
+    private let cid = Expression<String>("cid")
     private let account = Expression<String>("account")
     private let amount = Expression<String>("amount")
     private let blob = Expression<String>("blob")
@@ -71,6 +72,7 @@ class SenzDb {
                 table.column(timestamp)
                 table.column(isMyIgift)
                 table.column(isViewed)
+                table.column(cid)
                 table.column(account)
                 table.column(amount)
                 table.column(blob)
@@ -150,6 +152,7 @@ class SenzDb {
                 timestamp <- igift.timestamp,
                 isMyIgift <- igift.isMyIgift,
                 isViewed <- igift.isViewed,
+                cid <- igift.cid,
                 account <- igift.account,
                 amount <- igift.amount,
                 blob <- igift.blob,
@@ -202,6 +205,7 @@ class SenzDb {
                 ig.timestamp = i[timestamp]
                 ig.isMyIgift = i[isMyIgift]
                 ig.isViewed = i[isViewed]
+                ig.cid = i[cid]
                 ig.account = i[account]
                 ig.amount = i[amount]
                 ig.state = i[state]

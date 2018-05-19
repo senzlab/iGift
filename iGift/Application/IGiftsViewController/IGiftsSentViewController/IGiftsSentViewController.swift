@@ -13,34 +13,13 @@ class IGiftsSentViewController : BaseViewController, UITableViewDelegate, UITabl
     @IBOutlet weak var tblView: UITableView!
 
     var dataArray: [Igift]!
-    
-//    var dataArray = [Igift(id: 1,
-//                           user: "Lamda Lakmal",
-//                           timestamp: 0,
-//                           isMyIgift: true,
-//                           isViewed: true,
-//                           account: "54321",
-//                           amount: "100 LKR"),
-//                     Igift(id: 1,
-//                           user: "Haskeller Eranga",
-//                           timestamp: 0,
-//                           isMyIgift: true,
-//                           isViewed: false,
-//                           account: "1232232212343",
-//                           amount: "100 LKR"),
-//                    Igift(id: 1,
-//                           user: "Nalla Hewage", timestamp: 0,
-//                           isMyIgift: false,
-//                           isViewed: true,
-//                           account: "54321",
-//                           amount: "100 LKR")]
 
     let HEIGHT_OF_ROW = 85
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUi()
-        dataArray = SenzDb.instance.getIgifts(myGifts: false)
+        dataArray = SenzDb.instance.getIgifts(myGifts: true)
     }
 
     func setupUi() {
@@ -73,13 +52,6 @@ class IGiftsSentViewController : BaseViewController, UITableViewDelegate, UITabl
         }
 
         let data = dataArray[indexPath.row]
-
-        // Set if redeemed show button if not show account ??
-        if data.isViewed {
-            cell?.setRedeem()
-        } else {
-            cell?.setAccountNo(data.account)
-        }
 
         cell?.lblName?.text = data.user
         cell?.lblTime?.text = TimeUtil.sharedInstance.timeAgoSinceDate(data.timestamp)
