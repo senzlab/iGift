@@ -13,19 +13,37 @@ class ShowGiftViewController: BaseViewController {
     var iGift: Igift? = nil
 
     @IBOutlet weak var giftImageView: UIImageView!
-    
     @IBOutlet weak var redeemButton: CircleButton!
     
+    //    MARK: UIViewController lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUi()
         self.setupPreview()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        
+        self.navigationController?.navigationBar.isHidden = false
+    }
+    
+    //    MARK: Action functions
     @IBAction func redeemAction(_ sender: UIButton) {
         
     }
-
+    
+    @IBAction func backAction(_ sender: UIButton) {
+        goBack(animated: true)
+    }
+    
+    //    MARK: Supportive function
     func setupUi() {
         self.title = "Show Gift"
         

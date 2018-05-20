@@ -37,12 +37,25 @@
                         <action selector="redeemAction:" destination="-1" eventType="touchUpInside" id="Fka-nL-A2G"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vQS-nj-pbf" userLabel="Button_back">
+                    <rect key="frame" x="8" y="28" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="UMA-v6-sZb"/>
+                        <constraint firstAttribute="width" constant="50" id="rxG-K0-mjJ"/>
+                    </constraints>
+                    <state key="normal" image="back_white"/>
+                    <connections>
+                        <action selector="backAction:" destination="-1" eventType="touchUpInside" id="rmb-Wv-yo9"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="xJm-q3-PXm" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="0Bi-N7-JzH"/>
+                <constraint firstItem="vQS-nj-pbf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="Vj1-qf-p61"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="9BM-zl-eJl" secondAttribute="bottom" constant="20" id="WRL-bN-sHU"/>
                 <constraint firstItem="xJm-q3-PXm" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="blH-FG-cjw"/>
+                <constraint firstItem="vQS-nj-pbf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="hWU-Ty-tJP"/>
                 <constraint firstItem="xJm-q3-PXm" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="hsU-j3-to9"/>
                 <constraint firstItem="xJm-q3-PXm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="jwb-oK-PuT"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9BM-zl-eJl" secondAttribute="trailing" constant="20" id="mUv-aO-4dS"/>
@@ -52,6 +65,7 @@
         </view>
     </objects>
     <resources>
+        <image name="back_white" width="32" height="32"/>
         <image name="redeem2" width="32" height="32"/>
     </resources>
 </document>
