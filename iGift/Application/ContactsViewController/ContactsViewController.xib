@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContactsViewController" customModule="iGift" customModuleProvider="target">
             <connections>
+                <outlet property="contactTableView" destination="IVk-54-CgN" id="bOf-vw-4eX"/>
                 <outlet property="view" destination="iN0-l3-epB" id="icL-L8-dWO"/>
             </connections>
         </placeholder>

@@ -18,6 +18,7 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
     var dataArray: [User]!
     var forNewIgift: Bool = false
     
+    @IBOutlet weak var contactTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUi()

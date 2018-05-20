@@ -10,12 +10,12 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChangePasswordViewController" customModule="iGift" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RedeemViewController" customModule="iGift" customModuleProvider="target">
             <connections>
-                <outlet property="scrollView" destination="rwL-IR-92e" id="uy8-Kp-pKY"/>
-                <outlet property="txtFieldNewConfirmPw" destination="wiZ-MY-KMU" id="9od-cn-gMK"/>
-                <outlet property="txtFieldNewPw" destination="apv-kU-s5W" id="wnT-Ct-ki3"/>
-                <outlet property="txtcurrentPassword" destination="7FG-bQ-ehw" id="ehP-P8-UBh"/>
+                <outlet property="accountNoTextField" destination="apv-kU-s5W" id="5yU-66-aql"/>
+                <outlet property="bankNameTextField" destination="7FG-bQ-ehw" id="VlW-OS-Max"/>
+                <outlet property="confirmAccountNoTextField" destination="wiZ-MY-KMU" id="iiY-ZN-XBR"/>
+                <outlet property="scrollView" destination="rwL-IR-92e" id="jIA-TP-Hbs"/>
                 <outlet property="view" destination="iN0-l3-epB" id="4Uy-rE-kAa"/>
             </connections>
         </placeholder>
@@ -33,7 +33,7 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="hkw-jc-gu9">
                                     <rect key="frame" x="50" y="118.5" width="275" height="250"/>
                                     <subviews>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Current password" minimumFontSize="22" translatesAutoresizingMaskIntoConstraints="NO" id="7FG-bQ-ehw">
+                                        <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Bank Name" minimumFontSize="22" translatesAutoresizingMaskIntoConstraints="NO" id="7FG-bQ-ehw">
                                             <rect key="frame" x="0.0" y="0.0" width="275" height="50"/>
                                             <color key="backgroundColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="0.0" colorSpace="calibratedRGB"/>
                                             <color key="tintColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="0.0" colorSpace="calibratedRGB"/>
@@ -43,31 +43,22 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                             <textInputTraits key="textInputTraits"/>
-                                            <connections>
-                                                <outlet property="delegate" destination="-1" id="gSK-ld-kSo"/>
-                                            </connections>
                                         </textField>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Password" minimumFontSize="22" translatesAutoresizingMaskIntoConstraints="NO" id="apv-kU-s5W">
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Account No" minimumFontSize="22" translatesAutoresizingMaskIntoConstraints="NO" id="apv-kU-s5W">
                                             <rect key="frame" x="0.0" y="100" width="275" height="50"/>
                                             <color key="backgroundColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="0.0" colorSpace="calibratedRGB"/>
                                             <color key="tintColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="0.0" colorSpace="calibratedRGB"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                             <textInputTraits key="textInputTraits"/>
-                                            <connections>
-                                                <outlet property="delegate" destination="-1" id="jeo-4C-Hg1"/>
-                                            </connections>
                                         </textField>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" minimumFontSize="22" translatesAutoresizingMaskIntoConstraints="NO" id="wiZ-MY-KMU">
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Account No" minimumFontSize="22" translatesAutoresizingMaskIntoConstraints="NO" id="wiZ-MY-KMU">
                                             <rect key="frame" x="0.0" y="200" width="275" height="50"/>
                                             <color key="backgroundColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="0.0" colorSpace="calibratedRGB"/>
                                             <color key="tintColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="0.0" colorSpace="calibratedRGB"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                             <textInputTraits key="textInputTraits"/>
-                                            <connections>
-                                                <outlet property="delegate" destination="-1" id="Sjd-fu-ahn"/>
-                                            </connections>
                                         </textField>
                                     </subviews>
                                     <constraints>
@@ -85,7 +76,7 @@
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                     <color key="tintColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
-                                    <state key="normal" title="ADD">
+                                    <state key="normal" title="REDEEM">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <userDefinedRuntimeAttributes>
@@ -99,7 +90,7 @@
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isShadowUnder" value="YES"/>
                                     </userDefinedRuntimeAttributes>
                                     <connections>
-                                        <action selector="onAddAccountClicked:" destination="-1" eventType="touchUpInside" id="Ifa-oy-KLb"/>
+                                        <action selector="redeemAction:" destination="-1" eventType="touchUpInside" id="YBK-or-Cmx"/>
                                     </connections>
                                 </button>
                             </subviews>

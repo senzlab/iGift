@@ -28,6 +28,8 @@
 		0FC94F1420A6042700CDC810 /* AddArtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC94F1220A6042700CDC810 /* AddArtViewController.swift */; };
 		0FC94F1520A6042700CDC810 /* AddArtViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FC94F1320A6042700CDC810 /* AddArtViewController.xib */; };
 		0FC94F1720A60EFA00CDC810 /* AddArtViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC94F1620A60EFA00CDC810 /* AddArtViewModel.swift */; };
+		0FF81CD020B15A2900956928 /* RedeemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF81CCE20B15A2900956928 /* RedeemViewController.swift */; };
+		0FF81CD120B15A2900956928 /* RedeemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FF81CCF20B15A2900956928 /* RedeemViewController.xib */; };
 		0FFFDDC520ABE9BC00F044DD /* UIViewExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFFDDC420ABE9BC00F044DD /* UIViewExtention.swift */; };
 		0FFFDDC920ABF89A00F044DD /* ShowGiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFFDDC720ABF89A00F044DD /* ShowGiftViewController.swift */; };
 		0FFFDDCA20ABF89A00F044DD /* ShowGiftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FFFDDC820ABF89A00F044DD /* ShowGiftViewController.xib */; };
@@ -135,6 +137,8 @@
 		0FC94F1220A6042700CDC810 /* AddArtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddArtViewController.swift; sourceTree = "<group>"; };
 		0FC94F1320A6042700CDC810 /* AddArtViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddArtViewController.xib; sourceTree = "<group>"; };
 		0FC94F1620A60EFA00CDC810 /* AddArtViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddArtViewModel.swift; sourceTree = "<group>"; };
+		0FF81CCE20B15A2900956928 /* RedeemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemViewController.swift; sourceTree = "<group>"; };
+		0FF81CCF20B15A2900956928 /* RedeemViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RedeemViewController.xib; sourceTree = "<group>"; };
 		0FFFDDC420ABE9BC00F044DD /* UIViewExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtention.swift; sourceTree = "<group>"; };
 		0FFFDDC720ABF89A00F044DD /* ShowGiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowGiftViewController.swift; sourceTree = "<group>"; };
 		0FFFDDC820ABF89A00F044DD /* ShowGiftViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowGiftViewController.xib; sourceTree = "<group>"; };
@@ -297,6 +301,15 @@
 			path = AddArtViewController;
 			sourceTree = "<group>";
 		};
+		0FF81CCD20B159E200956928 /* RedeemViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0FF81CCE20B15A2900956928 /* RedeemViewController.swift */,
+				0FF81CCF20B15A2900956928 /* RedeemViewController.xib */,
+			);
+			path = RedeemViewController;
+			sourceTree = "<group>";
+		};
 		0FFFDDC620ABF87700F044DD /* ShowGiftViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -397,6 +410,7 @@
 		4021E70020A1CD0000B3DEB7 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				0FF81CCD20B159E200956928 /* RedeemViewController */,
 				0FFFDDD120AC3D6100F044DD /* ChangePasswordViewController */,
 				0FFFDDC620ABF87700F044DD /* ShowGiftViewController */,
 				0F1D5CA820AB1AB300A5D900 /* TermsOfUseViewController */,
@@ -825,6 +839,7 @@
 				4021E70620A1CFED00B3DEB7 /* HomeViewController.xib in Resources */,
 				0F7C393320A4218500DF5BF6 /* ChooseBackgroundViewContoller.xib in Resources */,
 				4021E72020A21AF300B3DEB7 /* ContactsViewController.xib in Resources */,
+				0FF81CD120B15A2900956928 /* RedeemViewController.xib in Resources */,
 				0FC94F1520A6042700CDC810 /* AddArtViewController.xib in Resources */,
 				4087151320A391E2007B3E4C /* CustomPhoneBookCell.xib in Resources */,
 				58B96F6420AB35A700E67D35 /* ConfirmAccountViewController.xib in Resources */,
@@ -907,6 +922,7 @@
 				4021E6EF20A1CA1600B3DEB7 /* iGift.xcdatamodeld in Sources */,
 				0F7C393220A4218500DF5BF6 /* ChooseBackgroundViewContoller.swift in Sources */,
 				0F1081BE20A6E8770024C9BD /* NotificationExtension.swift in Sources */,
+				0FF81CD020B15A2900956928 /* RedeemViewController.swift in Sources */,
 				C0E2165320A6F52F002FF833 /* SenzDb.swift in Sources */,
 				4087152E20A5F89D007B3E4C /* UITextField.swift in Sources */,
 				C085C4DC20B075200085092F /* SenzContact.swift in Sources */,
