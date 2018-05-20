@@ -78,7 +78,6 @@
 		4087151520A391EE007B3E4C /* CustomPhoneBookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4087151420A391EE007B3E4C /* CustomPhoneBookCell.swift */; };
 		4087151720A3FECF007B3E4C /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4087151620A3FECF007B3E4C /* CustomImageView.swift */; };
 		4087151A20A488ED007B3E4C /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4087151920A488ED007B3E4C /* CustomSearchBar.swift */; };
-		4087151E20A4A9BC007B3E4C /* PhoneContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4087151D20A4A9BC007B3E4C /* PhoneContact.swift */; };
 		4087152120A4ACA6007B3E4C /* PhoneBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4087152020A4ACA6007B3E4C /* PhoneBook.swift */; };
 		4087152320A4BE5F007B3E4C /* CustomTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4087152220A4BE5F007B3E4C /* CustomTableView.swift */; };
 		4087152620A4ED86007B3E4C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4087152520A4ED86007B3E4C /* RegisterViewController.swift */; };
@@ -188,7 +187,6 @@
 		4087151420A391EE007B3E4C /* CustomPhoneBookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPhoneBookCell.swift; sourceTree = "<group>"; };
 		4087151620A3FECF007B3E4C /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		4087151920A488ED007B3E4C /* CustomSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
-		4087151D20A4A9BC007B3E4C /* PhoneContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneContact.swift; sourceTree = "<group>"; };
 		4087152020A4ACA6007B3E4C /* PhoneBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneBook.swift; sourceTree = "<group>"; };
 		4087152220A4BE5F007B3E4C /* CustomTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableView.swift; sourceTree = "<group>"; };
 		4087152520A4ED86007B3E4C /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -407,7 +405,6 @@
 				0FC94F1120A603E100CDC810 /* AddArtViewController */,
 				0F2EE36420A5943F003C9AEA /* CapturePhotoViewController */,
 				4087152420A4ED4F007B3E4C /* RegisterViewController */,
-				4087151820A40667007B3E4C /* LoadingViewController */,
 				408714E920A31B02007B3E4C /* Shared */,
 				0F7C392F20A4213A00DF5BF6 /* ChooseBackgroundViewContoller */,
 				0F9138F020A34DF40011DF2C /* DesignIGiftViewController */,
@@ -417,7 +414,6 @@
 				4021E6FB20A1CAD900B3DEB7 /* HomeViewController */,
 				4021E71420A209D700B3DEB7 /* SendIGiftViewController */,
 				4021E71320A209A600B3DEB7 /* AboutViewController */,
-				4021E71020A2095D00B3DEB7 /* ChangeUserNameViewController */,
 				4021E70F20A2094900B3DEB7 /* AddAccountInfoViewController */,
 				4021E70E20A2093800B3DEB7 /* SettingsViewController */,
 				4021E70D20A2090400B3DEB7 /* PhoneBookViewController */,
@@ -492,13 +488,6 @@
 				58148C7420AB434600FE9AAD /* SaltConfirmViewController */,
 			);
 			path = AddAccountInfoViewController;
-			sourceTree = "<group>";
-		};
-		4021E71020A2095D00B3DEB7 /* ChangeUserNameViewController */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ChangeUserNameViewController;
 			sourceTree = "<group>";
 		};
 		4021E71320A209A600B3DEB7 /* AboutViewController */ = {
@@ -647,20 +636,12 @@
 			path = CustomPhoneBookCell;
 			sourceTree = "<group>";
 		};
-		4087151820A40667007B3E4C /* LoadingViewController */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = LoadingViewController;
-			sourceTree = "<group>";
-		};
 		4087151F20A4AC42007B3E4C /* Pojo */ = {
 			isa = PBXGroup;
 			children = (
 				C0E2163120A6EAE4002FF833 /* Igift.swift */,
 				C0E2163020A6EAE4002FF833 /* Senz.swift */,
 				C0E2163220A6EAE5002FF833 /* User.swift */,
-				4087151D20A4A9BC007B3E4C /* PhoneContact.swift */,
 				0F2EE36B20A5A6BE003C9AEA /* GiftCard.swift */,
 				C085C4DB20B075200085092F /* SenzContact.swift */,
 			);
@@ -943,7 +924,6 @@
 				408714F420A337AD007B3E4C /* CustomSettingCell.swift in Sources */,
 				0FC94F1720A60EFA00CDC810 /* AddArtViewModel.swift in Sources */,
 				58148C7120AB3F5D00FE9AAD /* VerifyAccountViewController.swift in Sources */,
-				4087151E20A4A9BC007B3E4C /* PhoneContact.swift in Sources */,
 				4087151720A3FECF007B3E4C /* CustomImageView.swift in Sources */,
 				4087151A20A488ED007B3E4C /* CustomSearchBar.swift in Sources */,
 				0F7C393520A4507300DF5BF6 /* ChooseBackgroundViewModel.swift in Sources */,
