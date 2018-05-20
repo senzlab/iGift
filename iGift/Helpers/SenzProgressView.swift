@@ -1,22 +1,14 @@
-//
-//  IJProgressView.swift
-//  iGift
-//
-//  Created by eranga on 5/20/18.
-//  Copyright © 2018 Creative Solutions. All rights reserved.
-//
-
 import Foundation
 import UIKit
 
-open class IJProgressView {
+open class SenzProgressView {
     var containerView = UIView()
     var progressView = UIView()
     var activityIndicator = UIActivityIndicatorView()
     
-    open class var shared: IJProgressView {
+    open class var shared: SenzProgressView {
         struct Static {
-            static let instance: IJProgressView = IJProgressView()
+            static let instance: SenzProgressView = SenzProgressView()
         }
         return Static.instance
     }

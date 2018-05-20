@@ -104,7 +104,7 @@
 		58B96F6320AB35A700E67D35 /* ConfirmAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B96F6120AB35A600E67D35 /* ConfirmAccountViewController.swift */; };
 		58B96F6420AB35A700E67D35 /* ConfirmAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58B96F6220AB35A600E67D35 /* ConfirmAccountViewController.xib */; };
 		C03D5D3F20B1D8F9008EDEDE /* Bank.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03D5D3E20B1D8F9008EDEDE /* Bank.swift */; };
-		C03D5D4120B1F049008EDEDE /* IJProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03D5D4020B1F049008EDEDE /* IJProgressView.swift */; };
+		C03D5D4120B1F049008EDEDE /* SenzProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03D5D4020B1F049008EDEDE /* SenzProgressView.swift */; };
 		C085C4DC20B075200085092F /* SenzContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = C085C4DB20B075200085092F /* SenzContact.swift */; };
 		C0C58F6F20A9567700DD14BB /* Httpz.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C58F6E20A9567700DD14BB /* Httpz.swift */; };
 		C0E2163320A6EAE5002FF833 /* Senz.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E2163020A6EAE4002FF833 /* Senz.swift */; };
@@ -218,7 +218,7 @@
 		58B96F6220AB35A600E67D35 /* ConfirmAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfirmAccountViewController.xib; sourceTree = "<group>"; };
 		BF90EAD1A777AEBC93ABF445 /* Pods-iGift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iGift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iGift/Pods-iGift.debug.xcconfig"; sourceTree = "<group>"; };
 		C03D5D3E20B1D8F9008EDEDE /* Bank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bank.swift; sourceTree = "<group>"; };
-		C03D5D4020B1F049008EDEDE /* IJProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IJProgressView.swift; sourceTree = "<group>"; };
+		C03D5D4020B1F049008EDEDE /* SenzProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenzProgressView.swift; sourceTree = "<group>"; };
 		C085C4DB20B075200085092F /* SenzContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenzContact.swift; sourceTree = "<group>"; };
 		C0C58F6E20A9567700DD14BB /* Httpz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Httpz.swift; sourceTree = "<group>"; };
 		C0E2163020A6EAE4002FF833 /* Senz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Senz.swift; sourceTree = "<group>"; };
@@ -557,7 +557,7 @@
 				404B1A3020A86C9600E06B71 /* TimeUtil.swift */,
 				C0C58F6E20A9567700DD14BB /* Httpz.swift */,
 				58B96F5E20AB2DDC00E67D35 /* ViewControllerUtil.swift */,
-				C03D5D4020B1F049008EDEDE /* IJProgressView.swift */,
+				C03D5D4020B1F049008EDEDE /* SenzProgressView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -906,7 +906,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C03D5D4120B1F049008EDEDE /* IJProgressView.swift in Sources */,
+				C03D5D4120B1F049008EDEDE /* SenzProgressView.swift in Sources */,
 				404B1A2420A84B7500E06B71 /* IGiftsSentViewController.swift in Sources */,
 				0F2EE36A20A59D8E003C9AEA /* CapturePhotoViewModel.swift in Sources */,
 				4087152320A4BE5F007B3E4C /* CustomTableView.swift in Sources */,
