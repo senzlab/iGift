@@ -38,7 +38,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vQS-nj-pbf" userLabel="Button_back">
-                    <rect key="frame" x="8" y="44" width="40" height="30"/>
+                    <rect key="frame" x="327" y="44" width="40" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="UMA-v6-sZb"/>
                         <constraint firstAttribute="width" constant="40" id="rxG-K0-mjJ"/>
@@ -52,12 +52,12 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="xJm-q3-PXm" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="0Bi-N7-JzH"/>
-                <constraint firstItem="vQS-nj-pbf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="Vj1-qf-p61"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="9BM-zl-eJl" secondAttribute="bottom" constant="20" id="WRL-bN-sHU"/>
                 <constraint firstItem="xJm-q3-PXm" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="blH-FG-cjw"/>
                 <constraint firstItem="vQS-nj-pbf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="24" id="hWU-Ty-tJP"/>
                 <constraint firstItem="xJm-q3-PXm" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="hsU-j3-to9"/>
                 <constraint firstItem="xJm-q3-PXm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="jwb-oK-PuT"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vQS-nj-pbf" secondAttribute="trailing" constant="8" id="koP-nf-eI9"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9BM-zl-eJl" secondAttribute="trailing" constant="20" id="mUv-aO-4dS"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

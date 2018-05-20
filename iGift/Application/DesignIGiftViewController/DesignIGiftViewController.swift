@@ -171,7 +171,7 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
         
         let image = UIImage(named: imageName)!
         let imageView = UIImageView(image: image)
-        imageView.frame = CGRect(x: (screenWidth/2 - 35), y: 10, width: 70, height: 70)
+        imageView.frame = CGRect(x: (screenWidth/2 - 35), y: 20, width: 70, height: 70)
         rootView.addSubview(imageView)
         
         imageView.isUserInteractionEnabled = true
