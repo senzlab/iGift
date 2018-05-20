@@ -16,6 +16,7 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
     @IBOutlet weak var capturedPhotoImageView: UIImageView!
     @IBOutlet weak var rootView: UIView!
     @IBOutlet weak var giftModifyView: UIView!
+    @IBOutlet weak var fancyOverlayView: UIView!
     
     var userTryingToGiveCurrencyValue: Bool = false
     var keyboardHeight: CGFloat!
@@ -39,13 +40,15 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
+
         if GiftCard.shared.capturedImage != nil {
             capturedPhotoImageView.isHidden = false
             capturedPhotoImageView.image = GiftCard.shared.capturedImage
+            fancyOverlayView.isHidden = false
         }
         else {
             capturedPhotoImageView.isHidden = true
+            fancyOverlayView.isHidden = true
         }
         
         if GiftCard.shared.backgroundColor != nil {

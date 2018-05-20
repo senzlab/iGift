@@ -16,6 +16,7 @@
             <connections>
                 <outlet property="capturedPhotoImageView" destination="CTF-8A-KT8" id="7jv-bh-x43"/>
                 <outlet property="currencyValueTextField" destination="1ta-Cp-S2T" id="AYC-nF-j5s"/>
+                <outlet property="fancyOverlayView" destination="VdK-18-6gD" id="H83-Xm-GBw"/>
                 <outlet property="giftModifyView" destination="8Lb-9T-ayU" id="4f1-Qz-iQR"/>
                 <outlet property="giftMsgTextView" destination="JEJ-We-bVa" id="Fif-dp-lty"/>
                 <outlet property="rootView" destination="H5G-bI-zak" id="RAC-YK-ILY"/>
@@ -34,6 +35,10 @@
                         <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CTF-8A-KT8" userLabel="ImageView_CapturedPhoto">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         </imageView>
+                        <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VdK-18-6gD" userLabel="View_FancyOverlay">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="430"/>
+                            <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
                         <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NOv-JQ-tns" userLabel="View_Amount">
                             <rect key="frame" x="0.0" y="430" width="375" height="217"/>
                             <subviews>
@@ -64,7 +69,7 @@
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNe-wY-ozB" userLabel="Label_Amount" customClass="CustomLabel" customModule="iGift" customModuleProvider="target">
-                                    <rect key="frame" x="156" y="117" width="64" height="24.5"/>
+                                    <rect key="frame" x="156" y="117" width="64" height="25"/>
                                     <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="22"/>
                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -174,16 +179,20 @@
                         <constraint firstItem="NOv-JQ-tns" firstAttribute="height" secondItem="H5G-bI-zak" secondAttribute="height" multiplier="1/3" constant="1" id="7hh-3x-w4Z"/>
                         <constraint firstAttribute="bottom" secondItem="NOv-JQ-tns" secondAttribute="bottom" id="9YA-Wl-DXn"/>
                         <constraint firstAttribute="bottom" secondItem="CTF-8A-KT8" secondAttribute="bottom" id="BlG-i7-PPT"/>
+                        <constraint firstItem="NOv-JQ-tns" firstAttribute="top" secondItem="VdK-18-6gD" secondAttribute="bottom" id="Ljc-hL-rI5"/>
                         <constraint firstAttribute="trailing" secondItem="NOv-JQ-tns" secondAttribute="trailing" id="MOz-lN-BMs"/>
                         <constraint firstItem="JEJ-We-bVa" firstAttribute="leading" secondItem="H5G-bI-zak" secondAttribute="leading" constant="20" id="MsV-PP-5uN"/>
                         <constraint firstItem="CTF-8A-KT8" firstAttribute="top" secondItem="H5G-bI-zak" secondAttribute="top" id="Mw5-ju-uTY"/>
                         <constraint firstItem="NOv-JQ-tns" firstAttribute="top" secondItem="JEJ-We-bVa" secondAttribute="bottom" constant="70" id="NSM-LL-zwz"/>
+                        <constraint firstItem="VdK-18-6gD" firstAttribute="top" secondItem="H5G-bI-zak" secondAttribute="top" id="OWC-Lw-qU8"/>
                         <constraint firstAttribute="trailing" secondItem="8Lb-9T-ayU" secondAttribute="trailing" id="SAb-cm-Ypq"/>
+                        <constraint firstItem="VdK-18-6gD" firstAttribute="leading" secondItem="H5G-bI-zak" secondAttribute="leading" id="bEl-ub-rij"/>
                         <constraint firstItem="CTF-8A-KT8" firstAttribute="leading" secondItem="H5G-bI-zak" secondAttribute="leading" id="czO-6n-47E"/>
                         <constraint firstItem="NOv-JQ-tns" firstAttribute="leading" secondItem="H5G-bI-zak" secondAttribute="leading" id="eFr-af-LmO"/>
                         <constraint firstItem="8Lb-9T-ayU" firstAttribute="top" secondItem="H5G-bI-zak" secondAttribute="top" id="f3d-Lt-AT8"/>
                         <constraint firstItem="JEJ-We-bVa" firstAttribute="top" secondItem="H5G-bI-zak" secondAttribute="top" constant="70" id="fKT-rd-SOL"/>
                         <constraint firstAttribute="trailing" secondItem="CTF-8A-KT8" secondAttribute="trailing" id="gv2-SX-Pak"/>
+                        <constraint firstAttribute="trailing" secondItem="VdK-18-6gD" secondAttribute="trailing" id="h0b-uP-bGa"/>
                         <constraint firstItem="8Lb-9T-ayU" firstAttribute="leading" secondItem="JEJ-We-bVa" secondAttribute="trailing" constant="20" id="nEc-3C-MUc"/>
                     </constraints>
                 </view>
