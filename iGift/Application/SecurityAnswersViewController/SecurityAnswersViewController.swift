@@ -27,9 +27,9 @@ class SecurityAnswersViewController : KeyboardScrollableViewController {
     }
 
     @IBAction func onSaveClicked(_ sender: Any) {
-        let q1 = txtFieldAOne.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        let q2 = txtFieldATwo.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        let q3 = txtFieldAThree.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let q1 = txtFieldAOne.text!.replacingOccurrences(of: " ", with: "")
+        let q2 = txtFieldATwo.text!.replacingOccurrences(of: " ", with: "")
+        let q3 = txtFieldAThree.text!.replacingOccurrences(of: " ", with: "")
         
         validateQuestions(q1: q1, q2: q2, q3: q3)
     }
@@ -51,13 +51,13 @@ class SecurityAnswersViewController : KeyboardScrollableViewController {
         } else {
             // need to asnwer all questions
             if (ViewControllerUtil.validateQuestions(q1: q1, q2: q2, q3: q3)) {
-                ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "You need to aswer all three questions")
-            } else {
                 PreferenceUtil.instance.put(key: PreferenceUtil.QUESTION1, value: q1)
                 PreferenceUtil.instance.put(key: PreferenceUtil.QUESTION2, value: q2)
                 PreferenceUtil.instance.put(key: PreferenceUtil.QUESTION3, value: q3)
                 
                 self.loadView("HomeViewController")
+            } else {
+                ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "You need to aswer all three questions")
             }
         }
     }

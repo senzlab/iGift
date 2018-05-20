@@ -17,8 +17,5 @@ class SenzContact {
         self.name = name
         self.phone = phone
         self.thumbnail = thumbnail
-        
-        print(name)
-        print(phone)
     }
 }

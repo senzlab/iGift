@@ -35,10 +35,10 @@ class SaltConfirmViewController : KeyboardScrollableViewController {
     }
 
     @IBAction func onConfirmClicked(_ sender: Any) {
-        let salt = txtFieldTransactionAmt.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let salt = txtFieldTransactionAmt.text!.replacingOccurrences(of: " ", with: "")
         if(ViewControllerUtil.validateSalt(salt: salt)) {
             let z = Httpz.instance.pushSenz(senz: SenzUtil.instance.salSenz(salt: salt))
-            if (z != nil) {
+            if (z == nil) {
                 ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to verify account")
             } else {
                 if (SenzUtil.instance.verifyStatus(z: z!)) {

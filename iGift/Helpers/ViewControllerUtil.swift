@@ -70,7 +70,7 @@ class ViewControllerUtil: NSObject {
             return false
         }
         
-        return false
+        return true
     }
     
     class func validateQuestions(q1: String, q2: String, q3: String) -> Bool {

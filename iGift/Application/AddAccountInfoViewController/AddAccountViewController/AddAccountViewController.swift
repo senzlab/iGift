@@ -38,8 +38,8 @@ class AddAccountViewController : KeyboardScrollableViewController {
     }
 
     @IBAction func onAddAccountClicked(_ sender: Any) {
-        let acc = txtFieldAccount.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        let accCon = txtFieldConfirmAccount.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let acc = txtFieldAccount.text!.replacingOccurrences(of: " ", with: "")
+        let accCon = txtFieldConfirmAccount.text!.replacingOccurrences(of: " ", with: "")
         
         // validate account
         if(ViewControllerUtil.validateAccount(acc: acc, accCon: accCon)) {

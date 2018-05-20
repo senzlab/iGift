@@ -56,31 +56,32 @@ class RegisterViewController : KeyboardScrollableViewController {
     
     func doReg() {
         // ui fields
-        let phn = txtFieldUsername.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        let phnCon = txtFieldConfirmUsername.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        let psw = txtFieldPassword.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        let pswCon = txtFieldConfirmPassword.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let phn = txtFieldUsername.text!.replacingOccurrences(of: " ", with: "")
+        let phnCon = txtFieldConfirmUsername.text!.replacingOccurrences(of: " ", with: "")
+        let psw = txtFieldPassword.text!.replacingOccurrences(of: " ", with: "")
+        let pswCon = txtFieldConfirmPassword.text!.replacingOccurrences(of: " ", with: "")
         
         // validate inputs
         if(ViewControllerUtil.validateRegistration(phn: phn, phnCon: phnCon, psw: psw, pswCon: pswCon)) {
-            ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Invalid input fields")
-        } else {
-            if let phone = PhoneBook.instance.internationalize(phone: phn) {
+            if let p = PhoneBook.instance.internationalize(phone: phn) {
                 // reg
-                let uid = SenzUtil.instance.uid(zAddress: phone.replacingOccurrences(of: " ", with: ""))
-                let regSenz = SenzUtil.instance.regSenz(uid: uid, zAddress: phone.replacingOccurrences(of: " ", with: ""))
+                let phone = p.replacingOccurrences(of: " ", with: "")
+                let uid = SenzUtil.instance.uid(zAddress: phone)
+                let regSenz = SenzUtil.instance.regSenz(uid: uid, zAddress: phone)
                 let z = Httpz.instance.pushSenz(senz: regSenz!)
                 if z == nil {
                     // reg fail
                     ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Regaistration fail")
                 } else {
                     // reg done
-                    PreferenceUtil.instance.put(key: PreferenceUtil.PHONE_NUMBER, value: self.txtFieldUsername.text!)
+                    PreferenceUtil.instance.put(key: PreferenceUtil.PHONE_NUMBER, value: phone)
                     self.loadView("SecurityQuestionsViewController")
                 }
             } else {
                 ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Invalid phone no")
             }
+        } else {
+            ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Invalid input fields")
         }
     }
 }

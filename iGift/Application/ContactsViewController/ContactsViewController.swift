@@ -102,11 +102,14 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
             let senz = SenzUtil.instance.connectSenz(to: user.phone)
             let z = Httpz.instance.pushSenz(senz: senz)
             if z == nil {
-                // reg fail
+                // fail
                 ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to confirm request")
             } else {
-                // reg done
+                // done, exit from her
                 SenzDb.instance.markAsActive(id: user.zid)
+                self.navigationController?.popToRootViewController(animated: true)
+                
+                // todo reload list
             }
         }))
         
