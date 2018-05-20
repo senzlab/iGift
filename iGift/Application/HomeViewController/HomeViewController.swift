@@ -52,9 +52,6 @@ class HomeViewController : BaseViewController {
 
     @IBAction func onIGiftsBtnClicked(_ sender: Any) {
         self.loadView("IGiftsViewController")
-        
-//        let redeemViewController = RedeemViewController(nibName: "RedeemViewController", bundle: nil)
-//        self.navigationController?.pushViewController(redeemViewController, animated: true)
     }
 
 }

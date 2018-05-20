@@ -14,6 +14,9 @@ class RedeemViewController: KeyboardScrollableViewController {
     @IBOutlet weak var accountNoTextField: UITextField!
     @IBOutlet weak var confirmAccountNoTextField: UITextField!
     
+    var iGift: Igift? = nil
+    var bank: Bank? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUi()
@@ -22,6 +25,10 @@ class RedeemViewController: KeyboardScrollableViewController {
     func setupUi() {
         self.title = "Redeem Gift"
         self.setupStylesForTextFields()
+        
+        if(bank != nil) {
+            bankNameTextField.text = bank!.name
+        }
     }
     
     func setupStylesForTextFields(){
@@ -36,7 +43,29 @@ class RedeemViewController: KeyboardScrollableViewController {
     }
     
     @IBAction func redeemAction(_ sender: UIButton) {
-        
+        if (iGift != nil) {
+            let acc = accountNoTextField.text!.replacingOccurrences(of: " ", with: "")
+            let accCon = confirmAccountNoTextField.text!.replacingOccurrences(of: " ", with: "")
+            if (ViewControllerUtil.validateAccount(acc: acc, accCon: accCon)) {
+                let z = Httpz.instance.pushSenz(senz: SenzUtil.instance.redeemSenz(iGift: iGift!, bank: bank!.code, account: acc))
+                if (z == nil) {
+                    ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to redeem iGift")
+                } else {
+                    // verify response
+                    if (SenzUtil.instance.verifyStatus(z: z!)) {
+                        // success redeem
+                        // update database
+                        SenzDb.instance.markAsRedeemed(id: iGift!.uid)
+                        self.navigationController?.popToRootViewController(animated: true)
+                    } else {
+                        ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to redeem iGift")
+                    }
+                }
+            } else {
+                ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Invalid account")
+            }
+        } else {
+            ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to redeem iGift")
+        }
     }
-    
 }

@@ -107,8 +107,23 @@ class SenzUtil {
         return senz + " " + signature
     }
     
-    func redeemSenz() {
-        
+    func redeemSenz(iGift: Igift, bank: String, account: String) -> String {
+        let zAddress = PreferenceUtil.instance.get(key: PreferenceUtil.PHONE_NUMBER)
+        let account = PreferenceUtil.instance.get(key: PreferenceUtil.ACCOUNT)
+        let senz = "SHARE" +
+            " #uid " + uid(zAddress: zAddress) +
+            " #id " + iGift.cid +
+            " #amnt " + iGift.amount +
+            " #bnkcode " + bank +
+            " #bnk " + "sampath" +
+            " #blob " + "" +
+            " #acc " + account +
+            " #to " + "sampath" +
+            " #type " + "REDEEM" +
+            " @" + "sampath" +
+            " ^" + zAddress
+        let signature = CryptoUtil.instance.sign(payload: senz)
+        return senz + " " + signature
     }
     
     func blobSenz(uid: String) -> String {

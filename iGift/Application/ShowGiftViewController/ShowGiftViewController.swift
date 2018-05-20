@@ -36,7 +36,10 @@ class ShowGiftViewController: BaseViewController {
     
     //    MARK: Action functions
     @IBAction func redeemAction(_ sender: UIButton) {
-        
+        let redeemViewController = RedeemViewController(nibName: "RedeemViewController", bundle: nil)
+        redeemViewController.iGift = iGift
+        redeemViewController.bank = Bank(code: "7278", name: "Sampath bank")
+        self.navigationController?.pushViewController(redeemViewController, animated: true)
     }
     
     @IBAction func backAction(_ sender: UIButton) {
