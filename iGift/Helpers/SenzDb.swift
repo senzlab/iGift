@@ -144,6 +144,20 @@ class SenzDb {
 
         return l
     }
+    
+    func existingUser(phn: String) -> Bool {
+        let q = users.filter(zid == phn).limit(1)
+        // todo refactor
+        do {
+            for i in try db!.prepare(q) {
+                return true
+            }
+        } catch {
+            return false
+        }
+        
+        return false
+    }
 
     func createIgift(igift: Igift) -> Int64 {
         do {

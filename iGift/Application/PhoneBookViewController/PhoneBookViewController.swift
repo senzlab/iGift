@@ -87,7 +87,23 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
         return CGFloat(HEIGHT_OF_ROW)
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let contact = dataArray[indexPath.row]
+        
+        // todo check user already exists
+        
+        // send request
+        let phone = contact.phone.trimmingCharacters(in: .whitespacesAndNewlines)
+        let z = Httpz.instance.pushSenz(senz: SenzUtil.instance.connectSenz(to: phone))
+        if (z == nil) {
+            ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to send request")
+        } else {
+            let senzUser = User(id: 1)
+            senzUser.zid = phone
+            senzUser.phone = phone
+            SenzDb.instance.createUser(user: senzUser)
+        }
+    }
 
     func configureCustomSearchController() {
         self.searchBar = CustomSearchBar(searchBarFrame: CGRect(x: 0.0,y: 0.0, width: tblView.frame.size.width, height: 56.0), searchBarFont: UIFont(name: Constants.MAIN_FONT_FAMILY.rawValue, size: 22.0)!, searchBarTextColor: UIColor.fromHex(HexColors.PRIMARY_COLOR.rawValue), searchBarTintColor: UIColor.fromHex(HexColors.WHITE_COLOR.rawValue), placeholderText: "Search Contacts")
