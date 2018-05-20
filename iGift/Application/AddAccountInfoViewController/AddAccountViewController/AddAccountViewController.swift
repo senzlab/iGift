@@ -38,12 +38,16 @@ class AddAccountViewController : KeyboardScrollableViewController {
     }
 
     @IBAction func onAddAccountClicked(_ sender: Any) {
-        // validate account
         let acc = txtFieldAccount.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        let confAcc = txtFieldConfirmAccount.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let accCon = txtFieldConfirmAccount.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
-        let viewController = VerifyAccountViewController(nibName: "VerifyAccountViewController", bundle: nil)
-        viewController.account = acc
-        self.navigationController?.pushViewController(viewController, animated: true)
+        // validate account
+        if(ViewControllerUtil.validateAccount(acc: acc, accCon: accCon)) {
+            let viewController = VerifyAccountViewController(nibName: "VerifyAccountViewController", bundle: nil)
+            viewController.account = acc
+            self.navigationController?.pushViewController(viewController, animated: true)
+        } else {
+            ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Invalide input fields")
+        }
     }
 }

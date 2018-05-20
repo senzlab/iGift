@@ -50,33 +50,37 @@ class RegisterViewController : KeyboardScrollableViewController {
         }
 
         // gengerate key pair
-        // do register
         CryptoUtil.instance.initKeys()
         doReg()
     }
     
     func doReg() {
         // ui fields
-        let phoneNo = txtFieldUsername.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-        let password = txtFieldPassword.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-        let confirmPassword = txtFieldConfirmPassword.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        let phn = txtFieldUsername.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let phnCon = txtFieldConfirmUsername.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let psw = txtFieldPassword.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let pswCon = txtFieldConfirmPassword.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
-        // todo validate input fileds
-        if let phn = PhoneBook.instance.internationalize(phone: phoneNo!) {
-            // reg
-            let uid = SenzUtil.instance.uid(zAddress: phn.replacingOccurrences(of: " ", with: ""))
-            let regSenz = SenzUtil.instance.regSenz(uid: uid, zAddress: phn.replacingOccurrences(of: " ", with: ""))
-            let z = Httpz.instance.pushSenz(senz: regSenz!)
-            if z == nil {
-                // reg fail
-                ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Regaistration fail")
-            } else {
-                // reg done
-                PreferenceUtil.instance.put(key: PreferenceUtil.PHONE_NUMBER, value: self.txtFieldUsername.text!)
-                self.loadView("SecurityQuestionsViewController")
-            }
+        // validate inputs
+        if(ViewControllerUtil.validateRegistration(phn: phn, phnCon: phnCon, psw: psw, pswCon: pswCon)) {
+            ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Invalid input fields")
         } else {
-            ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Invalid phone no")
+            if let phone = PhoneBook.instance.internationalize(phone: phn) {
+                // reg
+                let uid = SenzUtil.instance.uid(zAddress: phone.replacingOccurrences(of: " ", with: ""))
+                let regSenz = SenzUtil.instance.regSenz(uid: uid, zAddress: phone.replacingOccurrences(of: " ", with: ""))
+                let z = Httpz.instance.pushSenz(senz: regSenz!)
+                if z == nil {
+                    // reg fail
+                    ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Regaistration fail")
+                } else {
+                    // reg done
+                    PreferenceUtil.instance.put(key: PreferenceUtil.PHONE_NUMBER, value: self.txtFieldUsername.text!)
+                    self.loadView("SecurityQuestionsViewController")
+                }
+            } else {
+                ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Invalid phone no")
+            }
         }
     }
 }

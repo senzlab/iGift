@@ -24,9 +24,8 @@ class PreferenceUtil {
     
     let userDefaults = UserDefaults.standard
     
-    func put(key: String, value: String) -> Bool {
+    func put(key: String, value: String) {
         userDefaults.set(value, forKey: key)
-        return true
     }
     
     func get(key: String) -> String {

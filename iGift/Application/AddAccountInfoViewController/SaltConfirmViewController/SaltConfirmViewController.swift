@@ -35,19 +35,21 @@ class SaltConfirmViewController : KeyboardScrollableViewController {
     }
 
     @IBAction func onConfirmClicked(_ sender: Any) {
-        // send salt confirm senz
         let salt = txtFieldTransactionAmt.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        let z = Httpz.instance.pushSenz(senz: SenzUtil.instance.salSenz(salt: salt))
-        if (z != nil) {
-            ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to verify account")
-        } else {
-            if (SenzUtil.instance.verifyStatus(z: z!)) {
-                PreferenceUtil.instance.put(key: PreferenceUtil.ACCOUNT_STATUS, value: "VERIFIED")
-                self.navigationController?.popToRootViewController(animated: true)
-            } else {
+        if(ViewControllerUtil.validateSalt(salt: salt)) {
+            let z = Httpz.instance.pushSenz(senz: SenzUtil.instance.salSenz(salt: salt))
+            if (z != nil) {
                 ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to verify account")
+            } else {
+                if (SenzUtil.instance.verifyStatus(z: z!)) {
+                    PreferenceUtil.instance.put(key: PreferenceUtil.ACCOUNT_STATUS, value: "VERIFIED")
+                    self.navigationController?.popToRootViewController(animated: true)
+                } else {
+                    ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to verify account")
+                }
             }
+        } else {
+            ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Invlid transaction amount")
         }
     }
-
 }
