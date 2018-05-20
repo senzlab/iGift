@@ -22,7 +22,7 @@ class IGiftsSentViewController : BaseViewController, UITableViewDelegate, UITabl
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.tabBarController?.navigationItem.title = "Sent iGifts"
+        //self.tabBarController?.navigationItem.title = "Sent iGifts"
     }
 
     func reloadTable() {
