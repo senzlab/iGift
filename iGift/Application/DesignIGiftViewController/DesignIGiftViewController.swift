@@ -191,6 +191,11 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
         let point = sender.location(in: view)
         let panGesture = sender.view
         panGesture?.center = point
+        
+//        If art image is going to Amount section, hide it
+        if (point.y > screenHeight*2/3) {
+            sender.view?.isHidden = true
+        }
     }
     
     //    MARK: UITextFieldDelegate functions
