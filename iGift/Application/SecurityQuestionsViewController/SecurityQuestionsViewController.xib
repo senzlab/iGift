@@ -12,6 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SecurityQuestionsViewController" customModule="iGift" customModuleProvider="target">
             <connections>
+                <outlet property="bottomLabel" destination="Yeq-2g-s2K" id="usk-cf-vtD"/>
+                <outlet property="topLabel" destination="AwA-1O-tEa" id="gUW-g3-2LJ"/>
                 <outlet property="view" destination="snQ-Pc-fhU" id="aj3-73-9pF"/>
             </connections>
         </placeholder>

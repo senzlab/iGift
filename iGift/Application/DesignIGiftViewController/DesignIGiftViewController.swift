@@ -161,6 +161,7 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
         capturedPhotoImageView.isHidden = true
     
         giftMsgTextView.font = giftMsgTextView.font?.fontWithName(name: Constants.MAIN_FONT_FAMILY.rawValue)
+        currencyValueTextField.font = currencyValueTextField.font?.fontWithName(name: Constants.MAIN_FONT_FAMILY.rawValue)
     }
     
     @objc func createStickerImage(notification: NSNotification) {

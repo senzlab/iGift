@@ -9,6 +9,9 @@
 import UIKit
 
 class SecurityQuestionsViewController : BaseViewController {
+    
+    @IBOutlet weak var topLabel: CustomLabel!
+    @IBOutlet weak var bottomLabel: CustomLabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
