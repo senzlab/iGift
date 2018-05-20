@@ -17,6 +17,7 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
     @IBOutlet weak var rootView: UIView!
     @IBOutlet weak var giftModifyView: UIView!
     @IBOutlet weak var fancyOverlayView: UIView!
+    @IBOutlet weak var backButton: UIButton!
     
     var userTryingToGiveCurrencyValue: Bool = false
     var keyboardHeight: CGFloat!
@@ -24,6 +25,7 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
     var user: User? = nil
     let currencyType = "Rs "
     
+    //    MARK: UIViewController lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         print((#file as NSString).lastPathComponent)
@@ -40,6 +42,8 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        
+        self.navigationController?.navigationBar.isHidden = true
 
         if GiftCard.shared.capturedImage != nil {
             capturedPhotoImageView.isHidden = false
@@ -56,48 +60,27 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
         }
     }
     
-    @objc func keyboardWillShow(notification: NSNotification) {
-        if userTryingToGiveCurrencyValue {
-            if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-                let navPlusStatusBarHeight = navigationBarHeight(viewController: self) + statusBarHeight
-                if self.view.frame.origin.y == 0 || self.view.frame.origin.y == navPlusStatusBarHeight {
-                    if keyboardHeight == nil {
-                        keyboardHeight = keyboardSize.height
-                    }
-                    self.view.frame.origin.y -= keyboardHeight
-                }
-            }
-        }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        
+        self.navigationController?.navigationBar.isHidden = false
     }
-    
-    @objc func keyboardWillHide(notification: NSNotification) {
-        if userTryingToGiveCurrencyValue {
-            if ((notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue) != nil {
-                if self.view.frame.origin.y != 0 {
-                    self.view.frame.origin.y += keyboardHeight
-                }
-            }
-        }
-    }
-    
-    @objc override func dismissKeyboard() {
-        view.endEditing(true)
-        userTryingToGiveCurrencyValue = false
-        giftMsgTextView.isUserInteractionEnabled = true;
-    }
-    
+
+    //    MARK: Action functions
     @IBAction func sendGiftAction(_ sender: UIButton) {
         let amount = currencyValueTextField.text!.replacingOccurrences(of: currencyType, with: "", options: NSString.CompareOptions.literal, range: nil)
         sendGiftButton.isHidden = true
         giftModifyView.isHidden = true
+        backButton.isHidden = true
         
-        let screenshot = view.takeSnapshot()
+        let screenshot = rootView.takeSnapshot()
         let compressedImageData = screenshot.lowestQualityJPEGNSData
         let blob = compressedImageData.base64EncodedString()
         let uid = NSUUID().uuidString
         
         sendGiftButton.isHidden = false
         giftModifyView.isHidden = false
+        backButton.isHidden = false
         
         let z = Httpz.instance.pushSenz(senz: SenzUtil.instance.transferSenz(amount: amount, blob: blob, to: user!.phone))
         if z == nil {
@@ -152,19 +135,34 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
         self.navigationController?.pushViewController(chooseBackgroundViewContoller, animated: true)
     }
     
-    func setupUi() {
-        self.title = "New iGift"
-        
-        sendGiftButton.layer.cornerRadius = 0.5 * sendGiftButton.bounds.size.width;
-        
-        giftMsgTextView.placeholder = "Write your message here"
-        
-        GiftCard.shared.backgroundColor = nil
-        GiftCard.shared.capturedImage = nil
-        capturedPhotoImageView.isHidden = true
+    @IBAction func backAction(_ sender: UIButton) {
+        goBack(animated: true)
+    }
     
-        giftMsgTextView.font = giftMsgTextView.font?.fontWithName(name: Constants.MAIN_FONT_FAMILY.rawValue)
-        currencyValueTextField.font = currencyValueTextField.font?.fontWithName(name: Constants.MAIN_FONT_FAMILY.rawValue)
+    //    MARK: Notification observer selectors
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if userTryingToGiveCurrencyValue {
+            if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+                let navPlusStatusBarHeight = navigationBarHeight(viewController: self) + statusBarHeight
+                if self.view.frame.origin.y == 0 || self.view.frame.origin.y == navPlusStatusBarHeight {
+                    if keyboardHeight == nil {
+                        keyboardHeight = keyboardSize.height
+                    }
+                    self.view.frame.origin.y -= keyboardHeight
+                }
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if userTryingToGiveCurrencyValue {
+            if ((notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue) != nil {
+                if self.view.frame.origin.y != 0 {
+                    self.view.frame.origin.y += keyboardHeight
+                }
+            }
+        }
     }
     
     @objc func createStickerImage(notification: NSNotification) {
@@ -181,11 +179,21 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
         imageView.addGestureRecognizer(panGesture)
     }
     
+    //    MARK: Gesture selectors
+
+    @objc override func dismissKeyboard() {
+        view.endEditing(true)
+        userTryingToGiveCurrencyValue = false
+        giftMsgTextView.isUserInteractionEnabled = true;
+    }
+    
     @objc func panGesture(sender: UIPanGestureRecognizer){
         let point = sender.location(in: view)
         let panGesture = sender.view
         panGesture?.center = point
     }
+    
+    //    MARK: UITextFieldDelegate functions
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField == currencyValueTextField {
@@ -208,6 +216,22 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
         return true
     }
     
+    //    MARK: Supportive functions
+    
+    func setupUi() {
+        self.title = "New iGift"
+        
+        sendGiftButton.layer.cornerRadius = 0.5 * sendGiftButton.bounds.size.width;
+        
+        giftMsgTextView.placeholder = "Write your message here"
+        
+        GiftCard.shared.backgroundColor = nil
+        GiftCard.shared.capturedImage = nil
+        capturedPhotoImageView.isHidden = true
+        
+        giftMsgTextView.font = giftMsgTextView.font?.fontWithName(name: Constants.MAIN_FONT_FAMILY.rawValue)
+        currencyValueTextField.font = currencyValueTextField.font?.fontWithName(name: Constants.MAIN_FONT_FAMILY.rawValue)
+    }
 }
 
 

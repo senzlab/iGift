@@ -14,6 +14,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DesignIGiftViewController" customModule="iGift" customModuleProvider="target">
             <connections>
+                <outlet property="backButton" destination="Q3V-qv-rG7" id="Ggd-YF-pRS"/>
                 <outlet property="capturedPhotoImageView" destination="CTF-8A-KT8" id="7jv-bh-x43"/>
                 <outlet property="currencyValueTextField" destination="1ta-Cp-S2T" id="AYC-nF-j5s"/>
                 <outlet property="fancyOverlayView" destination="VdK-18-6gD" id="H83-Xm-GBw"/>
@@ -196,11 +197,24 @@
                         <constraint firstItem="8Lb-9T-ayU" firstAttribute="leading" secondItem="JEJ-We-bVa" secondAttribute="trailing" constant="20" id="nEc-3C-MUc"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q3V-qv-rG7" userLabel="Button_back">
+                    <rect key="frame" x="8" y="28" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="CAy-5z-bnb"/>
+                        <constraint firstAttribute="height" constant="50" id="MxC-Ol-F9e"/>
+                    </constraints>
+                    <state key="normal" image="back_white"/>
+                    <connections>
+                        <action selector="backAction:" destination="-1" eventType="touchUpInside" id="Y9W-mj-lFo"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="H5G-bI-zak" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="Tzj-BY-3Zp"/>
                 <constraint firstItem="H5G-bI-zak" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Yvi-2o-2dy"/>
+                <constraint firstItem="Q3V-qv-rG7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="Zd3-ZP-XDH"/>
+                <constraint firstItem="Q3V-qv-rG7" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="aD5-qI-YVr"/>
                 <constraint firstItem="H5G-bI-zak" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="gTS-bQ-cD5"/>
                 <constraint firstItem="H5G-bI-zak" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="rbn-Yl-bpe"/>
             </constraints>
@@ -210,6 +224,7 @@
     </objects>
     <resources>
         <image name="art" width="32" height="32"/>
+        <image name="back_white" width="32" height="32"/>
         <image name="background" width="32" height="32"/>
         <image name="capture" width="32" height="32"/>
         <image name="msgg" width="32" height="32"/>
