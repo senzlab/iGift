@@ -12,13 +12,13 @@ import Contacts
 import ContactsUI
 import StoreKit
 
-class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, UISearchBarDelegate {
+class BankListViewController : BaseViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, UISearchBarDelegate {
 
     @IBOutlet weak var tblView: UITableView!
     @IBOutlet weak var searchPlaceHolder: UIView!
 
-    var dataArray = [SenzContact]()
-    var filteredArray = [SenzContact]()
+    var dataArray = [Bank]()
+    var filteredArray = [Bank]()
     var shouldShowSearchResults = false
     var searchBar: CustomSearchBar!
     let HEIGHT_OF_ROW = 60
@@ -26,7 +26,7 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUi()
-        self.loadContacts()
+        self.loadBanks()
     }
 
     func setupUi() {
@@ -34,16 +34,15 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
         self.title = "Phone Book"
     }
 
-    func loadContacts() {
-        PhoneBook.instance.requestAccess({value in
-            if value {
-                self.dataArray = PhoneBook.instance.getContacts()
-                self.reloadTable()
-            } else {
-                print("PhoneBook Permission Denied by user!!")
-                self.goBack(animated: true)
-            }
-        })
+    func loadBanks() {
+        dataArray = [Bank(code: "001", name: "Com bank"),
+                     Bank(code: "002", name: "Sam bank"),
+                     Bank(code: "003", name: "ADSL bank"),
+                     Bank(code: "004", name: "CAG bank"),
+                     Bank(code: "005", name: "For bank"),
+                     Bank(code: "006", name: "Net bank"),
+                     Bank(code: "007", name: "ASIA bank"),
+                     Bank(code: "008", name: "BOC bank")]
     }
 
     func reloadTable() {
@@ -63,21 +62,21 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Try to find reusable cell
-        var cell = tableView.dequeueReusableCell(withIdentifier: "CustomPhoneBookCell") as? CustomPhoneBookCell
+        var cell = tableView.dequeueReusableCell(withIdentifier: "CustomBankCell") as? CustomBankCell
 
         // If not available instantiate new custom cell
         if (cell == nil) {
             var nibArray = NSArray()
-            nibArray = Bundle.main.loadNibNamed("CustomPhoneBookCell", owner: self, options: nil)! as NSArray
-            cell = nibArray.object(at: 0) as? CustomPhoneBookCell
+            nibArray = Bundle.main.loadNibNamed("CustomBankCell", owner: self, options: nil)! as NSArray
+            cell = nibArray.object(at: 0) as? CustomBankCell
         }
 
         // Select Array to use to load table
-        let tableArray : [SenzContact] = shouldShowSearchResults ? self.filteredArray : self.dataArray
+        let tableArray : [Bank] = shouldShowSearchResults ? self.filteredArray : self.dataArray
 
         // Setup Cells in table
         cell?.lblName?.text = tableArray[indexPath.row].name
-        cell?.lblPhoneNo?.text = tableArray[indexPath.row].phone
+        cell?.lblCode?.text = tableArray[indexPath.row].code
 
         cell?.selectionStyle = .none
         return cell!
@@ -88,8 +87,8 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let contact = dataArray[indexPath.row]
-        addContact(contact: contact)
+        let object = dataArray[indexPath.row]
+        //Cell select functionality
     }
 
     func configureCustomSearchController() {
@@ -136,29 +135,5 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
         self.reloadTable()
     }
     
-    func addContact(contact: SenzContact) {
-        let alert = UIAlertController(title: "Confirm", message: "Would like to send iGift request to " + contact.name + "?", preferredStyle: UIAlertControllerStyle.alert)
-        
-        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action: UIAlertAction!) in
-            // todo check user already exists
-            
-            // send request
-            let phone = contact.phone.replacingOccurrences(of: " ", with: "")
-            let z = Httpz.instance.pushSenz(senz: SenzUtil.instance.connectSenz(to: phone))
-            if (z == nil) {
-                ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to send request")
-            } else {
-                let senzUser = User(id: 1)
-                senzUser.zid = phone
-                senzUser.phone = phone
-                SenzDb.instance.createUser(user: senzUser)
-            }
-        }))
-        
-        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: { (action: UIAlertAction!) in
-            // do nothing
-        }))
-        
-        present(alert, animated: true, completion: nil)
-    }
+    
 }

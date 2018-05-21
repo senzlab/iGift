@@ -103,6 +103,10 @@
 		58B96F5F20AB2DDC00E67D35 /* ViewControllerUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B96F5E20AB2DDC00E67D35 /* ViewControllerUtil.swift */; };
 		58B96F6320AB35A700E67D35 /* ConfirmAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B96F6120AB35A600E67D35 /* ConfirmAccountViewController.swift */; };
 		58B96F6420AB35A700E67D35 /* ConfirmAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58B96F6220AB35A600E67D35 /* ConfirmAccountViewController.xib */; };
+		7E3422BD20B31B0300C8DEAC /* CustomBankCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3422BB20B31B0300C8DEAC /* CustomBankCell.swift */; };
+		7E3422BE20B31B0300C8DEAC /* CustomBankCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E3422BC20B31B0300C8DEAC /* CustomBankCell.xib */; };
+		7E3422C120B31B1000C8DEAC /* BankListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E3422BF20B31B0F00C8DEAC /* BankListViewController.xib */; };
+		7E3422C220B31B1000C8DEAC /* BankListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3422C020B31B1000C8DEAC /* BankListViewController.swift */; };
 		C03D5D3F20B1D8F9008EDEDE /* Bank.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03D5D3E20B1D8F9008EDEDE /* Bank.swift */; };
 		C03D5D4120B1F049008EDEDE /* SenzProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03D5D4020B1F049008EDEDE /* SenzProgressView.swift */; };
 		C085C4DC20B075200085092F /* SenzContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = C085C4DB20B075200085092F /* SenzContact.swift */; };
@@ -216,6 +220,10 @@
 		58B96F5E20AB2DDC00E67D35 /* ViewControllerUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerUtil.swift; sourceTree = "<group>"; };
 		58B96F6120AB35A600E67D35 /* ConfirmAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmAccountViewController.swift; sourceTree = "<group>"; };
 		58B96F6220AB35A600E67D35 /* ConfirmAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfirmAccountViewController.xib; sourceTree = "<group>"; };
+		7E3422BB20B31B0300C8DEAC /* CustomBankCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomBankCell.swift; path = iGift/Application/BankListViewController/CustomBankCell/CustomBankCell.swift; sourceTree = SOURCE_ROOT; };
+		7E3422BC20B31B0300C8DEAC /* CustomBankCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CustomBankCell.xib; path = iGift/Application/BankListViewController/CustomBankCell/CustomBankCell.xib; sourceTree = SOURCE_ROOT; };
+		7E3422BF20B31B0F00C8DEAC /* BankListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BankListViewController.xib; sourceTree = "<group>"; };
+		7E3422C020B31B1000C8DEAC /* BankListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankListViewController.swift; sourceTree = "<group>"; };
 		BF90EAD1A777AEBC93ABF445 /* Pods-iGift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iGift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iGift/Pods-iGift.debug.xcconfig"; sourceTree = "<group>"; };
 		C03D5D3E20B1D8F9008EDEDE /* Bank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bank.swift; sourceTree = "<group>"; };
 		C03D5D4020B1F049008EDEDE /* SenzProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenzProgressView.swift; sourceTree = "<group>"; };
@@ -434,6 +442,7 @@
 				4021E71320A209A600B3DEB7 /* AboutViewController */,
 				4021E70F20A2094900B3DEB7 /* AddAccountInfoViewController */,
 				4021E70E20A2093800B3DEB7 /* SettingsViewController */,
+				7E3422B920B31A8100C8DEAC /* BankListViewController */,
 				4021E70D20A2090400B3DEB7 /* PhoneBookViewController */,
 				4021E70C20A208F100B3DEB7 /* ContactsViewController */,
 			);
@@ -741,6 +750,26 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		7E3422B920B31A8100C8DEAC /* BankListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7E3422C020B31B1000C8DEAC /* BankListViewController.swift */,
+				7E3422BF20B31B0F00C8DEAC /* BankListViewController.xib */,
+				7E3422BA20B31AEB00C8DEAC /* CustomBankCell */,
+			);
+			path = BankListViewController;
+			sourceTree = "<group>";
+		};
+		7E3422BA20B31AEB00C8DEAC /* CustomBankCell */ = {
+			isa = PBXGroup;
+			children = (
+				7E3422BB20B31B0300C8DEAC /* CustomBankCell.swift */,
+				7E3422BC20B31B0300C8DEAC /* CustomBankCell.xib */,
+			);
+			name = CustomBankCell;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		C0E2163A20A6F20E002FF833 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -823,6 +852,7 @@
 				4087151020A391C8007B3E4C /* CustomContactCell.xib in Resources */,
 				4021E72420A21DE100B3DEB7 /* SettingsViewController.xib in Resources */,
 				408714E620A31214007B3E4C /* AddAccountInfoViewController.xib in Resources */,
+				7E3422C120B31B1000C8DEAC /* BankListViewController.xib in Resources */,
 				4021E73420A231E100B3DEB7 /* PhoneBookViewController.xib in Resources */,
 				4021E6EC20A1CA1600B3DEB7 /* Main.storyboard in Resources */,
 				404B1A2620A84B8000E06B71 /* IGiftsSentViewController.xib in Resources */,
@@ -850,6 +880,7 @@
 				4087151320A391E2007B3E4C /* CustomPhoneBookCell.xib in Resources */,
 				58B96F6420AB35A700E67D35 /* ConfirmAccountViewController.xib in Resources */,
 				0FFFDDCA20ABF89A00F044DD /* ShowGiftViewController.xib in Resources */,
+				7E3422BE20B31B0300C8DEAC /* CustomBankCell.xib in Resources */,
 				4087152820A4ED96007B3E4C /* RegisterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -964,6 +995,7 @@
 				4021E72820A2234F00B3DEB7 /* UIColor.swift in Sources */,
 				4021E72620A21E2F00B3DEB7 /* BaseViewController.swift in Sources */,
 				0F1D5CA720AAB92E00A5D900 /* RegisterViewModel.swift in Sources */,
+				7E3422C220B31B1000C8DEAC /* BankListViewController.swift in Sources */,
 				0F1D5CAB20AB1AFB00A5D900 /* TermsOfUseViewController.swift in Sources */,
 				40A7340220A81DCD009C0B9B /* KeyboardScrollableViewController.swift in Sources */,
 				0F2EE36720A59466003C9AEA /* CapturePhotoViewController.swift in Sources */,
@@ -974,6 +1006,7 @@
 				4087152620A4ED86007B3E4C /* RegisterViewController.swift in Sources */,
 				0F2EE36C20A5A6BE003C9AEA /* GiftCard.swift in Sources */,
 				C0E2163320A6EAE5002FF833 /* Senz.swift in Sources */,
+				7E3422BD20B31B0300C8DEAC /* CustomBankCell.swift in Sources */,
 				C0C58F6F20A9567700DD14BB /* Httpz.swift in Sources */,
 				408714E820A31458007B3E4C /* AddAccountInfoViewController.swift in Sources */,
 				404B1A2A20A84B9200E06B71 /* IGiftsReceivedViewController.swift in Sources */,
