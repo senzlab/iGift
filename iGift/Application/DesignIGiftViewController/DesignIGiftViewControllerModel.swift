@@ -55,4 +55,11 @@ class DesignIGiftViewControllerModel: NSObject {
         
         return nil
     }
+    
+    func captureScreen(view: UIView) -> String {
+        let screenshot = view.takeSnapshot()
+        let compressedImageData = screenshot.lowestQualityJPEGNSData
+        return compressedImageData.base64EncodedString()
+    }
+    
 }

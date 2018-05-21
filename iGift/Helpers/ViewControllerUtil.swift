@@ -73,6 +73,14 @@ class ViewControllerUtil: NSObject {
         return true
     }
     
+    class func validateIGift(amount: String) -> Bool {
+        if amount.isEmpty {
+            return false
+        }
+        
+        return true
+    }
+    
     class func validateQuestions(q1: String, q2: String, q3: String) -> Bool {
         if (q1.isEmpty || q2.isEmpty || q3.isEmpty) {
             return false

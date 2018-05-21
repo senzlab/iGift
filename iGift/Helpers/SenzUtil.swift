@@ -89,12 +89,12 @@ class SenzUtil {
         return senz + " " + signature
     }
     
-    func transferSenz(amount: String, blob: String, to: String) -> String {
+    func transferSenz(amount: String, blob: String, to: String, cid: String) -> String {
         let zAddress = PreferenceUtil.instance.get(key: PreferenceUtil.PHONE_NUMBER)
         let account = PreferenceUtil.instance.get(key: PreferenceUtil.ACCOUNT)
         let senz = "SHARE" +
             " #uid " + uid(zAddress: zAddress) +
-            " #id " + NSUUID().uuidString +
+            " #id " + cid +
             " #amnt " + amount +
             " #bnk " + "sampath" +
             " #blob " + blob +

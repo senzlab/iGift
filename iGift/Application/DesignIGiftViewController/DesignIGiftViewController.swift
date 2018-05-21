@@ -25,10 +25,8 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
     var user: User? = nil
     let currencyType = "Rs "
     
-    //    MARK: UIViewController lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        print((#file as NSString).lastPathComponent)
         self.setupUi()
         
         currencyValueTextField.delegate = self
@@ -42,19 +40,16 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
         self.navigationController?.navigationBar.isHidden = true
 
         if GiftCard.shared.capturedImage != nil {
             capturedPhotoImageView.isHidden = false
             capturedPhotoImageView.image = GiftCard.shared.capturedImage
             fancyOverlayView.isHidden = false
-        }
-        else {
+        } else {
             capturedPhotoImageView.isHidden = true
             fancyOverlayView.isHidden = true
         }
-        
         if GiftCard.shared.backgroundColor != nil {
             rootView.backgroundColor = GiftCard.shared.backgroundColor
         }
@@ -62,53 +57,15 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
-        
         self.navigationController?.navigationBar.isHidden = false
     }
 
-    //    MARK: Action functions
     @IBAction func sendGiftAction(_ sender: UIButton) {
         let amount = currencyValueTextField.text!.replacingOccurrences(of: currencyType, with: "", options: NSString.CompareOptions.literal, range: nil)
-        sendGiftButton.isHidden = true
-        giftModifyView.isHidden = true
-        backButton.isHidden = true
-        
-        let screenshot = rootView.takeSnapshot()
-        let compressedImageData = screenshot.lowestQualityJPEGNSData
-        let blob = compressedImageData.base64EncodedString()
-        let uid = NSUUID().uuidString
-        
-        sendGiftButton.isHidden = false
-        giftModifyView.isHidden = false
-        backButton.isHidden = false
-        
-        let z = Httpz.instance.pushSenz(senz: SenzUtil.instance.transferSenz(amount: amount, blob: blob, to: user!.phone))
-        if z == nil {
-            // fail to send igift
-            ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to send iGift")
+        if (ViewControllerUtil.validateIGift(amount: amount)) {
+            sendIgift(amount: amount)
         } else {
-            if (SenzUtil.instance.verifyStatus(z: z!)) {
-                // save image
-                let filename = uid + ".jpeg"
-                createFileInPath(relativeFilePath: Constants.IMAGES_DIR.rawValue, fileName: filename, imageData: compressedImageData as Data)
-                
-                // save igift
-                let ig = Igift(id: 1)
-                ig.uid = uid
-                ig.amount = amount
-                ig.account = PreferenceUtil.instance.get(key: PreferenceUtil.ACCOUNT)
-                ig.state = "TRANSFER"
-                ig.isMyIgift = true
-                ig.user = user!.phone
-                ig.timestamp = TimeUtil.sharedInstance.timestamp()
-                SenzDb.instance.createIgift(igift: ig)
-                
-                // exit view controller
-                navigationController?.popViewController(animated: true)
-            } else {
-                // fail
-                ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to send iGift")
-            }
+            ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Invalid iGift amount")
         }
     }
     
@@ -138,8 +95,6 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
     @IBAction func backAction(_ sender: UIButton) {
         goBack(animated: true)
     }
-    
-    //    MARK: Notification observer selectors
     
     @objc func keyboardWillShow(notification: NSNotification) {
         if userTryingToGiveCurrencyValue {
@@ -179,8 +134,6 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
         imageView.addGestureRecognizer(panGesture)
     }
     
-    //    MARK: Gesture selectors
-
     @objc override func dismissKeyboard() {
         view.endEditing(true)
         userTryingToGiveCurrencyValue = false
@@ -192,13 +145,11 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
         let panGesture = sender.view
         panGesture?.center = point
         
-//        If art image is going to Amount section, hide it
+        // If art image is going to Amount section, hide it
         if (point.y > screenHeight*2/3) {
             sender.view?.isHidden = true
         }
     }
-    
-    //    MARK: UITextFieldDelegate functions
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField == currencyValueTextField {
@@ -221,21 +172,84 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
         return true
     }
     
-    //    MARK: Supportive functions
-    
     func setupUi() {
         self.title = "New iGift"
         
         sendGiftButton.layer.cornerRadius = 0.5 * sendGiftButton.bounds.size.width;
-        
-        giftMsgTextView.placeholder = "Write your message here"
-        
+
         GiftCard.shared.backgroundColor = nil
         GiftCard.shared.capturedImage = nil
         capturedPhotoImageView.isHidden = true
         
+        giftMsgTextView.placeholder = "Write your message here"
         giftMsgTextView.font = giftMsgTextView.font?.fontWithName(name: Constants.MAIN_FONT_FAMILY.rawValue)
         currencyValueTextField.font = currencyValueTextField.font?.fontWithName(name: Constants.MAIN_FONT_FAMILY.rawValue)
+    }
+    
+    func sendIgift(amount: String) {
+        let imgData = self.captureScreen()
+        let blob = imgData.base64EncodedString()
+        let cid = NSUUID().uuidString
+        let uid = SenzUtil.instance.uid(zAddress: PreferenceUtil.instance.get(key: PreferenceUtil.PHONE_NUMBER))
+        let senz = SenzUtil.instance.transferSenz(amount: amount, blob: blob, to: self.user!.phone, cid: cid)
+        
+        DispatchQueue.global(qos: .userInitiated).async {
+            let z = Httpz.instance.pushSenz(senz: senz)
+            if z == nil {
+                DispatchQueue.main.async {
+                    // fail to send igift
+                    ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to send iGift")
+                }
+            } else {
+                if (SenzUtil.instance.verifyStatus(z: z!)) {
+                    // save igift
+                    self.saveIGift(uid: uid, cid: cid, amount: amount, data: imgData)
+                    
+                    DispatchQueue.main.async {
+                        // exit view controller
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        // fail to send igift
+                        ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to send iGift")
+                    }
+                }
+            }
+        }
+    }
+    
+    func captureScreen() -> NSData {
+        sendGiftButton.isHidden = true
+        giftModifyView.isHidden = true
+        backButton.isHidden = true
+        
+        let screenshot = rootView.takeSnapshot()
+        let compressedImageData = screenshot.lowestQualityJPEGNSData
+        
+        sendGiftButton.isHidden = false
+        giftModifyView.isHidden = false
+        backButton.isHidden = false
+        
+        return compressedImageData
+    }
+    
+    func saveIGift(uid: String, cid: String, amount: String, data: NSData) {
+        // save image
+        let filename = uid + ".jpeg"
+        createFileInPath(relativeFilePath: Constants.IMAGES_DIR.rawValue, fileName: filename, imageData: data as Data)
+        
+        // save iGift
+        let ig = Igift(id: 1)
+        ig.uid = uid
+        ig.amount = amount
+        ig.account = PreferenceUtil.instance.get(key: PreferenceUtil.ACCOUNT)
+        ig.state = "TRANSFER"
+        ig.isMyIgift = true
+        ig.cid = cid
+        ig.user = user!.phone
+        ig.timestamp = TimeUtil.sharedInstance.timestamp()
+        SenzDb.instance.createIgift(igift: ig)
     }
 }
 
