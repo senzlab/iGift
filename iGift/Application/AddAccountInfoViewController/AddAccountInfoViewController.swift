@@ -9,6 +9,10 @@
 import UIKit
 
 class AddAccountInfoViewController : BaseViewController {
+    
+    @IBOutlet weak var cancelButton: CustomButton!
+    @IBOutlet weak var cancelButtonHeightConstraint: NSLayoutConstraint!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +21,8 @@ class AddAccountInfoViewController : BaseViewController {
 
     func setupUi() {
         self.title = "Add account"
+        cancelButton.isHidden = true
+        cancelButtonHeightConstraint.constant = 0
     }
 
     @IBAction func onAddClicked(_ sender: Any) {
