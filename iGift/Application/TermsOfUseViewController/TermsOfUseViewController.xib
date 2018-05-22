@@ -12,6 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TermsOfUseViewController" customModule="iGift" customModuleProvider="target">
             <connections>
+                <outlet property="acceptButton" destination="c2L-78-2HT" id="d6T-Ws-7LR"/>
+                <outlet property="rejectButton" destination="OJb-hQ-UUu" id="8Zh-gZ-xcv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

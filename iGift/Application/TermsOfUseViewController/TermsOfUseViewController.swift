@@ -10,6 +10,10 @@ import UIKit
 
 class TermsOfUseViewController: BaseViewController {
 
+    @IBOutlet weak var acceptButton: CustomButton!
+    @IBOutlet weak var rejectButton: CustomButton!
+    var isFirstTimeLoading:Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUi()
@@ -17,6 +21,11 @@ class TermsOfUseViewController: BaseViewController {
     
     func setupUi() {
         self.title = "Terms of use"
+        
+        if !isFirstTimeLoading {
+            acceptButton.isHidden = true
+            rejectButton.isHidden = true
+        }
     }
     
     @IBAction func acceptAction(_ sender: UIButton) {
