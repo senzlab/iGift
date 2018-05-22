@@ -254,10 +254,22 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
     
     func giftSendConfirmation(amount: String) {
         
+        var enteredPassword:String = ""
+        
         let alertController = UIAlertController(title: "Enter Password", message: "", preferredStyle: .alert)
 
         let saveAction = UIAlertAction(title: "Done", style: .default, handler: { alert -> Void in
-            self.sendIgift(amount: amount)
+            
+            let savedPassword = PreferenceUtil.instance.get(key: PreferenceUtil.PASSWORD)
+            
+            enteredPassword = alertController.textFields![0].text!
+            
+            if savedPassword == enteredPassword {
+                self.sendIgift(amount: amount)
+            }
+            else {
+                ViewControllerUtil.showAlert(alertTitle: "Notice", alertMessage: "Wrong password")
+            }
         })
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: { (action : UIAlertAction!) -> Void in })

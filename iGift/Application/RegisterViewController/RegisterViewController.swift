@@ -63,6 +63,9 @@ class RegisterViewController : KeyboardScrollableViewController {
         
         // validate inputs
         if(ViewControllerUtil.validateRegistration(phn: phn, phnCon: phnCon, psw: psw, pswCon: pswCon)) {
+            
+            PreferenceUtil.instance.put(key: PreferenceUtil.PASSWORD, value: psw)
+            
             if let p = PhoneBook.instance.internationalize(phone: phn) {
                 // reg
                 let phone = p.replacingOccurrences(of: " ", with: "")
