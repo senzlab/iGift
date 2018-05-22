@@ -75,7 +75,9 @@ class RegisterViewController : KeyboardScrollableViewController {
                 } else {
                     // reg done
                     PreferenceUtil.instance.put(key: PreferenceUtil.PHONE_NUMBER, value: phone)
-                    self.loadView("SecurityQuestionsViewController")
+                    let view = SecurityQuestionsViewController(nibName: "SecurityQuestionsViewController", bundle: nil)
+                    view.isRegistrationProcess = true
+                    self.navigationController?.pushViewController(view, animated: true)
                 }
             } else {
                 ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Invalid phone no")

@@ -13,6 +13,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SecurityQuestionsViewController" customModule="iGift" customModuleProvider="target">
             <connections>
                 <outlet property="bottomLabel" destination="Yeq-2g-s2K" id="usk-cf-vtD"/>
+                <outlet property="cancelBtnHeightConstraint" destination="Yem-Xu-hL4" id="Flg-wN-BO4"/>
+                <outlet property="cancelButton" destination="IlL-1g-XXA" id="Uxw-2G-kS0"/>
+                <outlet property="nextButton" destination="msG-Mp-yJJ" id="g6t-CM-IqP"/>
                 <outlet property="topLabel" destination="AwA-1O-tEa" id="gUW-g3-2LJ"/>
                 <outlet property="view" destination="snQ-Pc-fhU" id="aj3-73-9pF"/>
             </connections>

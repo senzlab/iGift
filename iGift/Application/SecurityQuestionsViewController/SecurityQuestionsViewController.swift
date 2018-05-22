@@ -12,7 +12,11 @@ class SecurityQuestionsViewController : BaseViewController {
     
     @IBOutlet weak var topLabel: CustomLabel!
     @IBOutlet weak var bottomLabel: CustomLabel!
-
+    @IBOutlet weak var nextButton: CustomButton!
+    @IBOutlet weak var cancelButton: CustomButton!
+    @IBOutlet weak var cancelBtnHeightConstraint: NSLayoutConstraint!
+    var isRegistrationProcess: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUi()
@@ -20,6 +24,12 @@ class SecurityQuestionsViewController : BaseViewController {
 
     func setupUi() {
         self.title = "Security questions"
+        
+        if isRegistrationProcess {
+            cancelButton.isHidden = true
+            cancelBtnHeightConstraint.constant = 0
+            self.navigationItem.setHidesBackButton(true, animated: false)
+        }
     }
 
     @IBAction func onNextClicked(_ sender: Any) {

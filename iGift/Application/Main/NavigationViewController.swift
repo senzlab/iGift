@@ -38,6 +38,7 @@ class NavigationViewController : UINavigationController {
             self.pushViewController(view, animated: true)
         } else if(PreferenceUtil.instance.get(key: PreferenceUtil.QUESTION1).isEmpty) {
             let view = SecurityQuestionsViewController(nibName: "SecurityQuestionsViewController", bundle: nil)
+            view.isRegistrationProcess = true
             self.pushViewController(view, animated: true)
         } else {
             let view = HomeViewController(nibName: "HomeViewController", bundle: nil)

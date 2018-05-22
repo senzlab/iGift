@@ -144,8 +144,8 @@ class SettingsViewController : BaseViewController, UITableViewDelegate, UITableV
             print("Case 1")
             break
         case 2:
-            print("Case 2")
-            self.loadView("SecurityQuestionsViewController")
+            let view = SecurityQuestionsViewController(nibName: "SecurityQuestionsViewController", bundle: nil)
+            self.navigationController?.pushViewController(view, animated: true)
             break
         case 3:
             print("Case 3")
