@@ -61,5 +61,4 @@ class DesignIGiftViewControllerModel: NSObject {
         let compressedImageData = screenshot.lowestQualityJPEGNSData
         return compressedImageData.base64EncodedString()
     }
-    
 }

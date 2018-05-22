@@ -34,6 +34,6 @@ class TermsOfUseViewController: BaseViewController {
     }
     
     @IBAction func rejectAction(_ sender: UIButton) {
-        ViewControllerUtil.showAlert(alertTitle: "Title", alertMessage: "Message")
+        ViewControllerUtil.showAlert(alertTitle: "Notice", alertMessage: "You have to accept the terms & conditions in order to proceed on iGifts")
     }
 }
