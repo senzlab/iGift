@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,70 +30,109 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2CL-8e-gkZ">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="UXS-EY-7wd">
-                                    <rect key="frame" x="50" y="20" width="275" height="376.5"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="UXS-EY-7wd">
+                                    <rect key="frame" x="50" y="10" width="275" height="502"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. What was your childhood nickname?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YbO-gV-lly" customClass="CustomLabel" customModule="iGift" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="275" height="85.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Answer" minimumFontSize="22" translatesAutoresizingMaskIntoConstraints="NO" id="3bR-VQ-y7u">
-                                            <rect key="frame" x="0.0" y="85.5" width="275" height="40"/>
-                                            <color key="backgroundColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="0.0" colorSpace="calibratedRGB"/>
-                                            <color key="tintColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="0.0" colorSpace="calibratedRGB"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WdB-mS-0Zh">
+                                            <rect key="frame" x="0.0" y="0.0" width="275" height="159.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. What was your childhood nickname?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YbO-gV-lly" customClass="CustomLabel" customModule="iGift" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="275" height="62"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Answer" minimumFontSize="22" translatesAutoresizingMaskIntoConstraints="NO" id="3bR-VQ-y7u">
+                                                    <rect key="frame" x="0.0" y="77" width="275" height="40"/>
+                                                    <color key="backgroundColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="0.0" colorSpace="calibratedRGB"/>
+                                                    <color key="tintColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="0.0" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="wwe-Xy-vQp">
+                                                            <variation key="heightClass=regular-widthClass=regular" constant="50"/>
+                                                        </constraint>
+                                                    </constraints>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="wwe-Xy-vQp">
-                                                    <variation key="heightClass=regular-widthClass=regular" constant="50"/>
-                                                </constraint>
+                                                <constraint firstItem="3bR-VQ-y7u" firstAttribute="top" secondItem="YbO-gV-lly" secondAttribute="bottom" constant="15" id="0za-hy-bPp"/>
+                                                <constraint firstItem="YbO-gV-lly" firstAttribute="leading" secondItem="WdB-mS-0Zh" secondAttribute="leading" id="19s-cO-FZn"/>
+                                                <constraint firstAttribute="trailing" secondItem="3bR-VQ-y7u" secondAttribute="trailing" id="59F-jf-fbm"/>
+                                                <constraint firstItem="YbO-gV-lly" firstAttribute="top" secondItem="WdB-mS-0Zh" secondAttribute="top" id="ONM-Qj-sob"/>
+                                                <constraint firstAttribute="trailing" secondItem="YbO-gV-lly" secondAttribute="trailing" id="d7l-rG-8TF"/>
+                                                <constraint firstItem="3bR-VQ-y7u" firstAttribute="leading" secondItem="WdB-mS-0Zh" secondAttribute="leading" id="raK-aP-RNy"/>
                                             </constraints>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                        </textField>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is your favourite sport?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iU0-bE-YSL" customClass="CustomLabel" customModule="iGift" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="125.5" width="275" height="85.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Answer" minimumFontSize="22" translatesAutoresizingMaskIntoConstraints="NO" id="WAg-t9-CKv">
-                                            <rect key="frame" x="0.0" y="211" width="275" height="40"/>
-                                            <color key="backgroundColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="0.0" colorSpace="calibratedRGB"/>
-                                            <color key="tintColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="0.0" colorSpace="calibratedRGB"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                        </textField>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In which town was your grade one school?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ID-C4-TVA" customClass="CustomLabel" customModule="iGift" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="251" width="275" height="85.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Answer" minimumFontSize="22" translatesAutoresizingMaskIntoConstraints="NO" id="d1K-JH-4cE">
-                                            <rect key="frame" x="0.0" y="336.5" width="275" height="40"/>
-                                            <color key="backgroundColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="0.0" colorSpace="calibratedRGB"/>
-                                            <color key="tintColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="0.0" colorSpace="calibratedRGB"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                        </textField>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jNo-Qi-LiI">
+                                            <rect key="frame" x="0.0" y="171.5" width="275" height="159"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is your favourite sport?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iU0-bE-YSL" customClass="CustomLabel" customModule="iGift" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="275" height="62"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Answer" minimumFontSize="22" translatesAutoresizingMaskIntoConstraints="NO" id="WAg-t9-CKv">
+                                                    <rect key="frame" x="0.0" y="77" width="275" height="40"/>
+                                                    <color key="backgroundColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="0.0" colorSpace="calibratedRGB"/>
+                                                    <color key="tintColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="0.0" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="WRl-EL-hV9"/>
+                                                    </constraints>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="WAg-t9-CKv" firstAttribute="top" secondItem="iU0-bE-YSL" secondAttribute="bottom" constant="15" id="6Id-Ac-dhf"/>
+                                                <constraint firstAttribute="trailing" secondItem="WAg-t9-CKv" secondAttribute="trailing" id="9ac-Uu-INA"/>
+                                                <constraint firstItem="WAg-t9-CKv" firstAttribute="leading" secondItem="jNo-Qi-LiI" secondAttribute="leading" id="Xzd-Gc-7Yy"/>
+                                                <constraint firstItem="iU0-bE-YSL" firstAttribute="leading" secondItem="jNo-Qi-LiI" secondAttribute="leading" id="neq-wL-rN0"/>
+                                                <constraint firstAttribute="trailing" secondItem="iU0-bE-YSL" secondAttribute="trailing" id="q25-kP-ymS"/>
+                                                <constraint firstItem="iU0-bE-YSL" firstAttribute="top" secondItem="jNo-Qi-LiI" secondAttribute="top" id="qf7-Pv-ipD"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uNJ-WB-kO0">
+                                            <rect key="frame" x="0.0" y="342.5" width="275" height="159.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In which town was your grade one school?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ID-C4-TVA" customClass="CustomLabel" customModule="iGift" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="275" height="100.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Answer" minimumFontSize="22" translatesAutoresizingMaskIntoConstraints="NO" id="d1K-JH-4cE">
+                                                    <rect key="frame" x="0.0" y="115.5" width="275" height="29"/>
+                                                    <color key="backgroundColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="0.0" colorSpace="calibratedRGB"/>
+                                                    <color key="tintColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="0.0" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="d1K-JH-4cE" firstAttribute="top" secondItem="9ID-C4-TVA" secondAttribute="bottom" constant="15" id="1DH-dG-yx6"/>
+                                                <constraint firstAttribute="trailing" secondItem="d1K-JH-4cE" secondAttribute="trailing" id="HYl-Tj-bxR"/>
+                                                <constraint firstItem="9ID-C4-TVA" firstAttribute="leading" secondItem="uNJ-WB-kO0" secondAttribute="leading" id="TRb-cF-5R8"/>
+                                                <constraint firstAttribute="trailing" secondItem="9ID-C4-TVA" secondAttribute="trailing" id="gSp-xG-ngH"/>
+                                                <constraint firstItem="d1K-JH-4cE" firstAttribute="leading" secondItem="uNJ-WB-kO0" secondAttribute="leading" id="koI-kY-qxI"/>
+                                                <constraint firstItem="9ID-C4-TVA" firstAttribute="top" secondItem="uNJ-WB-kO0" secondAttribute="top" id="mWq-EV-pLM"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="YbO-gV-lly" firstAttribute="leading" secondItem="UXS-EY-7wd" secondAttribute="leading" id="4mk-Wa-yLm"/>
-                                        <constraint firstAttribute="trailing" secondItem="WAg-t9-CKv" secondAttribute="trailing" id="8bo-6f-kWf"/>
-                                        <constraint firstAttribute="trailing" secondItem="YbO-gV-lly" secondAttribute="trailing" id="CrS-1L-tAx"/>
-                                        <constraint firstItem="WAg-t9-CKv" firstAttribute="leading" secondItem="UXS-EY-7wd" secondAttribute="leading" id="Jvi-4d-z3V"/>
-                                        <constraint firstAttribute="trailing" secondItem="9ID-C4-TVA" secondAttribute="trailing" id="Pxs-EE-jv3"/>
-                                        <constraint firstItem="9ID-C4-TVA" firstAttribute="leading" secondItem="UXS-EY-7wd" secondAttribute="leading" id="RTL-Um-VmU"/>
-                                        <constraint firstAttribute="trailing" secondItem="iU0-bE-YSL" secondAttribute="trailing" id="WGG-VA-Km9"/>
-                                        <constraint firstItem="iU0-bE-YSL" firstAttribute="leading" secondItem="UXS-EY-7wd" secondAttribute="leading" id="XWc-i8-3dl"/>
-                                        <constraint firstAttribute="trailing" secondItem="3bR-VQ-y7u" secondAttribute="trailing" id="arc-jI-0Dd"/>
-                                        <constraint firstItem="d1K-JH-4cE" firstAttribute="leading" secondItem="UXS-EY-7wd" secondAttribute="leading" id="bOL-sN-euU"/>
-                                        <constraint firstAttribute="trailing" secondItem="d1K-JH-4cE" secondAttribute="trailing" id="meP-ps-AHn"/>
-                                        <constraint firstItem="3bR-VQ-y7u" firstAttribute="leading" secondItem="UXS-EY-7wd" secondAttribute="leading" id="uqS-wG-hW0"/>
+                                        <constraint firstItem="uNJ-WB-kO0" firstAttribute="leading" secondItem="UXS-EY-7wd" secondAttribute="leading" id="3Cz-H1-WOa"/>
+                                        <constraint firstAttribute="trailing" secondItem="uNJ-WB-kO0" secondAttribute="trailing" id="45K-i6-52X"/>
+                                        <constraint firstAttribute="trailing" secondItem="jNo-Qi-LiI" secondAttribute="trailing" id="8pt-x5-Awb"/>
+                                        <constraint firstAttribute="trailing" secondItem="WdB-mS-0Zh" secondAttribute="trailing" id="S4Y-ms-v5e"/>
+                                        <constraint firstItem="WdB-mS-0Zh" firstAttribute="leading" secondItem="UXS-EY-7wd" secondAttribute="leading" id="t45-Ww-5NH"/>
+                                        <constraint firstItem="jNo-Qi-LiI" firstAttribute="leading" secondItem="UXS-EY-7wd" secondAttribute="leading" id="vKq-Ng-uLO"/>
                                     </constraints>
                                 </stackView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qBc-88-KSN" customClass="CustomButton" customModule="iGift" customModuleProvider="target">
@@ -128,8 +167,9 @@
                                 <constraint firstItem="UXS-EY-7wd" firstAttribute="centerX" secondItem="2CL-8e-gkZ" secondAttribute="centerX" id="BCY-qP-C9E"/>
                                 <constraint firstItem="UXS-EY-7wd" firstAttribute="leading" secondItem="2CL-8e-gkZ" secondAttribute="leading" constant="50" id="BX0-TN-gY2"/>
                                 <constraint firstAttribute="trailing" secondItem="UXS-EY-7wd" secondAttribute="trailing" constant="50" id="GJb-XA-ita"/>
+                                <constraint firstItem="qBc-88-KSN" firstAttribute="top" secondItem="UXS-EY-7wd" secondAttribute="bottom" constant="50" id="HkK-Sm-rGO"/>
                                 <constraint firstAttribute="bottom" secondItem="qBc-88-KSN" secondAttribute="bottom" constant="30" id="KWn-mV-GCL"/>
-                                <constraint firstItem="UXS-EY-7wd" firstAttribute="top" secondItem="2CL-8e-gkZ" secondAttribute="top" constant="20" id="R1n-do-Ocb">
+                                <constraint firstItem="UXS-EY-7wd" firstAttribute="top" secondItem="2CL-8e-gkZ" secondAttribute="top" constant="10" id="R1n-do-Ocb">
                                     <variation key="heightClass=regular-widthClass=regular" constant="250"/>
                                 </constraint>
                                 <constraint firstItem="qBc-88-KSN" firstAttribute="leading" secondItem="2CL-8e-gkZ" secondAttribute="leading" constant="50" id="qQd-BL-juh"/>
@@ -157,6 +197,7 @@
                 <constraint firstItem="qb9-cH-jcX" firstAttribute="trailing" secondItem="E86-a1-rde" secondAttribute="trailing" id="sSl-KW-vbG"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="qb9-cH-jcX"/>
+            <point key="canvasLocation" x="57.5" y="145.5"/>
         </view>
     </objects>
 </document>

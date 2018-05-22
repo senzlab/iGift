@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,13 +26,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You need to answer three security questions in order to setup the account." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AwA-1O-tEa" customClass="CustomLabel" customModule="iGift" customModuleProvider="target">
-                    <rect key="frame" x="30" y="80" width="315" height="93"/>
+                    <rect key="frame" x="30" y="30" width="315" height="93"/>
                     <fontDescription key="fontDescription" type="system" pointSize="28"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can use these information to recover the account, when you forgot your iGift password." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yeq-2g-s2K" customClass="CustomLabel" customModule="iGift" customModuleProvider="target">
-                    <rect key="frame" x="30" y="193" width="315" height="124"/>
+                    <rect key="frame" x="30" y="143" width="315" height="124"/>
                     <fontDescription key="fontDescription" type="system" pointSize="28"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
@@ -96,7 +96,7 @@
                 <constraint firstItem="vM7-y7-tSW" firstAttribute="trailing" secondItem="msG-Mp-yJJ" secondAttribute="trailing" constant="30" id="Wyu-UG-rRN"/>
                 <constraint firstItem="AwA-1O-tEa" firstAttribute="leading" secondItem="vM7-y7-tSW" secondAttribute="leading" constant="30" id="c3N-xe-Cfr"/>
                 <constraint firstItem="Yeq-2g-s2K" firstAttribute="top" secondItem="AwA-1O-tEa" secondAttribute="bottom" constant="20" id="ffA-Cs-cCN"/>
-                <constraint firstItem="AwA-1O-tEa" firstAttribute="top" secondItem="vM7-y7-tSW" secondAttribute="top" constant="60" id="pe0-b8-ai8">
+                <constraint firstItem="AwA-1O-tEa" firstAttribute="top" secondItem="vM7-y7-tSW" secondAttribute="top" constant="10" id="pe0-b8-ai8">
                     <variation key="heightClass=compact-widthClass=compact" constant="10"/>
                 </constraint>
                 <constraint firstItem="vM7-y7-tSW" firstAttribute="trailing" secondItem="Yeq-2g-s2K" secondAttribute="trailing" constant="30" id="w15-Gh-Cg2"/>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,13 +22,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hav-i4-Pnz" customClass="CustomLabel" customModule="iGift" customModuleProvider="target">
-                    <rect key="frame" x="30" y="50" width="260" height="0.0"/>
+                    <rect key="frame" x="30" y="30" width="260" height="0.0"/>
                     <fontDescription key="fontDescription" type="system" pointSize="28"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpm-UX-yfm" customClass="CustomLabel" customModule="iGift" customModuleProvider="target">
-                    <rect key="frame" x="30" y="70" width="260" height="278"/>
+                    <rect key="frame" x="30" y="50" width="260" height="334.5"/>
                     <string key="text">We have done test trasnaction from your account. To confirm the account, please find the transation amount cia sampath vishwa or by visiting nearest sampath bank and enter in next window.</string>
                     <fontDescription key="fontDescription" type="system" pointSize="28"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -86,7 +86,7 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="fpm-UX-yfm" secondAttribute="trailing" constant="30" id="Cfa-VR-NTz"/>
                 <constraint firstItem="Hav-i4-Pnz" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="GS0-6Z-TX2"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="oXl-2d-BiC" secondAttribute="bottom" constant="30" id="HN7-aS-lWH"/>
-                <constraint firstItem="Hav-i4-Pnz" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="30" id="M93-t1-9OR">
+                <constraint firstItem="Hav-i4-Pnz" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="M93-t1-9OR">
                     <variation key="heightClass=compact-widthClass=compact" constant="10"/>
                 </constraint>
                 <constraint firstItem="fpm-UX-yfm" firstAttribute="top" secondItem="Hav-i4-Pnz" secondAttribute="bottom" constant="20" id="Nlc-pa-XVE"/>

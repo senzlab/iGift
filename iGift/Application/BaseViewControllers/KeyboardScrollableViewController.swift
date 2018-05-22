@@ -48,7 +48,7 @@ class KeyboardScrollableViewController : BaseViewController, UITextFieldDelegate
         self.scrollView?.scrollIndicatorInsets = contentInsets
 
         var aRect : CGRect = self.view.frame
-        aRect.size.height -= keyboardSize!.height
+        aRect.size.height -= keyboardSize!.height + 30
         if let activeField = self.activeField {
             if (!aRect.contains(activeField.frame.origin)){
                 self.scrollView?.scrollRectToVisible(activeField.frame, animated: true)
