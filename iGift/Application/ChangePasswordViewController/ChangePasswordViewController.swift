@@ -41,5 +41,4 @@ class ChangePasswordViewController : KeyboardScrollableViewController {
     @IBAction func onAddAccountClicked(_ sender: Any) {
         //button action
     }
-
 }

@@ -63,7 +63,7 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
     @IBAction func sendGiftAction(_ sender: UIButton) {
         let amount = currencyValueTextField.text!.replacingOccurrences(of: currencyType, with: "", options: NSString.CompareOptions.literal, range: nil)
         if (ViewControllerUtil.validateIGift(amount: amount)) {
-            sendIgift(amount: amount)
+            giftSendConfirmation(amount: amount)
         } else {
             ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Invalid iGift amount")
         }
@@ -250,6 +250,26 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
         ig.user = user!.phone
         ig.timestamp = TimeUtil.sharedInstance.timestamp()
         SenzDb.instance.createIgift(igift: ig)
+    }
+    
+    func giftSendConfirmation(amount: String) {
+        
+        let alertController = UIAlertController(title: "Enter Password", message: "", preferredStyle: .alert)
+
+        let saveAction = UIAlertAction(title: "Done", style: .default, handler: { alert -> Void in
+            self.sendIgift(amount: amount)
+        })
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: { (action : UIAlertAction!) -> Void in })
+        
+        alertController.addTextField { (textField : UITextField!) -> Void in
+            textField.isSecureTextEntry = true
+        }
+        
+        alertController.addAction(saveAction)
+        alertController.addAction(cancelAction)
+        
+        self.present(alertController, animated: true, completion: nil)
     }
 }
 
