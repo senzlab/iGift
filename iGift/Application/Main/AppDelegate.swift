@@ -16,16 +16,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var navController: NavigationViewController!
+    let gcmMessageIDKey = "gcm.message_id"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         FirebaseApp.configure()
-        
-//        Messaging.messaging().delegate = self
-        
-        UNUserNotificationCenter.current().delegate = self as? UNUserNotificationCenterDelegate
-        
+
+        Messaging.messaging().delegate = self
+
+        UNUserNotificationCenter.current().delegate = self
 
         // Load Navigation View Controller to stack other viewcontroallers
         window = UIWindow.init(frame: UIScreen.main.bounds)
@@ -47,9 +47,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         application.registerForRemoteNotifications()
+        
+//        NotificationCenter.default.addObserver(self, selector: #selector(self.tokenRefreshNotification), name: NSNotification.Name.InstanceIDTokenRefresh, object: nil)
 
         return true
     }
+    
+//    @objc func tokenRefreshNotification(_ notification: Notification) {
+//        if let refreshedToken = InstanceID.instanceID().token() {
+//            print("InstanceID token: \(refreshedToken)")
+//        }
+//    }
 
     func setupNavBarStyles(_ navigationBar: UINavigationBar) {
         // Set Background color to nav bar
@@ -139,6 +147,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //    MARK: Push notifications related functions
     //    Reference : https://www.appcoda.com/push-notification-ios/
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        
+//        Messaging.messaging().apnsToken = deviceToken as Data
+        
         let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
         print((#file as NSString).lastPathComponent, " # deviceToken = ", deviceTokenString)
         PreferenceUtil.instance.put(key: PreferenceUtil.DEVICE_ID, value: deviceTokenString)
@@ -150,6 +161,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         print((#file as NSString).lastPathComponent, " # userInfo = ", userInfo)
+        
+//        let token = Messaging.messaging().fcmToken
+//        print("FCM token: \(token ?? "")")
+        
+        if let messageID = userInfo[gcmMessageIDKey] {
+            print("Message ID: \(messageID)")
+        }
+        
+        // Print full message.
+        print(userInfo)
         
         UIApplication.shared.applicationIconBadgeNumber = 0
         if let senzConnect = userInfo["senz_connect"] as? NSString {
@@ -184,7 +205,61 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             navController.pushViewController(igiftsReceivedViewController, animated: true)
         }
     }
+}
+
+extension AppDelegate : UNUserNotificationCenterDelegate {
     
-//    didRece
+    // Receive displayed notifications for iOS 10 devices.
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                willPresent notification: UNNotification,
+                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        let userInfo = notification.request.content.userInfo
+        
+        // With swizzling disabled you must let Messaging know about the message, for Analytics
+        // Messaging.messaging().appDidReceiveMessage(userInfo)
+        // Print message ID.
+        if let messageID = userInfo[gcmMessageIDKey] {
+            print("Message ID: \(messageID)")
+        }
+        
+        // Print full message.
+        print(userInfo)
+        
+        // Change this to your preferred presentation option
+        completionHandler([])
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                didReceive response: UNNotificationResponse,
+                                withCompletionHandler completionHandler: @escaping () -> Void) {
+        let userInfo = response.notification.request.content.userInfo
+        // Print message ID.
+        if let messageID = userInfo[gcmMessageIDKey] {
+            print("Message ID: \(messageID)")
+        }
+        
+        // Print full message.
+        print(userInfo)
+        
+        completionHandler()
+    }
+}
+
+extension AppDelegate : MessagingDelegate {
+    // [START refresh_token]
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+        print("Firebase registration token: \(fcmToken)")
+        
+        // TODO: If necessary send token to application server.
+        // Note: This callback is fired at each app startup and whenever a new token is generated.
+    }
+    // [END refresh_token]
+    // [START ios_10_data_message]
+    // Receive data messages on iOS 10+ directly from FCM (bypassing APNs) when the app is in the foreground.
+    // To enable direct data messages, you can set Messaging.messaging().shouldEstablishDirectChannel to true.
+    func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
+        print("Received data message: \(remoteMessage.appData)")
+    }
+    // [END ios_10_data_message]
 }
 
