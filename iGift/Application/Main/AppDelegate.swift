@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import UserNotifications
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +19,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        FirebaseApp.configure()
+        
+//        Messaging.messaging().delegate = self
+        
+        UNUserNotificationCenter.current().delegate = self as? UNUserNotificationCenterDelegate
+        
 
         // Load Navigation View Controller to stack other viewcontroallers
         window = UIWindow.init(frame: UIScreen.main.bounds)
@@ -176,5 +184,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             navController.pushViewController(igiftsReceivedViewController, animated: true)
         }
     }
+    
+//    didRece
 }
 
