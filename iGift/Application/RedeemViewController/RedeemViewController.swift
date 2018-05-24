@@ -47,20 +47,7 @@ class RedeemViewController: KeyboardScrollableViewController {
             let acc = accountNoTextField.text!.replacingOccurrences(of: " ", with: "")
             let accCon = confirmAccountNoTextField.text!.replacingOccurrences(of: " ", with: "")
             if (ViewControllerUtil.validateAccount(acc: acc, accCon: accCon)) {
-                let z = Httpz.instance.pushSenz(senz: SenzUtil.instance.redeemSenz(iGift: iGift!, bank: bank!.code, account: acc))
-                if (z == nil) {
-                    ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to redeem iGift")
-                } else {
-                    // verify response
-                    if (SenzUtil.instance.verifyStatus(z: z!)) {
-                        // success redeem
-                        // update database
-                        SenzDb.instance.markAsRedeemed(id: iGift!.uid)
-                        self.navigationController?.popToRootViewController(animated: true)
-                    } else {
-                        ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to redeem iGift")
-                    }
-                }
+                askPassword(acc: acc)
             } else {
                 ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Invalid account")
             }
@@ -69,5 +56,45 @@ class RedeemViewController: KeyboardScrollableViewController {
         }
     }
     
+    func askPassword(acc: String) {
+        var enteredPassword:String = ""
+        let alertController = UIAlertController(title: "Enter Password", message: "", preferredStyle: .alert)
+        let saveAction = UIAlertAction(title: "Done", style: .default, handler: { alert -> Void in
+            let savedPassword = PreferenceUtil.instance.get(key: PreferenceUtil.PASSWORD)
+            enteredPassword = alertController.textFields![0].text!
+            if savedPassword == enteredPassword {
+                self.redeem(acc: acc)
+            }
+            else {
+                ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Invalid password")
+            }
+        })
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: { (action : UIAlertAction!) -> Void in })
+        alertController.addTextField { (textField : UITextField!) -> Void in
+            textField.isSecureTextEntry = true
+        }
+        
+        alertController.addAction(saveAction)
+        alertController.addAction(cancelAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
     
+    func redeem(acc: String) {
+        let z = Httpz.instance.pushSenz(senz: SenzUtil.instance.redeemSenz(iGift: iGift!, bank: bank!.code, account: acc))
+        if (z == nil) {
+            ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to redeem iGift")
+        } else {
+            // verify response
+            if (SenzUtil.instance.verifyStatus(z: z!)) {
+                // success redeem
+                // update database
+                SenzDb.instance.markAsRedeemed(id: iGift!.uid)
+                self.navigationController?.popToRootViewController(animated: true)
+            } else {
+                ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to redeem iGift")
+            }
+        }
+    }
 }
