@@ -21,6 +21,7 @@ class PreferenceUtil {
     static let QUESTION3 = "QUESTION3"
     static let ACCOUNT = "ACCOUNT"
     static let ACCOUNT_STATUS = "ACCOUNT_STATUS"
+    static let FCM_TOKEN = "FCM_TOKEN"
     
     let userDefaults = UserDefaults.standard
     
