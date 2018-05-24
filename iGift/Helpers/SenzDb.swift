@@ -56,7 +56,6 @@ class SenzDb {
                 table.column(phone)
                 table.column(isActive)
                 table.column(isRequester)
-
             })
         } catch {
             print("Unable to create table")
@@ -145,18 +144,22 @@ class SenzDb {
         return l
     }
     
-    func existingUser(phn: String) -> Bool {
+    func getUser(phn: String) -> User! {
         let q = users.filter(zid == phn).limit(1)
-        // todo refactor
         do {
             for i in try db!.prepare(q) {
-                return true
+                let u = User(id: i[_uid])
+                u.zid = i[zid]
+                u.phone = i[phone]
+                u.isActive = i[isActive]
+                u.isRequester = i[isRequester]
+                return u
             }
         } catch {
-            return false
+            return nil
         }
         
-        return false
+        return nil
     }
 
     func createIgift(igift: Igift) -> Int64 {

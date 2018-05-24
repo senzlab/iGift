@@ -42,12 +42,12 @@ class SenzUtil {
     
     func regSenz(uid: String, zAddress: String) -> String? {
         let pubkey = PreferenceUtil.instance.get(key: PreferenceUtil.PUBLIC_KEY)
-        let devId = PreferenceUtil.instance.get(key: PreferenceUtil.DEVICE_ID)
+        let fcmToken = PreferenceUtil.instance.get(key: PreferenceUtil.FCM_TOKEN)
         let senz = "PUT" +
             " #uid " + uid +
             " #pubkey " + pubkey +
             " #dev " + "apple" +
-            " #devid " + devId +
+            " #devid " + fcmToken +
             " @" + "senzswitch" +
             " ^" + zAddress
         let signature = CryptoUtil.instance.sign(payload: senz)

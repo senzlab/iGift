@@ -20,7 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
         FirebaseApp.configure()
 
         Messaging.messaging().delegate = self
@@ -139,7 +138,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //    MARK: Push notifications related functions
     //    Reference : https://www.appcoda.com/push-notification-ios/
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-
         let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
         print((#file as NSString).lastPathComponent, " # deviceToken = ", deviceTokenString)
         PreferenceUtil.instance.put(key: PreferenceUtil.DEVICE_ID, value: deviceTokenString)
@@ -155,51 +153,52 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let messageID = userInfo[gcmMessageIDKey] {
             print("Message ID: \(messageID)")
         }
-        
-        // Print full message.
         print(userInfo)
         
         UIApplication.shared.applicationIconBadgeNumber = 0
-        if let senzConnect = userInfo["senz_connect"] as? NSString {
-            print((#file as NSString).lastPathComponent, " # senzConnect = ", senzConnect)
+        if let senz = userInfo["gcm.notification.senz"] as? NSString {
+            print((#file as NSString).lastPathComponent, " # senzConnect = ", senz)
             
-            let z = SenzUtil.instance.parse(msg: senzConnect as String)
-            let senzUser = User(id: 1)
-            let phoneNumber:String = z.attr["#from"]!
-            senzUser.zid = phoneNumber
-            senzUser.phone = phoneNumber
-            SenzDb.instance.createUser(user: senzUser)
-            
-            let contactsViewController = ContactsViewController(nibName: "ContactsViewController", bundle: nil)
-            navController.pushViewController(contactsViewController, animated: true)
-        }
-        else if let senzIgift = userInfo["senz_igift"] as? NSString {
-            print((#file as NSString).lastPathComponent, " # senzIgift = ", senzIgift)
-            
-            let z = SenzUtil.instance.parse(msg: senzIgift as String)
-            let senzGift = Igift(id: 1)
-            senzGift.uid = z.attr["#uid"]!
-            senzGift.user = z.attr["#from"]!
-            senzGift.amount = z.attr["#amnt"]!
-            senzGift.cid = z.attr["#id"]!
-            senzGift.state = "TRANSFER"
-            senzGift.timestamp = TimeUtil.sharedInstance.timestamp()
-            senzGift.isMyIgift = false
-            senzGift.isViewed = false
-            SenzDb.instance.createIgift(igift: senzGift)
-            
-            let igiftsReceivedViewController = IGiftsReceivedViewController(nibName: "IGiftsReceivedViewController", bundle: nil)
-            navController.pushViewController(igiftsReceivedViewController, animated: true)
-        }
-        else if let senzConnect = userInfo["gcm.notification.senz"] as? NSString {
-            print((#file as NSString).lastPathComponent, " # senzConnect = ", senzConnect)
-            
+            let z = SenzUtil.instance.parse(msg: senz as String)
+            if (z.attr["#amnt"] != nil) {
+                // this means new iGift
+                let senzGift = Igift(id: 1)
+                senzGift.uid = z.attr["#uid"]!
+                senzGift.user = z.attr["#from"]!
+                senzGift.amount = z.attr["#amnt"]!
+                senzGift.cid = z.attr["#id"]!
+                senzGift.state = "TRANSFER"
+                senzGift.timestamp = TimeUtil.sharedInstance.timestamp()
+                senzGift.isMyIgift = false
+                senzGift.isViewed = false
+                SenzDb.instance.createIgift(igift: senzGift)
+                
+                let igiftsReceivedViewController = IGiftsReceivedViewController(nibName: "IGiftsReceivedViewController", bundle: nil)
+                navController.pushViewController(igiftsReceivedViewController, animated: true)
+            } else {
+                // this means new request
+                let z = SenzUtil.instance.parse(msg: senz as String)
+                let phoneNumber:String = z.attr["#from"]!
+                
+                if (SenzDb.instance.getUser(phn: phoneNumber) != nil) {
+                    // activate user
+                    SenzDb.instance.markAsActive(id: phoneNumber)
+                } else {
+                    // create user
+                    let senzUser = User(id: 1)
+                    senzUser.zid = phoneNumber
+                    senzUser.phone = phoneNumber
+                    SenzDb.instance.createUser(user: senzUser)
+                }
+                
+                let contactsViewController = ContactsViewController(nibName: "ContactsViewController", bundle: nil)
+                navController.pushViewController(contactsViewController, animated: true)
+            }
         }
     }
 }
 
 extension AppDelegate : UNUserNotificationCenterDelegate {
-    
     // Receive displayed notifications for iOS 10 devices.
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 willPresent notification: UNNotification,
@@ -212,8 +211,6 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         if let messageID = userInfo[gcmMessageIDKey] {
             print("Message ID 1: \(messageID)")
         }
-        
-        // Print full message.
         print(userInfo)
         
         // Change this to your preferred presentation option
@@ -246,6 +243,7 @@ extension AppDelegate : MessagingDelegate {
         // TODO: If necessary send token to application server.
         // Note: This callback is fired at each app startup and whenever a new token is generated.
     }
+    
     // [END refresh_token]
     // [START ios_10_data_message]
     // Receive data messages on iOS 10+ directly from FCM (bypassing APNs) when the app is in the foreground.

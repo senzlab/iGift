@@ -68,4 +68,6 @@ class RedeemViewController: KeyboardScrollableViewController {
             ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to redeem iGift")
         }
     }
+    
+    
 }

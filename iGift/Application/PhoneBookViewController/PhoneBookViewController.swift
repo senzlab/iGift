@@ -137,28 +137,32 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
     }
     
     func addContact(contact: SenzContact) {
-        let alert = UIAlertController(title: "Confirm", message: "Would like to send iGift request to " + contact.name + "?", preferredStyle: UIAlertControllerStyle.alert)
-        
-        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action: UIAlertAction!) in
-            // todo check user already exists
+        let phone = contact.phone.replacingOccurrences(of: " ", with: "")
+        if (SenzDb.instance.getUser(phn: phone) != nil) {
+            // user exists
+            ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "User already added as a iGift contact")
+        } else {
+            let alert = UIAlertController(title: "Confirm", message: "Would like to send iGift request to " + contact.name + "?", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action: UIAlertAction!) in
+                // todo check user already exists
+                
+                // send request
+                let z = Httpz.instance.pushSenz(senz: SenzUtil.instance.connectSenz(to: phone))
+                if (z == nil) {
+                    ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to send request")
+                } else {
+                    let senzUser = User(id: 1)
+                    senzUser.zid = phone
+                    senzUser.phone = phone
+                    SenzDb.instance.createUser(user: senzUser)
+                }
+            }))
             
-            // send request
-            let phone = contact.phone.replacingOccurrences(of: " ", with: "")
-            let z = Httpz.instance.pushSenz(senz: SenzUtil.instance.connectSenz(to: phone))
-            if (z == nil) {
-                ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to send request")
-            } else {
-                let senzUser = User(id: 1)
-                senzUser.zid = phone
-                senzUser.phone = phone
-                SenzDb.instance.createUser(user: senzUser)
-            }
-        }))
-        
-        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: { (action: UIAlertAction!) in
-            // do nothing
-        }))
-        
-        present(alert, animated: true, completion: nil)
+            alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: { (action: UIAlertAction!) in
+                // do nothing
+            }))
+            
+            present(alert, animated: true, completion: nil)
+        }
     }
 }
