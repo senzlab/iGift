@@ -95,7 +95,7 @@ class RedeemViewController: KeyboardScrollableViewController {
                 if (SenzUtil.instance.verifyStatus(z: z!)) {
                     // success redeem
                     // update database
-                    SenzDb.instance.markAsRedeemed(id: self.iGift!.uid, acc: acc)
+                    _ = SenzDb.instance.markAsRedeemed(id: self.iGift!.uid, acc: acc)
                     DispatchQueue.main.async {
                         SenzProgressView.shared.hideProgressView()
                         self.navigationController?.popToRootViewController(animated: true)

@@ -171,7 +171,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 senzGift.timestamp = TimeUtil.sharedInstance.timestamp()
                 senzGift.isMyIgift = false
                 senzGift.isViewed = false
-                SenzDb.instance.createIgift(igift: senzGift)
+                _ = SenzDb.instance.createIgift(igift: senzGift)
                 
                 let igiftsReceivedViewController = IGiftsReceivedViewController(nibName: "IGiftsReceivedViewController", bundle: nil)
                 navController.pushViewController(igiftsReceivedViewController, animated: true)
@@ -182,13 +182,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
                 if (SenzDb.instance.getUser(phn: phoneNumber) != nil) {
                     // activate user
-                    SenzDb.instance.markAsActive(id: phoneNumber)
+                    _ = SenzDb.instance.markAsActive(id: phoneNumber)
                 } else {
                     // create user
                     let senzUser = User(id: 1)
                     senzUser.zid = phoneNumber
                     senzUser.phone = phoneNumber
-                    SenzDb.instance.createUser(user: senzUser)
+                    _ = SenzDb.instance.createUser(user: senzUser)
                 }
                 
                 let contactsViewController = ContactsViewController(nibName: "ContactsViewController", bundle: nil)

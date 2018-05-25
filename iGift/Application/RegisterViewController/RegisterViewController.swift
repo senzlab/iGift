@@ -50,7 +50,7 @@ class RegisterViewController : KeyboardScrollableViewController {
         }
 
         // gengerate key pair
-        CryptoUtil.instance.initKeys()
+        _ = CryptoUtil.instance.initKeys()
         
         // validate inputs
         // ui fields

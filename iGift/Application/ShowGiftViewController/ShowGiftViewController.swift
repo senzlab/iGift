@@ -90,10 +90,10 @@ class ShowGiftViewController: BaseViewController {
                 // save image
                 let rSenz = SenzUtil.instance.parse(msg: z!)
                 let dataDecoded : Data = Data(base64Encoded: rSenz.attr["#blob"]!)!
-                createFileInPath(relativeFilePath: Constants.IMAGES_DIR.rawValue, fileName: self.iGift!.uid + ".jpeg", imageData: dataDecoded)
+                _ = createFileInPath(relativeFilePath: Constants.IMAGES_DIR.rawValue, fileName: self.iGift!.uid + ".jpeg", imageData: dataDecoded)
                 
                 // mark as viewed
-                SenzDb.instance.markAsViewed(id: self.iGift!.uid)
+                _ = SenzDb.instance.markAsViewed(id: self.iGift!.uid)
                 
                 DispatchQueue.main.async {
                     let decodedimage = UIImage(data: dataDecoded)
