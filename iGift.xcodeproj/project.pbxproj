@@ -25,6 +25,8 @@
 		0F87F3CA20A9432500C33259 /* FileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F87F3C920A9432500C33259 /* FileModel.swift */; };
 		0F9138F320A34E400011DF2C /* DesignIGiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9138F120A34E400011DF2C /* DesignIGiftViewController.swift */; };
 		0F9138F420A34E400011DF2C /* DesignIGiftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F9138F220A34E400011DF2C /* DesignIGiftViewController.xib */; };
+		0FC681E720B867CB00DB6BAB /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC681E520B867CB00DB6BAB /* ResetPasswordViewController.swift */; };
+		0FC681E820B867CB00DB6BAB /* ResetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FC681E620B867CB00DB6BAB /* ResetPasswordViewController.xib */; };
 		0FC94F1020A5F45E00CDC810 /* DeviceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC94F0F20A5F45E00CDC810 /* DeviceModel.swift */; };
 		0FC94F1420A6042700CDC810 /* AddArtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC94F1220A6042700CDC810 /* AddArtViewController.swift */; };
 		0FC94F1520A6042700CDC810 /* AddArtViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FC94F1320A6042700CDC810 /* AddArtViewController.xib */; };
@@ -141,6 +143,8 @@
 		0F87F3C920A9432500C33259 /* FileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileModel.swift; sourceTree = "<group>"; };
 		0F9138F120A34E400011DF2C /* DesignIGiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignIGiftViewController.swift; sourceTree = "<group>"; };
 		0F9138F220A34E400011DF2C /* DesignIGiftViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DesignIGiftViewController.xib; sourceTree = "<group>"; };
+		0FC681E520B867CB00DB6BAB /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		0FC681E620B867CB00DB6BAB /* ResetPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResetPasswordViewController.xib; sourceTree = "<group>"; };
 		0FC94F0F20A5F45E00CDC810 /* DeviceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceModel.swift; sourceTree = "<group>"; };
 		0FC94F1220A6042700CDC810 /* AddArtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddArtViewController.swift; sourceTree = "<group>"; };
 		0FC94F1320A6042700CDC810 /* AddArtViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddArtViewController.xib; sourceTree = "<group>"; };
@@ -296,6 +300,15 @@
 			path = DesignIGiftViewController;
 			sourceTree = "<group>";
 		};
+		0FC681E420B867A300DB6BAB /* ResetPasswordViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0FC681E520B867CB00DB6BAB /* ResetPasswordViewController.swift */,
+				0FC681E620B867CB00DB6BAB /* ResetPasswordViewController.xib */,
+			);
+			path = ResetPasswordViewController;
+			sourceTree = "<group>";
+		};
 		0FC94F0E20A5F42000CDC810 /* GeneralModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -425,6 +438,7 @@
 		4021E70020A1CD0000B3DEB7 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				0FC681E420B867A300DB6BAB /* ResetPasswordViewController */,
 				0FF81CCD20B159E200956928 /* RedeemViewController */,
 				0FFFDDD120AC3D6100F044DD /* ChangePasswordViewController */,
 				0FFFDDC620ABF87700F044DD /* ShowGiftViewController */,
@@ -856,6 +870,7 @@
 				4021E72420A21DE100B3DEB7 /* SettingsViewController.xib in Resources */,
 				408714E620A31214007B3E4C /* AddAccountInfoViewController.xib in Resources */,
 				7E3422C120B31B1000C8DEAC /* BankListViewController.xib in Resources */,
+				0FC681E820B867CB00DB6BAB /* ResetPasswordViewController.xib in Resources */,
 				4021E73420A231E100B3DEB7 /* PhoneBookViewController.xib in Resources */,
 				4021E6EC20A1CA1600B3DEB7 /* Main.storyboard in Resources */,
 				404B1A2620A84B8000E06B71 /* IGiftsSentViewController.xib in Resources */,
@@ -1016,6 +1031,7 @@
 				4087152620A4ED86007B3E4C /* RegisterViewController.swift in Sources */,
 				0F2EE36C20A5A6BE003C9AEA /* GiftCard.swift in Sources */,
 				C0E2163320A6EAE5002FF833 /* Senz.swift in Sources */,
+				0FC681E720B867CB00DB6BAB /* ResetPasswordViewController.swift in Sources */,
 				7E3422BD20B31B0300C8DEAC /* CustomBankCell.swift in Sources */,
 				C0C58F6F20A9567700DD14BB /* Httpz.swift in Sources */,
 				408714E820A31458007B3E4C /* AddAccountInfoViewController.swift in Sources */,

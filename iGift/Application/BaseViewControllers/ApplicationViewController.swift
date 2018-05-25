@@ -69,6 +69,8 @@ class ApplicationViewController : UIViewController {
             return ChangePasswordViewController(nibName: "ChangePasswordViewController", bundle: nil)
         case "TermsOfUseViewController":
             return TermsOfUseViewController(nibName: "TermsOfUseViewController", bundle: nil)
+        case "ResetPasswordViewController":
+            return ResetPasswordViewController(nibName: "ResetPasswordViewController", bundle: nil)
         default:
             return nil
         }

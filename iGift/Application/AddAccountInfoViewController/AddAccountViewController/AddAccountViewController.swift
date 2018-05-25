@@ -16,7 +16,6 @@ class AddAccountViewController : KeyboardScrollableViewController {
     @IBOutlet weak var txtFieldAccount: UITextField!
     @IBOutlet weak var txtFieldConfirmAccount: UITextField!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUi()
