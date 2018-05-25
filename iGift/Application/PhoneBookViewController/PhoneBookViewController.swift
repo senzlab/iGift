@@ -88,8 +88,16 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let contact = filteredArray[indexPath.row]
-        addContact(contact: contact)
+        
+        var contact:SenzContact?
+        if filteredArray.count > 0 {
+            contact = filteredArray[indexPath.row]
+        }
+        else {
+            contact = dataArray[indexPath.row]
+        }
+
+        addContact(contact: contact!)
     }
 
     func configureCustomSearchController() {
