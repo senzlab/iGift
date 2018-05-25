@@ -43,9 +43,10 @@ class ChangePasswordViewController : KeyboardScrollableViewController {
         let pswNew = txtFieldNewPw.text!.replacingOccurrences(of: " ", with: "")
         let pswCon = txtFieldNewConfirmPw.text!.replacingOccurrences(of: " ", with: "")
         
-        if(ViewControllerUtil.validatePassword(psw: psw, pswNew: pswNew, pswCon: pswCon)) {
+        if(ViewControllerUtil.validateChangePassword(psw: psw, pswNew: pswNew, pswCon: pswCon)) {
             // save current password
             PreferenceUtil.instance.put(key: PreferenceUtil.PASSWORD, value: pswNew)
+            self.loadView("HomeViewController")
         } else {
             // error
             ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to chnage password")
