@@ -17,6 +17,7 @@ class BankListViewController : BaseViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var tblView: UITableView!
     @IBOutlet weak var searchPlaceHolder: UIView!
 
+    var iGift: Igift? = nil
     var dataArray = [Bank]()
     var filteredArray = [Bank]()
     var shouldShowSearchResults = false
@@ -87,12 +88,15 @@ class BankListViewController : BaseViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let object = dataArray[indexPath.row]
-        //Cell select functionality
+        let bank = dataArray[indexPath.row] 
+        let redeemViewController = RedeemViewController(nibName: "RedeemViewController", bundle: nil)
+        redeemViewController.iGift = iGift
+        redeemViewController.bank = bank
+        self.navigationController?.pushViewController(redeemViewController, animated: true)
     }
 
     func configureCustomSearchController() {
-        self.searchBar = CustomSearchBar(searchBarFrame: CGRect(x: 0.0,y: 0.0, width: tblView.frame.size.width, height: 56.0), searchBarFont: UIFont(name: Constants.MAIN_FONT_FAMILY.rawValue, size: 22.0)!, searchBarTextColor: UIColor.fromHex(HexColors.PRIMARY_COLOR.rawValue), searchBarTintColor: UIColor.fromHex(HexColors.WHITE_COLOR.rawValue), placeholderText: "Search Contacts")
+        self.searchBar = CustomSearchBar(searchBarFrame: CGRect(x: 0.0,y: 0.0, width: tblView.frame.size.width, height: 56.0), searchBarFont: UIFont(name: Constants.MAIN_FONT_FAMILY.rawValue, size: 22.0)!, searchBarTextColor: UIColor.fromHex(HexColors.PRIMARY_COLOR.rawValue), searchBarTintColor: UIColor.fromHex(HexColors.WHITE_COLOR.rawValue), placeholderText: "Search Bank")
         self.searchBar.delegate = self
         self.searchPlaceHolder.addSubview(searchBar)
     }

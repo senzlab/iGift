@@ -40,6 +40,10 @@ class ShowGiftViewController: BaseViewController {
         redeemViewController.iGift = iGift
         redeemViewController.bank = Bank(code: "7278", name: "Sampath bank")
         self.navigationController?.pushViewController(redeemViewController, animated: true)
+        
+        //let bankListViewController = BankListViewController(nibName: "BankListViewController", bundle: nil)
+        //bankListViewController.iGift = iGift
+        //self.navigationController?.pushViewController(bankListViewController, animated: true)
     }
     
     @IBAction func backAction(_ sender: UIButton) {
