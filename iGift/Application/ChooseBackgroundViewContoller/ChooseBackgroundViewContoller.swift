@@ -52,7 +52,7 @@ class ChooseBackgroundViewContoller: BaseViewController, UICollectionViewDataSou
         
         GiftCard.shared.backgroundColor = ChooseBackgroundViewModel().colourForTheCell(indexpathNumber: indexPath.row)
         GiftCard.shared.capturedImage = nil
-        self.navigationController?.popViewController(animated: true)
+        self.navigationController?.popViewController(animated: false)
     }
     
     //    MARK: UICollectionViewDelegateFlowLayout

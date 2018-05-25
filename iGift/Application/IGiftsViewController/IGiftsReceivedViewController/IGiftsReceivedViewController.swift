@@ -18,11 +18,16 @@ class IGiftsReceivedViewController : BaseViewController, UITableViewDelegate, UI
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        dataArray = SenzDb.instance.getIgifts(myGifts: false)
     }
 
     override func viewDidAppear(_ animated: Bool) {
         //self.tabBarController?.navigationItem.title = "Received iGifts"
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(false)
+        dataArray = SenzDb.instance.getIgifts(myGifts: false)
+        reloadTable()
     }
 
     func reloadTable() {
@@ -71,7 +76,7 @@ class IGiftsReceivedViewController : BaseViewController, UITableViewDelegate, UI
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let showGiftViewController = ShowGiftViewController(nibName: "ShowGiftViewController", bundle: nil)
         showGiftViewController.iGift = dataArray[indexPath.row]
-        self.navigationController?.pushViewController(showGiftViewController, animated: true)
+        self.navigationController?.pushViewController(showGiftViewController, animated: false)
     }
 }
 

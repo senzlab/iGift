@@ -173,8 +173,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 senzGift.isViewed = false
                 _ = SenzDb.instance.createIgift(igift: senzGift)
                 
-                let igiftsReceivedViewController = IGiftsReceivedViewController(nibName: "IGiftsReceivedViewController", bundle: nil)
-                navController.pushViewController(igiftsReceivedViewController, animated: true)
+                let igiftsReceivedViewController = IGiftsViewController(nibName: "IGiftsViewController", bundle: nil)
+                navController.pushViewController(igiftsReceivedViewController, animated: false)
             } else {
                 // this means new request
                 let z = SenzUtil.instance.parse(msg: senz as String)
@@ -192,7 +192,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
                 
                 let contactsViewController = ContactsViewController(nibName: "ContactsViewController", bundle: nil)
-                navController.pushViewController(contactsViewController, animated: true)
+                navController.pushViewController(contactsViewController, animated: false)
             }
         }
     }

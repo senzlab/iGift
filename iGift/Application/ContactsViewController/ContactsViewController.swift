@@ -19,10 +19,17 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
     var forNewIgift: Bool = false
     
     @IBOutlet weak var contactTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUi()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
         dataArray = SenzDb.instance.getUsers(active: forNewIgift)
+        contactTableView.reloadData()
     }
 
     func setupUi() {
@@ -86,7 +93,7 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
                 // goto new igift
                 let designIGiftViewController = DesignIGiftViewController(nibName: "DesignIGiftViewController", bundle: nil)
                 designIGiftViewController.user = user
-                self.navigationController?.pushViewController(designIGiftViewController, animated: true)
+                self.navigationController?.pushViewController(designIGiftViewController, animated: false)
             }
         } else {
             // send request
@@ -113,12 +120,13 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
                         ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to confirm request")
                     }
                 } else {
+
                     if (SenzUtil.instance.verifyStatus(z: z!)) {
                         // done, exit from here
                         SenzDb.instance.markAsActive(id: user.zid)
                         DispatchQueue.main.async {
                             SenzProgressView.shared.hideProgressView()
-                            self.navigationController?.popToRootViewController(animated: true)
+                            self.navigationController?.popViewController(animated: false)
                         }
                         
                         // todo reload list

@@ -34,7 +34,7 @@ class CapturePhotoViewModel: NSObject {
                 let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(imageSampleBuffer as! CMSampleBuffer)
                 let image: UIImage = UIImage(data: imageData!)!
                 GiftCard.shared.capturedImage = image
-                viewController.navigationController?.popViewController(animated: true)
+                viewController.navigationController?.popViewController(animated: false)
             }
         })
     }

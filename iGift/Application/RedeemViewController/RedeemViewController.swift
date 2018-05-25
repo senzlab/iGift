@@ -98,7 +98,7 @@ class RedeemViewController: KeyboardScrollableViewController {
                     _ = SenzDb.instance.markAsRedeemed(id: self.iGift!.uid, acc: acc)
                     DispatchQueue.main.async {
                         SenzProgressView.shared.hideProgressView()
-                        self.navigationController?.popToRootViewController(animated: true)
+                        self.loadView("HomeViewController")
                     }
                 } else {
                     DispatchQueue.main.async {

@@ -92,7 +92,7 @@ class BankListViewController : BaseViewController, UITableViewDelegate, UITableV
         let redeemViewController = RedeemViewController(nibName: "RedeemViewController", bundle: nil)
         redeemViewController.iGift = iGift
         redeemViewController.bank = bank
-        self.navigationController?.pushViewController(redeemViewController, animated: true)
+        self.navigationController?.pushViewController(redeemViewController, animated: false)
     }
 
     func configureCustomSearchController() {
