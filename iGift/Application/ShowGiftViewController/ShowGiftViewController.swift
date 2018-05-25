@@ -47,7 +47,7 @@ class ShowGiftViewController: BaseViewController {
     }
     
     @IBAction func backAction(_ sender: UIButton) {
-        goBack(animated: true)
+        goBack(animated: false)
     }
     
     //    MARK: Supportive function

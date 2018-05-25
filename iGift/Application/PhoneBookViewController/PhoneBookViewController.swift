@@ -41,7 +41,7 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
                 self.reloadTable()
             } else {
                 print("PhoneBook Permission Denied by user!!")
-                self.goBack(animated: true)
+                self.goBack(animated: false)
             }
         })
     }

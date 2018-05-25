@@ -61,7 +61,7 @@ class AddArtViewController: BaseViewController, UICollectionViewDataSource, UICo
         
         NotificationCenter.default.post(name: .tappedOnArtItem, object: nil, userInfo: [ stickerNameNotifiKey: AddArtViewModel().imageNameForTheCell(indexpathNumber: indexPath.row)])
         
-        goBack(animated: true)
+        goBack(animated: false)
 //        self.navigationController?.popViewController(animated: false)
     }
     
