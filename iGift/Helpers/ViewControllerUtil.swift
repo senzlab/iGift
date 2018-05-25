@@ -83,7 +83,7 @@ class ViewControllerUtil: NSObject {
             return false
         }
         
-        if Int(amount)! < 0 {
+        if Int(amount)! < 100 {
             return false
         }
         
