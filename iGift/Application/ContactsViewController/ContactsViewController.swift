@@ -100,6 +100,7 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
         
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action: UIAlertAction!) in
             // send request
+            SenzProgressView.shared.showProgressView((self.navigationController?.view)!)
             DispatchQueue.global(qos: .userInitiated).async {
                 let senz = SenzUtil.instance.connectSenz(to: user.phone)
                 let z = Httpz.instance.pushSenz(senz: senz)
@@ -107,15 +108,18 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
                 if z == nil {
                     // fail
                     DispatchQueue.main.async {
+                        SenzProgressView.shared.hideProgressView()
                         ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to confirm request")
                     }
                 } else {
                     // done, exit from her
                     SenzDb.instance.markAsActive(id: user.zid)
-                    
+            
                     DispatchQueue.main.async {
+                        SenzProgressView.shared.hideProgressView()
                         self.navigationController?.popToRootViewController(animated: true)
                     }
+                    
                     // todo reload list
                 }
             }

@@ -74,6 +74,7 @@ class RegisterViewController : KeyboardScrollableViewController {
     
     func doReg(phone: String, password: String) {
         // reg
+        SenzProgressView.shared.showProgressView((self.navigationController?.view)!)
         DispatchQueue.global(qos: .userInitiated).async {
             let uid = SenzUtil.instance.uid(zAddress: phone)
             let regSenz = SenzUtil.instance.regSenz(uid: uid, zAddress: phone)
@@ -81,6 +82,7 @@ class RegisterViewController : KeyboardScrollableViewController {
             if z == nil {
                 // reg fail
                 DispatchQueue.main.async {
+                    SenzProgressView.shared.hideProgressView()
                     ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Regaistration fail")
                 }
             } else {
@@ -89,6 +91,7 @@ class RegisterViewController : KeyboardScrollableViewController {
                 PreferenceUtil.instance.put(key: PreferenceUtil.PASSWORD, value: password)
                 
                 DispatchQueue.main.async {
+                    SenzProgressView.shared.hideProgressView()
                     let view = SecurityQuestionsViewController(nibName: "SecurityQuestionsViewController", bundle: nil)
                     view.isRegistrationProcess = true
                     self.navigationController?.pushViewController(view, animated: true)

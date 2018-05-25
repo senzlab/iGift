@@ -144,11 +144,13 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
         } else {
             let alert = UIAlertController(title: "Confirm", message: "Would like to send iGift request to " + contact.name + "?", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action: UIAlertAction!) in
+                SenzProgressView.shared.showProgressView((self.navigationController?.view)!)
                 DispatchQueue.global(qos: .userInitiated).async {
                     let z = Httpz.instance.pushSenz(senz: SenzUtil.instance.connectSenz(to: phone))
                     // todo validate z
                     if (z == nil) {
                         DispatchQueue.main.async {
+                            SenzProgressView.shared.hideProgressView()
                             ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to send request")
                         }
                     } else {
@@ -161,6 +163,7 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
                         
                         // exit
                         DispatchQueue.main.async {
+                            SenzProgressView.shared.hideProgressView()
                             self.navigationController?.popViewController(animated: true)
                         }
                     }
