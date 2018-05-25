@@ -88,7 +88,7 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let contact = dataArray[indexPath.row]
+        let contact = filteredArray[indexPath.row]
         addContact(contact: contact)
     }
 

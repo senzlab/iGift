@@ -11,7 +11,7 @@ import UIKit
 
 class SettingsViewController : BaseViewController, UITableViewDelegate, UITableViewDataSource {
 
-    let NUMBER_OF_ROWS = 5
+    let NUMBER_OF_ROWS = 4
     let HEIGHT_OF_ROW = 85
 
     override func viewDidLoad() {
@@ -89,10 +89,10 @@ class SettingsViewController : BaseViewController, UITableViewDelegate, UITableV
             cell?.lblTitle?.text = "Terms of use"
             cell?.btnSetting?.setTitle("VIEW", for: UIControlState.normal)
             break
-        case 4:
-            cell?.lblTitle?.text = "About iGift"
-            cell?.btnSetting?.setTitle("VIEW", for: UIControlState.normal)
-            break
+//        case 4:
+//            cell?.lblTitle?.text = "About iGift"
+//            cell?.btnSetting?.setTitle("VIEW", for: UIControlState.normal)
+//            break
         default:
              print("NO AVAILABLE CELL FOR INDEX - \(indexPath.row)!!")
         }
@@ -137,10 +137,10 @@ class SettingsViewController : BaseViewController, UITableViewDelegate, UITableV
             // View Terms Btn
             self.loadView("TermsOfUseViewController")
         break
-        case 4:
-            print("Case 4")
-            // View About Btn
-            break
+//        case 4:
+//            print("Case 4")
+//            // View About Btn
+//            break
         default:
             print("UnIdentified Button Clicked")
         }
@@ -160,9 +160,9 @@ class SettingsViewController : BaseViewController, UITableViewDelegate, UITableV
         case 3:
             print("Case 3")
             break
-        case 4:
-            print("Case 4")
-            break
+//        case 4:
+//            print("Case 4")
+//            break
         default:
             print("UnIdentified Button Clicked")
         }
