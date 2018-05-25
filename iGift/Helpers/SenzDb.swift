@@ -145,7 +145,7 @@ class SenzDb {
     }
     
     func getUser(phn: String) -> User! {
-        let q = users.filter(zid == phn)
+        let q = users.filter(zid == phn).limit(1)
         do {
             for i in try db!.prepare(q) {
                 let u = User(id: i[_uid])
