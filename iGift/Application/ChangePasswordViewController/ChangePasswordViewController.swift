@@ -39,6 +39,16 @@ class ChangePasswordViewController : KeyboardScrollableViewController {
     }
 
     @IBAction func onAddAccountClicked(_ sender: Any) {
-        //button action
+        let psw = txtcurrentPassword.text!.replacingOccurrences(of: " ", with: "")
+        let pswNew = txtFieldNewPw.text!.replacingOccurrences(of: " ", with: "")
+        let pswCon = txtFieldNewConfirmPw.text!.replacingOccurrences(of: " ", with: "")
+        
+        if(ViewControllerUtil.validatePassword(psw: psw, pswNew: pswNew, pswCon: pswCon)) {
+            // save current password
+            PreferenceUtil.instance.put(key: PreferenceUtil.PASSWORD, value: pswNew)
+        } else {
+            // error
+            ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to chnage password")
+        }
     }
 }

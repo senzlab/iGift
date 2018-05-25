@@ -56,7 +56,13 @@ class SettingsViewController : BaseViewController, UITableViewDelegate, UITableV
             }
             
             cell?.lblTitle?.text = labelTitle
-            cell?.btnSetting?.setTitle("ADD", for: UIControlState.normal)
+            if(PreferenceUtil.instance.get(key: PreferenceUtil.ACCOUNT_STATUS) == "PENDING") {
+                cell?.btnSetting?.setTitle("VERIFY", for: UIControlState.normal)
+            } else if(PreferenceUtil.instance.get(key: PreferenceUtil.ACCOUNT_STATUS) == "VERIFIED") {
+                cell?.btnSetting?.setTitle("CHANGE", for: UIControlState.normal)
+            } else {
+                cell?.btnSetting?.setTitle("ADD", for: UIControlState.normal)
+            }
             break
         case 1:
             
@@ -111,7 +117,11 @@ class SettingsViewController : BaseViewController, UITableViewDelegate, UITableV
     @objc func buttonClicked(_ sender: CustomButton) {
         switch sender.tag {
         case 0:
-            self.loadView("AddAccountInfoViewController")
+            if(PreferenceUtil.instance.get(key: PreferenceUtil.ACCOUNT_STATUS) == "PENDING") {
+                self.loadView("ConfirmAccountViewController")
+            } else {
+                self.loadView("AddAccountInfoViewController")
+            }
         break
         case 1:
             print("Case 1")

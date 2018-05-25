@@ -70,6 +70,11 @@ class ViewControllerUtil: NSObject {
             return false
         }
         
+        if(acc.count != 12) {
+            // account should be 12 lenght
+            return false
+        }
+        
         return true
     }
     
@@ -89,10 +94,6 @@ class ViewControllerUtil: NSObject {
         return true
     }
     
-    func callDelegate(title: String) {
-        delegate?.executeTaskForAction(actionTitle : title)
-    }
-    
     class func validateSalt(salt: String) -> Bool {
         if(salt.isEmpty) {
             return false
@@ -100,4 +101,25 @@ class ViewControllerUtil: NSObject {
         
         return true
     }
+    
+    class func validatePassword(psw: String, pswNew: String, pswCon: String) -> Bool {
+        if (psw.isEmpty || pswCon.isEmpty || pswNew.isEmpty) {
+            return false
+        }
+        
+        if(psw != PreferenceUtil.instance.get(key: PreferenceUtil.PASSWORD)) {
+            return false
+        }
+        
+        if (pswNew != pswCon) {
+            return false
+        }
+        
+        return true
+    }
+    
+    func callDelegate(title: String) {
+        delegate?.executeTaskForAction(actionTitle : title)
+    }
+
 }
