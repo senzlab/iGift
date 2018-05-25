@@ -48,6 +48,23 @@ class SecurityAnswersViewController : KeyboardScrollableViewController {
     func validateQuestions(q1: String, q2: String, q3: String) {
         if (resetPassword) {
             // need to answer two question
+            var match = 0
+            if (q1 == PreferenceUtil.instance.get(key: PreferenceUtil.QUESTION1)) {
+                match = match + 1
+            }
+            if (q2 == PreferenceUtil.instance.get(key: PreferenceUtil.QUESTION2)) {
+                match = match + 1
+            }
+            if (q3 == PreferenceUtil.instance.get(key: PreferenceUtil.QUESTION3)) {
+                match = match + 1
+            }
+            
+            if(match >= 2) {
+                // todo navigate password reset
+                
+            } else {
+                ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "You need to give correct answers for two questions")
+            }
         } else {
             // need to asnwer all questions
             if (ViewControllerUtil.validateQuestions(q1: q1, q2: q2, q3: q3)) {
@@ -57,7 +74,7 @@ class SecurityAnswersViewController : KeyboardScrollableViewController {
                 
                 self.loadView("HomeViewController")
             } else {
-                ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "You need to aswer all three questions")
+                ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "You need to answer all three questions")
             }
         }
     }

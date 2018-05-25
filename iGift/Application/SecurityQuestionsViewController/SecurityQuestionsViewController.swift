@@ -23,14 +23,12 @@ class SecurityQuestionsViewController : BaseViewController {
     }
 
     func setupUi() {
-        
         if isRegistrationProcess {
             self.title = "Security questions"
             cancelButton.isHidden = true
             cancelBtnHeightConstraint.constant = 0
             self.navigationItem.setHidesBackButton(true, animated: false)
-        }
-        else {
+        } else {
             self.title = "Forgot password"
             topLabel.text = "Did you forget your iGift password"
             bottomLabel.text = "You can reset your password by answering two sequrity questions"
@@ -40,7 +38,9 @@ class SecurityQuestionsViewController : BaseViewController {
     }
 
     @IBAction func onNextClicked(_ sender: Any) {
-        self.loadView("SecurityAnswersViewController")
+        let viewController = SecurityAnswersViewController(nibName: "SecurityAnswersViewController", bundle: nil)
+        viewController.resetPassword = true
+        self.navigationController?.pushViewController(viewController, animated: false)
     }
 
     @IBAction func onCancelClicked(_ sender: Any) {
