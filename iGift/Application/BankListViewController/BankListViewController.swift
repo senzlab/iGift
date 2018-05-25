@@ -36,14 +36,32 @@ class BankListViewController : BaseViewController, UITableViewDelegate, UITableV
     }
 
     func loadBanks() {
-        dataArray = [Bank(code: "001", name: "Com bank"),
-                     Bank(code: "002", name: "Sam bank"),
-                     Bank(code: "003", name: "ADSL bank"),
-                     Bank(code: "004", name: "CAG bank"),
-                     Bank(code: "005", name: "For bank"),
-                     Bank(code: "006", name: "Net bank"),
-                     Bank(code: "007", name: "ASIA bank"),
-                     Bank(code: "008", name: "BOC bank")]
+        dataArray = [
+            Bank(code: "7010", name: "Bank of Ceylon"),
+            Bank(code: "7038", name: "Standard Chartered Bank"),
+            Bank(code: "7047", name: "Citi Bank"),
+            Bank(code: "7056", name: "Commercial Bank"),
+            Bank(code: "7074", name: "Habib Bank"),
+            Bank(code: "7083", name: "HNB - Hatton National Bank"),
+            Bank(code: "7302", name: "HSBC - Hongkong Shanghai Bank"),
+            Bank(code: "7108", name: "Indea Bank"),
+            Bank(code: "7384", name: "ICICI Bank Ltd"),
+            Bank(code: "7117", name: "Indian Overseas Bank"),
+            Bank(code: "7135", name: "Peoples Bank"),
+            Bank(code: "7144", name: "State Bank of India"),
+            Bank(code: "7162", name: "NTB - Nations Trust Bank"),
+            Bank(code: "7205", name: "Deutsche Bank"),
+            Bank(code: "7214", name: "NDB - National Development Bank"),
+            Bank(code: "7269", name: "MCB Bank"),
+            Bank(code: "7278", name: "Sampath Bank"),
+            Bank(code: "7287", name: "Seylan Bank"),
+            Bank(code: "7296", name: "Public Bank"),
+            Bank(code: "7302", name: "Union Bank of Colombo"),
+            Bank(code: "7311", name: "Pan Asia Banking Corporation"),
+            Bank(code: "7384", name: "ICICI Bank"),
+            Bank(code: "7454", name: "DFCC Bank"),
+            Bank(code: "7463", name: "Amana Bank")
+        ]
     }
 
     func reloadTable() {

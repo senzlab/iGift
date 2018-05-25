@@ -30,20 +30,19 @@ class ShowGiftViewController: BaseViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
-        
         self.navigationController?.navigationBar.isHidden = false
     }
     
     //    MARK: Action functions
     @IBAction func redeemAction(_ sender: UIButton) {
-        let redeemViewController = RedeemViewController(nibName: "RedeemViewController", bundle: nil)
-        redeemViewController.iGift = iGift
-        redeemViewController.bank = Bank(code: "7278", name: "Sampath bank")
-        self.navigationController?.pushViewController(redeemViewController, animated: false)
+        //let redeemViewController = RedeemViewController(nibName: "RedeemViewController", bundle: nil)
+        //redeemViewController.iGift = iGift
+        //redeemViewController.bank = Bank(code: "7278", name: "Sampath bank")
+        //self.navigationController?.pushViewController(redeemViewController, animated: false)
         
-        //let bankListViewController = BankListViewController(nibName: "BankListViewController", bundle: nil)
-        //bankListViewController.iGift = iGift
-        //self.navigationController?.pushViewController(bankListViewController, animated: false)
+        let bankListViewController = BankListViewController(nibName: "BankListViewController", bundle: nil)
+        bankListViewController.iGift = iGift
+        self.navigationController?.pushViewController(bankListViewController, animated: false)
     }
     
     @IBAction func backAction(_ sender: UIButton) {
