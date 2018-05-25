@@ -147,6 +147,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print((#file as NSString).lastPathComponent, " # Reason to fail register remote notification : ", error.localizedDescription)
     }
     
+//    When app is in foreground & background
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         print((#file as NSString).lastPathComponent, " # userInfo = ", userInfo)
 
@@ -199,7 +200,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 extension AppDelegate : UNUserNotificationCenterDelegate {
-    // Receive displayed notifications for iOS 10 devices.
+    // Receive displayed notifications for iOS 10 devices.  When app is active
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
@@ -217,6 +218,7 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         completionHandler([])
     }
     
+//    When user tap on the notification
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 didReceive response: UNNotificationResponse,
                                 withCompletionHandler completionHandler: @escaping () -> Void) {
