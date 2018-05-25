@@ -115,7 +115,7 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
                     }
                 } else {
                     // done, exit from her
-                    SenzDb.instance.markAsActive(id: user.zid)
+                    _ = SenzDb.instance.markAsActive(id: user.zid)
             
                     DispatchQueue.main.async {
                         SenzProgressView.shared.hideProgressView()

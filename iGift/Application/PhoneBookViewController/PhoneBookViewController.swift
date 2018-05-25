@@ -159,7 +159,7 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
                         senzUser.zid = phone
                         senzUser.phone = phone
                         senzUser.isActive = false
-                        SenzDb.instance.createUser(user: senzUser)
+                        _ = SenzDb.instance.createUser(user: senzUser)
                         
                         // exit
                         DispatchQueue.main.async {

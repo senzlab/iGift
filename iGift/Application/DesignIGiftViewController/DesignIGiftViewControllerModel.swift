@@ -48,7 +48,7 @@ class DesignIGiftViewControllerModel: NSObject {
             let compressedImageData = image.lowestQualityJPEGNSData
 
 //            Save inside the user documents directory
-            let fileWriteStatus = createFileInPath(relativeFilePath: Constants.IMAGES_DIR.rawValue, fileName: fileName, imageData: compressedImageData as Data)
+            _ = createFileInPath(relativeFilePath: Constants.IMAGES_DIR.rawValue, fileName: fileName, imageData: compressedImageData as Data)
             
             return compressedImageData.base64EncodedString()
         }

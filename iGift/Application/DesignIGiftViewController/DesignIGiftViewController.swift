@@ -241,7 +241,7 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
     func saveIGift(uid: String, cid: String, amount: String, data: NSData) {
         // save image
         let filename = uid + ".jpeg"
-        createFileInPath(relativeFilePath: Constants.IMAGES_DIR.rawValue, fileName: filename, imageData: data as Data)
+        _ = createFileInPath(relativeFilePath: Constants.IMAGES_DIR.rawValue, fileName: filename, imageData: data as Data)
         
         // save iGift
         let ig = Igift(id: 1)
@@ -253,7 +253,7 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
         ig.cid = cid
         ig.user = user!.phone
         ig.timestamp = TimeUtil.sharedInstance.timestamp()
-        SenzDb.instance.createIgift(igift: ig)
+        _ = SenzDb.instance.createIgift(igift: ig)
     }
     
     func giftSendConfirmation(amount: String) {
