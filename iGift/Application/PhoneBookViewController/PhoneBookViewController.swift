@@ -140,21 +140,30 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
         let phone = contact.phone.replacingOccurrences(of: " ", with: "")
         if (SenzDb.instance.getUser(phn: phone) != nil) {
             // user exists
-            ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "User already added as a iGift contact")
+            ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "This user already added in your iGift contact list")
         } else {
             let alert = UIAlertController(title: "Confirm", message: "Would like to send iGift request to " + contact.name + "?", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action: UIAlertAction!) in
-                // todo check user already exists
-                
-                // send request
-                let z = Httpz.instance.pushSenz(senz: SenzUtil.instance.connectSenz(to: phone))
-                if (z == nil) {
-                    ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to send request")
-                } else {
-                    let senzUser = User(id: 1)
-                    senzUser.zid = phone
-                    senzUser.phone = phone
-                    SenzDb.instance.createUser(user: senzUser)
+                DispatchQueue.global(qos: .userInitiated).async {
+                    let z = Httpz.instance.pushSenz(senz: SenzUtil.instance.connectSenz(to: phone))
+                    // todo validate z
+                    if (z == nil) {
+                        DispatchQueue.main.async {
+                            ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to send request")
+                        }
+                    } else {
+                        // save user
+                        let senzUser = User(id: 1)
+                        senzUser.zid = phone
+                        senzUser.phone = phone
+                        senzUser.isActive = false
+                        SenzDb.instance.createUser(user: senzUser)
+                        
+                        // exit
+                        DispatchQueue.main.async {
+                            self.navigationController?.popViewController(animated: true)
+                        }
+                    }
                 }
             }))
             

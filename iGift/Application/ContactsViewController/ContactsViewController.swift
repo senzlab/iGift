@@ -100,17 +100,24 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
         
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action: UIAlertAction!) in
             // send request
-            let senz = SenzUtil.instance.connectSenz(to: user.phone)
-            let z = Httpz.instance.pushSenz(senz: senz)
-            if z == nil {
-                // fail
-                ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to confirm request")
-            } else {
-                // done, exit from her
-                SenzDb.instance.markAsActive(id: user.zid)
-                self.navigationController?.popToRootViewController(animated: true)
-                
-                // todo reload list
+            DispatchQueue.global(qos: .userInitiated).async {
+                let senz = SenzUtil.instance.connectSenz(to: user.phone)
+                let z = Httpz.instance.pushSenz(senz: senz)
+                // todo validate senz
+                if z == nil {
+                    // fail
+                    DispatchQueue.main.async {
+                        ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to confirm request")
+                    }
+                } else {
+                    // done, exit from her
+                    SenzDb.instance.markAsActive(id: user.zid)
+                    
+                    DispatchQueue.main.async {
+                        self.navigationController?.popToRootViewController(animated: true)
+                    }
+                    // todo reload list
+                }
             }
         }))
         
