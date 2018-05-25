@@ -93,7 +93,7 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
     }
     
     @IBAction func backAction(_ sender: UIButton) {
-        goBack(animated: true)
+        goBack(animated: false)
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {

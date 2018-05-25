@@ -44,6 +44,6 @@ class SecurityQuestionsViewController : BaseViewController {
     }
 
     @IBAction func onCancelClicked(_ sender: Any) {
-        self.goBack(animated: true)
+        self.goBack(animated: false)
     }
 }
