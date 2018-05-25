@@ -81,19 +81,34 @@ class RedeemViewController: KeyboardScrollableViewController {
     }
     
     func redeem(acc: String) {
-        let z = Httpz.instance.pushSenz(senz: SenzUtil.instance.redeemSenz(iGift: iGift!, bank: bank!.code, account: acc))
-        if (z == nil) {
-            ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to redeem iGift")
-        } else {
-            // verify response
-            if (SenzUtil.instance.verifyStatus(z: z!)) {
-                // success redeem
-                // update database
-                SenzDb.instance.markAsRedeemed(id: iGift!.uid, acc: acc)
-                self.navigationController?.popToRootViewController(animated: true)
+        SenzProgressView.shared.showProgressView(self.view)
+        DispatchQueue.global(qos: .userInitiated).async {
+            let z = Httpz.instance.pushSenz(senz: SenzUtil.instance.redeemSenz(iGift: self.iGift!, bank: self.bank!.code, account: acc))
+            if (z == nil) {
+                DispatchQueue.main.async {
+                    // fail to send igift
+                    SenzProgressView.shared.hideProgressView()
+                    ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to redeem iGift")
+                }
             } else {
-                ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to redeem iGift")
+                // verify response
+                if (SenzUtil.instance.verifyStatus(z: z!)) {
+                    // success redeem
+                    // update database
+                    SenzDb.instance.markAsRedeemed(id: self.iGift!.uid, acc: acc)
+                    DispatchQueue.main.async {
+                        SenzProgressView.shared.hideProgressView()
+                        self.navigationController?.popToRootViewController(animated: true)
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        // fail to send igift
+                        SenzProgressView.shared.hideProgressView()
+                        ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to redeem iGift")
+                    }
+                }
             }
         }
     }
+    
 }

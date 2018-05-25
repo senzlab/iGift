@@ -193,11 +193,13 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
         let uid = SenzUtil.instance.uid(zAddress: PreferenceUtil.instance.get(key: PreferenceUtil.PHONE_NUMBER))
         let senz = SenzUtil.instance.transferSenz(amount: amount, blob: blob, to: self.user!.phone, cid: cid)
         
+        SenzProgressView.shared.showProgressView(self.view)
         DispatchQueue.global(qos: .userInitiated).async {
             let z = Httpz.instance.pushSenz(senz: senz)
             if z == nil {
                 DispatchQueue.main.async {
                     // fail to send igift
+                    SenzProgressView.shared.hideProgressView()
                     ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to send iGift")
                 }
             } else {
@@ -207,11 +209,13 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
                     
                     DispatchQueue.main.async {
                         // exit view controller
+                        SenzProgressView.shared.hideProgressView()
                         self.navigationController?.popViewController(animated: true)
                     }
                 } else {
                     DispatchQueue.main.async {
                         // fail to send igift
+                        SenzProgressView.shared.hideProgressView()
                         ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to send iGift")
                     }
                 }

@@ -37,6 +37,15 @@ class SaltConfirmViewController : KeyboardScrollableViewController {
     @IBAction func onConfirmClicked(_ sender: Any) {
         let salt = txtFieldTransactionAmt.text!.replacingOccurrences(of: " ", with: "")
         if(ViewControllerUtil.validateSalt(salt: salt)) {
+            saltConfirm(salt: salt)
+        } else {
+            ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Invlid transaction amount")
+        }
+    }
+    
+    func saltConfirm(salt: String) {
+        SenzProgressView.shared.showProgressView((self.navigationController?.view)!)
+        DispatchQueue.global(qos: .userInitiated).async {
             let z = Httpz.instance.pushSenz(senz: SenzUtil.instance.salSenz(salt: salt))
             if (z == nil) {
                 ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to verify account")
@@ -48,8 +57,6 @@ class SaltConfirmViewController : KeyboardScrollableViewController {
                     ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to verify account")
                 }
             }
-        } else {
-            ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Invlid transaction amount")
         }
     }
 }
