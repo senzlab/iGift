@@ -198,10 +198,10 @@ class SenzDb {
         return false
     }
 
-    func markAsRedeemed(id: String) -> Bool {
+    func markAsRedeemed(id: String, acc: String) -> Bool {
         do {
             let u = igifts.filter(uid == id)
-            let update = u.update([state <- "REDEEM"])
+            let update = u.update([state <- "REDEEM", account <- acc])
             if try db!.run(update) > 0 {
                 return true
             }

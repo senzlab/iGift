@@ -64,8 +64,7 @@ class RedeemViewController: KeyboardScrollableViewController {
             enteredPassword = alertController.textFields![0].text!
             if savedPassword == enteredPassword {
                 self.redeem(acc: acc)
-            }
-            else {
+            } else {
                 ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Invalid password")
             }
         })
@@ -90,7 +89,7 @@ class RedeemViewController: KeyboardScrollableViewController {
             if (SenzUtil.instance.verifyStatus(z: z!)) {
                 // success redeem
                 // update database
-                SenzDb.instance.markAsRedeemed(id: iGift!.uid)
+                SenzDb.instance.markAsRedeemed(id: iGift!.uid, acc: acc)
                 self.navigationController?.popToRootViewController(animated: true)
             } else {
                 ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to redeem iGift")
