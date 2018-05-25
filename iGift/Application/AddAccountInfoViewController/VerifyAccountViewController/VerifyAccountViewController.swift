@@ -28,19 +28,25 @@ class VerifyAccountViewController : BaseViewController {
             let z = Httpz.instance.pushSenz(senz: SenzUtil.instance.accountSenz(account: self.account!))
             if (z == nil) {
                 // fail to add account
-                SenzProgressView.shared.hideProgressView()
-                ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to add account")
+                DispatchQueue.main.async {
+                    SenzProgressView.shared.hideProgressView()
+                    ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to add account")
+                }
             } else {
                 // verify response
                 if (SenzUtil.instance.verifyStatus(z: z!)) {
                     // done add account
-                    SenzProgressView.shared.hideProgressView()
                     PreferenceUtil.instance.put(key: PreferenceUtil.ACCOUNT, value: self.account!)
                     PreferenceUtil.instance.put(key: PreferenceUtil.ACCOUNT_STATUS, value: "PENDING")
-                    self.loadView("ConfirmAccountViewController")
+                    DispatchQueue.main.async {
+                        SenzProgressView.shared.hideProgressView()
+                        self.loadView("ConfirmAccountViewController")
+                    }
                 } else {
-                    SenzProgressView.shared.hideProgressView()
-                    ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to verify account")
+                    DispatchQueue.main.async {
+                        SenzProgressView.shared.hideProgressView()
+                        ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to verify account")
+                    }
                 }
             }
         }

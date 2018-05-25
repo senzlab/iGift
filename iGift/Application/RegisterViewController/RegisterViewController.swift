@@ -63,9 +63,6 @@ class RegisterViewController : KeyboardScrollableViewController {
         
         // validate inputs
         if(ViewControllerUtil.validateRegistration(phn: phn, phnCon: phnCon, psw: psw, pswCon: pswCon)) {
-            
-            PreferenceUtil.instance.put(key: PreferenceUtil.PASSWORD, value: psw)
-            
             if let p = PhoneBook.instance.internationalize(phone: phn) {
                 // reg
                 let phone = p.replacingOccurrences(of: " ", with: "")
@@ -78,6 +75,7 @@ class RegisterViewController : KeyboardScrollableViewController {
                 } else {
                     // reg done
                     PreferenceUtil.instance.put(key: PreferenceUtil.PHONE_NUMBER, value: phone)
+                    PreferenceUtil.instance.put(key: PreferenceUtil.PASSWORD, value: psw)
                     let view = SecurityQuestionsViewController(nibName: "SecurityQuestionsViewController", bundle: nil)
                     view.isRegistrationProcess = true
                     self.navigationController?.pushViewController(view, animated: true)

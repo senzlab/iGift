@@ -66,24 +66,34 @@ class ShowGiftViewController: BaseViewController {
             if iGift!.isViewed {
                 giftImageView.image = UIImage(contentsOfFile: readFileInPath(relativeFilePath: Constants.IMAGES_DIR.rawValue, fileName: iGift!.uid + ".jpeg"))
             } else {
-                // download image
-                let senz = SenzUtil.instance.blobSenz(uid: iGift!.uid)
-                let z = Httpz.instance.pushSenz(senz: senz)
-                if z == nil {
-                    // reg fail
+                fetchImage()
+            }
+        }
+    }
+    
+    func fetchImage() {
+        // download image
+        DispatchQueue.main.async {
+            let senz = SenzUtil.instance.blobSenz(uid: self.iGift!.uid)
+            let z = Httpz.instance.pushSenz(senz: senz)
+            if z == nil {
+                // reg fail
+                DispatchQueue.main.async {
                     ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to download iGift")
-                } else {
-                    // fetch done
-                    // save image
-                    let rSenz = SenzUtil.instance.parse(msg: z!)
-                    let dataDecoded : Data = Data(base64Encoded: rSenz.attr["#blob"]!)!
-                    createFileInPath(relativeFilePath: Constants.IMAGES_DIR.rawValue, fileName: iGift!.uid + ".jpeg", imageData: dataDecoded)
-                    
+                }
+            } else {
+                // fetch done
+                // save image
+                let rSenz = SenzUtil.instance.parse(msg: z!)
+                let dataDecoded : Data = Data(base64Encoded: rSenz.attr["#blob"]!)!
+                createFileInPath(relativeFilePath: Constants.IMAGES_DIR.rawValue, fileName: self.iGift!.uid + ".jpeg", imageData: dataDecoded)
+                
+                // mark as viewed
+                SenzDb.instance.markAsViewed(id: self.iGift!.uid)
+                
+                DispatchQueue.main.async {
                     let decodedimage = UIImage(data: dataDecoded)
-                    giftImageView.image = decodedimage
-                    
-                    // mark as viewed
-                    SenzDb.instance.markAsViewed(id: iGift!.uid)
+                    self.giftImageView.image = decodedimage
                 }
             }
         }

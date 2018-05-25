@@ -21,13 +21,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We need to verify your account first." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hav-i4-Pnz" customClass="CustomLabel" customModule="iGift" customModuleProvider="target">
-                    <rect key="frame" x="30" y="30" width="260" height="62"/>
+                    <rect key="frame" x="30" y="30" width="260" height="67"/>
                     <fontDescription key="fontDescription" type="system" pointSize="28"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpm-UX-yfm" customClass="CustomLabel" customModule="iGift" customModuleProvider="target">
-                    <rect key="frame" x="30" y="112" width="260" height="247.5"/>
+                    <rect key="frame" x="30" y="117" width="260" height="334.5"/>
                     <string key="text">To verify your account, we will debit random amount which is less than two rupees from your account. It will be credited to your account after complete the verification.</string>
                     <fontDescription key="fontDescription" type="system" pointSize="28"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
