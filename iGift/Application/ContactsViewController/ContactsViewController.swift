@@ -19,10 +19,17 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
     var forNewIgift: Bool = false
     
     @IBOutlet weak var contactTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUi()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
         dataArray = SenzDb.instance.getUsers(active: forNewIgift)
+        contactTableView.reloadData()
     }
 
     func setupUi() {
@@ -119,7 +126,7 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
             
                     DispatchQueue.main.async {
                         SenzProgressView.shared.hideProgressView()
-                        self.navigationController?.popToRootViewController(animated: true)
+                        self.navigationController?.popViewController(animated: true)
                     }
                     
                     // todo reload list
