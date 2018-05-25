@@ -83,6 +83,14 @@ class ViewControllerUtil: NSObject {
             return false
         }
         
+        if Int(amount)! < 0 {
+            return false
+        }
+        
+        if Int(amount)! >= 10000 {
+            return false
+        }
+        
         return true
     }
     
