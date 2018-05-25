@@ -49,6 +49,7 @@ class SaltConfirmViewController : KeyboardScrollableViewController {
             let z = Httpz.instance.pushSenz(senz: SenzUtil.instance.salSenz(salt: salt))
             if (z == nil) {
                 DispatchQueue.main.async {
+                    SenzProgressView.shared.hideProgressView()
                     ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to verify account")
                 }
             } else {
@@ -56,10 +57,12 @@ class SaltConfirmViewController : KeyboardScrollableViewController {
                     PreferenceUtil.instance.put(key: PreferenceUtil.ACCOUNT_STATUS, value: "VERIFIED")
                     
                     DispatchQueue.main.async {
+                        SenzProgressView.shared.hideProgressView()
                         self.navigationController?.popToRootViewController(animated: true)
                     }
                 } else {
                     DispatchQueue.main.async {
+                        SenzProgressView.shared.hideProgressView()
                         ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to verify account")
                     }
                 }

@@ -56,7 +56,7 @@ class IGiftsReceivedViewController : BaseViewController, UITableViewDelegate, UI
             cell?.setAccountNo(data.account)
         }
         cell?.lblName?.text = PhoneBook.instance.getContact(phone: data.user)?.name
-        cell?.lblTime?.text = TimeUtil.sharedInstance.timeAgoSinceDate(data.timestamp)
+        cell?.lblTime?.text = TimeUtil.sharedInstance.timeAgoSinceDate(data.timestamp/1000)
         cell?.lblAmount?.text = data.amount + ".00"
         
         cell?.selectionStyle = .none
