@@ -35,14 +35,14 @@ class NavigationViewController : UINavigationController {
         if (PreferenceUtil.instance.get(key: PreferenceUtil.PHONE_NUMBER).isEmpty) {
             let view = TermsOfUseViewController(nibName: "TermsOfUseViewController", bundle: nil)
             view.isFirstTimeLoading = true
-            self.pushViewController(view, animated: true)
+            self.pushViewController(view, animated: false)
         } else if(PreferenceUtil.instance.get(key: PreferenceUtil.QUESTION1).isEmpty) {
             let view = SecurityQuestionsViewController(nibName: "SecurityQuestionsViewController", bundle: nil)
             view.isRegistrationProcess = true
-            self.pushViewController(view, animated: true)
+            self.pushViewController(view, animated: false)
         } else {
             let view = HomeViewController(nibName: "HomeViewController", bundle: nil)
-            self.pushViewController(view, animated: true)
+            self.pushViewController(view, animated: false)
         }
     }
 }

@@ -94,7 +94,7 @@ class RegisterViewController : KeyboardScrollableViewController {
                     SenzProgressView.shared.hideProgressView()
                     let view = SecurityQuestionsViewController(nibName: "SecurityQuestionsViewController", bundle: nil)
                     view.isRegistrationProcess = true
-                    self.navigationController?.pushViewController(view, animated: true)
+                    self.navigationController?.pushViewController(view, animated: false)
                 }
             }
         }

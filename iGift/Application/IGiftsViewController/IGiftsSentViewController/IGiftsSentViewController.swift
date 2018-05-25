@@ -66,7 +66,7 @@ class IGiftsSentViewController : BaseViewController, UITableViewDelegate, UITabl
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let showGiftViewController = ShowGiftViewController(nibName: "ShowGiftViewController", bundle: nil)
         showGiftViewController.iGift = dataArray[indexPath.row]
-        self.navigationController?.pushViewController(showGiftViewController, animated: true)
+        self.navigationController?.pushViewController(showGiftViewController, animated: false)
     }
 }
 

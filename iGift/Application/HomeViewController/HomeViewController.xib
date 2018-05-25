@@ -21,13 +21,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ksq-pE-SlQ" userLabel="Root View">
-                    <rect key="frame" x="10" y="60" width="355" height="597"/>
+                    <rect key="frame" x="10" y="40" width="355" height="617"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="om1-Lc-Xob" userLabel="Root Grid">
-                            <rect key="frame" x="0.0" y="1" width="355" height="596"/>
+                            <rect key="frame" x="0.0" y="1" width="355" height="616"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3sA-nS-HmP">
-                                    <rect key="frame" x="0.0" y="0.0" width="355" height="148.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="355" height="153.5"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TTL-I3-hZo" userLabel="View_BorderUpper">
                                             <rect key="frame" x="20" y="0.0" width="315" height="1"/>
@@ -37,21 +37,21 @@
                                             </constraints>
                                         </view>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="group_write" translatesAutoresizingMaskIntoConstraints="NO" id="i8L-5X-BqN">
-                                            <rect key="frame" x="35" y="44" width="60" height="60"/>
+                                            <rect key="frame" x="35" y="46.5" width="60" height="60"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="60" id="hNW-00-lFe"/>
                                                 <constraint firstAttribute="height" constant="60" id="hQv-TB-rJo"/>
                                             </constraints>
                                         </imageView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yvV-gN-Ztz" userLabel="Broder_1">
-                                            <rect key="frame" x="20" y="147.5" width="315" height="1"/>
+                                            <rect key="frame" x="20" y="152.5" width="315" height="1"/>
                                             <color key="backgroundColor" red="0.97647058823529409" green="0.73725490196078436" blue="0.56862745098039214" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="zFy-zw-0Kh"/>
                                             </constraints>
                                         </view>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ba3-I4-9XP" customClass="CustomButton" customModule="iGift" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="355" height="148.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="355" height="153.5"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                             <state key="normal" title="Send iGift">
@@ -77,26 +77,31 @@
                                         <constraint firstAttribute="trailing" secondItem="TTL-I3-hZo" secondAttribute="trailing" constant="20" id="di4-fh-ISy"/>
                                         <constraint firstItem="i8L-5X-BqN" firstAttribute="leading" secondItem="3sA-nS-HmP" secondAttribute="leading" constant="35" id="fjF-Mr-u97"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="subviews">
+                                            <exclude reference="TTL-I3-hZo"/>
+                                        </mask>
+                                    </variation>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yMN-IE-DU0">
-                                    <rect key="frame" x="0.0" y="149" width="355" height="149"/>
+                                    <rect key="frame" x="0.0" y="154" width="355" height="154"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="group_igift" translatesAutoresizingMaskIntoConstraints="NO" id="yow-64-vXF">
-                                            <rect key="frame" x="35" y="44" width="60" height="60"/>
+                                            <rect key="frame" x="35" y="46.5" width="60" height="60"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="60" id="4bv-bq-z2H"/>
                                                 <constraint firstAttribute="height" constant="60" id="heg-IA-R8B"/>
                                             </constraints>
                                         </imageView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Os-tq-TCF" userLabel="Broder_1">
-                                            <rect key="frame" x="20" y="148" width="315" height="1"/>
+                                            <rect key="frame" x="20" y="153" width="315" height="1"/>
                                             <color key="backgroundColor" red="0.97647058823529409" green="0.73725490196078436" blue="0.56862745098039214" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="Xri-Pm-JFl"/>
                                             </constraints>
                                         </view>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="van-M0-Vag" customClass="CustomButton" customModule="iGift" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="-0.5" width="355" height="149"/>
+                                            <rect key="frame" x="0.0" y="-0.5" width="355" height="154"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                             <state key="normal" title="iGift Store">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -120,24 +125,24 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vLP-UT-9FH">
-                                    <rect key="frame" x="0.0" y="298.5" width="355" height="148.5"/>
+                                    <rect key="frame" x="0.0" y="308.5" width="355" height="153.5"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contact_g" translatesAutoresizingMaskIntoConstraints="NO" id="VRL-zz-bPS">
-                                            <rect key="frame" x="35" y="43.5" width="60" height="60"/>
+                                            <rect key="frame" x="35" y="46" width="60" height="60"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="60" id="EZS-PI-wQp"/>
                                                 <constraint firstAttribute="height" constant="60" id="wzo-pF-crX"/>
                                             </constraints>
                                         </imageView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bda-4P-oAg" userLabel="Broder_1">
-                                            <rect key="frame" x="20" y="147" width="315" height="1"/>
+                                            <rect key="frame" x="20" y="152" width="315" height="1"/>
                                             <color key="backgroundColor" red="0.97647058823529409" green="0.73725490196078436" blue="0.56862745098039214" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="elj-4C-fUu"/>
                                             </constraints>
                                         </view>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkq-qE-aVa" customClass="CustomButton" customModule="iGift" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="-0.5" width="355" height="148.5"/>
+                                            <rect key="frame" x="0.0" y="-0.5" width="355" height="153.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                             <state key="normal" title="Contacts">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -161,17 +166,17 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ywe-5W-1jA">
-                                    <rect key="frame" x="0.0" y="447.5" width="355" height="148.5"/>
+                                    <rect key="frame" x="0.0" y="462.5" width="355" height="153.5"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="setting_g" translatesAutoresizingMaskIntoConstraints="NO" id="kpy-yd-F1C">
-                                            <rect key="frame" x="35" y="43.5" width="60" height="60"/>
+                                            <rect key="frame" x="35" y="46" width="60" height="60"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="60" id="UZw-mo-3Ba"/>
                                                 <constraint firstAttribute="width" constant="60" id="xx8-N4-977"/>
                                             </constraints>
                                         </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zYi-Ug-PLc" customClass="CustomButton" customModule="iGift" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="355" height="148.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="355" height="153.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                             <state key="normal" title="Settings">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -215,7 +220,7 @@
             </subviews>
             <color key="backgroundColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="ksq-pE-SlQ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="40" id="0Uq-fM-6To"/>
+                <constraint firstItem="ksq-pE-SlQ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="0Uq-fM-6To"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="ksq-pE-SlQ" secondAttribute="bottom" constant="10" id="hym-hp-92F"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ksq-pE-SlQ" secondAttribute="trailing" constant="10" id="maD-Cs-aQb"/>
                 <constraint firstItem="ksq-pE-SlQ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="slT-iT-LQQ"/>

@@ -19,7 +19,7 @@ class ApplicationViewController : UIViewController {
         let viewController = getNewInstance(name)
         if let controller = viewController {
             DispatchQueue.main.async {
-                self.navigationController?.pushViewController(controller, animated: true)
+                self.navigationController?.pushViewController(controller, animated: false)
             }
         } else {
             print("Trying to load an unregistered view controller. Please look into ApplicationViewController class to register view controller")

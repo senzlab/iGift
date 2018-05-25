@@ -58,7 +58,8 @@ class SaltConfirmViewController : KeyboardScrollableViewController {
                     
                     DispatchQueue.main.async {
                         SenzProgressView.shared.hideProgressView()
-                        self.navigationController?.popViewController(animated: true)
+//                        self.navigationController?.popViewController(animated: true)
+                        self.loadView("HomeViewController")
                     }
                 } else {
                     DispatchQueue.main.async {

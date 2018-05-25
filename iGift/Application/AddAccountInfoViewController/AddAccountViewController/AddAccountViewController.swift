@@ -45,7 +45,7 @@ class AddAccountViewController : KeyboardScrollableViewController {
         if(ViewControllerUtil.validateAccount(acc: acc, accCon: accCon)) {
             let viewController = VerifyAccountViewController(nibName: "VerifyAccountViewController", bundle: nil)
             viewController.account = acc
-            self.navigationController?.pushViewController(viewController, animated: true)
+            self.navigationController?.pushViewController(viewController, animated: false)
         } else {
             ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Invalide input fields")
         }

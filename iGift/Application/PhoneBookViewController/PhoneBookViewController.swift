@@ -164,7 +164,7 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
                             // exit
                             DispatchQueue.main.async {
                                 SenzProgressView.shared.hideProgressView()
-                                self.navigationController?.popViewController(animated: true)
+                                self.navigationController?.popViewController(animated: false)
                             }
                         } else {
                             DispatchQueue.main.async {

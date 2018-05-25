@@ -71,7 +71,7 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
     
     @IBAction func cameraAction(_ sender: UIButton) {
         let capturePhotoViewController = CapturePhotoViewController(nibName: "CapturePhotoViewController", bundle: nil)
-        self.navigationController?.pushViewController(capturePhotoViewController, animated: true)
+        self.navigationController?.pushViewController(capturePhotoViewController, animated: false)
     }
     
     @IBAction func showHideMsgAction(_ sender: UIButton) {
@@ -84,12 +84,12 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
     
     @IBAction func addArtAction(_ sender: UIButton) {
         let addArtViewController = AddArtViewController(nibName: "AddArtViewController", bundle: nil)
-        self.navigationController?.pushViewController(addArtViewController, animated: true)
+        self.navigationController?.pushViewController(addArtViewController, animated: false)
     }
     
     @IBAction func changeBgColorAction(_ sender: UIButton) {
         let chooseBackgroundViewContoller = ChooseBackgroundViewContoller(nibName: "ChooseBackgroundViewContoller", bundle: nil)
-        self.navigationController?.pushViewController(chooseBackgroundViewContoller, animated: true)
+        self.navigationController?.pushViewController(chooseBackgroundViewContoller, animated: false)
     }
     
     @IBAction func backAction(_ sender: UIButton) {
@@ -210,7 +210,7 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
                     DispatchQueue.main.async {
                         // exit view controller
                         SenzProgressView.shared.hideProgressView()
-                        self.navigationController?.popViewController(animated: true)
+                        self.navigationController?.popViewController(animated: false)
                     }
                 } else {
                     DispatchQueue.main.async {

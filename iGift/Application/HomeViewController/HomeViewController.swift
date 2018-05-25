@@ -24,7 +24,7 @@ class HomeViewController : BaseViewController {
     @IBAction func onContactsBtnClicked(_ sender: Any) {
         let contactsViewController = ContactsViewController(nibName: "ContactsViewController", bundle: nil)
         contactsViewController.forNewIgift = false
-        self.navigationController?.pushViewController(contactsViewController, animated: true)
+        self.navigationController?.pushViewController(contactsViewController, animated: false)
     }
 
     @IBAction func onSettingsBtnClicked(_ sender: Any) {
@@ -42,7 +42,7 @@ class HomeViewController : BaseViewController {
                 // verified account
                 let contactsViewController = ContactsViewController(nibName: "ContactsViewController", bundle: nil)
                 contactsViewController.forNewIgift = true
-                self.navigationController?.pushViewController(contactsViewController, animated: true)
+                self.navigationController?.pushViewController(contactsViewController, animated: false)
             } else {
                 // not verified account
                 self.loadView("ConfirmAccountViewController")

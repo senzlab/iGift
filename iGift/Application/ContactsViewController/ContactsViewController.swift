@@ -93,7 +93,7 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
                 // goto new igift
                 let designIGiftViewController = DesignIGiftViewController(nibName: "DesignIGiftViewController", bundle: nil)
                 designIGiftViewController.user = user
-                self.navigationController?.pushViewController(designIGiftViewController, animated: true)
+                self.navigationController?.pushViewController(designIGiftViewController, animated: false)
             }
         } else {
             // send request
@@ -126,7 +126,7 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
                         SenzDb.instance.markAsActive(id: user.zid)
                         DispatchQueue.main.async {
                             SenzProgressView.shared.hideProgressView()
-                            self.navigationController?.popViewController(animated: true)
+                            self.navigationController?.popViewController(animated: false)
                         }
                         
                         // todo reload list
