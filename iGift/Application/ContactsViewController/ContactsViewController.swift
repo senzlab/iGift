@@ -88,7 +88,14 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let user = dataArray[indexPath.row]
-        if !user.isActive {
+        if user.isActive {
+            if (forNewIgift && PreferenceUtil.instance.get(key: PreferenceUtil.ACCOUNT_STATUS) == "VERIFIED") {
+                // goto new igift
+                let designIGiftViewController = DesignIGiftViewController(nibName: "DesignIGiftViewController", bundle: nil)
+                designIGiftViewController.user = user
+                self.navigationController?.pushViewController(designIGiftViewController, animated: false)
+            }
+        } else {
             // send request
             if !user.isRequester {
                 // ask to confirm request
