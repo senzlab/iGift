@@ -33,8 +33,11 @@ class NavigationViewController : UINavigationController {
 
     func loadInitialView() {
         if (PreferenceUtil.instance.get(key: PreferenceUtil.PHONE_NUMBER).isEmpty) {
-            let view = TermsOfUseViewController(nibName: "TermsOfUseViewController", bundle: nil)
-            view.isFirstTimeLoading = true
+//            let view = TermsOfUseViewController(nibName: "TermsOfUseViewController", bundle: nil)
+//            view.isFirstTimeLoading = true
+//            self.pushViewController(view, animated: false)
+
+            let view = RegisterViewController(nibName: "RegisterViewController", bundle: nil)
             self.pushViewController(view, animated: false)
         } else if(PreferenceUtil.instance.get(key: PreferenceUtil.QUESTION1).isEmpty) {
             let view = SecurityQuestionsViewController(nibName: "SecurityQuestionsViewController", bundle: nil)

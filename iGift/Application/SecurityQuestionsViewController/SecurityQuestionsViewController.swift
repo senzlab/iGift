@@ -39,7 +39,7 @@ class SecurityQuestionsViewController : BaseViewController {
 
     @IBAction func onNextClicked(_ sender: Any) {
         let viewController = SecurityAnswersViewController(nibName: "SecurityAnswersViewController", bundle: nil)
-        viewController.resetPassword = true
+        viewController.resetPassword = isRegistrationProcess ? false : true
         self.navigationController?.pushViewController(viewController, animated: false)
     }
 
