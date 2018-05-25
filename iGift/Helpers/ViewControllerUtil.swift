@@ -102,7 +102,7 @@ class ViewControllerUtil: NSObject {
         return true
     }
     
-    class func validatePassword(psw: String, pswNew: String, pswCon: String) -> Bool {
+    class func validateChangePassword(psw: String, pswNew: String, pswCon: String) -> Bool {
         if (psw.isEmpty || pswCon.isEmpty || pswNew.isEmpty) {
             return false
         }
@@ -112,6 +112,18 @@ class ViewControllerUtil: NSObject {
         }
         
         if (pswNew != pswCon) {
+            return false
+        }
+        
+        return true
+    }
+    
+    class func validateResetPassword(psw: String, pswCon: String) -> Bool {
+        if (psw.isEmpty || pswCon.isEmpty) {
+            return false
+        }
+        
+        if (psw != pswCon) {
             return false
         }
         

@@ -16,7 +16,6 @@ class ResetPasswordViewController: KeyboardScrollableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUi()
-
     }
     
     func setupUi() {
@@ -35,5 +34,15 @@ class ResetPasswordViewController: KeyboardScrollableViewController {
     }
     
     @IBAction func updateAction(_ sender: UIButton) {
+        let psw = passwordTextField.text!.replacingOccurrences(of: " ", with: "")
+        let pswCon = confirmPasswordTextField.text!.replacingOccurrences(of: " ", with: "")
+        
+        if(ViewControllerUtil.validateResetPassword(psw: psw, pswCon: pswCon)) {
+            // save current password
+            PreferenceUtil.instance.put(key: PreferenceUtil.PASSWORD, value: pswCon)
+            self.loadView("HomeViewController")
+        } else {
+            ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to chnage password")
+        }
     }
 }
