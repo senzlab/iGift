@@ -51,10 +51,8 @@ class RegisterViewController : KeyboardScrollableViewController {
 
         // gengerate key pair
         CryptoUtil.instance.initKeys()
-        doReg()
-    }
-    
-    func doReg() {
+        
+        // validate inputs
         // ui fields
         let phn = txtFieldUsername.text!.replacingOccurrences(of: " ", with: "")
         let phnCon = txtFieldConfirmUsername.text!.replacingOccurrences(of: " ", with: "")
@@ -64,27 +62,38 @@ class RegisterViewController : KeyboardScrollableViewController {
         // validate inputs
         if(ViewControllerUtil.validateRegistration(phn: phn, phnCon: phnCon, psw: psw, pswCon: pswCon)) {
             if let p = PhoneBook.instance.internationalize(phone: phn) {
-                // reg
                 let phone = p.replacingOccurrences(of: " ", with: "")
-                let uid = SenzUtil.instance.uid(zAddress: phone)
-                let regSenz = SenzUtil.instance.regSenz(uid: uid, zAddress: phone)
-                let z = Httpz.instance.pushSenz(senz: regSenz!)
-                if z == nil {
-                    // reg fail
-                    ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Regaistration fail")
-                } else {
-                    // reg done
-                    PreferenceUtil.instance.put(key: PreferenceUtil.PHONE_NUMBER, value: phone)
-                    PreferenceUtil.instance.put(key: PreferenceUtil.PASSWORD, value: psw)
-                    let view = SecurityQuestionsViewController(nibName: "SecurityQuestionsViewController", bundle: nil)
-                    view.isRegistrationProcess = true
-                    self.navigationController?.pushViewController(view, animated: true)
-                }
+                doReg(phone: phone, password: psw)
             } else {
                 ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Invalid phone no")
             }
         } else {
             ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Invalid input fields")
+        }
+    }
+    
+    func doReg(phone: String, password: String) {
+        // reg
+        DispatchQueue.global(qos: .userInitiated).async {
+            let uid = SenzUtil.instance.uid(zAddress: phone)
+            let regSenz = SenzUtil.instance.regSenz(uid: uid, zAddress: phone)
+            let z = Httpz.instance.pushSenz(senz: regSenz!)
+            if z == nil {
+                // reg fail
+                DispatchQueue.main.async {
+                    ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Regaistration fail")
+                }
+            } else {
+                // reg done
+                PreferenceUtil.instance.put(key: PreferenceUtil.PHONE_NUMBER, value: phone)
+                PreferenceUtil.instance.put(key: PreferenceUtil.PASSWORD, value: password)
+                
+                DispatchQueue.main.async {
+                    let view = SecurityQuestionsViewController(nibName: "SecurityQuestionsViewController", bundle: nil)
+                    view.isRegistrationProcess = true
+                    self.navigationController?.pushViewController(view, animated: true)
+                }
+            }
         }
     }
 }
