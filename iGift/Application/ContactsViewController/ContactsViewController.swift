@@ -113,7 +113,6 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
             DispatchQueue.global(qos: .userInitiated).async {
                 let senz = SenzUtil.instance.connectSenz(to: user.phone)
                 let z = Httpz.instance.pushSenz(senz: senz)
-                // todo validate senz
                 if z == nil {
                     // fail
                     DispatchQueue.main.async {
@@ -121,15 +120,22 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
                         ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to confirm request")
                     }
                 } else {
-                    // done, exit from her
-                    _ = SenzDb.instance.markAsActive(id: user.zid)
-            
-                    DispatchQueue.main.async {
-                        SenzProgressView.shared.hideProgressView()
-                        self.navigationController?.popViewController(animated: true)
+
+                    if (SenzUtil.instance.verifyStatus(z: z!)) {
+                        // done, exit from here
+                        SenzDb.instance.markAsActive(id: user.zid)
+                        DispatchQueue.main.async {
+                            SenzProgressView.shared.hideProgressView()
+                            self.navigationController?.popViewController(animated: true)
+                        }
+                        
+                        // todo reload list
+                    } else {
+                        DispatchQueue.main.async {
+                            SenzProgressView.shared.hideProgressView()
+                            ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to confirm request")
+                        }
                     }
-                    
-                    // todo reload list
                 }
             }
         }))

@@ -147,24 +147,30 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
                 SenzProgressView.shared.showProgressView((self.navigationController?.view)!)
                 DispatchQueue.global(qos: .userInitiated).async {
                     let z = Httpz.instance.pushSenz(senz: SenzUtil.instance.connectSenz(to: phone))
-                    // todo validate z
                     if (z == nil) {
                         DispatchQueue.main.async {
                             SenzProgressView.shared.hideProgressView()
                             ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to send request")
                         }
                     } else {
-                        // save user
-                        let senzUser = User(id: 1)
-                        senzUser.zid = phone
-                        senzUser.phone = phone
-                        senzUser.isActive = false
-                        _ = SenzDb.instance.createUser(user: senzUser)
-                        
-                        // exit
-                        DispatchQueue.main.async {
-                            SenzProgressView.shared.hideProgressView()
-                            self.navigationController?.popViewController(animated: true)
+                        if (SenzUtil.instance.verifyStatus(z: z!)) {
+                            // save user
+                            let senzUser = User(id: 1)
+                            senzUser.zid = phone
+                            senzUser.phone = phone
+                            senzUser.isActive = false
+                            SenzDb.instance.createUser(user: senzUser)
+                            
+                            // exit
+                            DispatchQueue.main.async {
+                                SenzProgressView.shared.hideProgressView()
+                                self.navigationController?.popViewController(animated: true)
+                            }
+                        } else {
+                            DispatchQueue.main.async {
+                                SenzProgressView.shared.hideProgressView()
+                                ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to send request")
+                            }
                         }
                     }
                 }
