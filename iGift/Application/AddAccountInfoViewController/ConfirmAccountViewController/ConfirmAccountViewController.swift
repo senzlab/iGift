@@ -11,6 +11,9 @@ import UIKit
 class ConfirmAccountViewController : BaseViewController {
 
     @IBOutlet weak var LblFirstText: CustomLabel!
+    @IBOutlet weak var cancelButton: CustomButton!
+    @IBOutlet weak var cancelBtnHeightConstraint: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUi()
@@ -18,6 +21,8 @@ class ConfirmAccountViewController : BaseViewController {
 
     func setupUi() {
         self.title = "Confirm account"
+        cancelButton.isHidden = true
+        cancelBtnHeightConstraint.constant = 0
     }
 
     @IBAction func onNextClicked(_ sender: Any) {

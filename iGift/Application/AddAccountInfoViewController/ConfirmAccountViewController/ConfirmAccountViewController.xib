@@ -13,6 +13,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ConfirmAccountViewController" customModule="iGift" customModuleProvider="target">
             <connections>
                 <outlet property="LblFirstText" destination="Hav-i4-Pnz" id="JNr-96-rch"/>
+                <outlet property="cancelBtnHeightConstraint" destination="6AH-CH-38y" id="xR0-L5-1xL"/>
+                <outlet property="cancelButton" destination="oXl-2d-BiC" id="6Fz-gG-bDE"/>
                 <outlet property="view" destination="iN0-l3-epB" id="Rwp-aE-8Vi"/>
             </connections>
         </placeholder>

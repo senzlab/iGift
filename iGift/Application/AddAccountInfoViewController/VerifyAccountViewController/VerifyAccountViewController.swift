@@ -12,6 +12,9 @@ class VerifyAccountViewController : BaseViewController {
     
     var account: String? = nil
     
+    @IBOutlet weak var cancelButton: CustomButton!
+    @IBOutlet weak var cancelBtnHeightConstraint: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUi()
@@ -19,6 +22,8 @@ class VerifyAccountViewController : BaseViewController {
 
     func setupUi() {
         self.title = "Verify account"
+        cancelButton.isHidden = true
+        cancelBtnHeightConstraint.constant = 0
     }
 
     @IBAction func onOKClicked(_ sender: Any) {
