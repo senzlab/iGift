@@ -32,7 +32,7 @@ class BankListViewController : BaseViewController, UITableViewDelegate, UITableV
 
     func setupUi() {
         self.configureCustomSearchController()
-        self.title = "Phone Book"
+        self.title = "Select Bank"
     }
 
     func loadBanks() {
@@ -106,7 +106,15 @@ class BankListViewController : BaseViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let bank = dataArray[indexPath.row] 
+        
+        var bank:Bank?
+        if filteredArray.count > 0 {
+            bank = filteredArray[indexPath.row]
+        }
+        else {
+            bank = dataArray[indexPath.row]
+        }
+        
         let redeemViewController = RedeemViewController(nibName: "RedeemViewController", bundle: nil)
         redeemViewController.iGift = iGift
         redeemViewController.bank = bank
