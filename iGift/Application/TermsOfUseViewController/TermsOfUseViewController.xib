@@ -12,8 +12,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TermsOfUseViewController" customModule="iGift" customModuleProvider="target">
             <connections>
-                <outlet property="acceptButton" destination="c2L-78-2HT" id="d6T-Ws-7LR"/>
-                <outlet property="rejectButton" destination="OJb-hQ-UUu" id="8Zh-gZ-xcv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,79 +20,212 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top label" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G6a-ae-G5W" userLabel="Label_Top" customClass="CustomLabel" customModule="iGift" customModuleProvider="target">
-                    <rect key="frame" x="30" y="80" width="315" height="31"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TD4-NX-wId" userLabel="Label_Bottom" customClass="CustomLabel" customModule="iGift" customModuleProvider="target">
-                    <rect key="frame" x="30" y="131" width="315" height="31"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c2L-78-2HT" userLabel="Button_Accept" customClass="CustomButton" customModule="iGift" customModuleProvider="target">
-                    <rect key="frame" x="30" y="507" width="315" height="55"/>
-                    <color key="backgroundColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D2E-QS-kie">
+                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bjO-BQ-T7M">
+                            <rect key="frame" x="10" y="0.0" width="355" height="647"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="GuM-Kl-PDy">
+                                    <rect key="frame" x="0.0" y="10" width="355" height="1604"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TERMS AND CONDITIONS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JEW-NG-FTA">
+                                            <rect key="frame" x="0.0" y="0.0" width="355" height="18"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ng1-WN-AEy">
+                                            <rect key="frame" x="0.0" y="30" width="355" height="172"/>
+                                            <mutableString key="text">
+These Terms and Conditions govern the sending and receiving of electronic gift vouchers (‘igift vouchers’) via igift mobile application. It is important that you read and understand these Terms and Conditions before you click on or otherwise electronically activate "I accept" or otherwise acknowledge your acceptance according to on-screen instructions during registration for igift. If you do not agree to these Terms and Conditions, you must not use igift. The use of igift shall be further subject to Sampath Bank PLC's prevailing Conditions, rules, regulations and any terms and conditions governing its services.</mutableString>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2P-jt-vNe">
+                                            <rect key="frame" x="0.0" y="214" width="355" height="72"/>
+                                            <string key="text">
+By registering for iGift, you represent that you are above 18 years of age and is capable of entering into a legally binding contract. iGift vouchers cannot be redeemed by a minor.
+</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5lq-df-VyV">
+                                            <rect key="frame" x="0.0" y="298" width="355" height="14.5"/>
+                                            <string key="text">1.	Account Verification</string>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PPw-Hp-Bib">
+                                            <rect key="frame" x="0.0" y="324.5" width="355" height="129"/>
+                                            <mutableString key="text">You are responsible for providing accurate registration information and notifying us in the event of any change. Verification of your account is a necessary part of registering for igift. An authentication transaction will initiate from your account as a form of verification. Sampath Bank PLC may debit random amounts less than Rs.2/- from your account and will credit it back to your account once the verification process is completed. The transaction can be viewed via Sampath Vishwa or you may contact a Sampath Bank Branch.</mutableString>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="niY-ER-7NK">
+                                            <rect key="frame" x="0.0" y="465.5" width="355" height="14.5"/>
+                                            <string key="text">2.	Use of the igift</string>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmF-L5-cSE">
+                                            <rect key="frame" x="0.0" y="492" width="355" height="229.5"/>
+                                            <mutableString key="text">You agree that you may only send an igift voucher when there is sufficient balance in your bank account corresponding to the value of the igift voucher. By registering for igift, you authorize Sampath Bank PLC to move funds from your bank account by debiting your account according to the value of the igift voucher. Maximum value of an igift voucher cannot exceed Rupees Ten Thousand (Rs.10, 000/-) per transaction and the daily transaction limit is Rupees One Hundred Thousand (Rs. 100,000/-). 
+igift vouchers cannot be used as a form of online purchasing. The receiver is only entitled to redeem the igift voucher via a bank account and it must be redeemed within 12 months from the date of sending. If an igift voucher expires prior to redemption, the value of the igift voucher shall be credited back to the sender’s account.
+</mutableString>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7j-4v-8Wv">
+                                            <rect key="frame" x="0.0" y="733.5" width="355" height="14.5"/>
+                                            <string key="text">3.	Suspending or Cancelling of igift </string>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XPs-Z8-dh9">
+                                            <rect key="frame" x="0.0" y="760" width="355" height="57.5"/>
+                                            <string key="text">An igift voucher once sent cannot be canceled or stopped. In case of you sending an igift voucher to an unintended recipient, Sampath Bank PLC will not be under any obligation to correct same.</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0jI-GM-Ais">
+                                            <rect key="frame" x="0.0" y="829.5" width="355" height="14.5"/>
+                                            <string key="text">4.	Third Party Agreements</string>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Wr-Vg-ppu">
+                                            <rect key="frame" x="0.0" y="856" width="355" height="72"/>
+                                            <string key="text">You will be responsible for all fees that may be imposed by third parties in connection with your use of  igift (such as data usage charges imposed on you by your wireless carrier, third party Bank charges) and be subject to any restrictions those third parties may impose. </string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LDn-Pn-adH">
+                                            <rect key="frame" x="0.0" y="940" width="355" height="14.5"/>
+                                            <string key="text">5.	Fees </string>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKI-sm-LYJ">
+                                            <rect key="frame" x="0.0" y="966.5" width="355" height="143.5"/>
+                                            <string key="text">For vouchers which are less than or equal to Rs.5000/- a transaction fee of Rs.20/- shall be applicable. For igift vouchers exceeding Rs.5000/- a transaction fee of Rs.50/- shall be applicable. 
+An additional fee of Rs.50/- will be deducted from the igift voucher value in the event of recipient redeeming such igift voucher via a Bank Account other than of Sampath Bank PLC’s.
+Sampath Bank reserves the right to change applicable fees from time to time with notice.</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZP-NO-shL">
+                                            <rect key="frame" x="0.0" y="1122" width="355" height="14.5"/>
+                                            <string key="text">6.	Security</string>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nht-zI-uFz">
+                                            <rect key="frame" x="0.0" y="1148.5" width="355" height="86"/>
+                                            <string key="text">You are solely responsible for maintaining the confidentiality of your igift user credentials. In the event of you misplacing the mobile device, the loss should be immediately reported to Sampath Bank in writing.  Sampath Bank will not be responsible for any loss/damage you may experience due to delay in duly informing.</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqh-11-JHt">
+                                            <rect key="frame" x="0.0" y="1246.5" width="355" height="14.5"/>
+                                            <string key="text">7.	Notices</string>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The notices and the igift terms and conditions will be available on the igift app." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGP-rD-mji">
+                                            <rect key="frame" x="0.0" y="1273" width="355" height="29"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGb-p5-qym">
+                                            <rect key="frame" x="0.0" y="1314" width="355" height="14.5"/>
+                                            <string key="text">8.	Termination</string>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u8J-V0-7MN">
+                                            <rect key="frame" x="0.0" y="1340.5" width="355" height="43"/>
+                                            <string key="text">In the event of you deciding to terminate the use of igift you may uninstall the igift mobile application from your mobile device.</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dol-cw-g6S">
+                                            <rect key="frame" x="0.0" y="1395.5" width="355" height="14.5"/>
+                                            <string key="text">9.	Intellectual Property</string>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JEr-ad-4uV">
+                                            <rect key="frame" x="0.0" y="1422" width="355" height="86"/>
+                                            <string key="text">You acknowledge that the intellectual property rights of igift is owned by Sampath Bank PLC. You may view, print or use the Content for personal, non-commercial use only, provided further that you do not modify the Content and that you retain all copyright notices and other proprietary notices contained in the Content.</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GTb-sF-cms">
+                                            <rect key="frame" x="0.0" y="1520" width="355" height="14.5"/>
+                                            <string key="text">10.	Governing Law</string>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GBE-mS-hTt">
+                                            <rect key="frame" x="0.0" y="1546.5" width="355" height="57.5"/>
+                                            <string key="text">These terms and conditions shall be governed by the laws of the Democratic Socialist Republic of Sri Lanka and shall be subject to the exclusive jurisdiction of a court of competent authority in Colombo.</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="GuM-Kl-PDy" secondAttribute="trailing" id="4sP-Ld-bTu"/>
+                                <constraint firstItem="GuM-Kl-PDy" firstAttribute="top" secondItem="bjO-BQ-T7M" secondAttribute="top" constant="10" id="JDJ-Hm-NPy">
+                                    <variation key="heightClass=regular-widthClass=regular" constant="250"/>
+                                </constraint>
+                                <constraint firstItem="GuM-Kl-PDy" firstAttribute="leading" secondItem="bjO-BQ-T7M" secondAttribute="leading" id="i6C-qM-xHl"/>
+                                <constraint firstItem="GuM-Kl-PDy" firstAttribute="centerX" secondItem="bjO-BQ-T7M" secondAttribute="centerX" id="vBy-3Z-uZE"/>
+                            </constraints>
+                        </view>
+                    </subviews>
                     <constraints>
-                        <constraint firstAttribute="height" constant="55" id="l5x-ii-Iue"/>
+                        <constraint firstAttribute="trailing" secondItem="bjO-BQ-T7M" secondAttribute="trailing" constant="10" id="0DK-U3-JEo"/>
+                        <constraint firstItem="bjO-BQ-T7M" firstAttribute="centerX" secondItem="D2E-QS-kie" secondAttribute="centerX" id="gJh-jT-d32"/>
+                        <constraint firstAttribute="bottom" secondItem="bjO-BQ-T7M" secondAttribute="bottom" id="ml4-oB-ril"/>
+                        <constraint firstItem="bjO-BQ-T7M" firstAttribute="top" secondItem="D2E-QS-kie" secondAttribute="top" id="oN1-sa-JdU"/>
+                        <constraint firstItem="bjO-BQ-T7M" firstAttribute="leading" secondItem="D2E-QS-kie" secondAttribute="leading" constant="10" id="y85-9B-dcC"/>
+                        <constraint firstItem="bjO-BQ-T7M" firstAttribute="centerY" secondItem="D2E-QS-kie" secondAttribute="centerY" id="ysn-zo-6YI"/>
                     </constraints>
-                    <state key="normal" title="ACCEPT">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="isRoundedCorners" value="YES"/>
-                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                            <integer key="value" value="1"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                            <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="isShadowUnder" value="YES"/>
-                    </userDefinedRuntimeAttributes>
-                    <connections>
-                        <action selector="acceptAction:" destination="-1" eventType="touchUpInside" id="1Ok-4N-Yzw"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OJb-hQ-UUu" userLabel="Button_Reject" customClass="CustomButton" customModule="iGift" customModuleProvider="target">
-                    <rect key="frame" x="30" y="582" width="315" height="55"/>
-                    <color key="backgroundColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="55" id="86M-5O-Jp1"/>
-                    </constraints>
-                    <state key="normal" title="REJECT">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="isRoundedCorners" value="YES"/>
-                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                            <integer key="value" value="1"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                            <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="isShadowUnder" value="YES"/>
-                    </userDefinedRuntimeAttributes>
-                    <connections>
-                        <action selector="rejectAction:" destination="-1" eventType="touchUpInside" id="DPG-c9-nD2"/>
-                    </connections>
-                </button>
+                    <viewLayoutGuide key="safeArea" id="QWC-nM-J3N"/>
+                </scrollView>
             </subviews>
             <color key="backgroundColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="TD4-NX-wId" firstAttribute="top" secondItem="G6a-ae-G5W" secondAttribute="bottom" constant="20" id="DBH-cR-GRJ"/>
-                <constraint firstItem="c2L-78-2HT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="G6w-09-ilL"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="TD4-NX-wId" secondAttribute="trailing" constant="30" id="Ogn-A7-gDh"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="c2L-78-2HT" secondAttribute="trailing" constant="30" id="RPp-Sb-ylj"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="OJb-hQ-UUu" secondAttribute="trailing" constant="30" id="UXP-00-3c4"/>
-                <constraint firstItem="TD4-NX-wId" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="c2D-sq-ykR"/>
-                <constraint firstItem="OJb-hQ-UUu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="cgA-6e-sZx"/>
-                <constraint firstItem="G6a-ae-G5W" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="ci3-Uk-AzJ"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="G6a-ae-G5W" secondAttribute="trailing" constant="30" id="dLf-72-6do"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="OJb-hQ-UUu" secondAttribute="bottom" constant="30" id="fLv-gS-1AQ"/>
-                <constraint firstItem="G6a-ae-G5W" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="60" id="hPA-En-Ffw"/>
-                <constraint firstItem="OJb-hQ-UUu" firstAttribute="top" secondItem="c2L-78-2HT" secondAttribute="bottom" constant="20" id="yux-xb-L1Y"/>
+                <constraint firstItem="D2E-QS-kie" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Ejk-D3-Man"/>
+                <constraint firstItem="D2E-QS-kie" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="PIs-vn-aGT"/>
+                <constraint firstItem="D2E-QS-kie" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="QAC-RM-y4b"/>
+                <constraint firstItem="D2E-QS-kie" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="bda-Iv-YqX"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="33.5" y="53.5"/>
