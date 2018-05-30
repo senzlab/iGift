@@ -110,20 +110,25 @@ class ViewControllerUtil: NSObject {
         return true
     }
     
-    class func validateChangePassword(psw: String, pswNew: String, pswCon: String) -> Bool {
+    class func validateChangePassword(psw: String, pswNew: String, pswCon: String) -> NSNumber {
+        
+        if pswNew == PreferenceUtil.instance.get(key: PreferenceUtil.PASSWORD)  {
+            return 5
+        }
+        
         if (psw.isEmpty || pswCon.isEmpty || pswNew.isEmpty) {
-            return false
+            return 4
         }
         
         if(psw != PreferenceUtil.instance.get(key: PreferenceUtil.PASSWORD)) {
-            return false
+            return 3
         }
         
         if (pswNew != pswCon) {
-            return false
+            return 2
         }
         
-        return true
+        return 1
     }
     
     class func validateResetPassword(psw: String, pswCon: String) -> Bool {
