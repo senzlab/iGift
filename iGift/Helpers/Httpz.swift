@@ -111,7 +111,7 @@ class Httpz {
         var tcpUrl:String?
         
         #if DEBUG
-            tcpUrl = "10.2.2.9"
+            tcpUrl = "34.226.3.46"
         #else
             tcpUrl = "222.165.167.19"
         #endif
