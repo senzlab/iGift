@@ -166,6 +166,7 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
                             let senzUser = User(id: 1)
                             senzUser.zid = phone
                             senzUser.phone = phone
+                            senzUser.isRequester = true
                             senzUser.isActive = false
                             SenzDb.instance.createUser(user: senzUser)
                             
