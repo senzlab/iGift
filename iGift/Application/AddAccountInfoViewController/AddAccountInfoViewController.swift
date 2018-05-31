@@ -20,7 +20,7 @@ class AddAccountInfoViewController : BaseViewController {
     }
 
     func setupUi() {
-        self.title = "Add account"
+        self.title = "Add Account"
         cancelButton.isHidden = true
         cancelButtonHeightConstraint.constant = 0
     }
