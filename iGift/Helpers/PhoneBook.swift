@@ -35,7 +35,8 @@ class PhoneBook {
                 for num in contact.phoneNumbers {
                     let phn = self.internationalize(phone: num.value.stringValue)
                     if phn != nil {
-                        results.append(SenzContact(name: contact.givenName, phone: phn!, thumbnail: contact.thumbnailImageData))
+                        //results.append(SenzContact(name: contact.givenName, phone: phn!, thumbnail: contact.thumbnailImageData))
+                        results.append(SenzContact(name: contact.givenName != "" ? contact.givenName : contact.familyName, phone: phn!, thumbnail: contact.thumbnailImageData))
                     }
                 }
             }
