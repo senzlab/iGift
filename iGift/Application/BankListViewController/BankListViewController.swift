@@ -60,7 +60,29 @@ class BankListViewController : BaseViewController, UITableViewDelegate, UITableV
             Bank(code: "7311", name: "Pan Asia Banking Corporation"),
             Bank(code: "7384", name: "ICICI Bank"),
             Bank(code: "7454", name: "DFCC Bank"),
-            Bank(code: "7463", name: "Amana Bank")
+            Bank(code: "7463", name: "Amana Bank"),
+            Bank(code: "7472", name: "Axis Bank"),
+            Bank(code: "7481", name: "Cargills Bank"),
+            Bank(code: "7719", name: "NSB - National Savings Bank"),
+            Bank(code: "7728", name: "SDB - Sanasa Development Bank"),
+            Bank(code: "7737", name: "HDFC Bank"),
+            Bank(code: "7746", name: "CDB - Citizen Development Business Finance"),
+            Bank(code: "7755", name: "RDB - Regional Development Bank"),
+            Bank(code: "7764", name: "State Mortgage & Investment Bank"),
+            Bank(code: "7773", name: "LB Finance"),
+            Bank(code: "7782", name: "Senkadagala Finance"),
+            Bank(code: "7807", name: "Commercial Leasing and Finance"),
+            Bank(code: "7816", name: "Vallibel Finance"),
+            Bank(code: "7825", name: "Central Finance"),
+            Bank(code: "7834", name: "Kanrich Finance"),
+            Bank(code: "7852", name: "Alliance Finance Company"),
+            Bank(code: "7861", name: "LOLC Finance"),
+            Bank(code: "7870", name: "Commercial Credit & Finance"),
+            Bank(code: "7898", name: "Merchant Bank of Sri Lanka & Finance"),
+            Bank(code: "7904", name: "HNB Grameen Finance Limited"),
+            Bank(code: "7913", name: "Mercantile Investment and Finance"),
+            Bank(code: "7922", name: "People's Leasing & Finance"),
+            Bank(code: "8004", name: "Central Bank of Sri Lanka")
         ]
     }
 

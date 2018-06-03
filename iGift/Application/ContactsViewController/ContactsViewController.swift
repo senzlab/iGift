@@ -120,7 +120,6 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
                         ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to confirm request")
                     }
                 } else {
-
                     if (SenzUtil.instance.verifyStatus(z: z!)) {
                         // done, exit from here
                         SenzDb.instance.markAsActive(id: user.zid)
