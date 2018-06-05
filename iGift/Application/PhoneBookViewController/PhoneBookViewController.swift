@@ -134,8 +134,7 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
         if searchText.isEmpty{
             filteredArray.removeAll()
             filteredArray = dataArray
-            
-        }else{
+        } else{
             filteredArray = dataArray.filter({ (phoneRecord) -> Bool in
                 return phoneRecord.name.lowercased().range(of:searchText.lowercased()) != nil
             })
@@ -150,46 +149,74 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
             // user exists
             ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "This user already added in your iGift contact list")
         } else {
-            let alert = UIAlertController(title: "Confirm", message: "Would like to send iGift request to " + contact.name + "?", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action: UIAlertAction!) in
-                SenzProgressView.shared.showProgressView((self.navigationController?.view)!)
-                DispatchQueue.global(qos: .userInitiated).async {
-                    let z = Httpz.instance.pushSenz(senz: SenzUtil.instance.connectSenz(to: phone))
-                    if (z == nil) {
+            // ask to send request
+            askSendRequest(contact: contact, phone: phone)
+        }
+    }
+    
+    func askSendRequest(contact: SenzContact, phone: String) {
+        let alert = UIAlertController(title: "Confirm", message: "Would like to send iGift request to " + contact.name + "?", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action: UIAlertAction!) in
+            SenzProgressView.shared.showProgressView((self.navigationController?.view)!)
+            DispatchQueue.global(qos: .userInitiated).async {
+                let z = Httpz.instance.pushSenz(senz: SenzUtil.instance.connectSenz(to: phone))
+                if (z == nil) {
+                    DispatchQueue.main.async {
+                        SenzProgressView.shared.hideProgressView()
+                        ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to send request")
+                    }
+                } else {
+                    let s = SenzUtil.instance.parse(msg: z!).attr["#status"]
+                    if (s == "201") {
+                        // request created
+                        // save user
+                        let senzUser = User(id: 1)
+                        senzUser.zid = phone
+                        senzUser.phone = phone
+                        senzUser.isRequester = true
+                        senzUser.isActive = false
+                        _ = SenzDb.instance.createUser(user: senzUser)
+                        
+                        // exit
+                        DispatchQueue.main.async {
+                            SenzProgressView.shared.hideProgressView()
+                            self.navigationController?.popViewController(animated: false)
+                        }
+                    } else if(s == "404") {
+                        // this means user does not exists
+                        // ask for sms request
+                        DispatchQueue.main.async {
+                            SenzProgressView.shared.hideProgressView()
+                            self.askSendSms(contact: contact, phone: phone)
+                        }
+                    } else {
                         DispatchQueue.main.async {
                             SenzProgressView.shared.hideProgressView()
                             ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to send request")
                         }
-                    } else {
-                        if (SenzUtil.instance.verifyStatus(z: z!)) {
-                            // save user
-                            let senzUser = User(id: 1)
-                            senzUser.zid = phone
-                            senzUser.phone = phone
-                            senzUser.isRequester = true
-                            senzUser.isActive = false
-                            SenzDb.instance.createUser(user: senzUser)
-                            
-                            // exit
-                            DispatchQueue.main.async {
-                                SenzProgressView.shared.hideProgressView()
-                                self.navigationController?.popViewController(animated: false)
-                            }
-                        } else {
-                            DispatchQueue.main.async {
-                                SenzProgressView.shared.hideProgressView()
-                                ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to send request")
-                            }
-                        }
                     }
                 }
-            }))
-            
-            alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: { (action: UIAlertAction!) in
-                // do nothing
-            }))
-            
-            present(alert, animated: true, completion: nil)
-        }
+            }
+        }))
+        
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: { (action: UIAlertAction!) in
+            // do nothing
+        }))
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func askSendSms(contact: SenzContact, phone: String) {
+        let message = contact.name + " not using sampath iGift app, would you like send invitation via SMS?"
+        let alert = UIAlertController(title: "Confirm", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action: UIAlertAction!) in
+            // todo start sms app to send request
+        }))
+        
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: { (action: UIAlertAction!) in
+            // do nothing
+        }))
+        
+        present(alert, animated: true, completion: nil)
     }
 }
