@@ -112,8 +112,11 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.delete) {
-            // handle delete (by removing the data from your array and updating the tableview)
-            print("Write delete logic")
+            
+            let user = dataArray[indexPath.row]
+            _ = SenzDb.instance.deleteUser(id: user.zid)
+            dataArray = SenzDb.instance.getUsers(active: forNewIgift)
+            contactTableView.reloadData()
         }
     }
     
