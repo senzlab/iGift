@@ -27,6 +27,9 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUi()
+        
+        tblView.addSubview(self.refreshControl)
+        
         self.loadContacts()
     }
 
@@ -242,5 +245,28 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
         
         // Dismiss the message compose view controller.
         controller.dismiss(animated: true, completion: nil)
+    }
+    
+    //    MARK : Pull to refresh
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self,
+                                 action: #selector(self.handleRefresh(_:)),
+                                 for: UIControlEvents.valueChanged)
+        refreshControl.tintColor = UIColor.orange
+        
+        return refreshControl
+    }()
+    
+    @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
+        dataArray.removeAll()
+        print("# 1 # dataArray count = ", dataArray.count)
+        
+        
+        self.dataArray = PhoneBook().getContacts()
+        print("# 2 # dataArray count = ", dataArray.count)
+        
+        tblView.reloadData()
+        refreshControl.endRefreshing()
     }
 }
