@@ -11,8 +11,9 @@ import UIKit
 import Contacts
 import ContactsUI
 import StoreKit
+import MessageUI
 
-class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, UISearchBarDelegate {
+class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, UISearchBarDelegate, MFMessageComposeViewControllerDelegate {
 
     @IBOutlet weak var tblView: UITableView!
     @IBOutlet weak var searchPlaceHolder: UIView!
@@ -210,7 +211,21 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
         let message = contact.name + " not using sampath iGift app, would you like send invitation via SMS?"
         let alert = UIAlertController(title: "Confirm", message: message, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action: UIAlertAction!) in
-            // todo start sms app to send request
+            
+            if !MFMessageComposeViewController.canSendText() {
+                ViewControllerUtil.showAlert(alertTitle: "Notice", alertMessage: "SMS services are not available")
+            }
+            else {
+                let composeVC = MFMessageComposeViewController()
+                composeVC.messageComposeDelegate = self
+                
+                // Configure the fields of the interface.
+                composeVC.recipients = [phone]
+                composeVC.body = "Download iGift from AppStore https://itunes.apple.com/us/app/APPNAME/id1389725182"
+                
+                // Present the view controller modally.
+                self.present(composeVC, animated: true, completion: nil)
+            }
         }))
         
         alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: { (action: UIAlertAction!) in
@@ -218,5 +233,13 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
         }))
         
         present(alert, animated: true, completion: nil)
+    }
+    
+    //    MARK: MFMessageComposeViewControllerDelegate
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        // Check the result or perform other tasks.
+        
+        // Dismiss the message compose view controller.
+        controller.dismiss(animated: true, completion: nil)
     }
 }
