@@ -88,6 +88,7 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
         return CGFloat(HEIGHT_OF_ROW)
     }
     
+    //    MARK : UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         var contact:SenzContact?
@@ -100,7 +101,7 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
 
         addContact(contact: contact!)
     }
-
+    
     func configureCustomSearchController() {
         self.searchBar = CustomSearchBar(searchBarFrame: CGRect(x: 0.0,y: 0.0, width: tblView.frame.size.width, height: 56.0), searchBarFont: UIFont(name: Constants.MAIN_FONT_FAMILY.rawValue, size: 22.0)!, searchBarTextColor: UIColor.fromHex(HexColors.PRIMARY_COLOR.rawValue), searchBarTintColor: UIColor.fromHex(HexColors.WHITE_COLOR.rawValue), placeholderText: "Search Contacts")
         self.searchBar.delegate = self

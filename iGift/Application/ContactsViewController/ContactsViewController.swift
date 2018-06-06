@@ -49,6 +49,7 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
         }
     }
 
+    //    MARK: UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataArray.count
     }
@@ -82,6 +83,7 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
         return cell!
     }
 
+    //    MARK: UITableViewDelegate
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return CGFloat(HEIGHT_OF_ROW)
     }
@@ -101,6 +103,17 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
                 // ask to confirm request
                 confirmRequest(user: user)
             }
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            // handle delete (by removing the data from your array and updating the tableview)
+            print("Write delete logic")
         }
     }
     
