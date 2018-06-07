@@ -82,7 +82,8 @@ class BankListViewController : BaseViewController, UITableViewDelegate, UITableV
             Bank(code: "7904", name: "HNB Grameen Finance Limited"),
             Bank(code: "7913", name: "Mercantile Investment and Finance"),
             Bank(code: "7922", name: "People's Leasing & Finance"),
-            Bank(code: "8004", name: "Central Bank of Sri Lanka")
+            Bank(code: "8004", name: "Central Bank of Sri Lanka"),
+            Bank(code: "6990", name: "Lanka Pay Test")
         ]
     }
 
