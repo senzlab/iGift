@@ -46,7 +46,7 @@ class RedeemViewController: KeyboardScrollableViewController {
         if (iGift != nil) {
             let acc = accountNoTextField.text!.replacingOccurrences(of: " ", with: "")
             let accCon = confirmAccountNoTextField.text!.replacingOccurrences(of: " ", with: "")
-            if (ViewControllerUtil.validateAccount(acc: acc, accCon: accCon)) {
+            if (ViewControllerUtil.validateRedeem(bankCode: bank!.code, acc: acc, accCon: accCon)) {
                 askPassword(acc: acc)
             } else {
                 ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Invalid account")

@@ -78,6 +78,34 @@ class ViewControllerUtil: NSObject {
         return true
     }
     
+    class func validateRedeem(bankCode: String, acc: String, accCon: String) -> Bool {
+        if(acc.isEmpty || accCon.isEmpty) {
+            // emapty
+            return false
+        }
+        
+        if(acc != accCon) {
+            // mismatch phone
+            return false
+        }
+        
+        if (bankCode == "7278") {
+            // sampath, 12 digit acc
+            if(acc.count != 12) {
+                // account should be 12 lenght
+                return false
+            }
+        } else {
+            // other banks, at least 8 digit acc
+            if(acc.count < 8) {
+                // account should be 12 lenght
+                return false
+            }
+        }
+        
+        return true
+    }
+    
     class func validateIGift(amount: String) -> Bool {
         if amount.isEmpty {
             return false
