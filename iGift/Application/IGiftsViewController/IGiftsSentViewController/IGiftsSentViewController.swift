@@ -18,11 +18,17 @@ class IGiftsSentViewController : BaseViewController, UITableViewDelegate, UITabl
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        dataArray = SenzDb.instance.getIgifts(myGifts: true)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        //self.tabBarController?.navigationItem.title = "Sent iGifts"
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(false)
+        dataArray = SenzDb.instance.getIgifts(myGifts: true)
+        
+        if dataArray.count == 0 {
+            tblView.isHidden = true
+        }
+        
+        reloadTable()
     }
 
     func reloadTable() {

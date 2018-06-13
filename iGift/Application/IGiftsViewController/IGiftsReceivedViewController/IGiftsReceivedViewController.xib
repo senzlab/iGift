@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -21,6 +21,18 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty_table" translatesAutoresizingMaskIntoConstraints="NO" id="Nme-9A-Ord" userLabel="ImageView">
+                    <rect key="frame" x="20" y="233" width="335" height="200"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="Hbr-Ba-hhy"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have not received an iGift yet." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tBm-uQ-wma" userLabel="placeHolder_Label">
+                    <rect key="frame" x="30" y="441" width="315" height="21.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="A7c-3q-KU1">
                     <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -33,12 +45,24 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="tBm-uQ-wma" firstAttribute="centerX" secondItem="pQG-Gh-dox" secondAttribute="centerX" id="0Dg-ra-bHm"/>
+                <constraint firstItem="tBm-uQ-wma" firstAttribute="leading" secondItem="Gsb-HA-CSd" secondAttribute="leading" constant="30" id="Jnu-yW-pSD"/>
                 <constraint firstItem="A7c-3q-KU1" firstAttribute="leading" secondItem="Gsb-HA-CSd" secondAttribute="leading" id="MWD-ba-5II"/>
+                <constraint firstItem="Nme-9A-Ord" firstAttribute="centerY" secondItem="pQG-Gh-dox" secondAttribute="centerY" id="RRa-vL-pzg"/>
                 <constraint firstItem="Gsb-HA-CSd" firstAttribute="trailing" secondItem="A7c-3q-KU1" secondAttribute="trailing" id="Sg2-29-dLw"/>
+                <constraint firstItem="Nme-9A-Ord" firstAttribute="centerX" secondItem="pQG-Gh-dox" secondAttribute="centerX" id="ZMw-dk-pTa"/>
                 <constraint firstItem="A7c-3q-KU1" firstAttribute="top" secondItem="Gsb-HA-CSd" secondAttribute="top" id="fgU-va-a3U"/>
+                <constraint firstItem="tBm-uQ-wma" firstAttribute="top" secondItem="Nme-9A-Ord" secondAttribute="bottom" constant="8" id="mdK-cB-yfS"/>
+                <constraint firstItem="Nme-9A-Ord" firstAttribute="leading" secondItem="Gsb-HA-CSd" secondAttribute="leading" constant="20" id="qvS-Er-l4f"/>
+                <constraint firstItem="Gsb-HA-CSd" firstAttribute="trailing" secondItem="Nme-9A-Ord" secondAttribute="trailing" constant="20" id="sji-FK-aNO"/>
                 <constraint firstItem="Gsb-HA-CSd" firstAttribute="bottom" secondItem="A7c-3q-KU1" secondAttribute="bottom" id="xX4-3x-U94"/>
+                <constraint firstItem="Gsb-HA-CSd" firstAttribute="trailing" secondItem="tBm-uQ-wma" secondAttribute="trailing" constant="30" id="xzz-Tk-yUm"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Gsb-HA-CSd"/>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="empty_table" width="470" height="234"/>
+    </resources>
 </document>

@@ -28,8 +28,7 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        dataArray = SenzDb.instance.getUsers(active: forNewIgift)
-        contactTableView.reloadData()
+        reloadDataTable()
     }
 
     func setupUi() {
@@ -115,8 +114,7 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
             
             let user = dataArray[indexPath.row]
             _ = SenzDb.instance.deleteUser(id: user.zid)
-            dataArray = SenzDb.instance.getUsers(active: forNewIgift)
-            contactTableView.reloadData()
+            reloadDataTable()
         }
     }
     
@@ -160,5 +158,19 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
         }))
         
         present(alert, animated: true, completion: nil)
+    }
+    
+    //    MARK : Supportive functions
+    func reloadDataTable() {
+        dataArray = SenzDb.instance.getUsers(active: forNewIgift)
+        
+        if dataArray.count == 0 {
+            contactTableView.isHidden = true
+        }
+        else {
+            contactTableView.isHidden = false
+        }
+        
+        contactTableView.reloadData()
     }
 }

@@ -27,6 +27,11 @@ class IGiftsReceivedViewController : BaseViewController, UITableViewDelegate, UI
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
         dataArray = SenzDb.instance.getIgifts(myGifts: false)
+        
+        if dataArray.count == 0 {
+            tblView.isHidden = true
+        }
+        
         reloadTable()
     }
 

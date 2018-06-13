@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,6 +21,18 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty_table" translatesAutoresizingMaskIntoConstraints="NO" id="D57-47-hYc" userLabel="ImageView">
+                    <rect key="frame" x="20" y="233" width="335" height="200"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="rYE-i4-6oZ"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have not sent an iGift yet." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ylA-qp-J4v" userLabel="placeHolder_Label">
+                    <rect key="frame" x="30" y="441" width="315" height="21.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xiz-dR-6fb">
                     <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -34,11 +46,22 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Xiz-dR-6fb" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="0AL-Hh-pzK"/>
+                <constraint firstItem="D57-47-hYc" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="3X5-Zh-h6d"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ylA-qp-J4v" secondAttribute="trailing" constant="30" id="5pD-Dn-EII"/>
                 <constraint firstItem="Xiz-dR-6fb" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="60C-7W-twm"/>
+                <constraint firstItem="D57-47-hYc" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="63b-B5-f3Y"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Xiz-dR-6fb" secondAttribute="bottom" id="JBd-HF-Fqg"/>
+                <constraint firstItem="ylA-qp-J4v" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="ONs-mv-3gq"/>
+                <constraint firstItem="ylA-qp-J4v" firstAttribute="top" secondItem="D57-47-hYc" secondAttribute="bottom" constant="8" id="fIf-ho-gZf"/>
+                <constraint firstItem="ylA-qp-J4v" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="gOa-gD-edJ"/>
+                <constraint firstItem="D57-47-hYc" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="kNz-uO-Wiy"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Xiz-dR-6fb" secondAttribute="trailing" id="smZ-1z-c48"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="D57-47-hYc" secondAttribute="trailing" constant="20" id="tq6-eh-U2V"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
         </view>
     </objects>
+    <resources>
+        <image name="empty_table" width="470" height="234"/>
+    </resources>
 </document>
