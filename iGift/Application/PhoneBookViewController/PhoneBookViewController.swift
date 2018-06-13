@@ -160,7 +160,7 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
     }
     
     func askSendRequest(contact: SenzContact, phone: String) {
-        let alert = UIAlertController(title: "Confirm", message: "Would like to send iGift request to " + contact.name + "?", preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "Confirm", message: "Are you sure you want to add " + contact.name + " as an iGift contact?", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action: UIAlertAction!) in
             SenzProgressView.shared.showProgressView((self.navigationController?.view)!)
             DispatchQueue.global(qos: .userInitiated).async {
