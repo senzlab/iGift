@@ -28,6 +28,14 @@ class RedeemViewController: KeyboardScrollableViewController {
         
         if(bank != nil) {
             bankNameTextField.text = bank!.name
+            
+            var chargeAmount:String = "20"
+            
+            if bank?.code != "7278" {
+                chargeAmount = "50"
+            }
+
+            ViewControllerUtil.showAlert(alertTitle: "Notice", alertMessage: "You will be charged Rs. \(chargeAmount) as CEFT chargers.")
         }
     }
     
