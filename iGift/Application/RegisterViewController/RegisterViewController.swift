@@ -60,15 +60,16 @@ class RegisterViewController : KeyboardScrollableViewController {
         let pswCon = txtFieldConfirmPassword.text!.replacingOccurrences(of: " ", with: "")
         
         // validate inputs
-        if(ViewControllerUtil.validateRegistration(phn: phn, phnCon: phnCon, psw: psw, pswCon: pswCon)) {
-            if let p = PhoneBook.instance.internationalize(phone: phn) {
-                let phone = p.replacingOccurrences(of: " ", with: "")
+        let returnObj = (ViewControllerUtil.validateRegistration(phn: phn, phnCon: phnCon, psw: psw, pswCon: pswCon))
+        if returnObj.0{
+//            if let p = PhoneBook.instance.internationalize(phone: phn) {
+                let phone = phn.replacingOccurrences(of: " ", with: "")
                 doReg(phone: phone, password: psw)
-            } else {
-                ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Invalid phone no")
-            }
+//            } else {
+//                ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Invalid phone no")
+//            }
         } else {
-            ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Invalid input fields")
+            ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: returnObj.1)
         }
     }
     

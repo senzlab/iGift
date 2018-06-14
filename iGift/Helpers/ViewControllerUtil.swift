@@ -40,23 +40,61 @@ class ViewControllerUtil: NSObject {
         viewController.present(alertController, animated: true, completion: nil)
     }
     
-    class func validateRegistration(phn: String, phnCon: String, psw: String, pswCon: String) -> Bool {
-        if (phn.isEmpty || phnCon.isEmpty || psw.isEmpty || pswCon.isEmpty) {
-            // empty fields
+    static func isValidPassword(testStr:String?) -> Bool {
+        guard testStr != nil else { return false }
+        
+        // at least one symbol,
+        // 8 characters total
+        
+        let passwordTest = NSPredicate(format: "SELF MATCHES %@", "(?=.*[!&^%$#@()/]+.*).{7,}")
+        return passwordTest.evaluate(with: testStr)
+    }
+    
+    static func isValidPhoneNo(testStr:String?) -> Bool {
+        guard testStr != nil else { return false }
+        
+        if testStr?.count != 10{
             return false
         }
-        
-        if(phn != phnCon) {
-            // mismatch phone
-            return false
-        }
-        
-        if(psw != pswCon) {
-            // mismatch password
+        if testStr?.first != "0"{
             return false
         }
         
         return true
+        
+    }
+    
+    class func validateRegistration(phn: String, phnCon: String, psw: String, pswCon: String) -> (Bool,String) {
+        
+        if (phn.isEmpty || phnCon.isEmpty || psw.isEmpty || pswCon.isEmpty) {
+            // empty fields
+            return (false, "Input fields can't be empty.")
+        }
+        
+        
+        if !isValidPhoneNo(testStr: phn) || (PhoneBook.instance.internationalize(phone: phn) == nil){
+            return (false,"Invalid phone no. Phone no should contains 10 digits and start with 07.")
+        }
+        
+        if(phn != phnCon) {
+            // mismatch phone
+            return (false,"Phone number is mismatch.")
+        }
+        
+        if !isValidPassword(testStr: psw){
+            // at least one symbol,
+            // 8 characters total
+            
+            return (false,"Invalid password. Password must include at least one symbol and be 7 or more characters long.")
+            
+        }
+        
+        if(psw != pswCon) {
+            // mismatch password
+            return (false,"password is mismatch.")
+        }
+        
+        return (true,"")
     }
     
     class func validateAccount(acc: String, accCon: String) -> Bool {
