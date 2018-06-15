@@ -68,6 +68,16 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
         let senzContact = PhoneBook.instance.getContact(phone: data.phone)
         cell?.lblName?.text = senzContact?.name
         cell?.lblMessage?.text = senzContact?.phone
+
+        if senzContact == nil {
+            cell?.lblName?.text = data.phone
+            cell?.lblMessage?.text = data.phone
+        }
+        else {
+            cell?.lblName?.text = senzContact?.name
+            cell?.lblMessage?.text = senzContact?.phone
+        }
+        
         if (!data.isActive) {
             if data.isRequester {
                 cell?.lblUserStatus?.setTitle("Sent request", for: .normal)
