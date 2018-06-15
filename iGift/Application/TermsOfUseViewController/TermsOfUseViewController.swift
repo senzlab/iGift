@@ -22,10 +22,10 @@ class TermsOfUseViewController: BaseViewController {
     func setupUi() {
         self.title = "Terms of use"
         
-        if !isFirstTimeLoading {
-            acceptButton.isHidden = true
+//        if !isFirstTimeLoading {
+//            acceptButton.isHidden = true
 //            rejectButton.isHidden = true
-        }
+//        }
     }
     
     @IBAction func acceptAction(_ sender: UIButton) {

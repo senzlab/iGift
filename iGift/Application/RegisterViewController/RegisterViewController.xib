@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterViewController" customModule="iGift" customModuleProvider="target">
             <connections>
+                <outlet property="btnTermsCon" destination="3Fg-Q2-2oK" id="hh8-Tq-278"/>
                 <outlet property="scrollView" destination="rwL-IR-92e" id="uy8-Kp-pKY"/>
                 <outlet property="txtFieldConfirmPassword" destination="Y6h-PW-SD2" id="F9l-2K-UPC"/>
                 <outlet property="txtFieldConfirmUsername" destination="lky-jj-v9E" id="dqu-X8-fmC"/>
@@ -96,6 +97,117 @@
                                         <constraint firstAttribute="trailing" secondItem="Y6h-PW-SD2" secondAttribute="trailing" id="rJn-Wx-aT1"/>
                                     </constraints>
                                 </stackView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Fg-Q2-2oK">
+                                    <rect key="frame" x="57.5" y="489" width="260" height="45"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="45" id="cgk-yh-uEQ"/>
+                                        <constraint firstAttribute="width" constant="260" id="pCB-kV-fjr"/>
+                                    </constraints>
+                                    <state key="normal">
+                                        <attributedString key="attributedTitle">
+                                            <fragment>
+                                                <string key="content">By registering in iGift you agree to our 
+</string>
+                                                <attributes>
+                                                    <font key="NSFont" size="16" name="GeosansLight"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                        <tabStops>
+                                                            <textTab alignment="left" location="28.299999237060547">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="56.650001525878906">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="85">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="113.34999847412109">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="141.69999694824219">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="170.05000305175781">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="198.39999389648438">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="226.75">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="255.10000610351562">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="283.45001220703125">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="311.79998779296875">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="340.14999389648438">
+                                                                <options/>
+                                                            </textTab>
+                                                        </tabStops>
+                                                    </paragraphStyle>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="Terms and Conditions ">
+                                                <attributes>
+                                                    <font key="NSFont" size="16" name="GeosansLight-Oblique"/>
+                                                    <font key="NSOriginalFont" size="16" name="GeosansLight-Oblique"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                        <tabStops>
+                                                            <textTab alignment="left" location="28.299999237060547">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="56.650001525878906">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="85">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="113.34999847412109">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="141.69999694824219">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="170.05000305175781">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="198.39999389648438">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="226.75">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="255.10000610351562">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="283.45001220703125">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="311.79998779296875">
+                                                                <options/>
+                                                            </textTab>
+                                                            <textTab alignment="left" location="340.14999389648438">
+                                                                <options/>
+                                                            </textTab>
+                                                        </tabStops>
+                                                    </paragraphStyle>
+                                                    <integer key="NSUnderline" value="1"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="fontName" value="GeosansLight"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="onTermsNConClicked:" destination="-1" eventType="touchUpInside" id="JfM-bN-QcT"/>
+                                    </connections>
+                                </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q1I-ir-BJl" customClass="CustomButton" customModule="iGift" customModuleProvider="target">
                                     <rect key="frame" x="50" y="562" width="275" height="55"/>
                                     <color key="backgroundColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -124,10 +236,12 @@
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
+                                <constraint firstItem="q1I-ir-BJl" firstAttribute="top" secondItem="3Fg-Q2-2oK" secondAttribute="bottom" constant="28" id="6mv-3E-tF7"/>
                                 <constraint firstItem="hkw-jc-gu9" firstAttribute="centerY" secondItem="dLL-u9-Yzn" secondAttribute="centerY" constant="-80" id="Cf0-2d-O5L"/>
                                 <constraint firstAttribute="trailing" secondItem="hkw-jc-gu9" secondAttribute="trailing" constant="50" id="Mnl-zf-B9r"/>
                                 <constraint firstAttribute="trailing" secondItem="q1I-ir-BJl" secondAttribute="trailing" constant="50" id="XQa-bC-Byl"/>
                                 <constraint firstItem="q1I-ir-BJl" firstAttribute="leading" secondItem="dLL-u9-Yzn" secondAttribute="leading" constant="50" id="cnf-s9-UcK"/>
+                                <constraint firstItem="3Fg-Q2-2oK" firstAttribute="centerX" secondItem="dLL-u9-Yzn" secondAttribute="centerX" id="dFZ-FQ-o4n"/>
                                 <constraint firstItem="hkw-jc-gu9" firstAttribute="centerX" secondItem="dLL-u9-Yzn" secondAttribute="centerX" id="hLM-Q0-agc"/>
                                 <constraint firstItem="hkw-jc-gu9" firstAttribute="leading" secondItem="dLL-u9-Yzn" secondAttribute="leading" constant="50" id="oKl-GJ-e5N"/>
                                 <constraint firstAttribute="bottom" secondItem="q1I-ir-BJl" secondAttribute="bottom" constant="30" id="oQA-Vv-JfH"/>
