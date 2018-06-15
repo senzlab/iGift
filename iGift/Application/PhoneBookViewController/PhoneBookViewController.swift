@@ -225,7 +225,7 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
                 
                 // Configure the fields of the interface.
                 composeVC.recipients = [phone]
-                composeVC.body = "Download iGift from AppStore https://itunes.apple.com/us/app/APPNAME/id1389725182"
+                composeVC.body = "Please install Sampath igift app to happy share gifts. You can download it from here. https://itunes.apple.com/us/app/APPNAME/id1389725182"
                 
                 // Present the view controller modally.
                 self.present(composeVC, animated: true, completion: nil)
