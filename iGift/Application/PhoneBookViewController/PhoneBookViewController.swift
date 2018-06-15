@@ -172,7 +172,7 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
                     }
                 } else {
                     let s = SenzUtil.instance.parse(msg: z!).attr["#status"]
-                    if (s == "201") {
+                    if (s == "201" || s == "SUCCESS") {
                         // request created
                         // save user
                         let senzUser = User(id: 1)
