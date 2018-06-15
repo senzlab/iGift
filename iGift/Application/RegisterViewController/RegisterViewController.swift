@@ -24,6 +24,7 @@ class RegisterViewController : KeyboardScrollableViewController {
     }
 
     func setupUi() {
+        navigationController?.navigationBar.topItem?.hidesBackButton = true
         self.title = "Register"
         self.setupStylesForTextFields()
     }

@@ -29,8 +29,7 @@ class TermsOfUseViewController: BaseViewController {
     }
     
     @IBAction func acceptAction(_ sender: UIButton) {
-        let registerViewController = RegisterViewController(nibName: "RegisterViewController", bundle: nil)
-        self.navigationController?.pushViewController(registerViewController, animated: false)
+        self.loadView("RegisterViewController")
     }
     
     @IBAction func rejectAction(_ sender: UIButton) {

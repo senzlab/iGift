@@ -1,5 +1,5 @@
 //
-//  AddAccountInfoViewController.swift
+//  VerifyAccountViewController.swift
 //  iGift
 //
 //  Created by Lakmal Caldera on 5/9/18.
