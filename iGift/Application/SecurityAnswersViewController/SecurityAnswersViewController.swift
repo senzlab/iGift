@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecurityAnswersViewController : KeyboardScrollableViewController {
+class SecurityAnswersViewController : KeyboardScrollableViewController, AlertViewControllerDelegate {
 
     @IBOutlet weak var txtFieldAOne: UITextField!
     @IBOutlet weak var txtFieldATwo: UITextField!
@@ -68,14 +68,31 @@ class SecurityAnswersViewController : KeyboardScrollableViewController {
         } else {
             // need to asnwer all questions
             if (ViewControllerUtil.validateQuestions(q1: q1, q2: q2, q3: q3)) {
-                PreferenceUtil.instance.put(key: PreferenceUtil.QUESTION1, value: q1)
-                PreferenceUtil.instance.put(key: PreferenceUtil.QUESTION2, value: q2)
-                PreferenceUtil.instance.put(key: PreferenceUtil.QUESTION3, value: q3)
                 
-                self.loadView("HomeViewController")
-            } else {
+                let viewContUtil = ViewControllerUtil()
+                
+                viewContUtil.delegate = self
+                viewContUtil.showAlertWithTwoActions(alertTitle: "Confirm", alertMessage: "Are you sure you want to save your answers to the questions", viewController: self)
+            }
+            else {
                 ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "You need to answer all three questions")
             }
+        }
+    }
+    
+    //    MARK: AlertViewControllerDelegate
+    func executeTaskForAction(actionTitle: String) {
+        
+        if actionTitle == "OK" {
+            
+            let q1 = txtFieldAOne.text!.replacingOccurrences(of: " ", with: "")
+            let q2 = txtFieldATwo.text!.replacingOccurrences(of: " ", with: "")
+            let q3 = txtFieldAThree.text!.replacingOccurrences(of: " ", with: "")
+            
+            PreferenceUtil.instance.put(key: PreferenceUtil.QUESTION1, value: q1)
+            PreferenceUtil.instance.put(key: PreferenceUtil.QUESTION2, value: q2)
+            PreferenceUtil.instance.put(key: PreferenceUtil.QUESTION3, value: q3)
+            self.loadView("HomeViewController")
         }
     }
 }
