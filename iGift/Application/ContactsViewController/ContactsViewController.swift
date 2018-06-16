@@ -12,7 +12,6 @@ import Contacts
 
 class ContactsViewController : BaseViewController, UITableViewDelegate, UITableViewDataSource {
 
-    let NUMBER_OF_ROWS = 1
     let HEIGHT_OF_ROW = 85
 
     var dataArray: [User]!

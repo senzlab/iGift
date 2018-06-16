@@ -19,10 +19,6 @@ class IGiftsReceivedViewController : BaseViewController, UITableViewDelegate, UI
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
-    override func viewDidAppear(_ animated: Bool) {
-        //self.tabBarController?.navigationItem.title = "Received iGifts"
-    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
