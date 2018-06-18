@@ -86,12 +86,12 @@ class RegisterViewController : KeyboardScrollableViewController {
         // validate inputs
         let returnObj = (ViewControllerUtil.validateRegistration(phn: phn, phnCon: phnCon, psw: psw, pswCon: pswCon))
         if returnObj.0{
-//            if let p = PhoneBook.instance.internationalize(phone: phn) {
-                let phone = phn.replacingOccurrences(of: " ", with: "")
+            if let p = PhoneBook.instance.internationalize(phone: phn) {
+                let phone = p.replacingOccurrences(of: " ", with: "")
                 doReg(phone: phone, password: psw)
-//            } else {
-//                ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Invalid phone no")
-//            }
+            } else {
+                ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Invalid phone no")
+            }
         } else {
             ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: returnObj.1)
         }
