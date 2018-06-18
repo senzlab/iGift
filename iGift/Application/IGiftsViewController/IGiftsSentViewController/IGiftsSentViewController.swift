@@ -11,13 +11,21 @@ import UIKit
 class IGiftsSentViewController : BaseViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tblView: UITableView!
-
+    @IBOutlet weak var topMargin: NSLayoutConstraint!
+    
     var dataArray: [Igift]!
 
     let HEIGHT_OF_ROW = 85
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        if #available(iOS 11.0, *) {
+            topMargin.constant = 0
+        } else {
+            topMargin.constant = 64
+        }
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
