@@ -232,7 +232,7 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
                  Android full URL = https://play.google.com/store/apps/details?id=com.score.cbook
                  Android shorten URL = https://goo.gl/scrCCn
                  */
-                composeVC.body = "Click on the link below to receive iGift. iOS link : https://goo.gl/W2UbgS Android link : https://goo.gl/scrCCn Make every moment count with Sampath iGift"
+                composeVC.body = "Click on the link below to receive iGift. https://goo.gl/W2UbgS More info : https://goo.gl/xNTuyJ Make every moment count with Sampath iGift"
                 
                 // Present the view controller modally.
                 self.present(composeVC, animated: true, completion: nil)
