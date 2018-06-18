@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
+class DesignIGiftViewController: BaseViewController, UITextFieldDelegate, AlertViewControllerDelegate {
     
     @IBOutlet weak var sendGiftButton: UIButton!
     @IBOutlet weak var currencyValueTextField: UITextField!
@@ -210,7 +210,10 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
                     DispatchQueue.main.async {
                         // exit view controller
                         SenzProgressView.shared.hideProgressView()
-                        self.navigationController?.popViewController(animated: false)
+                        
+                        let viewContUtil = ViewControllerUtil()
+                        viewContUtil.delegate = self
+                        viewContUtil.showAlertWithSingleActions(alertTitle: "Notice", alertMessage: "Successfully sent iGift", viewController: self)
                     }
                 } else {
                     DispatchQueue.main.async {
@@ -279,6 +282,16 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate {
         alertController.addAction(cancelAction)
         
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func executeTaskForAction(actionTitle: String) {
+        
+        if actionTitle == "OK" {
+            DispatchQueue.main.async {
+                // exit view controller
+                self.navigationController?.popViewController(animated: false)
+            }
+        }
     }
 }
 

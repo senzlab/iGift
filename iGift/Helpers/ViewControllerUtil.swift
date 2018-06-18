@@ -40,6 +40,17 @@ class ViewControllerUtil: NSObject {
         viewController.present(alertController, animated: true, completion: nil)
     }
     
+    func showAlertWithSingleActions(alertTitle:String, alertMessage:String, viewController: UIViewController) {
+        
+        let alertController = UIAlertController(title:alertTitle, message:alertMessage, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+            self.callDelegate(title: "OK")
+        }
+        
+        alertController.addAction(okAction)
+        viewController.present(alertController, animated: true, completion: nil)
+    }
+    
     static func isValidPassword(testStr:String?) -> Bool {
         guard testStr != nil else { return false }
         
