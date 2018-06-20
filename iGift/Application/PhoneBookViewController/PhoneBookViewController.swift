@@ -229,8 +229,6 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
                 /*
                  iOS full URL = https://itunes.apple.com/us/app/sampath-igift/id1389725182
                  iOS shorten URL = https://goo.gl/W2UbgS
-                 Android full URL = https://play.google.com/store/apps/details?id=com.score.cbook
-                 Android shorten URL = https://goo.gl/scrCCn
                  */
                 composeVC.body = "Click on the link below to receive iGift. https://goo.gl/W2UbgS More info : https://goo.gl/xNTuyJ Make every moment count with Sampath iGift"
                 
