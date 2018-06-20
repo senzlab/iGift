@@ -23,7 +23,10 @@ class SecurityAnswersViewController : KeyboardScrollableViewController, AlertVie
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.setupStylesForTextFields()
+        
+        DispatchQueue.main.async {
+            self.setupStylesForTextFields()
+        }
     }
 
     @IBAction func onSaveClicked(_ sender: Any) {
@@ -36,7 +39,10 @@ class SecurityAnswersViewController : KeyboardScrollableViewController, AlertVie
     
     func setupUi() {
         self.title = "Answer questions"
-        self.setupStylesForTextFields()
+        
+        DispatchQueue.main.async {
+            self.setupStylesForTextFields()
+        }
     }
 
     func setupStylesForTextFields(){

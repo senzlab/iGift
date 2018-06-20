@@ -22,7 +22,9 @@ class SaltConfirmViewController : KeyboardScrollableViewController {
 
     func setupUi() {
         self.title = "Confirm Account"
-        self.setupStylesForTextFields()
+        DispatchQueue.main.async {
+            self.setupStylesForTextFields()
+        }
     }
 
     func setupStylesForTextFields(){
@@ -31,7 +33,9 @@ class SaltConfirmViewController : KeyboardScrollableViewController {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.setupStylesForTextFields()
+        DispatchQueue.main.async {
+            self.setupStylesForTextFields()
+        }
     }
 
     @IBAction func onConfirmClicked(_ sender: Any) {

@@ -23,7 +23,9 @@ class AddAccountViewController : KeyboardScrollableViewController {
 
     func setupUi() {
         self.title = "Add Account"
-        self.setupStylesForTextFields()
+        DispatchQueue.main.async {
+            self.setupStylesForTextFields()
+        }
     }
 
     func setupStylesForTextFields(){
@@ -33,7 +35,9 @@ class AddAccountViewController : KeyboardScrollableViewController {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.setupStylesForTextFields()
+        DispatchQueue.main.async {
+            self.setupStylesForTextFields()
+        }
     }
 
     @IBAction func onAddAccountClicked(_ sender: Any) {
