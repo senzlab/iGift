@@ -58,8 +58,8 @@ class ChooseBackgroundViewContoller: BaseViewController, UICollectionViewDataSou
     //    MARK: UICollectionViewDelegateFlowLayout
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-//        Minimum spacing between cells are 1. Since there are two spaces like that we reduced 2 here
-        return CGSize(width: (colorCollectionView.frame.size.width - 2)/3, height: colorCollectionView.frame.size.height/4)
+//        Minimum spacing between cells are 1.
+        return CGSize(width: (colorCollectionView.frame.size.width/3) - 1, height: colorCollectionView.frame.size.height/4)
     }
     
     
