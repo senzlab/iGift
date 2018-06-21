@@ -152,7 +152,7 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
         let phone = contact.phone.replacingOccurrences(of: " ", with: "")
         if (SenzDb.instance.getUser(phn: phone) != nil) {
             // user exists
-            ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "This user already added in your iGift contact list")
+            ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "This user already added in your igift contact list")
         } else {
             // ask to send request
             askSendRequest(contact: contact, phone: phone)
@@ -160,7 +160,7 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
     }
     
     func askSendRequest(contact: SenzContact, phone: String) {
-        let alert = UIAlertController(title: "Confirm", message: "Are you sure you want to add " + contact.name + " as an iGift contact?", preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "Confirm", message: "Are you sure you want to add " + contact.name + " as an igift contact?", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action: UIAlertAction!) in
             SenzProgressView.shared.showProgressView((self.navigationController?.view)!)
             DispatchQueue.global(qos: .userInitiated).async {
@@ -212,7 +212,7 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
     }
     
     func askSendSms(contact: SenzContact, phone: String) {
-        let message = contact.name + " is not using sampath iGift app, would you like send invitation via SMS?"
+        let message = contact.name + " is not using sampath igift app, would you like send invitation via SMS?"
         let alert = UIAlertController(title: "Confirm", message: message, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action: UIAlertAction!) in
             

@@ -32,7 +32,7 @@ class IGiftsViewController: UITabBarController {
         self.view.addSubview(view)
         
         // title
-        self.title = "iGifts"
+        self.title = "igifts"
     }
     
     func setupTabs() {

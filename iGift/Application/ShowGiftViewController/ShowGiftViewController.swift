@@ -82,7 +82,7 @@ class ShowGiftViewController: BaseViewController {
             if z == nil {
                 // reg fail
                 DispatchQueue.main.async {
-                    ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to download iGift")
+                    ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to download igift")
                 }
             } else {
                 // fetch done

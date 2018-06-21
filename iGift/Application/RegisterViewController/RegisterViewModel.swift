@@ -28,7 +28,7 @@ class RegisterViewModel: NSObject {
     func askUserToRegisterRemoteNotifications(viewController: UIViewController) {
         registrationStatus = false
         
-        let alertController = UIAlertController(title: "Enable Notification", message: "You have to enable notification for iGift app by going to device settings", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Enable Notification", message: "You have to enable notification for igift app by going to device settings", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
             print("You've pressed OK");
         }

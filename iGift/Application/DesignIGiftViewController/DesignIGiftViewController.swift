@@ -65,7 +65,7 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate, AlertV
         if (ViewControllerUtil.validateIGift(amount: amount)) {
             giftSendConfirmation(amount: amount)
         } else {
-            ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Invalid iGift amount")
+            ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Invalid igift amount")
         }
     }
     
@@ -173,7 +173,7 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate, AlertV
     }
     
     func setupUi() {
-        self.title = "New iGift"
+        self.title = "New igift"
         
         sendGiftButton.layer.cornerRadius = 0.5 * sendGiftButton.bounds.size.width;
 
@@ -200,7 +200,7 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate, AlertV
                 DispatchQueue.main.async {
                     // fail to send igift
                     SenzProgressView.shared.hideProgressView()
-                    ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to send iGift")
+                    ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to send igift")
                 }
             } else {
                 if (SenzUtil.instance.verifyStatus(z: z!)) {
@@ -213,13 +213,13 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate, AlertV
                         
                         let viewContUtil = ViewControllerUtil()
                         viewContUtil.delegate = self
-                        viewContUtil.showAlertWithSingleActions(alertTitle: "Notice", alertMessage: "Successfully sent iGift", viewController: self)
+                        viewContUtil.showAlertWithSingleActions(alertTitle: "Notice", alertMessage: "Successfully sent igift", viewController: self)
                     }
                 } else {
                     DispatchQueue.main.async {
                         // fail to send igift
                         SenzProgressView.shared.hideProgressView()
-                        ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to send iGift")
+                        ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to send igift")
                     }
                 }
             }

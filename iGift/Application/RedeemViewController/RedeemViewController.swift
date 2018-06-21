@@ -57,7 +57,7 @@ class RedeemViewController: KeyboardScrollableViewController {
                 ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Invalid account")
             }
         } else {
-            ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to redeem iGift")
+            ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to redeem igift")
         }
     }
     
@@ -93,7 +93,7 @@ class RedeemViewController: KeyboardScrollableViewController {
                 DispatchQueue.main.async {
                     // fail to send igift
                     SenzProgressView.shared.hideProgressView()
-                    ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to redeem iGift")
+                    ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to redeem igift")
                 }
             } else {
                 // verify response
@@ -109,7 +109,7 @@ class RedeemViewController: KeyboardScrollableViewController {
                     DispatchQueue.main.async {
                         // fail to send igift
                         SenzProgressView.shared.hideProgressView()
-                        ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to redeem iGift")
+                        ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to redeem igift")
                     }
                 }
             }

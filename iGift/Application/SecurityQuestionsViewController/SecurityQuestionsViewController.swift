@@ -30,7 +30,7 @@ class SecurityQuestionsViewController : BaseViewController {
             self.navigationItem.setHidesBackButton(true, animated: false)
         } else {
             self.title = "Forgot password"
-            topLabel.text = "Did you forget your iGift password"
+            topLabel.text = "Did you forget your igift password"
             bottomLabel.text = "You can reset your password by answering two sequrity questions"
             cancelButton.isHidden = true
             cancelBtnHeightConstraint.constant = 0
