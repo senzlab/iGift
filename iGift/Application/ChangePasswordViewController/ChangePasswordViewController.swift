@@ -52,7 +52,10 @@ class ChangePasswordViewController : KeyboardScrollableViewController {
         }
         else {
             // error
-            if validationStatusNum == 5 {
+            if validationStatusNum == 6 {
+                ViewControllerUtil.showAlert(alertTitle: "Notice", alertMessage: "Invalid password. Password must include at least one symbol and be 7 or more characters long.")
+            }
+            else if validationStatusNum == 5 {
                 ViewControllerUtil.showAlert(alertTitle: "Notice", alertMessage: "You cannot enter existing password as new password")
             }
             else {

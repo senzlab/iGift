@@ -189,6 +189,10 @@ class ViewControllerUtil: NSObject {
     
     class func validateChangePassword(psw: String, pswNew: String, pswCon: String) -> NSNumber {
         
+        if !isValidPassword(testStr: pswNew) {
+            return 6
+        }
+        
         if pswNew == PreferenceUtil.instance.get(key: PreferenceUtil.PASSWORD)  {
             return 5
         }
@@ -197,7 +201,7 @@ class ViewControllerUtil: NSObject {
             return 4
         }
         
-        if(psw != PreferenceUtil.instance.get(key: PreferenceUtil.PASSWORD)) {
+        if (psw != PreferenceUtil.instance.get(key: PreferenceUtil.PASSWORD)) {
             return 3
         }
         
