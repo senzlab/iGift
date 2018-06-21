@@ -39,7 +39,7 @@
 	<key>NSContactsUsageDescription</key>
 	<string>This app requires contacts from phone book.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>You can save your iGift card in your photo library as well.</string>
+	<string>You can save your igift card in your photo library as well.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Save the gift you created.</string>
 	<key>UIAppFonts</key>

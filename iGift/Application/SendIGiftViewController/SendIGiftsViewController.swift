@@ -17,6 +17,6 @@ class SendIGiftsViewController : BaseViewController {
     }
 
     func setupUi() {
-        self.title = "Send iGifts"
+        self.title = "Send igifts"
     }
 }
