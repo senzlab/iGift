@@ -20,6 +20,7 @@ class ConfirmAccountViewController : BaseViewController {
     }
 
     func setupUi() {
+        self.navigationItem.setHidesBackButton(true, animated:true);
         self.title = "Confirm account"
         LblFirstText.text = "We have tested a transaction from account '\(PreferenceUtil.instance.get(key: PreferenceUtil.ACCOUNT))'."
         cancelButton.isHidden = true
