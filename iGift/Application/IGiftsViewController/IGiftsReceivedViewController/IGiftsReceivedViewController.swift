@@ -104,7 +104,7 @@ class IGiftsReceivedViewController : BaseViewController, UITableViewDelegate, UI
     @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
         // refresh phone book
         //SenzProgressView.shared.showProgressView((self.navigationController?.view)!)
-        //fetch()
+        fetch()
     }
     
     func fetch() {
@@ -136,11 +136,12 @@ class IGiftsReceivedViewController : BaseViewController, UITableViewDelegate, UI
                 self.dataArray = SenzDb.instance.getIgifts(myGifts: false)
                 DispatchQueue.main.async {
                     self.tblView.reloadData()
-                    self.refreshControl.endRefreshing()
                     //SenzProgressView.shared.hideProgressView()
                 }
             }
         }
+        
+        self.refreshControl.endRefreshing()
     }
     
 }

@@ -143,7 +143,7 @@ class SenzUtil {
             " #uid " + uid(zAddress: zAddress) +
             " #meta" +
             " @senzswitch" +
-            " ^eranga"
+            " ^" + zAddress
         let signature = CryptoUtil.instance.sign(payload: senz)
         return senz + " " + signature
     }

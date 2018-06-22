@@ -107,13 +107,13 @@ class Httpz {
     }
     
     func pushSenz(senz: String) -> String? {
-
         var tcpUrl:String?
         
         #if DEBUG
             tcpUrl = "34.226.3.46"
+            //tcpUrl = "10.25.130.202"
         #else
-//            tcpUrl = "222.165.167.19" //  TestFlight live
+            // tcpUrl = "222.165.167.19" //  TestFlight live
             tcpUrl = "222.165.167.26"   //  Real live
         #endif
         

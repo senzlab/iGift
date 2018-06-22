@@ -26,11 +26,13 @@ class ShowGiftViewController: BaseViewController {
         super.viewWillAppear(true)
         
         self.navigationController?.navigationBar.isHidden = true
+        UIApplication.shared.isStatusBarHidden = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
         self.navigationController?.navigationBar.isHidden = false
+        UIApplication.shared.isStatusBarHidden = false
     }
     
     //    MARK: Action functions
@@ -69,6 +71,7 @@ class ShowGiftViewController: BaseViewController {
             if iGift!.isViewed {
                 giftImageView.image = UIImage(contentsOfFile: readFileInPath(relativeFilePath: Constants.IMAGES_DIR.rawValue, fileName: iGift!.uid + ".jpeg"))
             } else {
+                SenzProgressView.shared.showProgressView((self.view))
                 fetchImage()
             }
         }
@@ -82,6 +85,7 @@ class ShowGiftViewController: BaseViewController {
             if z == nil {
                 // reg fail
                 DispatchQueue.main.async {
+                    SenzProgressView.shared.hideProgressView()
                     ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to download igift")
                 }
             } else {
@@ -95,6 +99,7 @@ class ShowGiftViewController: BaseViewController {
                 _ = SenzDb.instance.markAsViewed(id: self.iGift!.uid)
                 
                 DispatchQueue.main.async {
+                    SenzProgressView.shared.hideProgressView()
                     let decodedimage = UIImage(data: dataDecoded)
                     self.giftImageView.image = decodedimage
                 }

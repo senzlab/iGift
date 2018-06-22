@@ -86,7 +86,7 @@ class RedeemViewController: KeyboardScrollableViewController {
     }
     
     func redeem(acc: String) {
-        SenzProgressView.shared.showProgressView(self.view)
+        SenzProgressView.shared.showProgressView((self.navigationController?.view)!)
         DispatchQueue.global(qos: .userInitiated).async {
             let z = Httpz.instance.pushSenz(senz: SenzUtil.instance.redeemSenz(iGift: self.iGift!, bank: self.bank!.code, account: acc))
             if (z == nil) {

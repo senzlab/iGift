@@ -41,6 +41,7 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate, AlertV
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.navigationController?.navigationBar.isHidden = true
+        UIApplication.shared.isStatusBarHidden = true
 
         if GiftCard.shared.capturedImage != nil {
             capturedPhotoImageView.isHidden = false
@@ -58,6 +59,7 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate, AlertV
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
         self.navigationController?.navigationBar.isHidden = false
+        UIApplication.shared.isStatusBarHidden = false
     }
 
     @IBAction func sendGiftAction(_ sender: UIButton) {
