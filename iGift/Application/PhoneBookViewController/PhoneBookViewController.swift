@@ -264,13 +264,11 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
     }()
 
     @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
-        
-//        Remove data in this view
-//        dataArray.removeAll()
-        
-//        Remove data in the PhoneBook view and load a fresh list
+        // refresh phone book
+        PhoneBook.instance.refresh()
 
-        tblView.reloadData()
+        self.dataArray = PhoneBook.instance.getContacts()
+        self.reloadTable()
         refreshControl.endRefreshing()
     }
 }
