@@ -130,8 +130,20 @@ class SenzUtil {
         let zAddress = PreferenceUtil.instance.get(key: PreferenceUtil.PHONE_NUMBER)
         let senz = "GET" +
             " #uid " + uid +
+            " #id " + uid +
             " @" + "senzswitch" +
             " ^" + zAddress
+        let signature = CryptoUtil.instance.sign(payload: senz)
+        return senz + " " + signature
+    }
+    
+    func fetchSenz() -> String {
+        let zAddress = PreferenceUtil.instance.get(key: PreferenceUtil.PHONE_NUMBER)
+        let senz = "GET " +
+            " #uid " + uid(zAddress: zAddress) +
+            " #meta" +
+            " @senzswitch" +
+            " ^eranga"
         let signature = CryptoUtil.instance.sign(payload: senz)
         return senz + " " + signature
     }

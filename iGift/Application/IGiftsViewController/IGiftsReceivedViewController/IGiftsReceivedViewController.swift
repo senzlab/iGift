@@ -26,6 +26,8 @@ class IGiftsReceivedViewController : BaseViewController, UITableViewDelegate, UI
         } else {
             topMargin.constant = 64
         }
+        
+        tblView.addSubview(self.refreshControl)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -87,6 +89,60 @@ class IGiftsReceivedViewController : BaseViewController, UITableViewDelegate, UI
         showGiftViewController.iGift = dataArray[indexPath.row]
         self.navigationController?.pushViewController(showGiftViewController, animated: false)
     }
+    
+    //    MARK : Pull to refresh
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self,
+                                 action: #selector(self.handleRefresh(_:)),
+                                 for: UIControlEvents.valueChanged)
+        refreshControl.tintColor = UIColor.orange
+        
+        return refreshControl
+    }()
+    
+    @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
+        // refresh phone book
+        //SenzProgressView.shared.showProgressView((self.navigationController?.view)!)
+        //fetch()
+    }
+    
+    func fetch() {
+        // download image
+        DispatchQueue.main.async {
+            let zs = Httpz.instance.pushSenz(senz: SenzUtil.instance.fetchSenz())
+            if zs != nil {
+                // fetch done
+                // split and parse
+                for z in zs!.components(separatedBy: ";") {
+                    if !z.isEmpty {
+                        let senz = SenzUtil.instance.parse(msg: z)
+                        
+                        // create new iGift
+                        let senzGift = Igift(id: 1)
+                        senzGift.uid = senz.attr["#uid"]!
+                        senzGift.user = senz.attr["#from"]!
+                        senzGift.amount = senz.attr["#amnt"]!
+                        senzGift.cid = senz.attr["#id"]!
+                        senzGift.state = "TRANSFER"
+                        senzGift.timestamp = TimeUtil.sharedInstance.timestamp()
+                        senzGift.isMyIgift = false
+                        senzGift.isViewed = false
+                        _ = SenzDb.instance.createIgift(igift: senzGift)
+                    }
+                }
+                
+                // reload list
+                self.dataArray = SenzDb.instance.getIgifts(myGifts: false)
+                DispatchQueue.main.async {
+                    self.tblView.reloadData()
+                    self.refreshControl.endRefreshing()
+                    //SenzProgressView.shared.hideProgressView()
+                }
+            }
+        }
+    }
+    
 }
 
 
