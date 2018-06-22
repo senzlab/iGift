@@ -230,7 +230,7 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
                  iOS full URL = https://itunes.apple.com/us/app/sampath-igift/id1389725182
                  iOS shorten URL = https://goo.gl/W2UbgS
                  */
-                composeVC.body = "Please install sampath igift app to happy share gift"
+                composeVC.body = "Remembering every moment with Sampath igift. Plese, download Sampath igift from App Store or Play Store to receive my igift. Experience the new wave of gifting"
                 
                 // Present the view controller modally.
                 self.present(composeVC, animated: true, completion: nil)
