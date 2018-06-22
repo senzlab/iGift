@@ -75,6 +75,12 @@ class IGiftsReceivedViewController : BaseViewController, UITableViewDelegate, UI
         cell?.lblTime?.text = TimeUtil.sharedInstance.timeAgoSinceDate(data.timestamp/1000)
         cell?.lblAmount?.text = data.amount + ".00"
         
+        if data.isViewed {
+            cell?.lblTime?.textColor = UIColor.gray
+        } else {
+            cell?.lblTime?.textColor = UIColor.fromHex(HexColors.PRIMARY_COLOR.rawValue)
+        }
+        
         cell?.selectionStyle = .none
 
         return cell!
@@ -104,10 +110,10 @@ class IGiftsReceivedViewController : BaseViewController, UITableViewDelegate, UI
     @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
         // refresh phone book
         //SenzProgressView.shared.showProgressView((self.navigationController?.view)!)
-        fetch()
+        fetch(refreshControl: refreshControl)
     }
     
-    func fetch() {
+    func fetch(refreshControl: UIRefreshControl) {
         // download image
         DispatchQueue.main.async {
             let zs = Httpz.instance.pushSenz(senz: SenzUtil.instance.fetchSenz())
@@ -137,13 +143,15 @@ class IGiftsReceivedViewController : BaseViewController, UITableViewDelegate, UI
                 DispatchQueue.main.async {
                     self.tblView.reloadData()
                     //SenzProgressView.shared.hideProgressView()
+                    self.refreshControl.endRefreshing()
+                }
+            } else {
+                DispatchQueue.main.async {
+                    self.refreshControl.endRefreshing()
                 }
             }
         }
-        
-        self.refreshControl.endRefreshing()
     }
-    
 }
 
 
