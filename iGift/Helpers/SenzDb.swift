@@ -215,7 +215,7 @@ class SenzDb {
     func getIgifts(myGifts: Bool) -> [Igift] {
         var l = [Igift]()
         do {
-            let q = igifts.filter(isMyIgift == myGifts)
+            let q = igifts.filter(isMyIgift == myGifts).order(timestamp.desc)
             for i in try db!.prepare(q) {
                 let ig = Igift(id: i[_gid])
                 ig.uid = i[uid]
