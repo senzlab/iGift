@@ -11,13 +11,18 @@ import ContactsUI
 import PhoneNumberKit
 
 class PhoneBook {
-    
     static let instance = PhoneBook()
 
-    let contactStore = CNContactStore()
-    let phoneNumberKit = PhoneNumberKit()
+    var contactStore = CNContactStore()
+    var phoneNumberKit = PhoneNumberKit()
     
-    lazy var contacts: [SenzContact] = {
+    lazy var contacts: [SenzContact] = fetch()
+    
+    func refresh() {
+        self.contacts = fetch()
+    }
+    
+    func fetch() -> [SenzContact] {
         var results: [SenzContact] = []
         
         // data we need
@@ -31,7 +36,7 @@ class PhoneBook {
         // get contacts
         let request = CNContactFetchRequest(keysToFetch: keysToFetch as! [CNKeyDescriptor])
         do {
-            try contactStore.enumerateContacts(with: request) { (contact, stop) in
+            try self.contactStore.enumerateContacts(with: request) { (contact, stop) in
                 for num in contact.phoneNumbers {
                     let phn = self.internationalize(phone: num.value.stringValue)
                     if phn != nil {
@@ -45,10 +50,10 @@ class PhoneBook {
         }
         
         return results
-    }()
+    }
 
     func getContacts() -> [SenzContact] {
-        return contacts
+        return self.contacts
     }
     
     func getContact(phone: String) -> SenzContact? {
@@ -64,7 +69,7 @@ class PhoneBook {
     
     func internationalize(phone: String) -> String? {
         do {
-            return phoneNumberKit.format(try phoneNumberKit.parse(phone), toType: .international)
+            return self.phoneNumberKit.format(try self.phoneNumberKit.parse(phone), toType: .international)
         } catch {
             return nil
         }
@@ -75,7 +80,7 @@ class PhoneBook {
     }
 
     func requestAccess(_ resolve: @escaping ((Bool) -> Void)) {
-        contactStore.requestAccess(for: .contacts){succeeded, err in
+        self.contactStore.requestAccess(for: .contacts){succeeded, err in
             guard err == nil && succeeded else{
                     resolve(false)
                     return;
