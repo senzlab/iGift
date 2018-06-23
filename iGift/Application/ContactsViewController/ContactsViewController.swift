@@ -120,10 +120,18 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.delete) {
-            
             let user = dataArray[indexPath.row]
-            _ = SenzDb.instance.deleteUser(id: user.zid)
-            reloadDataTable()
+            // check user has igifts to reddem
+            if (SenzDb.instance.hasIgiftsToRedeem(phone: user.phone)) {
+                // show message that user has igifts to redeem
+                ViewControllerUtil.showAlert(alertTitle: "Notice", alertMessage: "You have igifts from this contact which not yet redeemed. Please reddem them before removing the contact")
+            } else {
+                // delete igifts
+                // delete user
+                _ = SenzDb.instance.deleteUser(id: user.zid)
+                _ = SenzDb.instance.deleteIgiftsOfUser(phone: user.phone)
+                reloadDataTable()
+            }
         }
     }
     
@@ -145,7 +153,7 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
                 } else {
                     if (SenzUtil.instance.verifyStatus(z: z!)) {
                         // done, exit from here
-                        SenzDb.instance.markAsActive(id: user.zid)
+                        _ = SenzDb.instance.markAsActive(id: user.zid)
                         DispatchQueue.main.async {
                             SenzProgressView.shared.hideProgressView()
                             self.navigationController?.popViewController(animated: false)

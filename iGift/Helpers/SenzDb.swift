@@ -235,6 +235,32 @@ class SenzDb {
 
         return l
     }
+    
+    func hasIgiftsToRedeem(phone: String) -> Bool {
+        do {
+            let q = igifts.filter(user == phone && isMyIgift == false && state == "TRANSFER").limit(1)
+            for _ in try db!.prepare(q) {
+                return true
+            }
+        } catch {
+            print("Query fail, getUsers")
+        }
+        
+        return false
+    }
+    
+    func deleteIgiftsOfUser(phone: String) -> Bool {
+        do {
+            let igs = igifts.filter(user == phone)
+            try db!.run(igs.delete())
+            
+            return true
+        } catch {
+            print("Delete failed")
+        }
+        
+        return false
+    }
 
     func updateIgift() {
 
