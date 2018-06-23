@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RedeemViewController: KeyboardScrollableViewController {
+class RedeemViewController: KeyboardScrollableViewController, AlertViewControllerDelegate {
     
     @IBOutlet weak var bankNameTextField: UITextField!
     @IBOutlet weak var accountNoTextField: UITextField!
@@ -102,7 +102,11 @@ class RedeemViewController: KeyboardScrollableViewController {
                     _ = SenzDb.instance.markAsRedeemed(id: self.iGift!.uid, acc: acc)
                     DispatchQueue.main.async {
                         SenzProgressView.shared.hideProgressView()
-                        self.loadView("HomeViewController")
+                        
+                        // notification
+                        let viewContUtil = ViewControllerUtil()
+                        viewContUtil.delegate = self
+                        viewContUtil.showAlertWithSingleActions(alertTitle: "Notice", alertMessage: "Successfully redeemed igift", viewController: self)
                     }
                 } else {
                     DispatchQueue.main.async {
@@ -111,6 +115,15 @@ class RedeemViewController: KeyboardScrollableViewController {
                         ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to redeem igift")
                     }
                 }
+            }
+        }
+    }
+    
+    func executeTaskForAction(actionTitle: String) {
+        if actionTitle == "OK" {
+            DispatchQueue.main.async {
+                // back to home
+                self.loadView("HomeViewController")
             }
         }
     }

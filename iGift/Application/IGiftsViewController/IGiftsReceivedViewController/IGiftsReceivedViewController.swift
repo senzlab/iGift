@@ -17,6 +17,17 @@ class IGiftsReceivedViewController : BaseViewController, UITableViewDelegate, UI
     var dataArray: [Igift]!
 
     let HEIGHT_OF_ROW = 85
+    
+    // pull to refresh
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self,
+                                 action: #selector(handleRefresh),
+                                 for: UIControlEvents.valueChanged)
+        refreshControl.tintColor = UIColor.orange
+        
+        return refreshControl
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,26 +107,15 @@ class IGiftsReceivedViewController : BaseViewController, UITableViewDelegate, UI
         self.navigationController?.pushViewController(showGiftViewController, animated: false)
     }
     
-    //    MARK : Pull to refresh
-    lazy var refreshControl: UIRefreshControl = {
-        let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self,
-                                 action: #selector(self.handleRefresh(_:)),
-                                 for: UIControlEvents.valueChanged)
-        refreshControl.tintColor = UIColor.orange
-        
-        return refreshControl
-    }()
-    
-    @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
+    @objc func handleRefresh() {
         // refresh phone book
-        //SenzProgressView.shared.showProgressView((self.navigationController?.view)!)
-        fetch(refreshControl: refreshControl)
+        refreshControl.beginRefreshing()
+        fetch()
     }
     
-    func fetch(refreshControl: UIRefreshControl) {
+    func fetch() {
         // download image
-        DispatchQueue.main.async {
+        DispatchQueue.global(qos:.userInteractive).async {
             let zs = Httpz.instance.pushSenz(senz: SenzUtil.instance.fetchSenz())
             if zs != nil {
                 // fetch done
@@ -142,7 +142,6 @@ class IGiftsReceivedViewController : BaseViewController, UITableViewDelegate, UI
                 self.dataArray = SenzDb.instance.getIgifts(myGifts: false)
                 DispatchQueue.main.async {
                     self.tblView.reloadData()
-                    //SenzProgressView.shared.hideProgressView()
                     self.refreshControl.endRefreshing()
                 }
             } else {

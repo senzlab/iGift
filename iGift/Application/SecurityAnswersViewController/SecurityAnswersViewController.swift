@@ -23,7 +23,6 @@ class SecurityAnswersViewController : KeyboardScrollableViewController, AlertVie
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
         DispatchQueue.main.async {
             self.setupStylesForTextFields()
         }

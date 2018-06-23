@@ -79,7 +79,7 @@ class ShowGiftViewController: BaseViewController {
     
     func fetchImage() {
         // download image
-        DispatchQueue.main.async {
+        DispatchQueue.global(qos: .userInitiated).async {
             let senz = SenzUtil.instance.blobSenz(uid: self.iGift!.uid)
             let z = Httpz.instance.pushSenz(senz: senz)
             if z == nil {
