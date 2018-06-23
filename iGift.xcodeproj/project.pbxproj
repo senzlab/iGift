@@ -456,7 +456,6 @@
 				4021E71520A209E800B3DEB7 /* IGiftsViewController */,
 				4021E6FB20A1CAD900B3DEB7 /* HomeViewController */,
 				4021E71420A209D700B3DEB7 /* SendIGiftViewController */,
-				4021E71320A209A600B3DEB7 /* AboutViewController */,
 				4021E70F20A2094900B3DEB7 /* AddAccountInfoViewController */,
 				4021E70E20A2093800B3DEB7 /* SettingsViewController */,
 				7E3422B920B31A8100C8DEAC /* BankListViewController */,
@@ -532,13 +531,6 @@
 				58148C7420AB434600FE9AAD /* SaltConfirmViewController */,
 			);
 			path = AddAccountInfoViewController;
-			sourceTree = "<group>";
-		};
-		4021E71320A209A600B3DEB7 /* AboutViewController */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = AboutViewController;
 			sourceTree = "<group>";
 		};
 		4021E71420A209D700B3DEB7 /* SendIGiftViewController */ = {
