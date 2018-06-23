@@ -141,7 +141,7 @@ class SenzUtil {
         let zAddress = PreferenceUtil.instance.get(key: PreferenceUtil.PHONE_NUMBER)
         let senz = "GET " +
             " #uid " + uid(zAddress: zAddress) +
-            " #meta" +
+            " #senzes" +
             " @senzswitch" +
             " ^" + zAddress
         let signature = CryptoUtil.instance.sign(payload: senz)

@@ -31,7 +31,7 @@ class SecurityQuestionsViewController : BaseViewController {
         } else {
             self.title = "Forgot password"
             topLabel.text = "Did you forget your igift password"
-            bottomLabel.text = "You can reset your password by answering two sequrity questions"
+            bottomLabel.text = "You can reset your password by answering two security questions"
             cancelButton.isHidden = true
             cancelBtnHeightConstraint.constant = 0
         }

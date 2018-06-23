@@ -30,11 +30,10 @@ class RedeemViewController: KeyboardScrollableViewController {
             bankNameTextField.text = bank!.name
 
             if bank?.code != "7278" {
-                
-                ViewControllerUtil.showAlert(alertTitle: "Notice", alertMessage: "You will be charged Rs. 50 as CEFT chargers.")
-            }  
+                ViewControllerUtil.showAlert(alertTitle: "Notice", alertMessage: "When you redeem igift to other bank accounts a charge of Rs 50.00 will be debited from your igift as the commission")
+            }
         }
-    }
+    };
     
     func setupStylesForTextFields(){
         UITextField.applyStyle(txtField: self.bankNameTextField)

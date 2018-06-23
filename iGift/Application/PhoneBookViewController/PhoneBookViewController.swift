@@ -212,7 +212,7 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
     }
     
     func askSendSms(contact: SenzContact, phone: String) {
-        let message = contact.name + " is not using sampath igift app, would you like send invitation via SMS?"
+        let message = contact.name + " is not using sampath igift app, would you like to send invitation via SMS?"
         let alert = UIAlertController(title: "Confirm", message: message, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action: UIAlertAction!) in
             

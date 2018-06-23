@@ -155,20 +155,24 @@ class ViewControllerUtil: NSObject {
         return true
     }
     
-    class func validateIGift(amount: String) -> Bool {
+    class func validateIGift(amount: String, message: String) -> Int {
         if amount.isEmpty {
-            return false
+            return -1
         }
         
         if Int(amount)! < 100 {
-            return false
+            return -1
         }
         
         if Int(amount)! >= 10000 {
-            return false
+            return -1
         }
         
-        return true
+        if message.isEmpty {
+            return -2
+        }
+        
+        return 0
     }
     
     class func validateQuestions(q1: String, q2: String, q3: String) -> Bool {

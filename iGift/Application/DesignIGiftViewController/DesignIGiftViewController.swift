@@ -64,10 +64,14 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate, AlertV
 
     @IBAction func sendGiftAction(_ sender: UIButton) {
         let amount = currencyValueTextField.text!.replacingOccurrences(of: currencyType, with: "", options: NSString.CompareOptions.literal, range: nil)
-        if (ViewControllerUtil.validateIGift(amount: amount)) {
+        let message = giftMsgTextView.text!
+        let status = ViewControllerUtil.validateIGift(amount: amount, message: message)
+        if (status == 0) {
             giftSendConfirmation(amount: amount)
-        } else {
+        } else if(status == -1) {
             ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Invalid igift amount")
+        } else if(status == -2) {
+            ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Please write igift message to send")
         }
     }
     
@@ -287,7 +291,6 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate, AlertV
     }
     
     func executeTaskForAction(actionTitle: String) {
-        
         if actionTitle == "OK" {
             DispatchQueue.main.async {
                 // exit view controller
