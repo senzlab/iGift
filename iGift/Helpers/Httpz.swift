@@ -113,8 +113,8 @@ class Httpz {
             tcpUrl = "34.226.3.46"
             //tcpUrl = "10.25.130.202"
         #else
-            // tcpUrl = "222.165.167.19" //  TestFlight live
-            tcpUrl = "222.165.167.26"   //  Real live
+             tcpUrl = "222.165.167.19" //  TestFlight live
+//            tcpUrl = "222.165.167.26"   //  Real live
         #endif
         
         let client = TCPClient(address: tcpUrl!, port: 7171)
