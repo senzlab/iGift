@@ -111,15 +111,14 @@ class Httpz {
         
         #if DEBUG
             tcpUrl = "34.226.3.46"
-            //tcpUrl = "10.25.130.202"
         #else
-             tcpUrl = "222.165.167.19" //  TestFlight live
-//            tcpUrl = "222.165.167.26"   //  Real live
+            tcpUrl = "222.165.167.19" // sampath test
+            // tcpUrl = "222.165.167.26"   // sampath prod
         #endif
         
         let client = TCPClient(address: tcpUrl!, port: 7171)
-        
         print(senz)
+        
         switch client.connect(timeout: 10) {
         case .success:
             switch client.send(string: senz + ";") {

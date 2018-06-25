@@ -218,19 +218,13 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
             
             if !MFMessageComposeViewController.canSendText() {
                 ViewControllerUtil.showAlert(alertTitle: "Notice", alertMessage: "SMS services are not available")
-            }
-            else {
+            } else {
                 let composeVC = MFMessageComposeViewController()
                 composeVC.messageComposeDelegate = self
                 
                 // Configure the fields of the interface.
                 composeVC.recipients = [phone]
-
-                /*
-                 iOS full URL = https://itunes.apple.com/us/app/sampath-igift/id1389725182
-                 iOS shorten URL = https://goo.gl/W2UbgS
-                 */
-                composeVC.body = "Remembering every moment with Sampath igift. Plese, download Sampath igift from App Store or Play Store to receive my igift. Experience the new wave of gifting"
+                composeVC.body = "Remembering every moment with Sampath igift. Plese, download Sampath igift from App Store to receive my igift. Experience the new wave of gifting"
                 
                 // Present the view controller modally.
                 self.present(composeVC, animated: true, completion: nil)
@@ -247,7 +241,6 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
     //    MARK: MFMessageComposeViewControllerDelegate
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
         // Check the result or perform other tasks.
-        
         // Dismiss the message compose view controller.
         controller.dismiss(animated: true, completion: nil)
     }

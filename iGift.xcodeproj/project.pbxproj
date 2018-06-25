@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0F1081BD20A6E8770024C9BD /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1081BB20A6E8760024C9BD /* UIImageExtension.swift */; };
 		0F1081BE20A6E8770024C9BD /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1081BC20A6E8770024C9BD /* NotificationExtension.swift */; };
-		0F1081C020A6E8AD0024C9BD /* DesignIGiftViewControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1081BF20A6E8AD0024C9BD /* DesignIGiftViewControllerModel.swift */; };
 		0F1D5CA720AAB92E00A5D900 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1D5CA620AAB92C00A5D900 /* RegisterViewModel.swift */; };
 		0F1D5CAB20AB1AFB00A5D900 /* TermsOfUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1D5CA920AB1AFB00A5D900 /* TermsOfUseViewController.swift */; };
 		0F1D5CAC20AB1AFB00A5D900 /* TermsOfUseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F1D5CAA20AB1AFB00A5D900 /* TermsOfUseViewController.xib */; };
@@ -55,8 +54,6 @@
 		4021E72420A21DE100B3DEB7 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4021E72320A21DE100B3DEB7 /* SettingsViewController.xib */; };
 		4021E72620A21E2F00B3DEB7 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4021E72520A21E2F00B3DEB7 /* BaseViewController.swift */; };
 		4021E72820A2234F00B3DEB7 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4021E72720A2234F00B3DEB7 /* UIColor.swift */; };
-		4021E72E20A22B6700B3DEB7 /* SendIGiftsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4021E72D20A22B6700B3DEB7 /* SendIGiftsViewController.xib */; };
-		4021E73020A22B7500B3DEB7 /* SendIGiftsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4021E72F20A22B7500B3DEB7 /* SendIGiftsViewController.swift */; };
 		4021E73220A231D600B3DEB7 /* PhoneBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4021E73120A231D600B3DEB7 /* PhoneBookViewController.swift */; };
 		4021E73420A231E100B3DEB7 /* PhoneBookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4021E73320A231E100B3DEB7 /* PhoneBookViewController.xib */; };
 		404B1A2420A84B7500E06B71 /* IGiftsSentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404B1A2320A84B7500E06B71 /* IGiftsSentViewController.swift */; };
@@ -84,7 +81,6 @@
 		4087151720A3FECF007B3E4C /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4087151620A3FECF007B3E4C /* CustomImageView.swift */; };
 		4087151A20A488ED007B3E4C /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4087151920A488ED007B3E4C /* CustomSearchBar.swift */; };
 		4087152120A4ACA6007B3E4C /* PhoneBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4087152020A4ACA6007B3E4C /* PhoneBook.swift */; };
-		4087152320A4BE5F007B3E4C /* CustomTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4087152220A4BE5F007B3E4C /* CustomTableView.swift */; };
 		4087152620A4ED86007B3E4C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4087152520A4ED86007B3E4C /* RegisterViewController.swift */; };
 		4087152820A4ED96007B3E4C /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4087152720A4ED96007B3E4C /* RegisterViewController.xib */; };
 		4087152A20A5E5F8007B3E4C /* ApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4087152920A5E5F8007B3E4C /* ApplicationViewController.swift */; };
@@ -127,7 +123,6 @@
 		0F0C35D420A8ABDA008B77C4 /* iGift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iGift.entitlements; sourceTree = "<group>"; };
 		0F1081BB20A6E8760024C9BD /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		0F1081BC20A6E8770024C9BD /* NotificationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
-		0F1081BF20A6E8AD0024C9BD /* DesignIGiftViewControllerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignIGiftViewControllerModel.swift; sourceTree = "<group>"; };
 		0F1D5CA620AAB92C00A5D900 /* RegisterViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		0F1D5CA920AB1AFB00A5D900 /* TermsOfUseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfUseViewController.swift; sourceTree = "<group>"; };
 		0F1D5CAA20AB1AFB00A5D900 /* TermsOfUseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TermsOfUseViewController.xib; sourceTree = "<group>"; };
@@ -175,8 +170,6 @@
 		4021E72320A21DE100B3DEB7 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		4021E72520A21E2F00B3DEB7 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		4021E72720A2234F00B3DEB7 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
-		4021E72D20A22B6700B3DEB7 /* SendIGiftsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendIGiftsViewController.xib; sourceTree = "<group>"; };
-		4021E72F20A22B7500B3DEB7 /* SendIGiftsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendIGiftsViewController.swift; sourceTree = "<group>"; };
 		4021E73120A231D600B3DEB7 /* PhoneBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneBookViewController.swift; sourceTree = "<group>"; };
 		4021E73320A231E100B3DEB7 /* PhoneBookViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneBookViewController.xib; sourceTree = "<group>"; };
 		404B1A2320A84B7500E06B71 /* IGiftsSentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGiftsSentViewController.swift; sourceTree = "<group>"; };
@@ -204,7 +197,6 @@
 		4087151620A3FECF007B3E4C /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		4087151920A488ED007B3E4C /* CustomSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
 		4087152020A4ACA6007B3E4C /* PhoneBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneBook.swift; sourceTree = "<group>"; };
-		4087152220A4BE5F007B3E4C /* CustomTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableView.swift; sourceTree = "<group>"; };
 		4087152520A4ED86007B3E4C /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		4087152720A4ED96007B3E4C /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
 		4087152920A5E5F8007B3E4C /* ApplicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationViewController.swift; sourceTree = "<group>"; };
@@ -293,7 +285,6 @@
 		0F9138F020A34DF40011DF2C /* DesignIGiftViewController */ = {
 			isa = PBXGroup;
 			children = (
-				0F1081BF20A6E8AD0024C9BD /* DesignIGiftViewControllerModel.swift */,
 				0F9138F120A34E400011DF2C /* DesignIGiftViewController.swift */,
 				0F9138F220A34E400011DF2C /* DesignIGiftViewController.xib */,
 			);
@@ -380,7 +371,6 @@
 				0FC94F0E20A5F42000CDC810 /* GeneralModels */,
 				4087151F20A4AC42007B3E4C /* Pojo */,
 				4021E70920A1D59500B3DEB7 /* Data */,
-				4021E70220A1CD4200B3DEB7 /* Communication */,
 				4021E70020A1CD0000B3DEB7 /* Application */,
 				4021E6FF20A1CCE800B3DEB7 /* Config */,
 				4021E71920A2104A00B3DEB7 /* Helpers */,
@@ -455,7 +445,6 @@
 				4021E71620A20AF600B3DEB7 /* BaseViewControllers */,
 				4021E71520A209E800B3DEB7 /* IGiftsViewController */,
 				4021E6FB20A1CAD900B3DEB7 /* HomeViewController */,
-				4021E71420A209D700B3DEB7 /* SendIGiftViewController */,
 				4021E70F20A2094900B3DEB7 /* AddAccountInfoViewController */,
 				4021E70E20A2093800B3DEB7 /* SettingsViewController */,
 				7E3422B920B31A8100C8DEAC /* BankListViewController */,
@@ -473,13 +462,6 @@
 				4021E70720A1D55600B3DEB7 /* NavigationViewController.swift */,
 			);
 			path = Main;
-			sourceTree = "<group>";
-		};
-		4021E70220A1CD4200B3DEB7 /* Communication */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Communication;
 			sourceTree = "<group>";
 		};
 		4021E70920A1D59500B3DEB7 /* Data */ = {
@@ -531,15 +513,6 @@
 				58148C7420AB434600FE9AAD /* SaltConfirmViewController */,
 			);
 			path = AddAccountInfoViewController;
-			sourceTree = "<group>";
-		};
-		4021E71420A209D700B3DEB7 /* SendIGiftViewController */ = {
-			isa = PBXGroup;
-			children = (
-				4021E72D20A22B6700B3DEB7 /* SendIGiftsViewController.xib */,
-				4021E72F20A22B7500B3DEB7 /* SendIGiftsViewController.swift */,
-			);
-			path = SendIGiftViewController;
 			sourceTree = "<group>";
 		};
 		4021E71520A209E800B3DEB7 /* IGiftsViewController */ = {
@@ -631,7 +604,6 @@
 				4087150120A34B58007B3E4C /* CustomLabel.swift */,
 				4087151620A3FECF007B3E4C /* CustomImageView.swift */,
 				4087151920A488ED007B3E4C /* CustomSearchBar.swift */,
-				4087152220A4BE5F007B3E4C /* CustomTableView.swift */,
 				0FFFDDCF20AC2FAC00F044DD /* CircleButton.swift */,
 			);
 			path = Shared;
@@ -881,7 +853,6 @@
 				40A7340820A82293009C0B9B /* SecurityAnswersViewController.xib in Resources */,
 				40A7340C20A822B8009C0B9B /* SecurityQuestionsViewController.xib in Resources */,
 				408714F120A3326E007B3E4C /* GeosansLight.ttf in Resources */,
-				4021E72E20A22B6700B3DEB7 /* SendIGiftsViewController.xib in Resources */,
 				4021E70620A1CFED00B3DEB7 /* HomeViewController.xib in Resources */,
 				0F7C393320A4218500DF5BF6 /* ChooseBackgroundViewContoller.xib in Resources */,
 				4021E72020A21AF300B3DEB7 /* ContactsViewController.xib in Resources */,
@@ -957,7 +928,6 @@
 				C03D5D4120B1F049008EDEDE /* SenzProgressView.swift in Sources */,
 				404B1A2420A84B7500E06B71 /* IGiftsSentViewController.swift in Sources */,
 				0F2EE36A20A59D8E003C9AEA /* CapturePhotoViewModel.swift in Sources */,
-				4087152320A4BE5F007B3E4C /* CustomTableView.swift in Sources */,
 				4087150E20A391B8007B3E4C /* CustomContactCell.swift in Sources */,
 				4087152A20A5E5F8007B3E4C /* ApplicationViewController.swift in Sources */,
 				0F1081BD20A6E8770024C9BD /* UIImageExtension.swift in Sources */,
@@ -999,7 +969,6 @@
 				4087151720A3FECF007B3E4C /* CustomImageView.swift in Sources */,
 				4087151A20A488ED007B3E4C /* CustomSearchBar.swift in Sources */,
 				0F7C393520A4507300DF5BF6 /* ChooseBackgroundViewModel.swift in Sources */,
-				0F1081C020A6E8AD0024C9BD /* DesignIGiftViewControllerModel.swift in Sources */,
 				404B1A2D20A84BF800E06B71 /* CustomIGiftCell.swift in Sources */,
 				4021E70820A1D55600B3DEB7 /* NavigationViewController.swift in Sources */,
 				4021E70420A1CFDF00B3DEB7 /* HomeViewController.swift in Sources */,
@@ -1016,7 +985,6 @@
 				0F1D5CAB20AB1AFB00A5D900 /* TermsOfUseViewController.swift in Sources */,
 				40A7340220A81DCD009C0B9B /* KeyboardScrollableViewController.swift in Sources */,
 				0F2EE36720A59466003C9AEA /* CapturePhotoViewController.swift in Sources */,
-				4021E73020A22B7500B3DEB7 /* SendIGiftsViewController.swift in Sources */,
 				0FFFDDC920ABF89A00F044DD /* ShowGiftViewController.swift in Sources */,
 				0F9138F320A34E400011DF2C /* DesignIGiftViewController.swift in Sources */,
 				0FC94F1020A5F45E00CDC810 /* DeviceModel.swift in Sources */,

@@ -60,5 +60,6 @@ class VerifyAccountViewController : BaseViewController {
     @IBAction func onCancelClicked(_ sender: Any) {
         //cancel button functionality
     }
+    
 }
 

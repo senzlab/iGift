@@ -26,16 +26,14 @@ class AddArtViewController: BaseViewController, UICollectionViewDataSource, UICo
     }
     
     //    MARK: UICollectionViewDataSource
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 12
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let cell: UICollectionViewCell = (collectionView.dequeueReusableCell(withReuseIdentifier: cellReusableIdentifier, for: indexPath) as UICollectionViewCell?)!
         
-        //        Create image view inside the cell
+        // Create image view inside the cell
         let image = AddArtViewModel().imageForTheCell(indexpathNumber: indexPath.row)
         let imageView = UIImageView(image: image)
         imageView.contentMode = .scaleAspectFit
@@ -51,8 +49,7 @@ class AddArtViewController: BaseViewController, UICollectionViewDataSource, UICo
     
     //    MARK: UICollectionViewDelegateFlowLayout
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-//        Minimum spacing between cells are 1.
+        // Minimum spacing between cells are 1.
         return CGSize(width: (stickerCollectionView.frame.size.width/3) - 1, height: stickerCollectionView.frame.size.height/4)
     }
     
@@ -62,7 +59,6 @@ class AddArtViewController: BaseViewController, UICollectionViewDataSource, UICo
         NotificationCenter.default.post(name: .tappedOnArtItem, object: nil, userInfo: [ stickerNameNotifiKey: AddArtViewModel().imageNameForTheCell(indexpathNumber: indexPath.row)])
         
         goBack(animated: false)
-//        self.navigationController?.popViewController(animated: false)
     }
     
     //    MARK: Supportive functions

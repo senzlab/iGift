@@ -25,18 +25,15 @@ func checkFileInPath(relativeFilePath:String) -> Bool {
     var isDir: ObjCBool = false
     
     if fileManager.fileExists(atPath: absoluteFilePath, isDirectory: &isDir) {
-        
-//        Directory exists with that name but not a file
         if isDir.boolValue {
+            // Directory exists with that name but not a file
             return false
-        }
-//            File exist with the given name
-        else {
+        } else {
+            // File exist with the given name
             return true
         }
-    }
-//        No file neither directory exists with the given name
-    else {
+    } else {
+        // No file neither directory exists with the given name
         return false
     }
 }

@@ -29,7 +29,6 @@ class SettingsViewController : BaseViewController, UITableViewDelegate, UITableV
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
         // Try to find reusable cell
         var cell = tableView.dequeueReusableCell(withIdentifier: "CustomSettingCell") as? CustomSettingCell
 
@@ -44,14 +43,12 @@ class SettingsViewController : BaseViewController, UITableViewDelegate, UITableV
         // SetupUI and return cell for each row
         switch indexPath.row {
         case 0:
-            
             let accountNumber:String? = PreferenceUtil.instance.get(key: PreferenceUtil.ACCOUNT)
             var labelTitle:String = ""
             
             if accountNumber == nil {
                 labelTitle = "Account"
-            }
-            else {
+            } else {
                 labelTitle = "Account \(accountNumber ?? "")"
             }
             
@@ -65,7 +62,6 @@ class SettingsViewController : BaseViewController, UITableViewDelegate, UITableV
             }
             break
         case 1:
-            
             let phoneNumber:String? = PreferenceUtil.instance.get(key: PreferenceUtil.PHONE_NUMBER)
             var labelTitle:String = ""
             
@@ -89,10 +85,6 @@ class SettingsViewController : BaseViewController, UITableViewDelegate, UITableV
             cell?.lblTitle?.text = "Terms of use"
             cell?.btnSetting?.setTitle("VIEW", for: UIControlState.normal)
             break
-//        case 4:
-//            cell?.lblTitle?.text = "About iGift"
-//            cell?.btnSetting?.setTitle("VIEW", for: UIControlState.normal)
-//            break
         default:
              print("NO AVAILABLE CELL FOR INDEX - \(indexPath.row)!!")
         }
@@ -137,10 +129,6 @@ class SettingsViewController : BaseViewController, UITableViewDelegate, UITableV
             // View Terms Btn
             self.loadView("TermsOfUseViewController")
         break
-//        case 4:
-//            print("Case 4")
-//            // View About Btn
-//            break
         default:
             print("UnIdentified Button Clicked")
         }
@@ -160,9 +148,6 @@ class SettingsViewController : BaseViewController, UITableViewDelegate, UITableV
         case 3:
             print("Case 3")
             break
-//        case 4:
-//            print("Case 4")
-//            break
         default:
             print("UnIdentified Button Clicked")
         }

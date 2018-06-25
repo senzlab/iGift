@@ -17,10 +17,10 @@ class RegisterViewModel: NSObject {
         
         let notificationType = UIApplication.shared.currentUserNotificationSettings!.types
         if notificationType == [] {
-            //Notifications are NOT enabled
+            // Notifications are NOT enabled
             return false
         } else {
-            //Notifications are Enabled
+            // Notifications are Enabled
             return true
         }
     }

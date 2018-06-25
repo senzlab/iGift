@@ -56,7 +56,6 @@ class ViewControllerUtil: NSObject {
         
         // at least one symbol,
         // 8 characters total
-        
         let passwordTest = NSPredicate(format: "SELF MATCHES %@", "(?=.*[!&^%$#@()/]+.*).{7,}")
         return passwordTest.evaluate(with: testStr)
     }
@@ -67,12 +66,12 @@ class ViewControllerUtil: NSObject {
         if testStr?.count != 10{
             return false
         }
+        
         if testStr?.first != "0"{
             return false
         }
         
         return true
-        
     }
     
     class func validateRegistration(phn: String, phnCon: String, psw: String, pswCon: String) -> (Bool,String) {
@@ -81,7 +80,6 @@ class ViewControllerUtil: NSObject {
             // empty fields
             return (false, "Input fields can't be empty.")
         }
-        
         
         if !isValidPhoneNo(testStr: phn) || (PhoneBook.instance.internationalize(phone: phn) == nil){
             return (false,"Invalid phone no. Phone no should contains 10 digits and start with 07.")
@@ -95,9 +93,7 @@ class ViewControllerUtil: NSObject {
         if !isValidPassword(testStr: psw){
             // at least one symbol,
             // 8 characters total
-            
             return (false,"Invalid password. Password must include at least one symbol and be 7 or more characters long.")
-            
         }
         
         if(psw != pswCon) {
@@ -192,7 +188,6 @@ class ViewControllerUtil: NSObject {
     }
     
     class func validateChangePassword(psw: String, pswNew: String, pswCon: String) -> NSNumber {
-        
         if !isValidPassword(testStr: pswNew) {
             return 6
         }

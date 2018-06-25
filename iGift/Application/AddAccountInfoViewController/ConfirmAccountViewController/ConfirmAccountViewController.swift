@@ -34,5 +34,6 @@ class ConfirmAccountViewController : BaseViewController {
     @IBAction func onCancelClicked(_ sender: Any) {
         //cancel button functionality
     }
+    
 }
 

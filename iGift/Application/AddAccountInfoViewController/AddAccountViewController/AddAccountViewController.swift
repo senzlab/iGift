@@ -53,4 +53,5 @@ class AddAccountViewController : KeyboardScrollableViewController {
             ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Invalide input fields")
         }
     }
+    
 }

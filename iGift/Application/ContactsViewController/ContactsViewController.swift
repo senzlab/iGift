@@ -71,8 +71,7 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
         if senzContact == nil {
             cell?.lblName?.text = data.phone
             cell?.lblMessage?.text = data.phone
-        }
-        else {
+        } else {
             cell?.lblName?.text = senzContact?.name
             cell?.lblMessage?.text = senzContact?.phone
         }
@@ -136,7 +135,7 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
     }
     
     func confirmRequest(user: User) {
-        let alert = UIAlertController(title: "Confirm", message: "Would like to accept the request from " + user.phone + "?", preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "Confirm", message: "Would you like to accept the request from " + user.phone + "?", preferredStyle: UIAlertControllerStyle.alert)
         
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action: UIAlertAction!) in
             // send request

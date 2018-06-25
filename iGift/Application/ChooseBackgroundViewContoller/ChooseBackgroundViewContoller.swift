@@ -26,16 +26,14 @@ class ChooseBackgroundViewContoller: BaseViewController, UICollectionViewDataSou
     }
     
     //    MARK: UICollectionViewDataSource
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 12
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let cell: UICollectionViewCell = (collectionView.dequeueReusableCell(withReuseIdentifier: cellReusableIdentifier, for: indexPath) as UICollectionViewCell?)!
         
-//        Create a circled color view inside the cell
+        // Create a circled color view inside the cell
         let colorPaletteWidth = cell.frame.size.width/2
         let colorView = UIView(frame: CGRect(x: (cell.frame.size.width/2 - colorPaletteWidth/2), y: (cell.frame.size.height/2 - colorPaletteWidth/2), width: colorPaletteWidth, height: colorPaletteWidth))
         colorView.backgroundColor = ChooseBackgroundViewModel().colourForTheCell(indexpathNumber: indexPath.row)
@@ -57,8 +55,7 @@ class ChooseBackgroundViewContoller: BaseViewController, UICollectionViewDataSou
     
     //    MARK: UICollectionViewDelegateFlowLayout
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
-//        Minimum spacing between cells are 1.
+        // Minimum spacing between cells are 1.
         return CGSize(width: (colorCollectionView.frame.size.width/3) - 1, height: colorCollectionView.frame.size.height/4)
     }
     
@@ -67,4 +64,5 @@ class ChooseBackgroundViewContoller: BaseViewController, UICollectionViewDataSou
     func setupUi() {
         self.title = "Choose background"
     }
+    
 }

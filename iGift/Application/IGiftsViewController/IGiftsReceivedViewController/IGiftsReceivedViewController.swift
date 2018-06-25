@@ -59,13 +59,11 @@ class IGiftsReceivedViewController : BaseViewController, UITableViewDelegate, UI
     }
 
     // MARK: UITableView Delegate Methods
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataArray.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
         // Try to find reusable cell
         var cell = tableView.dequeueReusableCell(withIdentifier: "CustomIGiftCell") as? CustomIGiftCell
 

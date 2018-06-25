@@ -34,7 +34,6 @@ class ApplicationViewController : UIViewController {
 
     func getNewInstance(_ name: String) -> UIViewController? {
         switch name {
-            
         case "DesignIGiftViewController":
             return DesignIGiftViewController(nibName: "DesignIGiftViewController", bundle: nil)
         case "BankListViewController":

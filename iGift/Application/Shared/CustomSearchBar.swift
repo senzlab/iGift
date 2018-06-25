@@ -41,23 +41,18 @@ class CustomSearchBar: UISearchBar {
 
             // Set the background color of the search field.
             searchField.backgroundColor = barTintColor
-
             searchField.clearButtonMode = .never
-
             searchField.textAlignment = .left
         }
     }
-
 
     init(frame: CGRect, font: UIFont, textColor: UIColor) {
         super.init(frame: frame)
     }
 
-
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-
 
     func indexOfSearchFieldInSubviews() -> Int! {
         var index: Int!

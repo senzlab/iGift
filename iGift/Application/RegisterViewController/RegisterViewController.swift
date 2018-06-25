@@ -21,7 +21,6 @@ class RegisterViewController : KeyboardScrollableViewController {
     @IBOutlet weak var btnTermsCon: UIButton!
     
     override func viewDidLoad() {
-//        btnTermsCon.titleLabel?.font = UIFont.systemFont(ofSize: 20)
         super.viewDidLoad()
         self.setupUi()
     }
@@ -30,20 +29,6 @@ class RegisterViewController : KeyboardScrollableViewController {
         navigationController?.navigationBar.topItem?.hidesBackButton = true
         self.title = "Register"
         self.setupStylesForTextFields()
-        
-//        btnTermsCon.title
-//        btnTermsCon.titleLabel?.font = UIFont.systemFont(ofSize: 20)
-//        btnTermsCon.titleLabel?.font = btnTermsCon.titleLabel?.font.fontWithName(name: Constants.MAIN_FONT_FAMILY.rawValue)
-        
-//        btnTermsCon.setAttributedTitle(NSAttributedString(NSAttributedStringKey.font, btnTermsCon.font!]), for: .normal)
-        
-//        btnTermsCon.titleLabel?.font = UIFont(name: Constants.MAIN_FONT_FAMILY.rawValue, size: 24)//[UIFont systemFontOfSize:size];
-        
-        
-//        btnTermsCon.ti
-        
-//        btnTermsCon.
-//        txtField.font?.fontWithName(name: fontFamily)
     }
 
     func setupStylesForTextFields(){
@@ -59,7 +44,6 @@ class RegisterViewController : KeyboardScrollableViewController {
     }
     
     @IBAction func onTermsNConClicked(_ sender: Any) {
-        
         let view = TermsOfUseViewController(nibName: "TermsOfUseViewController", bundle: nil)
         self.navigationController?.pushViewController(view, animated: true)
     }
@@ -85,7 +69,7 @@ class RegisterViewController : KeyboardScrollableViewController {
         
         // validate inputs
         let returnObj = (ViewControllerUtil.validateRegistration(phn: phn, phnCon: phnCon, psw: psw, pswCon: pswCon))
-        if returnObj.0{
+        if returnObj.0 {
             if let p = PhoneBook.instance.internationalize(phone: phn) {
                 let phone = p.replacingOccurrences(of: " ", with: "")
                 doReg(phone: phone, password: psw)

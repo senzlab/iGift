@@ -9,7 +9,6 @@
 import Foundation
 
 class TimeUtil {
-
     // Singleton
     static let sharedInstance = TimeUtil()
     private init() {}

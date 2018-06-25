@@ -32,7 +32,7 @@ class CapturePhotoViewController: BaseViewController {
     func setupUi() {
         self.title = "Capture Photo"
 
-        //        Creating a circular button
+        // Creating a circular button
         captureButton.layer.cornerRadius = 0.5 * captureButton.bounds.size.width;
     }
     
@@ -43,7 +43,6 @@ class CapturePhotoViewController: BaseViewController {
     }
     
     func openCameraView() {
-        
         //Initialize session an output variables this is necessary
         session = AVCaptureSession()
         output = AVCaptureStillImageOutput()
@@ -69,8 +68,7 @@ class CapturePhotoViewController: BaseViewController {
                 
                 if UIDevice.current.userInterfaceIdiom == .pad {
                     previewLayer?.frame = self.view.bounds
-                }
-                else {
+                } else {
                     previewLayer?.frame = cameraPreviewView.bounds
                 }
                 
@@ -79,4 +77,5 @@ class CapturePhotoViewController: BaseViewController {
             }
         }
     }
+    
 }

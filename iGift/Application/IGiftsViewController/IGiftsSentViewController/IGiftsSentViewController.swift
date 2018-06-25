@@ -46,7 +46,6 @@ class IGiftsSentViewController : BaseViewController, UITableViewDelegate, UITabl
     }
 
     // MARK: UITableView Delegate Methods
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataArray.count
     }

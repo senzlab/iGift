@@ -37,11 +37,6 @@ class ShowGiftViewController: BaseViewController {
     
     //    MARK: Action functions
     @IBAction func redeemAction(_ sender: UIButton) {
-        //let redeemViewController = RedeemViewController(nibName: "RedeemViewController", bundle: nil)
-        //redeemViewController.iGift = iGift
-        //redeemViewController.bank = Bank(code: "7278", name: "Sampath bank")
-        //self.navigationController?.pushViewController(redeemViewController, animated: false)
-        
         let bankListViewController = BankListViewController(nibName: "BankListViewController", bundle: nil)
         bankListViewController.iGift = iGift
         self.navigationController?.pushViewController(bankListViewController, animated: false)
@@ -83,7 +78,7 @@ class ShowGiftViewController: BaseViewController {
             let senz = SenzUtil.instance.blobSenz(uid: self.iGift!.uid)
             let z = Httpz.instance.pushSenz(senz: senz)
             if z == nil {
-                // reg fail
+                // fail
                 DispatchQueue.main.async {
                     SenzProgressView.shared.hideProgressView()
                     ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to download igift")

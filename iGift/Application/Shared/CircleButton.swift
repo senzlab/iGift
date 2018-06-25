@@ -9,7 +9,6 @@
 import UIKit
 
 class CircleButton: UIButton {
-
     override func awakeFromNib() {
         super.awakeFromNib()
         self.layer.cornerRadius = CGFloat(self.frame.height / 2)

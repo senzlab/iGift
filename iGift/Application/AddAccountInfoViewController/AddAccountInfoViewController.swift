@@ -13,7 +13,6 @@ class AddAccountInfoViewController : BaseViewController {
     @IBOutlet weak var cancelButton: CustomButton!
     @IBOutlet weak var cancelButtonHeightConstraint: NSLayoutConstraint!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUi()
@@ -32,5 +31,6 @@ class AddAccountInfoViewController : BaseViewController {
     @IBAction func onCancelClicked(_ sender: Any) {
         // cancel button functionality
     }
+    
 }
 

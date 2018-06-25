@@ -273,8 +273,7 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate, AlertV
             enteredPassword = alertController.textFields![0].text!
             if savedPassword == enteredPassword {
                 self.sendIgift(amount: amount)
-            }
-            else {
+            } else {
                 ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Invalid password")
             }
         })

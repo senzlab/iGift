@@ -24,9 +24,7 @@ class CapturePhotoViewModel: NSObject {
     }
     
     func capturePhoto(stillImageOutput: AVCaptureStillImageOutput, viewController: UIViewController) {
-        
         var videoConnection :AVCaptureConnection?
-
         videoConnection = stillImageOutput.connection(with: AVMediaType.video)
 
         stillImageOutput.captureStillImageAsynchronously(from: videoConnection!, completionHandler: {(imageSampleBuffer, error) in
