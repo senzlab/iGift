@@ -44,7 +44,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             (granted, error) in
             //Parse errors and track state
         }
-        
         application.registerForRemoteNotifications()
         
         return true
@@ -147,14 +146,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print((#file as NSString).lastPathComponent, " # Reason to fail register remote notification : ", error.localizedDescription)
     }
     
-//    When app is in foreground & background
+    //    When app is in foreground & background
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         print((#file as NSString).lastPathComponent, " # userInfo = ", userInfo)
-
         if let messageID = userInfo[gcmMessageIDKey] {
             print("Message ID: \(messageID)")
         }
-        print(userInfo)
         
         UIApplication.shared.applicationIconBadgeNumber = 0
         if let senz = userInfo["gcm.notification.senz"] as? NSString {
@@ -218,7 +215,7 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         completionHandler([])
     }
     
-//    When user tap on the notification
+    //    When user tap on the notification
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 didReceive response: UNNotificationResponse,
                                 withCompletionHandler completionHandler: @escaping () -> Void) {
