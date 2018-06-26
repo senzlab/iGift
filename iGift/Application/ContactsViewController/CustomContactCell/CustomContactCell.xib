@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,11 +31,10 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="cov-5p-aQW">
                                     <rect key="frame" x="20" y="17" width="335.5" height="50"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_user" translatesAutoresizingMaskIntoConstraints="NO" id="6dD-ql-2xK" customClass="CustomImageView">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_user" translatesAutoresizingMaskIntoConstraints="NO" id="6dD-ql-2xK" customClass="CustomImageView" customModule="iGift" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="50" id="WPu-Qs-yXc"/>
-                                                <constraint firstAttribute="height" constant="50" id="fhJ-jP-OIg"/>
+                                                <constraint firstAttribute="width" secondItem="6dD-ql-2xK" secondAttribute="height" multiplier="1:1" id="0kC-7s-hxl"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isRoundedCorners" value="YES"/>
@@ -92,6 +92,11 @@
                                             </constraints>
                                         </stackView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="6dD-ql-2xK" firstAttribute="leading" secondItem="cov-5p-aQW" secondAttribute="leading" id="Kiq-YF-Sqq"/>
+                                        <constraint firstItem="6dD-ql-2xK" firstAttribute="top" secondItem="cov-5p-aQW" secondAttribute="top" id="iaB-ff-xpf"/>
+                                        <constraint firstAttribute="bottom" secondItem="6dD-ql-2xK" secondAttribute="bottom" id="x3H-Hx-xha"/>
+                                    </constraints>
                                 </stackView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -113,7 +118,9 @@
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="RhG-RG-4QE" secondAttribute="trailing" id="8FM-Ed-krd"/>
                         <constraint firstAttribute="trailing" secondItem="Dld-wM-HA3" secondAttribute="trailing" id="AZ4-gN-WNf"/>
+                        <constraint firstItem="Dld-wM-HA3" firstAttribute="top" secondItem="RhG-RG-4QE" secondAttribute="bottom" id="XfY-Kc-3hJ"/>
                         <constraint firstItem="Dld-wM-HA3" firstAttribute="leading" secondItem="QfR-XY-ifq" secondAttribute="leading" id="aPn-xL-WWS"/>
+                        <constraint firstItem="RhG-RG-4QE" firstAttribute="top" secondItem="QfR-XY-ifq" secondAttribute="top" id="dFv-zD-ZGm"/>
                         <constraint firstAttribute="bottom" secondItem="Dld-wM-HA3" secondAttribute="bottom" id="iyo-eo-mwm"/>
                         <constraint firstItem="RhG-RG-4QE" firstAttribute="leading" secondItem="QfR-XY-ifq" secondAttribute="leading" id="zQB-B3-zhe"/>
                     </constraints>
