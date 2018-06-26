@@ -29,13 +29,6 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3sA-nS-HmP">
                                     <rect key="frame" x="0.0" y="0.0" width="355" height="153.5"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TTL-I3-hZo" userLabel="View_BorderUpper">
-                                            <rect key="frame" x="20" y="0.0" width="315" height="1"/>
-                                            <color key="backgroundColor" red="0.97647058823529409" green="0.73725490196078436" blue="0.56862745098039214" alpha="1" colorSpace="calibratedRGB"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="1" id="W0z-1r-krY"/>
-                                            </constraints>
-                                        </view>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="group_write" translatesAutoresizingMaskIntoConstraints="NO" id="i8L-5X-BqN">
                                             <rect key="frame" x="35" y="46.5" width="60" height="60"/>
                                             <constraints>
@@ -67,21 +60,13 @@
                                         <constraint firstItem="Ba3-I4-9XP" firstAttribute="leading" secondItem="3sA-nS-HmP" secondAttribute="leading" id="1hX-LV-IIE"/>
                                         <constraint firstAttribute="bottom" secondItem="yvV-gN-Ztz" secondAttribute="bottom" id="2Ef-H1-iKy"/>
                                         <constraint firstAttribute="trailing" secondItem="Ba3-I4-9XP" secondAttribute="trailing" id="2lD-WI-3Si"/>
-                                        <constraint firstItem="TTL-I3-hZo" firstAttribute="top" secondItem="3sA-nS-HmP" secondAttribute="top" id="Cjt-Uw-xCR"/>
                                         <constraint firstItem="i8L-5X-BqN" firstAttribute="centerY" secondItem="3sA-nS-HmP" secondAttribute="centerY" id="JHg-81-GrG"/>
                                         <constraint firstItem="yvV-gN-Ztz" firstAttribute="leading" secondItem="3sA-nS-HmP" secondAttribute="leading" constant="20" id="LaS-1z-kxZ"/>
                                         <constraint firstAttribute="bottom" secondItem="Ba3-I4-9XP" secondAttribute="bottom" id="ZgL-Am-ATG"/>
                                         <constraint firstItem="Ba3-I4-9XP" firstAttribute="top" secondItem="3sA-nS-HmP" secondAttribute="top" id="b6R-4a-xBt"/>
                                         <constraint firstAttribute="trailing" secondItem="yvV-gN-Ztz" secondAttribute="trailing" constant="20" id="cU9-2J-DsZ"/>
-                                        <constraint firstItem="TTL-I3-hZo" firstAttribute="leading" secondItem="3sA-nS-HmP" secondAttribute="leading" constant="20" id="dey-G7-Yg6"/>
-                                        <constraint firstAttribute="trailing" secondItem="TTL-I3-hZo" secondAttribute="trailing" constant="20" id="di4-fh-ISy"/>
                                         <constraint firstItem="i8L-5X-BqN" firstAttribute="leading" secondItem="3sA-nS-HmP" secondAttribute="leading" constant="35" id="fjF-Mr-u97"/>
                                     </constraints>
-                                    <variation key="default">
-                                        <mask key="subviews">
-                                            <exclude reference="TTL-I3-hZo"/>
-                                        </mask>
-                                    </variation>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yMN-IE-DU0">
                                     <rect key="frame" x="0.0" y="154" width="355" height="154"/>

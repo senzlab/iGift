@@ -17,7 +17,6 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate, AlertV
     @IBOutlet weak var rootView: UIView!
     @IBOutlet weak var giftModifyView: UIView!
     @IBOutlet weak var fancyOverlayView: UIView!
-    @IBOutlet weak var backButton: UIButton!
     
     var userTryingToGiveCurrencyValue: Bool = false
     var keyboardHeight: CGFloat!
@@ -235,14 +234,12 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate, AlertV
     func captureScreen() -> NSData {
         sendGiftButton.isHidden = true
         giftModifyView.isHidden = true
-        backButton.isHidden = true
         
         let screenshot = rootView.takeSnapshot()
         let compressedImageData = screenshot.lowestQualityJPEGNSData
         
         sendGiftButton.isHidden = false
         giftModifyView.isHidden = false
-        backButton.isHidden = false
         
         return compressedImageData
     }
