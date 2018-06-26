@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,11 +31,10 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="f0j-Ny-drP">
                                     <rect key="frame" x="20" y="17" width="335.5" height="50"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_user" translatesAutoresizingMaskIntoConstraints="NO" id="LJT-hO-mZa" customClass="CustomImageView">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_user" translatesAutoresizingMaskIntoConstraints="NO" id="LJT-hO-mZa" customClass="CustomImageView" customModule="iGift" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="50" id="OEX-3R-ZIN"/>
-                                                <constraint firstAttribute="width" constant="50" id="Yxz-Kd-jcJ"/>
+                                                <constraint firstAttribute="width" secondItem="LJT-hO-mZa" secondAttribute="height" multiplier="1:1" id="OZH-3D-YiU"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isRoundedCorners" value="YES"/>
@@ -145,8 +145,10 @@
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="YKX-3K-Blm" secondAttribute="trailing" id="Flz-f0-wYT"/>
+                        <constraint firstItem="YKX-3K-Blm" firstAttribute="top" secondItem="j8A-iM-1kg" secondAttribute="bottom" id="GEl-9f-KjT"/>
                         <constraint firstAttribute="bottom" secondItem="YKX-3K-Blm" secondAttribute="bottom" id="Z6A-TU-QXZ"/>
                         <constraint firstAttribute="trailing" secondItem="j8A-iM-1kg" secondAttribute="trailing" id="cqm-G7-bhI"/>
+                        <constraint firstItem="j8A-iM-1kg" firstAttribute="top" secondItem="g5e-QI-Cz7" secondAttribute="top" id="ibJ-KX-kyb"/>
                         <constraint firstItem="j8A-iM-1kg" firstAttribute="leading" secondItem="g5e-QI-Cz7" secondAttribute="leading" id="sej-RE-09y"/>
                         <constraint firstItem="YKX-3K-Blm" firstAttribute="leading" secondItem="g5e-QI-Cz7" secondAttribute="leading" id="x1B-HO-dWl"/>
                     </constraints>
