@@ -226,5 +226,4 @@ class ViewControllerUtil: NSObject {
     func callDelegate(title: String) {
         delegate?.executeTaskForAction(actionTitle : title)
     }
-
 }
