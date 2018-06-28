@@ -47,6 +47,11 @@ class SaltConfirmViewController : KeyboardScrollableViewController {
         }
     }
     
+    
+    @IBAction func cancelAction(_ sender: UIButton) {
+        self.loadView("HomeViewController")
+    }
+    
     func saltConfirm(salt: String) {
         SenzProgressView.shared.showProgressView((self.navigationController?.view)!)
         DispatchQueue.global(qos: .userInitiated).async {
