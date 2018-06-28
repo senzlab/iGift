@@ -92,7 +92,7 @@ class RegisterViewController : KeyboardScrollableViewController {
                 // reg fail
                 DispatchQueue.main.async {
                     SenzProgressView.shared.hideProgressView()
-                    ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Regaistration fail")
+                    ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Registration fail")
                 }
             } else {
                 // reg done

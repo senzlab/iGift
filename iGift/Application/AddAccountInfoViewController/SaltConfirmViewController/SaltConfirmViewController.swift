@@ -54,13 +54,31 @@ class SaltConfirmViewController : KeyboardScrollableViewController {
             if (z == nil) {
                 DispatchQueue.main.async {
                     SenzProgressView.shared.hideProgressView()
-                    ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to verify account")
+                    
+                    var currentAttempt:String = PreferenceUtil.instance.get(key: PreferenceUtil.WRONG_ATTEMPTS)
+                    
+                    if currentAttempt.isEmpty {
+                        currentAttempt = String(1);
+                    }
+                    else {
+                        currentAttempt = String(Int(currentAttempt)! + 1)
+                    }
+
+                    PreferenceUtil.instance.put(key: PreferenceUtil.WRONG_ATTEMPTS, value: currentAttempt)
+                    
+                    if Int(currentAttempt)! < 3 {
+                        ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to verify account")
+                    }
+                    else {
+                        ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "You have been blocked")
+                    }
                 }
             } else {
                 if (SenzUtil.instance.verifyStatus(z: z!)) {
                     PreferenceUtil.instance.put(key: PreferenceUtil.ACCOUNT_STATUS, value: "VERIFIED")
                     
                     DispatchQueue.main.async {
+                        PreferenceUtil.instance.put(key: PreferenceUtil.WRONG_ATTEMPTS, value: String(0))
                         SenzProgressView.shared.hideProgressView()
                         self.loadView("HomeViewController")
                     }
