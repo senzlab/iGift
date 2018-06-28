@@ -53,6 +53,15 @@ class ChangePasswordViewController : KeyboardScrollableViewController, AlertView
             else if validationStatusNum == 5 {
                 ViewControllerUtil.showAlert(alertTitle: "Notice", alertMessage: "You cannot enter existing password as new password")
             }
+            else if validationStatusNum == 4 {
+                ViewControllerUtil.showAlert(alertTitle: "Notice", alertMessage: "You cannot have empty fields")
+            }
+            else if validationStatusNum == 3 {
+                ViewControllerUtil.showAlert(alertTitle: "Notice", alertMessage: "Current password is not matching")
+            }
+            else if validationStatusNum == 2 {
+                ViewControllerUtil.showAlert(alertTitle: "Notice", alertMessage: "New password and confirmation password is not matching")
+            }
             else {
                 ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to chnage password")
             }
