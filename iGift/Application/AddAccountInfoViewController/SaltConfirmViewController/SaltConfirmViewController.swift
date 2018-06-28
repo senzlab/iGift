@@ -11,7 +11,7 @@ import UIKit
 import Foundation
 
 // Class that load all view controllers on the main thread
-class SaltConfirmViewController : KeyboardScrollableViewController {
+class SaltConfirmViewController : KeyboardScrollableViewController, AlertViewControllerDelegate {
 
     @IBOutlet weak var txtFieldTransactionAmt: UITextField!
     
@@ -85,7 +85,9 @@ class SaltConfirmViewController : KeyboardScrollableViewController {
                     DispatchQueue.main.async {
                         PreferenceUtil.instance.put(key: PreferenceUtil.WRONG_ATTEMPTS, value: String(0))
                         SenzProgressView.shared.hideProgressView()
-                        self.loadView("HomeViewController")
+                        let viewContUtil = ViewControllerUtil()
+                        viewContUtil.delegate = self
+                        viewContUtil.showAlertWithSingleActions(alertTitle: "Notice", alertMessage: "Successfully added account", viewController: self)
                     }
                 } else {
                     DispatchQueue.main.async {
@@ -93,6 +95,16 @@ class SaltConfirmViewController : KeyboardScrollableViewController {
                         ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to verify account")
                     }
                 }
+            }
+        }
+    }
+    
+    //    MARK: AlertViewControllerDelegate
+    func executeTaskForAction(actionTitle: String) {
+        if actionTitle == "OK" {
+            DispatchQueue.main.async {
+                // back to home
+                self.loadView("HomeViewController")
             }
         }
     }
