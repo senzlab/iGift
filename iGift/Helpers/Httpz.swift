@@ -109,18 +109,12 @@ class Httpz {
     func pushSenz(senz: String) -> String? {
         var tcpUrl:String?
 
-        // Not from app store, eg: testflight or others
-        if (Bundle.main.path(forResource: "embedded", ofType: "mobileprovision") != nil) {
-            #if DEBUG
-                tcpUrl = "34.226.3.46"
-            #else
-                tcpUrl = "222.165.167.19" // sampath test
-            #endif
-        }
-        // From App Store
-        else {
-            tcpUrl = "222.165.167.26"   // sampath prod
-        }
+        #if DEBUG
+            tcpUrl = "34.226.3.46"
+        #else
+            tcpUrl = "222.165.167.19" // sampath test
+            // tcpUrl = "222.165.167.26"   // sampath prod
+        #endif
         
         let client = TCPClient(address: tcpUrl!, port: 7171)
         print(senz)
