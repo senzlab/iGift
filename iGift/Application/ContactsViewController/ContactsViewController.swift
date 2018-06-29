@@ -109,6 +109,10 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
             if !user.isRequester {
                 // ask to confirm request
                 confirmRequest(user: user)
+            } else {
+                // display message that user not accepted the request
+                let msg = PhoneBook.instance.getContact(phone: user.phone)!.name + " not accepted your igift contact request yet"
+                ViewControllerUtil.showAlert(alertTitle: "Information", alertMessage: msg)
             }
         }
     }

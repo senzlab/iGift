@@ -89,21 +89,36 @@ class RegisterViewController : KeyboardScrollableViewController {
             let regSenz = SenzUtil.instance.regSenz(uid: uid, zAddress: phone)
             let z = Httpz.instance.pushSenz(senz: regSenz!)
             if z == nil {
-                // reg fail
+                // reg fail, old way
                 DispatchQueue.main.async {
                     SenzProgressView.shared.hideProgressView()
-                    ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Registration fail")
+                    ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to register in igift")
                 }
             } else {
-                // reg done
-                PreferenceUtil.instance.put(key: PreferenceUtil.PHONE_NUMBER, value: phone)
-                PreferenceUtil.instance.put(key: PreferenceUtil.PASSWORD, value: password)
-                
-                DispatchQueue.main.async {
-                    SenzProgressView.shared.hideProgressView()
-                    let view = SecurityQuestionsViewController(nibName: "SecurityQuestionsViewController", bundle: nil)
-                    view.isRegistrationProcess = true
-                    self.navigationController?.pushViewController(view, animated: false)
+                let s = SenzUtil.instance.parse(msg: z!).attr["#status"]
+                if (s == "SUCCESS") {
+                    // reg done
+                    PreferenceUtil.instance.put(key: PreferenceUtil.PHONE_NUMBER, value: phone)
+                    PreferenceUtil.instance.put(key: PreferenceUtil.PASSWORD, value: password)
+                    
+                    DispatchQueue.main.async {
+                        SenzProgressView.shared.hideProgressView()
+                        let view = SecurityQuestionsViewController(nibName: "SecurityQuestionsViewController", bundle: nil)
+                        view.isRegistrationProcess = true
+                        self.navigationController?.pushViewController(view, animated: false)
+                    }
+                } else if (s == "403") {
+                    // already registered
+                    DispatchQueue.main.async {
+                        SenzProgressView.shared.hideProgressView()
+                        ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Given phone no " + phone + " already registerd in igift. Please contact sampath support center for verification")
+                    }
+                } else {
+                    // reg fail
+                    DispatchQueue.main.async {
+                        SenzProgressView.shared.hideProgressView()
+                        ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Registration fail")
+                    }
                 }
             }
         }
