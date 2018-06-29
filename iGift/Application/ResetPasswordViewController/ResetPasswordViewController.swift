@@ -37,12 +37,31 @@ class ResetPasswordViewController: KeyboardScrollableViewController {
         let psw = passwordTextField.text!.replacingOccurrences(of: " ", with: "")
         let pswCon = confirmPasswordTextField.text!.replacingOccurrences(of: " ", with: "")
         
-        if(ViewControllerUtil.validateResetPassword(psw: psw, pswCon: pswCon)) {
+        let validationStatusNum = ViewControllerUtil.validateResetPassword(psw: psw, pswCon: pswCon)
+        if(validationStatusNum == 1) {
             // save current password
             PreferenceUtil.instance.put(key: PreferenceUtil.PASSWORD, value: pswCon)
             self.loadView("HomeViewController")
         } else {
-            ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to chnage password")
+            // error
+            if validationStatusNum == 6 {
+                ViewControllerUtil.showAlert(alertTitle: "Notice", alertMessage: "Invalid password. Password must include at least one symbol and be 7 or more characters long.")
+            }
+            else if validationStatusNum == 5 {
+                ViewControllerUtil.showAlert(alertTitle: "Notice", alertMessage: "You cannot enter existing password as new password")
+            }
+            else if validationStatusNum == 4 {
+                ViewControllerUtil.showAlert(alertTitle: "Notice", alertMessage: "You cannot have empty fields")
+            }
+            else if validationStatusNum == 3 {
+                ViewControllerUtil.showAlert(alertTitle: "Notice", alertMessage: "Current password is not matching")
+            }
+            else if validationStatusNum == 2 {
+                ViewControllerUtil.showAlert(alertTitle: "Notice", alertMessage: "New password and confirmation password is not matching")
+            }
+            else {
+                ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to chnage password")
+            }
         }
     }
 }

@@ -160,7 +160,7 @@ class ViewControllerUtil: NSObject {
             return -1
         }
         
-        if Int(amount)! >= 10000 {
+        if Int(amount)! > 10000 {
             return -1
         }
         
@@ -187,7 +187,7 @@ class ViewControllerUtil: NSObject {
         return true
     }
     
-    class func validateChangePassword(psw: String, pswNew: String, pswCon: String) -> NSNumber {
+    class func validateChangePassword(psw: String, pswNew: String, pswCon: String) -> Int {
         if !isValidPassword(testStr: pswNew) {
             return 6
         }
@@ -211,16 +211,20 @@ class ViewControllerUtil: NSObject {
         return 1
     }
     
-    class func validateResetPassword(psw: String, pswCon: String) -> Bool {
+    class func validateResetPassword(psw: String, pswCon: String) -> Int {
+        if !isValidPassword(testStr: psw) {
+            return 6
+        }
+        
         if (psw.isEmpty || pswCon.isEmpty) {
-            return false
+            return 4
         }
         
         if (psw != pswCon) {
-            return false
+            return 2
         }
         
-        return true
+        return 1
     }
     
     func callDelegate(title: String) {
