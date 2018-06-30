@@ -12,6 +12,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="GeosansLight.ttf">
+            <string>GeosansLight</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserProfileViewController" customModule="iGift" customModuleProvider="target">
             <connections>
@@ -32,14 +37,14 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0EB-ie-vhg" userLabel="View_ImageContainer">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="223"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_user" translatesAutoresizingMaskIntoConstraints="NO" id="c9s-6P-gHz" userLabel="ImageView_User">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_user" translatesAutoresizingMaskIntoConstraints="NO" id="c9s-6P-gHz" userLabel="ImageView_User">
                                     <rect key="frame" x="86" y="10" width="203" height="203"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="c9s-6P-gHz" secondAttribute="height" multiplier="1:1" id="UD6-YW-JDQ"/>
                                     </constraints>
                                 </imageView>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="c9s-6P-gHz" secondAttribute="bottom" constant="10" id="EeP-gz-HGE"/>
                                 <constraint firstItem="c9s-6P-gHz" firstAttribute="centerX" secondItem="0EB-ie-vhg" secondAttribute="centerX" id="HV9-8d-ZlY"/>
@@ -56,14 +61,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="359" height="77"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sEo-ON-VRP" userLabel="Label_Name">
-                                                    <rect key="frame" x="10" y="26.5" width="51.5" height="24"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <rect key="frame" x="10" y="27.5" width="47.5" height="22.5"/>
+                                                    <fontDescription key="fontDescription" name="GeosansLight" family="GeosansLight" pointSize="20"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cys-TO-1HH" userLabel="Label_NameValue">
                                                     <rect key="frame" x="349" y="38.5" width="0.0" height="0.0"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <fontDescription key="fontDescription" name="GeosansLight" family="GeosansLight" pointSize="20"/>
                                                     <color key="textColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -81,14 +86,14 @@
                                             <rect key="frame" x="0.0" y="87" width="359" height="53"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone No" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9aR-68-2qS" userLabel="Label_PhnNo">
-                                                    <rect key="frame" x="10" y="15" width="85.5" height="24"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <rect key="frame" x="10" y="16" width="77" height="22.5"/>
+                                                    <fontDescription key="fontDescription" name="GeosansLight" family="GeosansLight" pointSize="20"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7lQ-Ps-4kG" userLabel="Label_PhnNoValue">
                                                     <rect key="frame" x="349" y="27" width="0.0" height="0.0"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <fontDescription key="fontDescription" name="GeosansLight" family="GeosansLight" pointSize="20"/>
                                                     <color key="textColor" red="0.96078431369999995" green="0.58039215690000001" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
