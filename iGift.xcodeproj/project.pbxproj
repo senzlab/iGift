@@ -24,6 +24,8 @@
 		0F87F3CA20A9432500C33259 /* FileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F87F3C920A9432500C33259 /* FileModel.swift */; };
 		0F9138F320A34E400011DF2C /* DesignIGiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9138F120A34E400011DF2C /* DesignIGiftViewController.swift */; };
 		0F9138F420A34E400011DF2C /* DesignIGiftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F9138F220A34E400011DF2C /* DesignIGiftViewController.xib */; };
+		0FAA1E9E20E7AAA600EF571B /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAA1E9C20E7AAA600EF571B /* UserProfileViewController.swift */; };
+		0FAA1E9F20E7AAA600EF571B /* UserProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FAA1E9D20E7AAA600EF571B /* UserProfileViewController.xib */; };
 		0FC681E720B867CB00DB6BAB /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC681E520B867CB00DB6BAB /* ResetPasswordViewController.swift */; };
 		0FC681E820B867CB00DB6BAB /* ResetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FC681E620B867CB00DB6BAB /* ResetPasswordViewController.xib */; };
 		0FC94F1020A5F45E00CDC810 /* DeviceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC94F0F20A5F45E00CDC810 /* DeviceModel.swift */; };
@@ -138,6 +140,8 @@
 		0F87F3C920A9432500C33259 /* FileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileModel.swift; sourceTree = "<group>"; };
 		0F9138F120A34E400011DF2C /* DesignIGiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignIGiftViewController.swift; sourceTree = "<group>"; };
 		0F9138F220A34E400011DF2C /* DesignIGiftViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DesignIGiftViewController.xib; sourceTree = "<group>"; };
+		0FAA1E9C20E7AAA600EF571B /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		0FAA1E9D20E7AAA600EF571B /* UserProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserProfileViewController.xib; sourceTree = "<group>"; };
 		0FC681E520B867CB00DB6BAB /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		0FC681E620B867CB00DB6BAB /* ResetPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResetPasswordViewController.xib; sourceTree = "<group>"; };
 		0FC94F0F20A5F45E00CDC810 /* DeviceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceModel.swift; sourceTree = "<group>"; };
@@ -291,6 +295,15 @@
 			path = DesignIGiftViewController;
 			sourceTree = "<group>";
 		};
+		0FAA1E9B20E7AA8000EF571B /* UserProfileViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0FAA1E9C20E7AAA600EF571B /* UserProfileViewController.swift */,
+				0FAA1E9D20E7AAA600EF571B /* UserProfileViewController.xib */,
+			);
+			path = UserProfileViewController;
+			sourceTree = "<group>";
+		};
 		0FC681E420B867A300DB6BAB /* ResetPasswordViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -428,6 +441,7 @@
 		4021E70020A1CD0000B3DEB7 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				0FAA1E9B20E7AA8000EF571B /* UserProfileViewController */,
 				0FC681E420B867A300DB6BAB /* ResetPasswordViewController */,
 				0FF81CCD20B159E200956928 /* RedeemViewController */,
 				0FFFDDD120AC3D6100F044DD /* ChangePasswordViewController */,
@@ -862,6 +876,7 @@
 				4087151320A391E2007B3E4C /* CustomPhoneBookCell.xib in Resources */,
 				58B96F6420AB35A700E67D35 /* ConfirmAccountViewController.xib in Resources */,
 				0FFFDDCA20ABF89A00F044DD /* ShowGiftViewController.xib in Resources */,
+				0FAA1E9F20E7AAA600EF571B /* UserProfileViewController.xib in Resources */,
 				7E3422BE20B31B0300C8DEAC /* CustomBankCell.xib in Resources */,
 				4087152820A4ED96007B3E4C /* RegisterViewController.xib in Resources */,
 			);
@@ -926,6 +941,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C03D5D4120B1F049008EDEDE /* SenzProgressView.swift in Sources */,
+				0FAA1E9E20E7AAA600EF571B /* UserProfileViewController.swift in Sources */,
 				404B1A2420A84B7500E06B71 /* IGiftsSentViewController.swift in Sources */,
 				0F2EE36A20A59D8E003C9AEA /* CapturePhotoViewModel.swift in Sources */,
 				4087150E20A391B8007B3E4C /* CustomContactCell.swift in Sources */,

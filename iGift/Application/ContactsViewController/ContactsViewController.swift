@@ -104,6 +104,12 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
                 designIGiftViewController.user = user
                 self.navigationController?.pushViewController(designIGiftViewController, animated: false)
             }
+            else {
+                let userProfileViewController = UserProfileViewController(nibName: "UserProfileViewController", bundle: nil)
+                let senzContact = PhoneBook.instance.getContact(phone: user.phone)
+                userProfileViewController.selectedUser = senzContact
+                self.navigationController?.pushViewController(userProfileViewController, animated: false)
+            }
         } else {
             // send request
             if !user.isRequester {
