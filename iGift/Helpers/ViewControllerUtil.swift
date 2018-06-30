@@ -84,30 +84,24 @@ class ViewControllerUtil: NSObject {
     }
     
     class func validateRegistration(phn: String, phnCon: String, psw: String, pswCon: String) -> (Bool,String) {
-        
-        if (phn.isEmpty || phnCon.isEmpty || psw.isEmpty || pswCon.isEmpty) {
-            // empty fields
-            return (false, "Input fields can't be empty.")
-        }
-        
         if !isValidPhoneNo(testStr: phn) || (PhoneBook.instance.internationalize(phone: phn) == nil){
-            return (false,"Invalid phone no. Phone no should contains 10 digits and start with 07.")
+            return (false,"Invalid phone no. Phone no should contains 10 digits and start with 07")
         }
         
         if(phn != phnCon) {
             // mismatch phone
-            return (false,"Phone number is mismatch.")
+            return (false,"Mismatching Phone no and confirm Phone no")
         }
         
         if !isValidPassword(testStr: psw){
             // at least one symbol,
             // 8 characters total
-            return (false,"Invalid password. Password must include at least one symbol and be 7 or more characters long.")
+            return (false,"Invalid password. Password should contains more than 7 characters with special character")
         }
         
         if(psw != pswCon) {
             // mismatch password
-            return (false,"password is mismatch.")
+            return (false,"Mismatching password and confirm password")
         }
         
         return (true,"")
@@ -161,20 +155,20 @@ class ViewControllerUtil: NSObject {
     }
     
     class func validateIGift(amount: String, message: String) -> Int {
-        if amount.isEmpty {
-            return -1
-        }
-        
         if Int(amount)! < 100 {
             return -1
         }
         
         if Int(amount)! > 10000 {
-            return -1
+            return -2
+        }
+        
+        if amount.isEmpty {
+            return -3
         }
         
         if message.isEmpty {
-            return -2
+            return -4
         }
         
         return 0

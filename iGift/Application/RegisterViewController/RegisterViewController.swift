@@ -117,7 +117,7 @@ class RegisterViewController : KeyboardScrollableViewController {
                     // reg fail
                     DispatchQueue.main.async {
                         SenzProgressView.shared.hideProgressView()
-                        ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Registration fail")
+                        ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to register in igift")
                     }
                 }
             }

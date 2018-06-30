@@ -106,7 +106,7 @@ class RedeemViewController: KeyboardScrollableViewController, AlertViewControlle
                         // notification
                         let viewContUtil = ViewControllerUtil()
                         viewContUtil.delegate = self
-                        viewContUtil.showAlertWithSingleActions(alertTitle: "Notice", alertMessage: "Successfully redeemed igift", viewController: self)
+                        viewContUtil.showAlertWithSingleActions(alertTitle: "Success", alertMessage: "Successfully redeemed igift", viewController: self)
                     }
                 } else {
                     DispatchQueue.main.async {

@@ -68,8 +68,12 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate, AlertV
         if (status == 0) {
             giftSendConfirmation(amount: amount)
         } else if(status == -1) {
-            ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Invalid igift amount")
+            ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "iGift transaction amount should exceed 100 rupees")
         } else if(status == -2) {
+            ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "iGift transaction amount should not exceed 10,000 rupees")
+        } else if(status == -3) {
+            ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Empty iGift amount")
+        } else if(status == -4) {
             ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Please write igift message to send")
         }
     }
@@ -218,7 +222,7 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate, AlertV
                         
                         let viewContUtil = ViewControllerUtil()
                         viewContUtil.delegate = self
-                        viewContUtil.showAlertWithSingleActions(alertTitle: "Notice", alertMessage: "Successfully sent igift", viewController: self)
+                        viewContUtil.showAlertWithSingleActions(alertTitle: "Success", alertMessage: "Successfully sent igift", viewController: self)
                     }
                 } else {
                     DispatchQueue.main.async {

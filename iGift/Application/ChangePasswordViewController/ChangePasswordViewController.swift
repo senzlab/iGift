@@ -17,7 +17,7 @@ class ChangePasswordViewController : KeyboardScrollableViewController, AlertView
     @IBOutlet weak var txtFieldNewPw: UITextField!
     @IBOutlet weak var txtFieldNewConfirmPw: UITextField!
 
-    //    MARK : UIViewController lifecycle
+    //    MARK : UIViewController lifecyclex
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUi()
@@ -43,27 +43,21 @@ class ChangePasswordViewController : KeyboardScrollableViewController, AlertView
             
             let viewContUtil = ViewControllerUtil()
             viewContUtil.delegate = self
-            viewContUtil.showAlertWithSingleActions(alertTitle: "Notice", alertMessage: "Successfully changed password", viewController: self)
+            viewContUtil.showAlertWithSingleActions(alertTitle: "Success", alertMessage: "Successfully changed password", viewController: self)
         }
         else {
             // error
-            if validationStatusNum == 6 {
-                ViewControllerUtil.showAlert(alertTitle: "Notice", alertMessage: "Invalid password. Password must include at least one symbol and be 7 or more characters long.")
-            }
-            else if validationStatusNum == 5 {
-                ViewControllerUtil.showAlert(alertTitle: "Notice", alertMessage: "You cannot enter existing password as new password")
-            }
-            else if validationStatusNum == 4 {
-                ViewControllerUtil.showAlert(alertTitle: "Notice", alertMessage: "You cannot have empty fields")
+            if validationStatusNum == 5 {
+                ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Your old password and new password are same, please choose a different new password")
             }
             else if validationStatusNum == 3 {
-                ViewControllerUtil.showAlert(alertTitle: "Notice", alertMessage: "Current password is not matching")
+                ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Invalid current password")
             }
             else if validationStatusNum == 2 {
-                ViewControllerUtil.showAlert(alertTitle: "Notice", alertMessage: "New password and confirmation password is not matching")
+                ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Mismatching password and confirm password")
             }
             else {
-                ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to chnage password")
+                ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Invalid password. Password should contains more than 7 characters with special character")
             }
         }
     }

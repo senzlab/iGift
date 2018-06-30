@@ -72,7 +72,7 @@ class SecurityAnswersViewController : KeyboardScrollableViewController, AlertVie
                 ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Only one answer is correct")
             }
             else {
-                ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "You need to give correct answers for two questions")
+                ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "You have to give correct answers for two questions")
             }
         } else {
             // need to asnwer all questions
@@ -81,10 +81,10 @@ class SecurityAnswersViewController : KeyboardScrollableViewController, AlertVie
                 let viewContUtil = ViewControllerUtil()
                 
                 viewContUtil.delegate = self
-                viewContUtil.showAlertWithTwoActions(alertTitle: "Confirm", alertMessage: "Are you sure you want to save your answers to the questions", viewController: self)
+                viewContUtil.showAlertWithTwoActions(alertTitle: "Confirm", alertMessage: "Are you sure you want to save your answers to the questions?", viewController: self)
             }
             else {
-                ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "You need to answer all three questions")
+                ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Please answer for all three questions")
             }
         }
     }
