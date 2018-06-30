@@ -35,7 +35,7 @@ class VerifyAccountViewController : BaseViewController {
                 // fail to add account
                 DispatchQueue.main.async {
                     SenzProgressView.shared.hideProgressView()
-                    ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to add account")
+                    ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to verify account")
                 }
             } else {
                 // verify response

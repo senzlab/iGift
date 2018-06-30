@@ -70,13 +70,7 @@ class SaltConfirmViewController : KeyboardScrollableViewController, AlertViewCon
                     }
 
                     PreferenceUtil.instance.put(key: PreferenceUtil.WRONG_ATTEMPTS, value: currentAttempt)
-                    
-                    if Int(currentAttempt)! < 3 {
-                        ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to verify account")
-                    }
-                    else {
-                        ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "You have been blocked")
-                    }
+                    ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to verify account")
                 }
             } else {
                 if (SenzUtil.instance.verifyStatus(z: z!)) {
