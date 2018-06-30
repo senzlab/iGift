@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ResetPasswordViewController: KeyboardScrollableViewController {
+class ResetPasswordViewController: KeyboardScrollableViewController, AlertViewControllerDelegate {
     
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
@@ -41,7 +41,10 @@ class ResetPasswordViewController: KeyboardScrollableViewController {
         if(validationStatusNum == 1) {
             // save current password
             PreferenceUtil.instance.put(key: PreferenceUtil.PASSWORD, value: pswCon)
-            self.loadView("HomeViewController")
+            
+            let viewContUtil = ViewControllerUtil()
+            viewContUtil.delegate = self
+            viewContUtil.showAlertWithSingleActions(alertTitle: "Notice", alertMessage: "Successfully changed password", viewController: self)
         } else {
             // error
             if validationStatusNum == 6 {
@@ -61,6 +64,16 @@ class ResetPasswordViewController: KeyboardScrollableViewController {
             }
             else {
                 ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to chnage password")
+            }
+        }
+    }
+    
+    //    MARK : AlertViewControllerDelegate
+    func executeTaskForAction(actionTitle: String) {
+        if actionTitle == "OK" {
+            DispatchQueue.main.async {
+                // back to home
+                self.loadView("HomeViewController")
             }
         }
     }
