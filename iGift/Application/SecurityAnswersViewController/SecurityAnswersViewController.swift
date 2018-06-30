@@ -97,7 +97,9 @@ class SecurityAnswersViewController : KeyboardScrollableViewController, AlertVie
             PreferenceUtil.instance.put(key: PreferenceUtil.QUESTION1, value: q1)
             PreferenceUtil.instance.put(key: PreferenceUtil.QUESTION2, value: q2)
             PreferenceUtil.instance.put(key: PreferenceUtil.QUESTION3, value: q3)
-            self.loadView("HomeViewController")
+            let view = HomeViewController(nibName: "HomeViewController", bundle: nil)
+            view.shouldShowSecAnsSavedMsg = true
+            self.navigationController?.pushViewController(view, animated: false)
         }
     }
 }

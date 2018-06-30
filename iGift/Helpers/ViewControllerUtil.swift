@@ -26,6 +26,15 @@ class ViewControllerUtil: NSObject {
         perent.showDetailViewController(alert, sender: nil)
     }
     
+    class func showAutoDismissAlert(alertTitle:String, alertMessage:String) {
+        let alertController = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
+        let perent: UIViewController = (UIApplication.shared.delegate as! AppDelegate).window!.rootViewController!
+        perent.present(alertController, animated: true, completion: nil)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            alertController.dismiss(animated: true, completion: nil)
+        }
+    }
+    
     func showAlertWithTwoActions(alertTitle:String, alertMessage:String, viewController: UIViewController) {
         let alertController = UIAlertController(title:alertTitle, message:alertMessage, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in

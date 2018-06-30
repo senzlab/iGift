@@ -10,10 +10,16 @@ import Foundation
 import UIKit
 
 class HomeViewController : BaseViewController {
+    
+    var shouldShowSecAnsSavedMsg:Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUi()
+        
+        if shouldShowSecAnsSavedMsg {
+            ViewControllerUtil.showAutoDismissAlert(alertTitle: "Notice", alertMessage: "Successfully saved answers")
+        }
     }
 
     func setupUi() {
