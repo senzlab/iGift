@@ -32,6 +32,9 @@
 		0FC94F1420A6042700CDC810 /* AddArtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC94F1220A6042700CDC810 /* AddArtViewController.swift */; };
 		0FC94F1520A6042700CDC810 /* AddArtViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FC94F1320A6042700CDC810 /* AddArtViewController.xib */; };
 		0FC94F1720A60EFA00CDC810 /* AddArtViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC94F1620A60EFA00CDC810 /* AddArtViewModel.swift */; };
+		0FEC974520E7EE01004D793C /* TermsInWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEC974320E7EE01004D793C /* TermsInWebViewController.swift */; };
+		0FEC974620E7EE01004D793C /* TermsInWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FEC974420E7EE01004D793C /* TermsInWebViewController.xib */; };
+		0FEC974820E7F023004D793C /* Terms.html in Resources */ = {isa = PBXBuildFile; fileRef = 0FEC974720E7F023004D793C /* Terms.html */; };
 		0FF81CD020B15A2900956928 /* RedeemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF81CCE20B15A2900956928 /* RedeemViewController.swift */; };
 		0FF81CD120B15A2900956928 /* RedeemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FF81CCF20B15A2900956928 /* RedeemViewController.xib */; };
 		0FFFDDC520ABE9BC00F044DD /* UIViewExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFFDDC420ABE9BC00F044DD /* UIViewExtention.swift */; };
@@ -148,6 +151,9 @@
 		0FC94F1220A6042700CDC810 /* AddArtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddArtViewController.swift; sourceTree = "<group>"; };
 		0FC94F1320A6042700CDC810 /* AddArtViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddArtViewController.xib; sourceTree = "<group>"; };
 		0FC94F1620A60EFA00CDC810 /* AddArtViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddArtViewModel.swift; sourceTree = "<group>"; };
+		0FEC974320E7EE01004D793C /* TermsInWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsInWebViewController.swift; sourceTree = "<group>"; };
+		0FEC974420E7EE01004D793C /* TermsInWebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TermsInWebViewController.xib; sourceTree = "<group>"; };
+		0FEC974720E7F023004D793C /* Terms.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Terms.html; sourceTree = "<group>"; };
 		0FF81CCE20B15A2900956928 /* RedeemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemViewController.swift; sourceTree = "<group>"; };
 		0FF81CCF20B15A2900956928 /* RedeemViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RedeemViewController.xib; sourceTree = "<group>"; };
 		0FFFDDC420ABE9BC00F044DD /* UIViewExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtention.swift; sourceTree = "<group>"; };
@@ -262,6 +268,8 @@
 			children = (
 				0F1D5CA920AB1AFB00A5D900 /* TermsOfUseViewController.swift */,
 				0F1D5CAA20AB1AFB00A5D900 /* TermsOfUseViewController.xib */,
+				0FEC974320E7EE01004D793C /* TermsInWebViewController.swift */,
+				0FEC974420E7EE01004D793C /* TermsInWebViewController.xib */,
 			);
 			path = TermsOfUseViewController;
 			sourceTree = "<group>";
@@ -380,6 +388,7 @@
 		4021E6E520A1CA1600B3DEB7 /* iGift */ = {
 			isa = PBXGroup;
 			children = (
+				0FEC974720E7F023004D793C /* Terms.html */,
 				0F0C35D420A8ABDA008B77C4 /* iGift.entitlements */,
 				0FC94F0E20A5F42000CDC810 /* GeneralModels */,
 				4087151F20A4AC42007B3E4C /* Pojo */,
@@ -846,10 +855,12 @@
 				4021E6F420A1CA1700B3DEB7 /* LaunchScreen.storyboard in Resources */,
 				4087151020A391C8007B3E4C /* CustomContactCell.xib in Resources */,
 				4021E72420A21DE100B3DEB7 /* SettingsViewController.xib in Resources */,
+				0FEC974620E7EE01004D793C /* TermsInWebViewController.xib in Resources */,
 				408714E620A31214007B3E4C /* AddAccountInfoViewController.xib in Resources */,
 				7E3422C120B31B1000C8DEAC /* BankListViewController.xib in Resources */,
 				0FC681E820B867CB00DB6BAB /* ResetPasswordViewController.xib in Resources */,
 				4021E73420A231E100B3DEB7 /* PhoneBookViewController.xib in Resources */,
+				0FEC974820E7F023004D793C /* Terms.html in Resources */,
 				4021E6EC20A1CA1600B3DEB7 /* Main.storyboard in Resources */,
 				404B1A2620A84B8000E06B71 /* IGiftsSentViewController.xib in Resources */,
 				0F9138F420A34E400011DF2C /* DesignIGiftViewController.xib in Resources */,
@@ -960,6 +971,7 @@
 				40A7340620A82288009C0B9B /* SecurityAnswersViewController.swift in Sources */,
 				408714FE20A34996007B3E4C /* UIFont.swift in Sources */,
 				58B96F5F20AB2DDC00E67D35 /* ViewControllerUtil.swift in Sources */,
+				0FEC974520E7EE01004D793C /* TermsInWebViewController.swift in Sources */,
 				4021E6EF20A1CA1600B3DEB7 /* iGift.xcdatamodeld in Sources */,
 				0F7C393220A4218500DF5BF6 /* ChooseBackgroundViewContoller.swift in Sources */,
 				0F1081BE20A6E8770024C9BD /* NotificationExtension.swift in Sources */,
