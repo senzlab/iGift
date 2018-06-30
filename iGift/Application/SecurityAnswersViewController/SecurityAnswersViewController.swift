@@ -67,7 +67,11 @@ class SecurityAnswersViewController : KeyboardScrollableViewController, AlertVie
             if(match >= 2) {
                 // todo navigate password reset
                 self.loadView("ResetPasswordViewController")
-            } else {
+            }
+            else if (match == 1) {
+                ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Only one answer is correct")
+            }
+            else {
                 ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "You need to give correct answers for two questions")
             }
         } else {
