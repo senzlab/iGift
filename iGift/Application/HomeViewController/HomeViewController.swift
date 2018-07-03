@@ -21,6 +21,15 @@ class HomeViewController : BaseViewController {
             ViewControllerUtil.showAutoDismissAlert(alertTitle: "Notice", alertMessage: "Successfully saved answers")
         }
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewWillDisappear(false)
+        
+        if isContactRequestSent {
+            isContactRequestSent = false
+            ViewControllerUtil.showAutoDismissAlert(alertTitle: "Notice", alertMessage: "Contact request has been sent")
+        }
+    }
 
     func setupUi() {
         self.setNavBarHidden(true)

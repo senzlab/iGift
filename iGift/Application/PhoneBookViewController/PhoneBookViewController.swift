@@ -185,7 +185,7 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
                         // exit
                         DispatchQueue.main.async {
                             SenzProgressView.shared.hideProgressView()
-//                            self.navigationController?.popViewController(animated: false)
+                            isContactRequestSent = true
                             self.loadView("HomeViewController")
                         }
                     } else if(s == "404") {
