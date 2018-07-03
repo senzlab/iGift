@@ -185,7 +185,8 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
                         // exit
                         DispatchQueue.main.async {
                             SenzProgressView.shared.hideProgressView()
-                            self.navigationController?.popViewController(animated: false)
+//                            self.navigationController?.popViewController(animated: false)
+                            self.loadView("HomeViewController")
                         }
                     } else if(s == "404") {
                         // this means user does not exists

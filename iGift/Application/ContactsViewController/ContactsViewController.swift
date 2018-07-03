@@ -188,7 +188,7 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
     
     //    MARK : Supportive functions
     func reloadDataTable() {
-        dataArray = SenzDb.instance.getUsers(active: forNewIgift)
+        dataArray = SenzDb.instance.getUsers(active: false)
         
         if dataArray.count == 0 {
             contactTableView.isHidden = true

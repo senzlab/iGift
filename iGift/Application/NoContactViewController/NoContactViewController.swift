@@ -8,19 +8,26 @@
 
 import UIKit
 
-class NoContactViewController: UIViewController {
+class NoContactViewController: BaseViewController {
 
     //    MARK: UIViewController lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.setupUi()
         
     }
     
+    //    MARK : Action functions
     @IBAction func phoneBookAction(_ sender: UIButton) {
+        self.loadView("PhoneBookViewController")
     }
     
     @IBAction func cancelAction(_ sender: UIButton) {
+        goBack(animated: false)
     }
     
+    //    MARK: Supportive functions
+    func setupUi() {
+        self.title = "Add Account"
+    }
 }
