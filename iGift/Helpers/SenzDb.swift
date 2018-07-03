@@ -144,6 +144,19 @@ class SenzDb {
         return l
     }
     
+    func hasUsers() -> Bool {
+        do {
+            let q = self.users.limit(1)
+            for _ in try db!.prepare(q) {
+                return true
+            }
+        } catch {
+            print("Query fail, getUsers")
+        }
+        
+        return false
+    }
+    
     func getUser(phn: String) -> User! {
         let q = users.filter(zid == phn).limit(1)
         do {
