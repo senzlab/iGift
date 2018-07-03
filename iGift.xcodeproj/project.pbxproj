@@ -32,6 +32,8 @@
 		0FC94F1420A6042700CDC810 /* AddArtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC94F1220A6042700CDC810 /* AddArtViewController.swift */; };
 		0FC94F1520A6042700CDC810 /* AddArtViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FC94F1320A6042700CDC810 /* AddArtViewController.xib */; };
 		0FC94F1720A60EFA00CDC810 /* AddArtViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC94F1620A60EFA00CDC810 /* AddArtViewModel.swift */; };
+		0FEA6BC120EBD8A7006205BA /* NoContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEA6BBF20EBD8A7006205BA /* NoContactViewController.swift */; };
+		0FEA6BC220EBD8A7006205BA /* NoContactViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FEA6BC020EBD8A7006205BA /* NoContactViewController.xib */; };
 		0FEC974520E7EE01004D793C /* TermsInWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEC974320E7EE01004D793C /* TermsInWebViewController.swift */; };
 		0FEC974620E7EE01004D793C /* TermsInWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FEC974420E7EE01004D793C /* TermsInWebViewController.xib */; };
 		0FEC974820E7F023004D793C /* Terms.html in Resources */ = {isa = PBXBuildFile; fileRef = 0FEC974720E7F023004D793C /* Terms.html */; };
@@ -151,6 +153,8 @@
 		0FC94F1220A6042700CDC810 /* AddArtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddArtViewController.swift; sourceTree = "<group>"; };
 		0FC94F1320A6042700CDC810 /* AddArtViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddArtViewController.xib; sourceTree = "<group>"; };
 		0FC94F1620A60EFA00CDC810 /* AddArtViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddArtViewModel.swift; sourceTree = "<group>"; };
+		0FEA6BBF20EBD8A7006205BA /* NoContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoContactViewController.swift; sourceTree = "<group>"; };
+		0FEA6BC020EBD8A7006205BA /* NoContactViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoContactViewController.xib; sourceTree = "<group>"; };
 		0FEC974320E7EE01004D793C /* TermsInWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsInWebViewController.swift; sourceTree = "<group>"; };
 		0FEC974420E7EE01004D793C /* TermsInWebViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TermsInWebViewController.xib; sourceTree = "<group>"; };
 		0FEC974720E7F023004D793C /* Terms.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Terms.html; sourceTree = "<group>"; };
@@ -340,6 +344,15 @@
 			path = AddArtViewController;
 			sourceTree = "<group>";
 		};
+		0FEA6BBA20EBD7DD006205BA /* NoContactViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0FEA6BBF20EBD8A7006205BA /* NoContactViewController.swift */,
+				0FEA6BC020EBD8A7006205BA /* NoContactViewController.xib */,
+			);
+			path = NoContactViewController;
+			sourceTree = "<group>";
+		};
 		0FF81CCD20B159E200956928 /* RedeemViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -450,6 +463,7 @@
 		4021E70020A1CD0000B3DEB7 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				0FEA6BBA20EBD7DD006205BA /* NoContactViewController */,
 				0FAA1E9B20E7AA8000EF571B /* UserProfileViewController */,
 				0FC681E420B867A300DB6BAB /* ResetPasswordViewController */,
 				0FF81CCD20B159E200956928 /* RedeemViewController */,
@@ -886,6 +900,7 @@
 				0FC94F1520A6042700CDC810 /* AddArtViewController.xib in Resources */,
 				4087151320A391E2007B3E4C /* CustomPhoneBookCell.xib in Resources */,
 				58B96F6420AB35A700E67D35 /* ConfirmAccountViewController.xib in Resources */,
+				0FEA6BC220EBD8A7006205BA /* NoContactViewController.xib in Resources */,
 				0FFFDDCA20ABF89A00F044DD /* ShowGiftViewController.xib in Resources */,
 				0FAA1E9F20E7AAA600EF571B /* UserProfileViewController.xib in Resources */,
 				7E3422BE20B31B0300C8DEAC /* CustomBankCell.xib in Resources */,
@@ -968,6 +983,7 @@
 				4087150220A34B59007B3E4C /* CustomLabel.swift in Sources */,
 				0FFFDDD420AC3D7B00F044DD /* ChangePasswordViewController.swift in Sources */,
 				4087151520A391EE007B3E4C /* CustomPhoneBookCell.swift in Sources */,
+				0FEA6BC120EBD8A7006205BA /* NoContactViewController.swift in Sources */,
 				40A7340620A82288009C0B9B /* SecurityAnswersViewController.swift in Sources */,
 				408714FE20A34996007B3E4C /* UIFont.swift in Sources */,
 				58B96F5F20AB2DDC00E67D35 /* ViewControllerUtil.swift in Sources */,

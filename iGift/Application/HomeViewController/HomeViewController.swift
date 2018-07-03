@@ -38,6 +38,7 @@ class HomeViewController : BaseViewController {
     }
 
     @IBAction func onSendIGiftsBtnClicked(_ sender: Any) {
+        
         if (PreferenceUtil.instance.get(key: PreferenceUtil.ACCOUNT).isEmpty) {
             // no account
             // verified account
@@ -49,7 +50,12 @@ class HomeViewController : BaseViewController {
                 let contactsViewController = ContactsViewController(nibName: "ContactsViewController", bundle: nil)
                 contactsViewController.forNewIgift = true
                 self.navigationController?.pushViewController(contactsViewController, animated: false)
-            } else {
+            }
+            else if (true) {
+                let noContactViewController = NoContactViewController(nibName: "NoContactViewController", bundle: nil)
+                self.navigationController?.pushViewController(noContactViewController, animated: false)
+            }
+            else {
                 // not verified account
                 self.loadView("ConfirmAccountViewController")
             }
