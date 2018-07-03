@@ -13,7 +13,7 @@ import ContactsUI
 import StoreKit
 import MessageUI
 
-class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, UISearchBarDelegate, MFMessageComposeViewControllerDelegate {
+class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating, UISearchBarDelegate, MFMessageComposeViewControllerDelegate, AlertViewControllerDelegate {
 
     @IBOutlet weak var tblView: UITableView!
     @IBOutlet weak var searchPlaceHolder: UIView!
@@ -185,8 +185,9 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
                         // exit
                         DispatchQueue.main.async {
                             SenzProgressView.shared.hideProgressView()
-                            isContactRequestSent = true
-                            self.loadView("HomeViewController")
+                            let viewContUtil = ViewControllerUtil()
+                            viewContUtil.delegate = self
+                            viewContUtil.showAlertWithSingleActions(alertTitle: "Notice", alertMessage: "Contact request has been sent", viewController: self)
                         }
                     } else if(s == "404") {
                         // this means user does not exists
@@ -264,5 +265,15 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
         self.dataArray = PhoneBook.instance.getContacts()
         self.reloadTable()
         refreshControl.endRefreshing()
+    }
+    
+    //    MARK: AlertViewControllerDelegate
+    func executeTaskForAction(actionTitle: String) {
+        if actionTitle == "OK" {
+            DispatchQueue.main.async {
+                // back to home
+                self.loadView("HomeViewController")
+            }
+        }
     }
 }
