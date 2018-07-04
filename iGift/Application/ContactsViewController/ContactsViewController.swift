@@ -166,10 +166,9 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
                         _ = SenzDb.instance.markAsActive(id: user.zid)
                         DispatchQueue.main.async {
                             SenzProgressView.shared.hideProgressView()
-                            self.navigationController?.popViewController(animated: false)
+                            ViewControllerUtil.showAlert(alertTitle: "Success", alertMessage: "Successfully added contact")
+                            self.reloadDataTable()
                         }
-                        
-                        // todo reload list
                     } else {
                         DispatchQueue.main.async {
                             SenzProgressView.shared.hideProgressView()
