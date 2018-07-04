@@ -47,13 +47,11 @@ class HomeViewController : BaseViewController {
             // have account
             if (PreferenceUtil.instance.get(key: PreferenceUtil.ACCOUNT_STATUS) == "VERIFIED") {
                 // verified account
-                
                 if (SenzDb.instance.hasUsers()) {
                     let contactsViewController = ContactsViewController(nibName: "ContactsViewController", bundle: nil)
                     contactsViewController.forNewIgift = true
                     self.navigationController?.pushViewController(contactsViewController, animated: false)
-                }
-                else {
+                } else {
                     let noContactViewController = NoContactViewController(nibName: "NoContactViewController", bundle: nil)
                     self.navigationController?.pushViewController(noContactViewController, animated: false)
                 }

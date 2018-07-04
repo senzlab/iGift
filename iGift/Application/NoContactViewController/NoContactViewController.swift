@@ -28,6 +28,6 @@ class NoContactViewController: BaseViewController {
     
     //    MARK: Supportive functions
     func setupUi() {
-        self.title = "Add Account"
+        self.title = "Add Contact"
     }
 }
