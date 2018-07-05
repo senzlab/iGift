@@ -155,6 +155,7 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
             ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "This user already added in your igift contact list")
         } else {
             // ask to send request
+            view.endEditing(true)
             askSendRequest(contact: contact, phone: phone)
         }
     }

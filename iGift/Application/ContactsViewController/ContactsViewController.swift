@@ -103,11 +103,9 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
                 let designIGiftViewController = DesignIGiftViewController(nibName: "DesignIGiftViewController", bundle: nil)
                 designIGiftViewController.user = user
                 self.navigationController?.pushViewController(designIGiftViewController, animated: false)
-            }
-            else {
+            } else {
                 let userProfileViewController = UserProfileViewController(nibName: "UserProfileViewController", bundle: nil)
-                let senzContact = PhoneBook.instance.getContact(phone: user.phone)
-                userProfileViewController.selectedUser = senzContact
+                userProfileViewController.user = user
                 self.navigationController?.pushViewController(userProfileViewController, animated: false)
             }
         } else {

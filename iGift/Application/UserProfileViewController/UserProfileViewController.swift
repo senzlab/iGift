@@ -14,15 +14,20 @@ class UserProfileViewController: BaseViewController {
     @IBOutlet weak var nameValueLabel: UILabel!
     @IBOutlet weak var phnNoValueLabel: UILabel!
     
-    var selectedUser: SenzContact!
+    var user: User!
     
-    //    MARK: UIViewController lifecycle
+    // MARK: UIViewController lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUi()
         
-        nameValueLabel.text = selectedUser.name
-        phnNoValueLabel.text = selectedUser.phone
+        phnNoValueLabel.text = user.phone
+        let senzContact = PhoneBook.instance.getContact(phone: user.phone)
+        if senzContact != nil {
+            nameValueLabel.text = senzContact?.name
+        } else {
+            nameValueLabel.text = senzContact?.name
+        }
     }
     
     //    MARK: Supportive methods

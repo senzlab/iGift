@@ -14,7 +14,6 @@ class NoContactViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUi()
-        
     }
     
     //    MARK : Action functions
