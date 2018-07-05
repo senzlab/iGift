@@ -13,7 +13,7 @@ class Httpz {
     
     static let instance = Httpz()
     
-    func doPost(url: String, param: [String : Any], onComplete: @escaping (Bool) -> ()) {
+    func doPost(url: String, param: [String : Any], onComplete: @escaping (String) -> ()) {
         // json
         guard let jsonData = try? JSONSerialization.data(withJSONObject: param) else {
             print("error decoding json")
@@ -34,7 +34,7 @@ class Httpz {
             guard let data = data, error == nil else {
                 // request error
                 print(error.debugDescription)
-                onComplete(false)
+                onComplete("400")
                 return
             }
             
@@ -42,7 +42,7 @@ class Httpz {
             if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
                 // registration fail
                 print("statusCode should be 200, not \(httpStatus.statusCode)")
-                onComplete(false)
+                onComplete("400")
                 return
             }
             
@@ -52,25 +52,27 @@ class Httpz {
                 print(responseJSON)
             }
             
-            onComplete(true)
+            // TODO parse response json and extract status
+            
+            onComplete("200")
         }
         task.resume()
     }
     
-    func doGet(url: String, param: [String : Any], onComplete: @escaping (Bool, String) -> ()) {
+    func doGet(url: String, onComplete: @escaping (Bool, String) -> ()) {
         // json
-        guard let jsonData = try? JSONSerialization.data(withJSONObject: param) else {
-            print("error decoding json")
-            return
-        }
-        let jsonStr = String(data: jsonData, encoding: String.Encoding.utf8)?
-            .replacingOccurrences(of: "\\", with: "")
+//        guard let jsonData = try? JSONSerialization.data(withJSONObject: param) else {
+//            print("error decoding json")
+//            return
+//        }
+//        let jsonStr = String(data: jsonData, encoding: String.Encoding.utf8)?
+//            .replacingOccurrences(of: "\\", with: "")
         
         // request data
         let url = URL(string: url)!
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
-        request.httpBody = jsonStr?.data(using: .utf8)
+        //request.httpBody = jsonStr?.data(using: .utf8)
         
         // post request
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -89,6 +91,10 @@ class Httpz {
                 onComplete(false, "")
                 return
             }
+            
+            var result = NSString(data: data, encoding:
+                String.Encoding.ascii.rawValue)!
+            print(result)
             
             // means success
             let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
