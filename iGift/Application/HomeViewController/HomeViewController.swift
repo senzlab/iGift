@@ -34,16 +34,7 @@ class HomeViewController : BaseViewController {
     }
 
     @IBAction func onSettingsBtnClicked(_ sender: Any) {
-        //self.loadView("SettingsViewController")
-        
-//        Httpz.instance.doGet(url: "https://uatweb.sampath.lk", onComplete: {(status: Bool, response: String) -> Void in
-//            print(response)
-//        })
-        
-        let dict = ["UID": "23232", "MSG": "SHARE #lat"]
-        Httpz.instance.doPost(url: "http://10.25.201.126:7171/api/v1/contractz", param: dict, onComplete: {(status: String) -> Void in
-            print(status)
-        })
+        self.loadView("SettingsViewController")
     }
 
     @IBAction func onSendIGiftsBtnClicked(_ sender: Any) {
