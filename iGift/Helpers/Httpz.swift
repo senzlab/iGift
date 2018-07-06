@@ -13,7 +13,11 @@ class Httpz {
     
     static let instance = Httpz()
     
-    func doPost(url: String, param: [String : Any], onComplete: @escaping (String) -> ()) {
+    // contractz api
+    let api = "https://uatweb.sampath.lk/igift/v1/contractz"
+    //let api = "http://10.25.29.56:7171/api/v1/contractz"
+    
+    func doPost(param: [String : Any], onComplete: @escaping (String) -> ()) {
         // json
         guard let jsonData = try? JSONSerialization.data(withJSONObject: param) else {
             print("error decoding json")
@@ -23,7 +27,7 @@ class Httpz {
             .replacingOccurrences(of: "\\", with: "")
         
         // request data
-        let url = URL(string: url)!
+        let url = URL(string: self.api)!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.httpBody = jsonStr?.data(using: .utf8)
@@ -50,29 +54,33 @@ class Httpz {
             let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
             if let responseJSON = responseJSON as? [String: Any] {
                 print(responseJSON)
+                
+                //  parse response json and extract status
+                let msg = responseJSON["Msg"] as? String
+                let senz = SenzUtil.instance.parse(msg: msg!)
+                onComplete(senz.attr["status"]!)
             }
             
-            // TODO parse response json and extract status
-            
-            onComplete("200")
+            onComplete("400")
         }
+        
         task.resume()
     }
     
-    func doGet(url: String, onComplete: @escaping (Bool, String) -> ()) {
+    func doGet(param: [String : Any], onComplete: @escaping ([Senz]?) -> ()) {
         // json
-//        guard let jsonData = try? JSONSerialization.data(withJSONObject: param) else {
-//            print("error decoding json")
-//            return
-//        }
-//        let jsonStr = String(data: jsonData, encoding: String.Encoding.utf8)?
-//            .replacingOccurrences(of: "\\", with: "")
+        guard let jsonData = try? JSONSerialization.data(withJSONObject: param) else {
+            print("error decoding json")
+            return
+        }
+        let jsonStr = String(data: jsonData, encoding: String.Encoding.utf8)?
+            .replacingOccurrences(of: "\\", with: "")
         
         // request data
-        let url = URL(string: url)!
+        let url = URL(string: api)!
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
-        //request.httpBody = jsonStr?.data(using: .utf8)
+        request.httpBody = jsonStr?.data(using: .utf8)
         
         // post request
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -80,7 +88,7 @@ class Httpz {
             guard let data = data, error == nil else {
                 // request error
                 print(error.debugDescription)
-                onComplete(false, "")
+                onComplete(nil)
                 return
             }
             
@@ -88,27 +96,30 @@ class Httpz {
             if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
                 // registration fail
                 print("statusCode should be 200, not \(httpStatus.statusCode)")
-                onComplete(false, "")
+                onComplete(nil)
                 return
             }
             
-            var result = NSString(data: data, encoding:
-                String.Encoding.ascii.rawValue)!
-            print(result)
-            
             // means success
             let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
-            if let responseJSON = responseJSON as? [String: Any] {
+            if let responseJSON = responseJSON as? [Any] {
                 print(responseJSON)
-                // get json
-                // parse senz
-                let msg = responseJSON["Msg"] as? String
-                let senz = SenzUtil.instance.parse(msg: msg!)
-                onComplete(true, senz.attr["#blob"]!)
+                
+                // parse extract senzes
+                var senzes: [Senz] = []
+                for respDict in responseJSON {
+                    if let dict = respDict as? [String: Any] {
+                        let senz = SenzUtil.instance.parse(msg: (dict["Msg"] as? String)!)
+                        senzes.append(senz)
+                    }
+                }
+                
+                onComplete(senzes)
             }
             
-            onComplete(false, "")
+            onComplete(nil)
         }
+        
         task.resume()
     }
     

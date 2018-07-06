@@ -69,18 +69,20 @@ class RegisterViewController : KeyboardScrollableViewController {
         let psw = txtFieldPassword.text!.replacingOccurrences(of: " ", with: "")
         let pswCon = txtFieldConfirmPassword.text!.replacingOccurrences(of: " ", with: "")
         
+        doReg(phone: phn, password: psw)
+        
         // validate inputs
-        let returnObj = (ViewControllerUtil.validateRegistration(phn: phn, phnCon: phnCon, psw: psw, pswCon: pswCon))
-        if returnObj.0 {
-            if let p = PhoneBook.instance.internationalize(phone: phn) {
-                let phone = p.replacingOccurrences(of: " ", with: "")
-                doReg(phone: phone, password: psw)
-            } else {
-                ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Invalid phone no")
-            }
-        } else {
-            ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: returnObj.1)
-        }
+//        let returnObj = (ViewControllerUtil.validateRegistration(phn: phn, phnCon: phnCon, psw: psw, pswCon: pswCon))
+//        if returnObj.0 {
+//            if let p = PhoneBook.instance.internationalize(phone: phn) {
+//                let phone = p.replacingOccurrences(of: " ", with: "")
+//                doReg(phone: phone, password: psw)
+//            } else {
+//                ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Invalid phone no")
+//            }
+//        } else {
+//            ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: returnObj.1)
+//        }
     }
     
     func doReg(phone: String, password: String) {
@@ -89,16 +91,11 @@ class RegisterViewController : KeyboardScrollableViewController {
         DispatchQueue.global(qos: .userInitiated).async {
             let uid = SenzUtil.instance.uid(zAddress: phone)
             let regSenz = SenzUtil.instance.regSenz(uid: uid, zAddress: phone)
-            let z = Httpz.instance.pushSenz(senz: regSenz!)
-            if z == nil {
-                // reg fail, old way
-                DispatchQueue.main.async {
-                    SenzProgressView.shared.hideProgressView()
-                    ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to register in igift")
-                }
-            } else {
-                let s = SenzUtil.instance.parse(msg: z!).attr["#status"]
-                if (s == "SUCCESS") {
+            
+            // post to contractz
+            let dict = ["Uid": uid, "Msg": regSenz!]
+            Httpz.instance.doPost(param: dict, onComplete: {(status: String) -> Void in
+                if (status == "200") {
                     // reg done
                     PreferenceUtil.instance.put(key: PreferenceUtil.PHONE_NUMBER, value: phone)
                     PreferenceUtil.instance.put(key: PreferenceUtil.PASSWORD, value: password)
@@ -109,7 +106,7 @@ class RegisterViewController : KeyboardScrollableViewController {
                         view.isRegistrationProcess = true
                         self.navigationController?.pushViewController(view, animated: false)
                     }
-                } else if (s == "403") {
+                } else if (status == "403") {
                     // already registered
                     DispatchQueue.main.async {
                         SenzProgressView.shared.hideProgressView()
@@ -122,7 +119,7 @@ class RegisterViewController : KeyboardScrollableViewController {
                         ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to register in igift")
                     }
                 }
-            }
+            })
         }
     }
 }
