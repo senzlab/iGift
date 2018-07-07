@@ -74,31 +74,35 @@ class ShowGiftViewController: BaseViewController {
     
     func fetchImage() {
         // download image
+        SenzProgressView.shared.showProgressView((self.navigationController?.view)!)
         DispatchQueue.global(qos: .userInitiated).async {
             let senz = SenzUtil.instance.blobSenz(uid: self.iGift!.uid)
-            let z = Httpz.instance.pushSenz(senz: senz)
-            if z == nil {
-                // fail
-                DispatchQueue.main.async {
-                    SenzProgressView.shared.hideProgressView()
-                    ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to download igift")
+
+            // post to contractz
+            let dict = ["Uid": self.iGift!.uid, "Msg": senz]
+            Httpz.instance.doPost(param: dict, onComplete: {(senzes: [Senz]) -> Void in
+                if (senzes.count > 0 && senzes.first!.attr["#status"] == "200") {
+                    // fetch done
+                    // save image
+                    let dataDecoded : Data = Data(base64Encoded: senzes.first!.attr["#blob"]!)!
+                    _ = createFileInPath(relativeFilePath: Constants.IMAGES_DIR.rawValue, fileName: self.iGift!.uid + ".jpeg", imageData: dataDecoded)
+                    
+                    // mark as viewed
+                    _ = SenzDb.instance.markAsViewed(id: self.iGift!.uid)
+                    
+                    DispatchQueue.main.async {
+                        SenzProgressView.shared.hideProgressView()
+                        let decodedimage = UIImage(data: dataDecoded)
+                        self.giftImageView.image = decodedimage
+                    }
+                } else {
+                    // fail
+                    DispatchQueue.main.async {
+                        SenzProgressView.shared.hideProgressView()
+                        ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to download igift")
+                    }
                 }
-            } else {
-                // fetch done
-                // save image
-                let rSenz = SenzUtil.instance.parse(msg: z!)
-                let dataDecoded : Data = Data(base64Encoded: rSenz.attr["#blob"]!)!
-                _ = createFileInPath(relativeFilePath: Constants.IMAGES_DIR.rawValue, fileName: self.iGift!.uid + ".jpeg", imageData: dataDecoded)
-                
-                // mark as viewed
-                _ = SenzDb.instance.markAsViewed(id: self.iGift!.uid)
-                
-                DispatchQueue.main.async {
-                    SenzProgressView.shared.hideProgressView()
-                    let decodedimage = UIImage(data: dataDecoded)
-                    self.giftImageView.image = decodedimage
-                }
-            }
+            })
         }
     }
 }

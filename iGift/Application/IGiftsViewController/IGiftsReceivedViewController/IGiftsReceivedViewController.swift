@@ -112,41 +112,42 @@ class IGiftsReceivedViewController : BaseViewController, UITableViewDelegate, UI
     }
     
     func fetch() {
-        // download image
-        DispatchQueue.global(qos:.userInteractive).async {
-            let zs = Httpz.instance.pushSenz(senz: SenzUtil.instance.fetchSenz())
-            if zs != nil {
-                // fetch done
-                // split and parse
-                for z in zs!.components(separatedBy: ";") {
-                    if !z.isEmpty {
-                        let senz = SenzUtil.instance.parse(msg: z)
-                        
+        // send request to fetch
+        DispatchQueue.global(qos: .userInitiated).async {
+            let uid = SenzUtil.instance.uid(zAddress: PreferenceUtil.instance.get(key: PreferenceUtil.PHONE_NUMBER))
+            let senz = SenzUtil.instance.fetchSenz(uid: uid)
+            
+            // post to contractz
+            let dict = ["Uid": uid, "Msg": senz]
+            Httpz.instance.doPost(param: dict, onComplete: {(senzes: [Senz]) -> Void in
+                if (senzes.count > 0) {
+                    for z in senzes {
                         // create new iGift
                         let senzGift = Igift(id: 1)
-                        senzGift.uid = senz.attr["#uid"]!
-                        senzGift.user = senz.attr["#from"]!
-                        senzGift.amount = senz.attr["#amnt"]!
-                        senzGift.cid = senz.attr["#id"]!
+                        senzGift.uid = z.attr["#uid"]!
+                        senzGift.user = z.attr["#from"]!
+                        senzGift.amount = z.attr["#amnt"]!
+                        senzGift.cid = z.attr["#id"]!
                         senzGift.state = "TRANSFER"
                         senzGift.timestamp = TimeUtil.sharedInstance.timestamp()
                         senzGift.isMyIgift = false
                         senzGift.isViewed = false
                         _ = SenzDb.instance.createIgift(igift: senzGift)
                     }
+                    
+                    // reload list
+                    self.dataArray = SenzDb.instance.getIgifts(myGifts: false)
+                    DispatchQueue.main.async {
+                        self.tblView.reloadData()
+                        self.refreshControl.endRefreshing()
+                    }
+                } else {
+                    // nothing fetched
+                    DispatchQueue.main.async {
+                        self.refreshControl.endRefreshing()
+                    }
                 }
-                
-                // reload list
-                self.dataArray = SenzDb.instance.getIgifts(myGifts: false)
-                DispatchQueue.main.async {
-                    self.tblView.reloadData()
-                    self.refreshControl.endRefreshing()
-                }
-            } else {
-                DispatchQueue.main.async {
-                    self.refreshControl.endRefreshing()
-                }
-            }
+            })
         }
     }
 }

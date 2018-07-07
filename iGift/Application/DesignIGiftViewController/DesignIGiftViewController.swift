@@ -202,17 +202,13 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate, AlertV
         let uid = SenzUtil.instance.uid(zAddress: PreferenceUtil.instance.get(key: PreferenceUtil.PHONE_NUMBER))
         let senz = SenzUtil.instance.transferSenz(amount: amount, blob: blob, to: self.user!.phone, cid: cid)
         
-        SenzProgressView.shared.showProgressView(self.view)
+        // send request
+        SenzProgressView.shared.showProgressView((self.navigationController?.view)!)
         DispatchQueue.global(qos: .userInitiated).async {
-            let z = Httpz.instance.pushSenz(senz: senz)
-            if z == nil {
-                DispatchQueue.main.async {
-                    // fail to send igift
-                    SenzProgressView.shared.hideProgressView()
-                    ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to send igift")
-                }
-            } else {
-                if (SenzUtil.instance.verifyStatus(z: z!)) {
+            // post to contractz
+            let dict = ["Uid": uid, "Msg": senz]
+            Httpz.instance.doPost(param: dict, onComplete: {(senzes: [Senz]) -> Void in
+                if (senzes.count > 0 && senzes.first!.attr["#status"] == "200") {
                     // save igift
                     self.saveIGift(uid: uid, cid: cid, amount: amount, data: imgData)
                     
@@ -225,13 +221,14 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate, AlertV
                         viewContUtil.showAlertWithSingleActions(alertTitle: "Success", alertMessage: "Successfully sent igift", viewController: self)
                     }
                 } else {
+                    // fail
                     DispatchQueue.main.async {
                         // fail to send igift
                         SenzProgressView.shared.hideProgressView()
                         ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to send igift")
                     }
                 }
-            }
+            })
         }
     }
     

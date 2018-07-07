@@ -27,19 +27,16 @@ class VerifyAccountViewController : BaseViewController {
     }
 
     @IBAction func onOKClicked(_ sender: Any) {
-        // push senz to add account
+        // send request
         SenzProgressView.shared.showProgressView((self.navigationController?.view)!)
         DispatchQueue.global(qos: .userInitiated).async {
-            let z = Httpz.instance.pushSenz(senz: SenzUtil.instance.accountSenz(account: self.account!))
-            if (z == nil) {
-                // fail to add account
-                DispatchQueue.main.async {
-                    SenzProgressView.shared.hideProgressView()
-                    ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to verify account")
-                }
-            } else {
-                // verify response
-                if (SenzUtil.instance.verifyStatus(z: z!)) {
+            let uid = SenzUtil.instance.uid(zAddress: PreferenceUtil.instance.get(key: PreferenceUtil.PHONE_NUMBER))
+            let senz = SenzUtil.instance.accountSenz(uid: uid, account: self.account!)
+            
+            // post to contractz
+            let dict = ["Uid": uid, "Msg": senz]
+            Httpz.instance.doPost(param: dict, onComplete: {(senzes: [Senz]) -> Void in
+                if (senzes.count > 0 && senzes.first!.attr["#status"] == "200") {
                     // done add account
                     PreferenceUtil.instance.put(key: PreferenceUtil.ACCOUNT, value: self.account!)
                     PreferenceUtil.instance.put(key: PreferenceUtil.ACCOUNT_STATUS, value: "PENDING")
@@ -48,12 +45,13 @@ class VerifyAccountViewController : BaseViewController {
                         self.loadView("ConfirmAccountViewController")
                     }
                 } else {
+                    // fail
                     DispatchQueue.main.async {
                         SenzProgressView.shared.hideProgressView()
                         ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to verify account")
                     }
                 }
-            }
+            })
         }
     }
     

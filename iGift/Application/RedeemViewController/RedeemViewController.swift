@@ -87,16 +87,13 @@ class RedeemViewController: KeyboardScrollableViewController, AlertViewControlle
     func redeem(acc: String) {
         SenzProgressView.shared.showProgressView((self.navigationController?.view)!)
         DispatchQueue.global(qos: .userInitiated).async {
-            let z = Httpz.instance.pushSenz(senz: SenzUtil.instance.redeemSenz(iGift: self.iGift!, bank: self.bank!.code, account: acc))
-            if (z == nil) {
-                DispatchQueue.main.async {
-                    // fail to send igift
-                    SenzProgressView.shared.hideProgressView()
-                    ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to redeem igift")
-                }
-            } else {
-                // verify response
-                if (SenzUtil.instance.verifyStatus(z: z!)) {
+            let uid = SenzUtil.instance.uid(zAddress: PreferenceUtil.instance.get(key: PreferenceUtil.PHONE_NUMBER))
+            let senz = SenzUtil.instance.redeemSenz(iGift: self.iGift!, bank: self.bank!.code, account: acc)
+            
+            // post to contractz
+            let dict = ["Uid": uid, "Msg": senz]
+            Httpz.instance.doPost(param: dict, onComplete: {(senzes: [Senz]) -> Void in
+                if (senzes.count > 0 && senzes.first!.attr["#status"] == "200") {
                     // success redeem
                     // update database
                     _ = SenzDb.instance.markAsRedeemed(id: self.iGift!.uid, acc: acc)
@@ -109,14 +106,15 @@ class RedeemViewController: KeyboardScrollableViewController, AlertViewControlle
                         viewContUtil.showAlertWithSingleActions(alertTitle: "Success", alertMessage: "Successfully redeemed igift", viewController: self)
                     }
                 } else {
+                    // fail
                     DispatchQueue.main.async {
                         // fail to send igift
                         SenzProgressView.shared.hideProgressView()
                         ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to redeem igift")
                     }
                 }
-            }
-        }
+            })
+        }        
     }
     
     func executeTaskForAction(actionTitle: String) {

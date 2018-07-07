@@ -47,33 +47,22 @@ class SaltConfirmViewController : KeyboardScrollableViewController, AlertViewCon
         }
     }
     
-    
     @IBAction func cancelAction(_ sender: UIButton) {
         self.loadView("HomeViewController")
     }
     
     func saltConfirm(salt: String) {
+        // send request
         SenzProgressView.shared.showProgressView((self.navigationController?.view)!)
         DispatchQueue.global(qos: .userInitiated).async {
-            let z = Httpz.instance.pushSenz(senz: SenzUtil.instance.salSenz(salt: salt))
-            if (z == nil) {
-                DispatchQueue.main.async {
-                    SenzProgressView.shared.hideProgressView()
-                    
-                    var currentAttempt:String = PreferenceUtil.instance.get(key: PreferenceUtil.WRONG_ATTEMPTS)
-                    
-                    if currentAttempt.isEmpty {
-                        currentAttempt = String(1);
-                    }
-                    else {
-                        currentAttempt = String(Int(currentAttempt)! + 1)
-                    }
-
-                    PreferenceUtil.instance.put(key: PreferenceUtil.WRONG_ATTEMPTS, value: currentAttempt)
-                    ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to verify account")
-                }
-            } else {
-                if (SenzUtil.instance.verifyStatus(z: z!)) {
+            let uid = SenzUtil.instance.uid(zAddress: PreferenceUtil.instance.get(key: PreferenceUtil.PHONE_NUMBER))
+            let senz = SenzUtil.instance.salSenz(uid: uid, salt: salt)
+            
+            // post to contractz
+            let dict = ["Uid": uid, "Msg": senz]
+            Httpz.instance.doPost(param: dict, onComplete: {(senzes: [Senz]) -> Void in
+                if (senzes.count > 0 && senzes.first!.attr["#status"] == "200") {
+                    // done add account
                     PreferenceUtil.instance.put(key: PreferenceUtil.ACCOUNT_STATUS, value: "VERIFIED")
                     
                     DispatchQueue.main.async {
@@ -84,16 +73,17 @@ class SaltConfirmViewController : KeyboardScrollableViewController, AlertViewCon
                         viewContUtil.showAlertWithSingleActions(alertTitle: "Notice", alertMessage: "Successfully added account", viewController: self)
                     }
                 } else {
+                    // fail
                     DispatchQueue.main.async {
                         SenzProgressView.shared.hideProgressView()
                         ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to verify account")
                     }
                 }
-            }
+            })
         }
     }
     
-    //    MARK: AlertViewControllerDelegate
+    // MARK: AlertViewControllerDelegate
     func executeTaskForAction(actionTitle: String) {
         if actionTitle == "OK" {
             DispatchQueue.main.async {

@@ -67,10 +67,10 @@ class SenzUtil {
         return senz + " " + signature
     }
     
-    func accountSenz(account: String) -> String {
+    func accountSenz(uid: String, account: String) -> String {
         let zAddress = PreferenceUtil.instance.get(key: PreferenceUtil.PHONE_NUMBER)
         let senz = "SHARE" +
-            " #uid " + uid(zAddress: zAddress) +
+            " #uid " + uid +
             " #acc " + account +
             " @" + "sampath" +
             " ^" + zAddress
@@ -78,10 +78,10 @@ class SenzUtil {
         return senz + " " + signature
     }
     
-    func salSenz(salt: String) -> String {
+    func salSenz(uid: String, salt: String) -> String {
         let zAddress = PreferenceUtil.instance.get(key: PreferenceUtil.PHONE_NUMBER)
         let senz = "SHARE" +
-            " #uid " + uid(zAddress: zAddress) +
+            " #uid " + uid +
             " #salt " + salt +
             " @" + "sampath" +
             " ^" + zAddress
@@ -137,10 +137,10 @@ class SenzUtil {
         return senz + " " + signature
     }
     
-    func fetchSenz() -> String {
+    func fetchSenz(uid: String) -> String {
         let zAddress = PreferenceUtil.instance.get(key: PreferenceUtil.PHONE_NUMBER)
         let senz = "GET " +
-            " #uid " + uid(zAddress: zAddress) +
+            " #uid " + uid +
             " #senzes" +
             " @senzswitch" +
             " ^" + zAddress
