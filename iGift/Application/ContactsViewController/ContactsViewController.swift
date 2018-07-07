@@ -150,16 +150,13 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
             // send request
             SenzProgressView.shared.showProgressView((self.navigationController?.view)!)
             DispatchQueue.global(qos: .userInitiated).async {
-                let senz = SenzUtil.instance.connectSenz(to: user.phone)
-                let z = Httpz.instance.pushSenz(senz: senz)
-                if z == nil {
-                    // fail
-                    DispatchQueue.main.async {
-                        SenzProgressView.shared.hideProgressView()
-                        ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to confirm request")
-                    }
-                } else {
-                    if (SenzUtil.instance.verifyStatus(z: z!)) {
+                let uid = SenzUtil.instance.uid(zAddress: user.phone)
+                let senz = SenzUtil.instance.connectSenz(uid: uid ,to: user.phone)
+
+                // post to contractz
+                let dict = ["Uid": uid, "Msg": senz]
+                Httpz.instance.doPost(param: dict, onComplete: {(senzes: [Senz]) -> Void in
+                    if (senzes.count > 0 && senzes.first!.attr["#status"] == "200") {
                         // done, exit from here
                         _ = SenzDb.instance.markAsActive(id: user.zid)
                         DispatchQueue.main.async {
@@ -168,12 +165,13 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
                             self.reloadDataTable()
                         }
                     } else {
+                        // fail
                         DispatchQueue.main.async {
                             SenzProgressView.shared.hideProgressView()
                             ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to confirm request")
                         }
                     }
-                }
+                })
             }
         }))
         

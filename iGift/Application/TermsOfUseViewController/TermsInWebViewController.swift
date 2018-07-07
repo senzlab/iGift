@@ -26,7 +26,6 @@ class TermsInWebViewController: BaseViewController {
     }
     
     func loadHtmlFile() {
-
         let myProjectBundle:Bundle = Bundle.main
         let filePath:String = myProjectBundle.path(forResource: "Terms", ofType: "html")!
         let myURL = URL(string: filePath);

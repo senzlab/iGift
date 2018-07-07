@@ -84,7 +84,7 @@ class ViewControllerUtil: NSObject {
     }
     
     class func validateRegistration(phn: String, phnCon: String, psw: String, pswCon: String) -> (Bool,String) {
-        if !isValidPhoneNo(testStr: phn) || (PhoneBook.instance.internationalize(phone: phn) == nil){
+        if phn.count != 10 || phnCon.count != 10 || phn.first != "0" || phnCon.first != "0" {
             return (false,"Invalid phone no. Phone no should contains 10 digits and start with 07")
         }
         

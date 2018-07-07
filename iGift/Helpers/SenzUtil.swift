@@ -40,7 +40,7 @@ class SenzUtil {
         return senz
     }
     
-    func regSenz(uid: String, zAddress: String) -> String? {
+    func regSenz(uid: String, zAddress: String) -> String {
         let pubkey = PreferenceUtil.instance.get(key: PreferenceUtil.PUBLIC_KEY)
         let fcmToken = PreferenceUtil.instance.get(key: PreferenceUtil.FCM_TOKEN)
         let senz = "PUT" +
@@ -54,11 +54,11 @@ class SenzUtil {
         return senz + " " + signature
     }
     
-    func connectSenz(to: String) -> String {
+    func connectSenz(uid: String, to: String) -> String {
         let pubkey = PreferenceUtil.instance.get(key: PreferenceUtil.PUBLIC_KEY)
         let zAddress = PreferenceUtil.instance.get(key: PreferenceUtil.PHONE_NUMBER)
         let senz = "SHARE" +
-            " #uid " + uid(zAddress: zAddress) +
+            " #uid " + uid +
             " #pubkey " + pubkey +
             " #to " + to +
             " @" + "senzswitch" +

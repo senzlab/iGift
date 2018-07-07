@@ -163,17 +163,16 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
     func askSendRequest(contact: SenzContact, phone: String) {
         let alert = UIAlertController(title: "Confirm", message: "Are you sure you want to add " + contact.name + " as an igift contact?", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action: UIAlertAction!) in
+            // send request
             SenzProgressView.shared.showProgressView((self.navigationController?.view)!)
             DispatchQueue.global(qos: .userInitiated).async {
-                let z = Httpz.instance.pushSenz(senz: SenzUtil.instance.connectSenz(to: phone))
-                if (z == nil) {
-                    DispatchQueue.main.async {
-                        SenzProgressView.shared.hideProgressView()
-                        ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to send request")
-                    }
-                } else {
-                    let s = SenzUtil.instance.parse(msg: z!).attr["#status"]
-                    if (s == "201" || s == "SUCCESS") {
+                let uid = SenzUtil.instance.uid(zAddress: phone)
+                let senz = SenzUtil.instance.connectSenz(uid: uid, to: phone)
+                
+                // post to contractz
+                let dict = ["Uid": uid, "Msg": senz]
+                Httpz.instance.doPost(param: dict, onComplete: {(senzes: [Senz]) -> Void in
+                    if (senzes.count > 0 && senzes.first!.attr["#status"] == "200") {
                         // request created
                         // save user
                         let senzUser = User(id: 1)
@@ -190,7 +189,7 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
                             viewContUtil.delegate = self
                             viewContUtil.showAlertWithSingleActions(alertTitle: "Notice", alertMessage: "Contact request has been sent", viewController: self)
                         }
-                    } else if(s == "404") {
+                    } else if(senzes.count > 0 && senzes.first!.attr["#status"] == "404") {
                         // this means user does not exists
                         // ask for sms request
                         DispatchQueue.main.async {
@@ -198,12 +197,13 @@ class PhoneBookViewController : BaseViewController, UITableViewDelegate, UITable
                             self.askSendSms(contact: contact, phone: phone)
                         }
                     } else {
+                        // fail
                         DispatchQueue.main.async {
                             SenzProgressView.shared.hideProgressView()
                             ViewControllerUtil.showAlert(alertTitle: "Error", alertMessage: "Fail to send request")
                         }
                     }
-                }
+                })
             }
         }))
         
