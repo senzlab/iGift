@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -35,24 +34,22 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0EB-ie-vhg" userLabel="View_ImageContainer">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="223"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_user" translatesAutoresizingMaskIntoConstraints="NO" id="c9s-6P-gHz" userLabel="ImageView_User">
-                                    <rect key="frame" x="86" y="10" width="203" height="203"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" secondItem="c9s-6P-gHz" secondAttribute="height" multiplier="1:1" id="UD6-YW-JDQ"/>
-                                    </constraints>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_user_gray" translatesAutoresizingMaskIntoConstraints="NO" id="c9s-6P-gHz" userLabel="ImageView_User">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
                                 </imageView>
                             </subviews>
-                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            <color key="backgroundColor" red="0.83137254901960789" green="0.83137254901960789" blue="0.83137254901960789" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstAttribute="bottom" secondItem="c9s-6P-gHz" secondAttribute="bottom" constant="10" id="EeP-gz-HGE"/>
-                                <constraint firstItem="c9s-6P-gHz" firstAttribute="centerX" secondItem="0EB-ie-vhg" secondAttribute="centerX" id="HV9-8d-ZlY"/>
-                                <constraint firstItem="c9s-6P-gHz" firstAttribute="top" secondItem="0EB-ie-vhg" secondAttribute="top" constant="10" id="Mxn-My-mhz"/>
+                                <constraint firstAttribute="bottom" secondItem="c9s-6P-gHz" secondAttribute="bottom" id="IgN-MC-pkS"/>
+                                <constraint firstAttribute="trailing" secondItem="c9s-6P-gHz" secondAttribute="trailing" id="Zhe-2N-dtS"/>
+                                <constraint firstItem="c9s-6P-gHz" firstAttribute="leading" secondItem="0EB-ie-vhg" secondAttribute="leading" id="odG-rI-9g8"/>
+                                <constraint firstItem="c9s-6P-gHz" firstAttribute="top" secondItem="0EB-ie-vhg" secondAttribute="top" id="viA-mu-VT2"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nyh-ng-ZYd" userLabel="View_DatailsContainer">
-                            <rect key="frame" x="0.0" y="223" width="375" height="444"/>
+                            <rect key="frame" x="0.0" y="333.5" width="375" height="333.5"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qLk-hU-LpF">
                                     <rect key="frame" x="8" y="0.0" width="359" height="140"/>
@@ -126,7 +123,7 @@
                         <constraint firstItem="0EB-ie-vhg" firstAttribute="top" secondItem="CN2-y7-wgh" secondAttribute="top" id="5wW-ab-NRi"/>
                         <constraint firstAttribute="trailing" secondItem="nyh-ng-ZYd" secondAttribute="trailing" id="9tD-9T-o0z"/>
                         <constraint firstAttribute="bottom" secondItem="nyh-ng-ZYd" secondAttribute="bottom" id="ABW-Sx-dIj"/>
-                        <constraint firstItem="0EB-ie-vhg" firstAttribute="height" secondItem="CN2-y7-wgh" secondAttribute="height" multiplier="1/3" id="OMl-Sa-lln"/>
+                        <constraint firstItem="0EB-ie-vhg" firstAttribute="height" secondItem="CN2-y7-wgh" secondAttribute="height" multiplier="1/2" id="OMl-Sa-lln"/>
                         <constraint firstAttribute="trailing" secondItem="0EB-ie-vhg" secondAttribute="trailing" id="hiJ-XZ-moc"/>
                         <constraint firstItem="0EB-ie-vhg" firstAttribute="leading" secondItem="CN2-y7-wgh" secondAttribute="leading" id="qEl-2g-LnC"/>
                         <constraint firstItem="nyh-ng-ZYd" firstAttribute="leading" secondItem="CN2-y7-wgh" secondAttribute="leading" id="uE8-Dg-cPK"/>
@@ -146,6 +143,6 @@
         </view>
     </objects>
     <resources>
-        <image name="default_user" width="500" height="500"/>
+        <image name="default_user_gray" width="200" height="200"/>
     </resources>
 </document>
