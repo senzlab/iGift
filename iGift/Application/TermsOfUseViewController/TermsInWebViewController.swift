@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TermsInWebViewController: BaseViewController {
+class TermsInWebViewController: BaseViewController, UIWebViewDelegate {
     
     @IBOutlet weak var webView: UIWebView!
     
@@ -23,6 +23,9 @@ class TermsInWebViewController: BaseViewController {
     //    MARK: Supportive functions
     func setupUi() {
         self.title = "Terms of use"
+        
+        webView.delegate = self
+        webView.isHidden = true
     }
     
     func loadHtmlFile() {
@@ -33,5 +36,10 @@ class TermsInWebViewController: BaseViewController {
         
         webView.loadRequest(myURLRequest)
 
+    }
+    
+    //    MARK: UIWebViewDelegate
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        webView.isHidden = false
     }
 }
