@@ -127,9 +127,9 @@ class SettingsViewController : BaseViewController, UITableViewDelegate, UITableV
         case 3:
             print("Case 3")
             // View Terms Btn
-//            self.loadView("TermsOfUseViewController")
-            let view = TermsInWebViewController(nibName: "TermsInWebViewController", bundle: nil)
-            self.navigationController?.pushViewController(view, animated: false)
+            self.loadView("TermsOfUseViewController")
+//            let view = TermsInWebViewController(nibName: "TermsInWebViewController", bundle: nil)
+//            self.navigationController?.pushViewController(view, animated: false)
         break
         default:
             print("UnIdentified Button Clicked")

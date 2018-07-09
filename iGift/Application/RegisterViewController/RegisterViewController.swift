@@ -44,10 +44,10 @@ class RegisterViewController : KeyboardScrollableViewController {
     }
     
     @IBAction func onTermsNConClicked(_ sender: Any) {
-//        let view = TermsOfUseViewController(nibName: "TermsOfUseViewController", bundle: nil)
-//        self.navigationController?.pushViewController(view, animated: true)
-        let view = TermsInWebViewController(nibName: "TermsInWebViewController", bundle: nil)
-        self.navigationController?.pushViewController(view, animated: false)
+        let view = TermsOfUseViewController(nibName: "TermsOfUseViewController", bundle: nil)
+        self.navigationController?.pushViewController(view, animated: true)
+//        let view = TermsInWebViewController(nibName: "TermsInWebViewController", bundle: nil)
+//        self.navigationController?.pushViewController(view, animated: false)
     }
     
     @IBAction func onRegisterClicked(_ sender: Any) {
