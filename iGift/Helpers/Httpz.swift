@@ -13,8 +13,8 @@ class Httpz {
     static let instance = Httpz()
     
     // contractz api
-    //let api = "https://uatweb.sampath.lk/igift/v1/contractz"
-    let api = "http://34.226.3.46:7171/igift/v1/contractz"
+    let api = "https://uatweb.sampath.lk/igift/v1/contractz" // sampath test
+    //let api = "http://34.226.3.46:7171/igift/v1/contractz" // aws
     
     func doPost(param: [String : Any], onComplete: @escaping ([Senz]) -> ()) {
         // serialize json
