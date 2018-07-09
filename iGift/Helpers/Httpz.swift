@@ -13,10 +13,13 @@ class Httpz {
     static let instance = Httpz()
     
     // contractz api
-    let api = "https://uatweb.sampath.lk/igift/v1/contractz" // sampath test
-    //let api = "http://34.226.3.46:7171/igift/v1/contractz" // aws
+    var api = "https://uatweb.sampath.lk/igift/v1/contractz" // sampath test
     
     func doPost(param: [String : Any], onComplete: @escaping ([Senz]) -> ()) {
+        #if DEBUG
+            api = "http://34.226.3.46:7171/igift/v1/contractz"
+        #endif
+        
         // serialize json
         guard let jsonData = try? JSONSerialization.data(withJSONObject: param) else {
             print("error decoding json")
@@ -75,6 +78,10 @@ class Httpz {
     }
     
     func doGet(param: [String : Any], onComplete: @escaping ([Senz]?) -> ()) {
+        #if DEBUG
+            api = "http://34.226.3.46:7171/igift/v1/contractz" // aws
+        #endif
+        
         // json
         guard let jsonData = try? JSONSerialization.data(withJSONObject: param) else {
             print("error decoding json")
