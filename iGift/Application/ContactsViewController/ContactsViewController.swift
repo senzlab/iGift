@@ -132,7 +132,7 @@ class ContactsViewController : BaseViewController, UITableViewDelegate, UITableV
             // check user has igifts to reddem
             if (SenzDb.instance.hasIgiftsToRedeem(phone: user.phone)) {
                 // show message that user has igifts to redeem
-                ViewControllerUtil.showAlert(alertTitle: "Notice", alertMessage: "You have igifts from this contact which not yet redeemed. Please redeem them before removing the contact")
+                ViewControllerUtil.showAlert(alertTitle: "Notice", alertMessage: "You have igifts from this contact which not been redeemed. Please redeem them before removing the contact")
             } else {
                 // delete igifts
                 // delete user
