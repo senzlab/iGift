@@ -17,7 +17,7 @@ class Httpz {
     
     func doPost(param: [String : Any], onComplete: @escaping ([Senz]) -> ()) {
         #if DEBUG
-            api = "http://34.226.3.46:7171/igift/v1/contractz"
+            api = "https://uatweb.sampath.lk/igift/v1/contractz"
         #endif
         
         // serialize json

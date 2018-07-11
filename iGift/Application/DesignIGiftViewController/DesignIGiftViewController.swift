@@ -108,8 +108,8 @@ class DesignIGiftViewController: BaseViewController, UITextFieldDelegate, AlertV
     @objc func keyboardWillShow(notification: NSNotification) {
         if userTryingToGiveCurrencyValue {
             if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-                let navPlusStatusBarHeight = navigationBarHeight(viewController: self) + statusBarHeight
-                if self.view.frame.origin.y == 0 || self.view.frame.origin.y == navPlusStatusBarHeight {
+                //let navPlusStatusBarHeight = navigationBarHeight(viewController: self) + statusBarHeight
+                if self.view.frame.origin.y == 0 {
                     if keyboardHeight == nil {
                         keyboardHeight = keyboardSize.height
                     }
