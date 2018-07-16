@@ -13,8 +13,8 @@ class Httpz {
     static let instance = Httpz()
     
     // contractz api
-    var api = "https://uatweb.sampath.lk/igift/v1/contractz" // sampath test
-//    var api = "https://igift.sampath.lk/igift/v1/contractz"    // Live
+//    var api = "https://uatweb.sampath.lk/igift/v1/contractz" // sampath test
+    var api = "https://igift.sampath.lk/igift/v1/contractz"    // Live
     
     func doPost(param: [String : Any], onComplete: @escaping ([Senz]) -> ()) {
         #if DEBUG
