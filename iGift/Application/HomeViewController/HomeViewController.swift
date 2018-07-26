@@ -95,9 +95,7 @@ class HomeViewController : BaseViewController, AlertViewControllerDelegate {
     }
     
     //    MARK: Supportive functions
-//    @objc func applicationDidBecomeActive() {
     func applicationDidBecomeActive() {
-    
         if !updateAlertDisplayes {
             DispatchQueue.global().async {
                 
@@ -112,7 +110,7 @@ class HomeViewController : BaseViewController, AlertViewControllerDelegate {
                                 self.updateAlertDisplayes = true
                                 let viewContUtil = ViewControllerUtil()
                                 viewContUtil.delegate = self
-                                viewContUtil.showAlertWithSingleActions(alertTitle: "Notice", alertMessage: "Please download the latest update to proceed.", viewController: self)
+                                viewContUtil.showAlertWithSingleActions(alertTitle: "Update igift", alertMessage: "New version of igift application available on iTuens store. Please update the new version for better usage", viewController: self)
                                 
                             }
                         }
