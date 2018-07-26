@@ -9,10 +9,15 @@
 import Foundation
 import UIKit
 
-class HomeViewController : BaseViewController {
+enum VersionError: Error {
+    case invalidResponse, invalidBundleInfo
+}
+
+class HomeViewController : BaseViewController, AlertViewControllerDelegate {
     
     var shouldShowSecAnsSavedMsg:Bool = false
-
+    var updateAlertDisplayes = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUi()
@@ -20,6 +25,9 @@ class HomeViewController : BaseViewController {
         if shouldShowSecAnsSavedMsg {
             ViewControllerUtil.showAutoDismissAlert(alertTitle: "Notice", alertMessage: "Successfully saved answers")
         }
+        
+        applicationDidBecomeActive()
+//        NotificationCenter.default.addObserver(self, selector: #selector(applicationDidBecomeActive), name: .UIApplicationDidBecomeActive, object: nil)
     }
     
     func setupUi() {
@@ -66,4 +74,76 @@ class HomeViewController : BaseViewController {
         self.loadView("IGiftsViewController")
     }
 
+    //    MARK: AlertViewControllerDelegate
+    func executeTaskForAction(actionTitle: String) {
+        if actionTitle == "OK" {
+            self.updateAlertDisplayes = false
+            DispatchQueue.main.async {
+//                itms://itunes.apple.com/de/app/x-gift/id1389725182?mt=8&uo=4
+//                  itms-apps://itunes.apple.com/app/id1389725182
+                if let url = URL(string: "itms://itunes.apple.com/de/app/x-gift/id1389725182?mt=8&uo=4"),
+                    UIApplication.shared.canOpenURL(url)
+                {
+                    if #available(iOS 10.0, *) {
+                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                    } else {
+                        UIApplication.shared.openURL(url)
+                    }
+                }
+            }
+        }
+    }
+    
+    //    MARK: Supportive functions
+//    @objc func applicationDidBecomeActive() {
+    func applicationDidBecomeActive() {
+    
+        if !updateAlertDisplayes {
+            DispatchQueue.global().async {
+                
+                _ = try? self.isUpdateAvailable { (update, error) in
+                    if let error = error {
+                        print(error)
+                    } else if let update = update {
+                        print(update)
+                        
+                        if (update) {
+                            DispatchQueue.main.async {
+                                self.updateAlertDisplayes = true
+                                let viewContUtil = ViewControllerUtil()
+                                viewContUtil.delegate = self
+                                viewContUtil.showAlertWithSingleActions(alertTitle: "Notice", alertMessage: "Please download the latest update to proceed.", viewController: self)
+                                
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    func isUpdateAvailable(completion: @escaping (Bool?, Error?) -> Void) throws -> URLSessionDataTask {
+        guard let info = Bundle.main.infoDictionary,
+            let currentVersion = info["CFBundleShortVersionString"] as? String,
+            let identifier = info["CFBundleIdentifier"] as? String,
+            let url = URL(string: "http://itunes.apple.com/lookup?bundleId=\(identifier)") else {
+                throw VersionError.invalidBundleInfo
+        }
+        
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            do {
+                if let error = error { throw error }
+                guard let data = data else { throw VersionError.invalidResponse }
+                let json = try JSONSerialization.jsonObject(with: data, options: [.allowFragments]) as? [String: Any]
+                guard let result = (json?["results"] as? [Any])?.first as? [String: Any], let version = result["version"] as? String else {
+                    throw VersionError.invalidResponse
+                }
+                completion(version != currentVersion, nil)
+            } catch {
+                completion(nil, error)
+            }
+        }
+        task.resume()
+        return task
+    }
 }
