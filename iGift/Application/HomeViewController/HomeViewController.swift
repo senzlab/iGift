@@ -22,12 +22,8 @@ class HomeViewController : BaseViewController, AlertViewControllerDelegate {
         super.viewDidLoad()
         self.setupUi()
         
-        if shouldShowSecAnsSavedMsg {
-            ViewControllerUtil.showAutoDismissAlert(alertTitle: "Notice", alertMessage: "Successfully saved answers")
-        }
-        
-        applicationDidBecomeActive()
-//        NotificationCenter.default.addObserver(self, selector: #selector(applicationDidBecomeActive), name: .UIApplicationDidBecomeActive, object: nil)
+        //applicationDidBecomeActive()
+        checkForUpdates()
     }
     
     func setupUi() {
@@ -73,17 +69,42 @@ class HomeViewController : BaseViewController, AlertViewControllerDelegate {
     @IBAction func onIGiftsBtnClicked(_ sender: Any) {
         self.loadView("IGiftsViewController")
     }
-
+    
+    func checkForUpdates() {
+        DispatchQueue.global(qos: .userInitiated).async {
+            let uid = SenzUtil.instance.uid(zAddress: PreferenceUtil.instance.get(key: PreferenceUtil.PHONE_NUMBER))
+            let senz = SenzUtil.instance.versionSenz(uid: uid)
+            
+            // post to contractz/check version
+            let dict = ["Uid": uid, "Msg": senz]
+            Httpz.instance.doPost(param: dict, onComplete: {(senzes: [Senz]) -> Void in
+                if (senzes.count > 0) {
+                    if let iosv = senzes.first!.attr["#ios"] {
+                        // comapre version
+                        if let appv = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+                            if iosv != appv {
+                                // ask for update version
+                                DispatchQueue.main.async {
+                                    self.updateAlertDisplayes = true
+                                    let viewContUtil = ViewControllerUtil()
+                                    viewContUtil.delegate = self
+                                    viewContUtil.showAlertWithSingleActions(alertTitle: "Update igift", alertMessage: "New version of igift application available on iTuens store. Please update the new version for better usage", viewController: self)
+                                }
+                            }
+                        }
+                    }
+                }
+            })
+        }
+    }
+    
     //    MARK: AlertViewControllerDelegate
     func executeTaskForAction(actionTitle: String) {
         if actionTitle == "OK" {
             self.updateAlertDisplayes = false
             DispatchQueue.main.async {
-//                itms://itunes.apple.com/de/app/x-gift/id1389725182?mt=8&uo=4
-//                  itms-apps://itunes.apple.com/app/id1389725182
                 if let url = URL(string: "itms://itunes.apple.com/de/app/x-gift/id1389725182?mt=8&uo=4"),
-                    UIApplication.shared.canOpenURL(url)
-                {
+                    UIApplication.shared.canOpenURL(url) {
                     if #available(iOS 10.0, *) {
                         UIApplication.shared.open(url, options: [:], completionHandler: nil)
                     } else {
@@ -98,7 +119,6 @@ class HomeViewController : BaseViewController, AlertViewControllerDelegate {
     func applicationDidBecomeActive() {
         if !updateAlertDisplayes {
             DispatchQueue.global().async {
-                
                 _ = try? self.isUpdateAvailable { (update, error) in
                     if let error = error {
                         print(error)
@@ -111,7 +131,6 @@ class HomeViewController : BaseViewController, AlertViewControllerDelegate {
                                 let viewContUtil = ViewControllerUtil()
                                 viewContUtil.delegate = self
                                 viewContUtil.showAlertWithSingleActions(alertTitle: "Update igift", alertMessage: "New version of igift application available on iTuens store. Please update the new version for better usage", viewController: self)
-                                
                             }
                         }
                     }

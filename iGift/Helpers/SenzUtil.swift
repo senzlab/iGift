@@ -147,6 +147,17 @@ class SenzUtil {
         return senz + " " + signature
     }
     
+    func versionSenz(uid: String) -> String {
+        let zAddress = PreferenceUtil.instance.get(key: PreferenceUtil.PHONE_NUMBER)
+        let senz = "GET " +
+            " #uid " + uid +
+            " #version" +
+            " @senzswitch" +
+            " ^" + zAddress
+        let signature = CryptoUtil.instance.sign(payload: senz)
+        return senz + " " + signature
+    }
+    
     func uid(zAddress: String) -> String {
         return zAddress + String(TimeUtil.sharedInstance.timestamp())
     }
